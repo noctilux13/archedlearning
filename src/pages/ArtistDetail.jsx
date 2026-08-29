@@ -13,7 +13,7 @@ const EASE = [0.16, 1, 0.3, 1];
 
 export default function ArtistDetail() {
   const { movementId, id } = useParams();
-  const { resolveArtistAvatar, customImages, t } = useContext(AppContext) || {};
+  const { resolveArtistAvatar, customImages, t, l } = useContext(AppContext) || {};
   const [showUploadModal, setShowUploadModal] = useState(false);
   const [artworkModalTarget, setArtworkModalTarget] = useState(null);
 
@@ -129,7 +129,7 @@ export default function ArtistDetail() {
               </h1>
 
               <p style={{ fontSize: '0.95rem', lineHeight: '1.8', color: 'var(--text-secondary)', margin: '0.75rem 0 0 0' }}>
-                {artist.bio}
+                {l ? l(artist, 'bio', 'artists') : artist.bio}
               </p>
             </div>
           </div>
@@ -240,7 +240,7 @@ export default function ArtistDetail() {
                           marginBottom: '1rem',
                           display: '-webkit-box', WebkitLineClamp: 3, WebkitBoxOrient: 'vertical', overflow: 'hidden'
                         }}>
-                          {work.notes}
+                          {l ? l(work, 'notes', 'artworks') : work.notes}
                         </p>
                       )}
                     </div>

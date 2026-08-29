@@ -19,7 +19,7 @@ const fadeBlurUp = {
 };
 
 export default function Home() {
-  const { t } = useContext(AppContext);
+  const { t, l, lArray } = useContext(AppContext);
   const [searchTerm, setSearchTerm] = useState('');
   const [activeCategory, setActiveCategory] = useState('all');
 
@@ -245,7 +245,7 @@ export default function Home() {
                             marginBottom: '1rem',
                             display: '-webkit-box', WebkitLineClamp: 3, WebkitBoxOrient: 'vertical', overflow: 'hidden'
                           }}>
-                            {movement.description}
+                            {l(movement, 'description', 'movements')}
                           </p>
                         </div>
 
@@ -253,7 +253,7 @@ export default function Home() {
                         <div>
                           {movement.keyFeatures && (
                             <div style={{ display: 'flex', flexWrap: 'wrap', gap: '4px', marginBottom: '1rem' }}>
-                              {movement.keyFeatures.slice(0, 2).map((feat, fIdx) => (
+                              {lArray(movement, 'keyFeatures', 'movements').slice(0, 2).map((feat, fIdx) => (
                                 <span key={fIdx} style={{ fontSize: '0.7rem', padding: '2px 7px', borderRadius: '3px', backgroundColor: 'var(--bg-subtle)', color: 'var(--text-tertiary)' }}>
                                   {feat}
                                 </span>

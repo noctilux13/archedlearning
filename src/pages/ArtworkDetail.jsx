@@ -13,7 +13,7 @@ const EASE = [0.16, 1, 0.3, 1];
 
 export default function ArtworkDetail() {
   const { movementId, artistId, id } = useParams();
-  const { markArtworkViewed, progress, toggleFavorite, apiKey, cfWorkerUrl, customImages, t } = useContext(AppContext) || {};
+  const { markArtworkViewed, progress, toggleFavorite, apiKey, cfWorkerUrl, customImages, t, l, lArray } = useContext(AppContext) || {};
 
   const [isZoomed, setIsZoomed] = useState(false);
   const [showUploadModal, setShowUploadModal] = useState(false);
@@ -56,7 +56,7 @@ export default function ArtworkDetail() {
         artwork.title,
         artist.englishName || artist.name,
         movement.englishName,
-        artwork.knowledgePoints
+        lArray ? lArray(artwork, 'knowledgePoints', 'artworks') : artwork.knowledgePoints
       );
       setAiAnalysis(res);
     } catch (err) {
@@ -225,7 +225,7 @@ export default function ArtworkDetail() {
                 {t ? t('artwork.curatorialNotes', 'Curatorial Notes') : 'Curatorial Notes'}
               </div>
               <p style={{ fontSize: '0.94rem', lineHeight: '1.75', color: 'var(--text-primary)', margin: 0 }}>
-                {artwork.notes}
+                {l ? l(artwork, 'notes', 'artworks') : artwork.notes}
               </p>
             </motion.div>
 
@@ -241,7 +241,7 @@ export default function ArtworkDetail() {
                   {t ? t('artwork.keyPoints', 'Key Examination Points') : 'Key Points'}
                 </div>
                 <div style={{ display: 'flex', flexDirection: 'column', gap: '0.6rem' }}>
-                  {artwork.knowledgePoints.map((kp, idx) => (
+                  {(lArray ? lArray(artwork, 'knowledgePoints', 'artworks') : artwork.knowledgePoints).map((kp, idx) => (
                     <div key={idx} style={{ display: 'flex', gap: '8px', alignItems: 'flex-start' }}>
                       <CheckCircle2 size={14} style={{ color: 'var(--text-primary)', marginTop: '3px', flexShrink: 0 }} />
                       <span style={{ fontSize: '0.88rem', color: 'var(--text-primary)', lineHeight: '1.6' }}>{kp}</span>

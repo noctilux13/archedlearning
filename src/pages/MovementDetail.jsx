@@ -12,7 +12,7 @@ const EASE = [0.16, 1, 0.3, 1];
 
 export default function MovementDetail() {
   const { id } = useParams();
-  const { resolveArtistAvatar, t } = useContext(AppContext) || {};
+  const { resolveArtistAvatar, t, l, lArray } = useContext(AppContext) || {};
   const movement = artData.find(m => m.id === id);
 
   if (!movement) {
@@ -67,7 +67,7 @@ export default function MovementDetail() {
           </h1>
 
           <p style={{ fontSize: '1rem', lineHeight: '1.8', color: 'var(--text-secondary)', marginBottom: '1.75rem', maxWidth: '880px' }}>
-            {movement.description}
+            {l ? l(movement, 'description', 'movements') : movement.description}
           </p>
 
           {/* Historical Context */}
@@ -80,7 +80,7 @@ export default function MovementDetail() {
               {t ? t('movement.historicalContext', 'Historical Context') : 'Historical Context'}
             </div>
             <p style={{ fontSize: '0.92rem', color: 'var(--text-primary)', lineHeight: '1.7', margin: 0 }}>
-              {movement.historicalContext}
+              {l ? l(movement, 'historicalContext', 'movements') : movement.historicalContext}
             </p>
           </div>
 
@@ -91,7 +91,7 @@ export default function MovementDetail() {
                 {t ? t('movement.keyFeatures', 'Key Features') : 'Key Features'}
               </div>
               <div style={{ display: 'flex', flexWrap: 'wrap', gap: '6px' }}>
-                {movement.keyFeatures.map((feat, idx) => (
+                {(lArray ? lArray(movement, 'keyFeatures', 'movements') : movement.keyFeatures).map((feat, idx) => (
                   <span key={idx} className="chip chip-neutral" style={{ fontSize: '0.78rem', padding: '4px 10px' }}>
                     {feat}
                   </span>
@@ -167,7 +167,7 @@ export default function MovementDetail() {
                         marginBottom: '1rem',
                         display: '-webkit-box', WebkitLineClamp: 3, WebkitBoxOrient: 'vertical', overflow: 'hidden'
                       }}>
-                        {artist.bio}
+                        {l ? l(artist, 'bio', 'artists') : artist.bio}
                       </p>
                     </div>
 

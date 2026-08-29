@@ -1,6 +1,7 @@
 import React, { createContext, useState, useEffect, useCallback } from 'react';
 import { getAllCustomImages, saveCustomImage, deleteCustomImage, clearAllCustomImages } from '../utils/imageStorage';
 import { translations, LANGUAGES } from '../i18n/translations';
+import { localizedContent } from '../data/localizedContent';
 
 export const AppContext = createContext();
 
@@ -14,7 +15,7 @@ export const AppProvider = ({ children }) => {
     localStorage.setItem('app_lang', lang);
   }, []);
 
-  // Translation helper function
+  // Translation helper function for UI strings
   const t = useCallback((path, fallback = '') => {
     const langDict = translations[language] || translations.zh;
     const parts = path.split('.');
@@ -37,6 +38,58 @@ export const AppProvider = ({ children }) => {
       }
     }
     return typeof current === 'string' ? current : (fallback || path);
+  }, [language]);
+
+  // Content localization helper for dynamic entities (movements, artists, artworks)
+  const l = useCallback((item, field, category = 'artworks') => {
+    if (!item) return '';
+    if (language === 'zh') return item[field] || '';
+    
+    // Check in localizedContent dictionary
+    const dict = localizedContent[language] || localizedContent.en;
+    if (dict) {
+      if (dict[category] && dict[category][item.id] && dict[category][item.id][field]) {
+        return dict[category][item.id][field];
+      }
+      if (dict[item.id] && dict[item.id][field]) {
+        return dict[item.id][field];
+      }
+    }
+
+    // Fallback to English dictionary
+    const enDict = localizedContent.en;
+    if (enDict) {
+      if (enDict[category] && enDict[category][item.id] && enDict[category][item.id][field]) {
+        return enDict[category][item.id][field];
+      }
+    }
+
+    // Direct object property fallbacks
+    return item[`${field}_${language}`] || item[`${field}_en`] || item[field] || '';
+  }, [language]);
+
+  const lArray = useCallback((item, field, category = 'artworks') => {
+    if (!item) return [];
+    if (language === 'zh') return item[field] || [];
+    
+    const dict = localizedContent[language] || localizedContent.en;
+    if (dict) {
+      if (dict[category] && dict[category][item.id] && dict[category][item.id][field]) {
+        return dict[category][item.id][field];
+      }
+      if (dict[item.id] && dict[item.id][field]) {
+        return dict[item.id][field];
+      }
+    }
+
+    const enDict = localizedContent.en;
+    if (enDict) {
+      if (enDict[category] && enDict[category][item.id] && enDict[category][item.id][field]) {
+        return enDict[category][item.id][field];
+      }
+    }
+
+    return item[`${field}_${language}`] || item[`${field}_en`] || item[field] || [];
   }, [language]);
 
   const [progress, setProgress] = useState(() => {
@@ -179,6 +232,8 @@ export const AppProvider = ({ children }) => {
       language,
       setLanguage,
       t,
+      l,
+      lArray,
       LANGUAGES,
       progress,
       markArtworkViewed,
