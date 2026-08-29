@@ -1,4 +1,4 @@
-import React, { useState, useContext } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import { ImageOff, ExternalLink, CheckCircle2 } from 'lucide-react';
 import { getAssetUrl } from '../utils/assetUrl';
 import { AppContext } from '../context/AppContext';
@@ -16,11 +16,17 @@ export const ArtworkImage = ({
 }) => {
   const [loaded, setLoaded] = useState(false);
   const [error, setError] = useState(false);
-  const { resolveArtworkUrl } = useContext(AppContext) || { resolveArtworkUrl: (_, d) => d };
+  const { resolveArtworkUrl } = useContext(AppContext) || {};
 
   const data = embeddedArtworksCache?.[artworkId];
   const defaultUrl = data?.image_url ? getAssetUrl(data.image_url) : '';
   const finalImageUrl = resolveArtworkUrl ? resolveArtworkUrl(artworkId, defaultUrl) : defaultUrl;
+
+  // Crucial fix: Reset error & loading state whenever image URL or artworkId changes!
+  useEffect(() => {
+    setError(false);
+    setLoaded(false);
+  }, [finalImageUrl, artworkId]);
 
   if (!finalImageUrl || error) {
     return (
@@ -72,7 +78,7 @@ export const ArtworkImage = ({
         loading="lazy"
       />
       
-      {showMetaBadge && data.source_url && (
+      {showMetaBadge && data?.source_url && (
         <div 
           style={{
             position: 'absolute',

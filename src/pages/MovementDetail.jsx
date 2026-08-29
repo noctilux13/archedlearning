@@ -1,7 +1,8 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { artData } from '../data/artData';
+import { AppContext } from '../context/AppContext';
 import MouseSpotlight from '../components/MouseSpotlight';
 import { ArtworkImage } from '../components/ArtworkImage';
 import { getAssetUrl } from '../utils/assetUrl';
@@ -11,6 +12,7 @@ const EASE = [0.16, 1, 0.3, 1];
 
 export default function MovementDetail() {
   const { id } = useParams();
+  const { resolveArtistAvatar } = useContext(AppContext) || {};
   const movement = artData.find(m => m.id === id);
 
   if (!movement) {
@@ -137,7 +139,7 @@ export default function MovementDetail() {
                           flexShrink: 0, border: '1px solid var(--border-hairline)'
                         }}>
                           <img
-                            src={getAssetUrl(artist.avatar)}
+                            src={resolveArtistAvatar ? resolveArtistAvatar(artist.id, getAssetUrl(artist.avatar)) : getAssetUrl(artist.avatar)}
                             alt={artist.englishName || artist.name}
                             style={{ width: '100%', height: '100%', objectFit: 'cover' }}
                             onError={(e) => { e.target.style.display = 'none'; }}

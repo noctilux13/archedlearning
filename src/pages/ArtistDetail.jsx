@@ -15,6 +15,7 @@ export default function ArtistDetail() {
   const { movementId, id } = useParams();
   const { resolveArtistAvatar, customImages } = useContext(AppContext) || {};
   const [showUploadModal, setShowUploadModal] = useState(false);
+  const [artworkModalTarget, setArtworkModalTarget] = useState(null);
 
   const movement = artData.find(m => m.id === movementId);
   const artist = movement?.artists.find(a => a.id === id);
@@ -134,7 +135,7 @@ export default function ArtistDetail() {
           </div>
         </motion.div>
 
-        {/* Upload Modal */}
+        {/* Artist Avatar Upload Modal */}
         <ImageUploadModal
           isOpen={showUploadModal}
           onClose={() => setShowUploadModal(false)}
@@ -143,6 +144,17 @@ export default function ArtistDetail() {
           title={artist.englishName || artist.name}
           currentDefaultUrl={defaultAvatarUrl}
         />
+
+        {/* Artwork Image Upload Modal */}
+        {artworkModalTarget && (
+          <ImageUploadModal
+            isOpen={Boolean(artworkModalTarget)}
+            onClose={() => setArtworkModalTarget(null)}
+            targetType="artwork"
+            targetId={artworkModalTarget.id}
+            title={artworkModalTarget.title}
+          />
+        )}
 
         {/* Section Title */}
         <div style={{
@@ -160,58 +172,92 @@ export default function ArtistDetail() {
 
         {/* Artworks Grid */}
         <div className="grid">
-          {artist.artworks.map((work, wIdx) => (
-            <motion.div
-              key={work.id}
-              initial={{ opacity: 0, y: 20, filter: 'blur(6px)' }}
-              animate={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
-              transition={{ duration: 0.4, delay: 0.15 + wIdx * 0.05, ease: EASE }}
-              whileHover={{ y: -5, transition: { type: 'spring', stiffness: 400, damping: 25 } }}
-              whileTap={{ scale: 0.98 }}
-            >
-              <Link to={`/artwork/${movement.id}/${artist.id}/${work.id}`}>
-                <div className="card" style={{ height: '100%', display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
-                  <div>
-                    {/* Image */}
-                    <div className="image-box" style={{ height: '200px', marginBottom: '1rem' }}>
-                      <ArtworkImage artworkId={work.id} alt={work.title} className="w-full h-full object-cover" showMetaBadge={true} />
+          {artist.artworks.map((work, wIdx) => {
+            const hasCustomImg = Boolean(customImages?.[`artwork:${work.id}`] || customImages?.[work.id]);
+            return (
+              <motion.div
+                key={work.id}
+                initial={{ opacity: 0, y: 20, filter: 'blur(6px)' }}
+                animate={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
+                transition={{ duration: 0.4, delay: 0.15 + wIdx * 0.05, ease: EASE }}
+                whileHover={{ y: -5, transition: { type: 'spring', stiffness: 400, damping: 25 } }}
+                whileTap={{ scale: 0.98 }}
+              >
+                <Link to={`/artwork/${movement.id}/${artist.id}/${work.id}`} style={{ textDecoration: 'none', color: 'inherit' }}>
+                  <div className="card" style={{ height: '100%', display: 'flex', flexDirection: 'column', justifyContent: 'space-between', position: 'relative' }}>
+                    <div>
+                      {/* Image Stage with Quick Replace Button */}
+                      <div className="image-box" style={{ height: '200px', marginBottom: '1rem', position: 'relative' }}>
+                        <ArtworkImage artworkId={work.id} alt={work.title} className="w-full h-full object-cover" showMetaBadge={true} />
+                        
+                        <button
+                          type="button"
+                          onClick={(e) => {
+                            e.preventDefault();
+                            e.stopPropagation();
+                            setArtworkModalTarget(work);
+                          }}
+                          title="更换/修正此作品图片"
+                          className="btn btn-outline"
+                          style={{
+                            position: 'absolute',
+                            top: '8px',
+                            right: '8px',
+                            zIndex: 4,
+                            padding: '3px 8px',
+                            fontSize: '0.72rem',
+                            backgroundColor: 'rgba(0,0,0,0.65)',
+                            color: '#fff',
+                            border: '1px solid rgba(255,255,255,0.2)',
+                            backdropFilter: 'blur(6px)',
+                            borderRadius: 'var(--radius-pill)'
+                          }}
+                        >
+                          <Camera size={11} /> 更换
+                        </button>
+                      </div>
+
+                      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '0.4rem' }}>
+                        <span className="chip chip-neutral">{work.date}</span>
+                        {hasCustomImg && (
+                          <span className="chip chip-blue" style={{ fontSize: '0.68rem', padding: '1px 6px' }}>
+                            已自定义
+                          </span>
+                        )}
+                      </div>
+
+                      <h3 style={{ fontSize: '1.1rem', fontFamily: 'var(--font-serif)', marginBottom: '0.25rem', fontWeight: 600 }}>
+                        {work.title}
+                      </h3>
+
+                      <div style={{ fontSize: '0.78rem', color: 'var(--text-tertiary)', marginBottom: '0.7rem' }}>
+                        {work.location}
+                      </div>
+
+                      {work.notes && (
+                        <p style={{
+                          color: 'var(--text-secondary)', fontSize: '0.82rem', lineHeight: '1.6',
+                          marginBottom: '1rem',
+                          display: '-webkit-box', WebkitLineClamp: 3, WebkitBoxOrient: 'vertical', overflow: 'hidden'
+                        }}>
+                          {work.notes}
+                        </p>
+                      )}
                     </div>
 
-                    <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '0.4rem' }}>
-                      <span className="chip chip-neutral">{work.date}</span>
+                    <div style={{
+                      borderTop: '1px solid var(--border-hairline)', paddingTop: '0.7rem',
+                      display: 'flex', alignItems: 'center', justifyContent: 'space-between',
+                      color: 'var(--text-primary)', fontWeight: 550, fontSize: '0.82rem'
+                    }}>
+                      <span>Details</span>
+                      <ArrowRight size={14} />
                     </div>
-
-                    <h3 style={{ fontSize: '1.1rem', fontFamily: 'var(--font-serif)', marginBottom: '0.25rem', fontWeight: 600 }}>
-                      {work.title}
-                    </h3>
-
-                    <div style={{ fontSize: '0.78rem', color: 'var(--text-tertiary)', marginBottom: '0.7rem' }}>
-                      {work.location}
-                    </div>
-
-                    {work.notes && (
-                      <p style={{
-                        color: 'var(--text-secondary)', fontSize: '0.82rem', lineHeight: '1.6',
-                        marginBottom: '1rem',
-                        display: '-webkit-box', WebkitLineClamp: 3, WebkitBoxOrient: 'vertical', overflow: 'hidden'
-                      }}>
-                        {work.notes}
-                      </p>
-                    )}
                   </div>
-
-                  <div style={{
-                    borderTop: '1px solid var(--border-hairline)', paddingTop: '0.7rem',
-                    display: 'flex', alignItems: 'center', justifyContent: 'space-between',
-                    color: 'var(--text-primary)', fontWeight: 550, fontSize: '0.82rem'
-                  }}>
-                    <span>Details</span>
-                    <ArrowRight size={14} />
-                  </div>
-                </div>
-              </Link>
-            </motion.div>
-          ))}
+                </Link>
+              </motion.div>
+            );
+          })}
         </div>
       </motion.div>
     </MouseSpotlight>

@@ -171,6 +171,35 @@ export default function ArtworkDetail() {
               onClick={() => setIsZoomed(true)}
             >
               <ArtworkImage artworkId={artwork.id} alt={artwork.title} fit="contain" showMetaBadge={true} />
+              
+              <button
+                type="button"
+                onClick={(e) => {
+                  e.stopPropagation();
+                  setShowUploadModal(true);
+                }}
+                style={{
+                  position: 'absolute',
+                  bottom: '10px',
+                  left: '10px',
+                  padding: '5px 10px',
+                  borderRadius: 'var(--radius-sm)',
+                  backgroundColor: 'rgba(0,0,0,0.65)',
+                  color: '#fff',
+                  fontSize: '0.72rem',
+                  backdropFilter: 'blur(6px)',
+                  display: 'flex',
+                  alignItems: 'center',
+                  gap: '5px',
+                  border: '1px solid rgba(255,255,255,0.2)',
+                  cursor: 'pointer',
+                  zIndex: 3
+                }}
+                title="更换或修正此作品图片"
+              >
+                <Camera size={12} /> 更换图片
+              </button>
+
               <div style={{
                 position: 'absolute', bottom: '10px', right: '10px',
                 padding: '5px 10px', borderRadius: 'var(--radius-sm)',

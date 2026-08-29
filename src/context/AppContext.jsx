@@ -91,18 +91,31 @@ export const AppProvider = ({ children }) => {
   // Custom image handlers
   const setCustomImage = useCallback(async (id, dataUrl, meta = {}) => {
     const record = await saveCustomImage(id, dataUrl, meta);
+    const cleanId = id.replace(/^(artwork|artist):/, '');
+    const fullId = meta.targetType ? `${meta.targetType}:${cleanId}` : id;
+
     setCustomImages(prev => ({
       ...prev,
-      [id]: record
+      [id]: record,
+      [cleanId]: record,
+      [fullId]: record
     }));
     return record;
   }, []);
 
   const removeCustomImage = useCallback(async (id) => {
+    const cleanId = id.replace(/^(artwork|artist):/, '');
     await deleteCustomImage(id);
+    await deleteCustomImage(`artwork:${cleanId}`);
+    await deleteCustomImage(`artist:${cleanId}`);
+    await deleteCustomImage(cleanId);
+    
     setCustomImages(prev => {
       const next = { ...prev };
       delete next[id];
+      delete next[cleanId];
+      delete next[`artwork:${cleanId}`];
+      delete next[`artist:${cleanId}`];
       return next;
     });
   }, []);
@@ -114,13 +127,15 @@ export const AppProvider = ({ children }) => {
 
   // Fast helper to resolve an image URL with custom override priority
   const resolveArtworkUrl = useCallback((artworkId, defaultUrl) => {
+    if (!artworkId) return defaultUrl;
     const custom = customImages[`artwork:${artworkId}`] || customImages[artworkId];
-    return custom ? custom.dataUrl : defaultUrl;
+    return custom?.dataUrl || defaultUrl;
   }, [customImages]);
 
   const resolveArtistAvatar = useCallback((artistId, defaultUrl) => {
+    if (!artistId) return defaultUrl;
     const custom = customImages[`artist:${artistId}`] || customImages[artistId];
-    return custom ? custom.dataUrl : defaultUrl;
+    return custom?.dataUrl || defaultUrl;
   }, [customImages]);
 
   return (
