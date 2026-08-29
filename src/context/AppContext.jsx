@@ -6,7 +6,9 @@ import { localizedContent } from '../data/localizedContent';
 export const AppContext = createContext();
 
 export const AppProvider = ({ children }) => {
-  const [apiKey, setApiKey] = useState(localStorage.getItem('groqApiKey') || '');
+  const [apiKey, setApiKey] = useState(localStorage.getItem('aiApiKey') || localStorage.getItem('groqApiKey') || '');
+  const [apiEndpoint, setApiEndpoint] = useState(localStorage.getItem('aiApiEndpoint') || 'https://api.deepseek.com/v1');
+  const [apiModel, setApiModel] = useState(localStorage.getItem('aiApiModel') || 'deepseek-chat');
   const [cfWorkerUrl, setCfWorkerUrl] = useState(localStorage.getItem('cfWorkerUrl') || '');
   const [language, setLanguageState] = useState(() => localStorage.getItem('app_lang') || 'zh');
   
@@ -123,8 +125,17 @@ export const AppProvider = ({ children }) => {
   }, []);
 
   useEffect(() => {
+    localStorage.setItem('aiApiKey', apiKey);
     localStorage.setItem('groqApiKey', apiKey);
   }, [apiKey]);
+
+  useEffect(() => {
+    localStorage.setItem('aiApiEndpoint', apiEndpoint);
+  }, [apiEndpoint]);
+
+  useEffect(() => {
+    localStorage.setItem('aiApiModel', apiModel);
+  }, [apiModel]);
 
   useEffect(() => {
     localStorage.setItem('cfWorkerUrl', cfWorkerUrl);
@@ -225,6 +236,10 @@ export const AppProvider = ({ children }) => {
     <AppContext.Provider value={{
       apiKey,
       setApiKey,
+      apiEndpoint,
+      setApiEndpoint,
+      apiModel,
+      setApiModel,
       cfWorkerUrl,
       setCfWorkerUrl,
       language,

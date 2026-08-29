@@ -39,7 +39,7 @@ export default function AIFloatingAssistant({ contextText }) {
       setMessages(prev => [
         ...prev,
         { role: 'user', content: inputValue },
-        { role: 'assistant', content: t ? t('assistant.configureKey', 'Please configure your Groq API Key in Settings first.') : 'Please configure your Groq API Key in Settings first.' }
+        { role: 'assistant', content: t ? t('assistant.configureKey', 'Please configure your API Key in Settings first.') : 'Please configure your API Key in Settings first.' }
       ]);
       setInputValue('');
       return;

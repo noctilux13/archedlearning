@@ -1,7 +1,7 @@
 import React, { useContext, useState, useRef } from 'react';
 import { motion } from 'framer-motion';
 import { AppContext } from '../context/AppContext';
-import { callGroqAi } from '../services/aiService';
+import { callAiService } from '../services/aiService';
 import MouseSpotlight from '../components/MouseSpotlight';
 import {
   Settings as SettingsIcon,
@@ -16,15 +16,55 @@ import {
   Upload,
   RotateCcw,
   Languages,
-  Check
+  Check,
+  Cpu,
+  Server,
+  Sparkles
 } from 'lucide-react';
 
 const EASE = [0.16, 1, 0.3, 1];
+
+const PROVIDER_PRESETS = [
+  {
+    name: 'DeepSeek',
+    endpoint: 'https://api.deepseek.com/v1',
+    model: 'deepseek-chat',
+    hint: 'sk-... (deepseek-chat / deepseek-reasoner)'
+  },
+  {
+    name: 'Claude',
+    endpoint: 'https://api.anthropic.com/v1',
+    model: 'claude-3-5-sonnet-20241022',
+    hint: 'sk-ant-... (claude-3-5-sonnet-20241022)'
+  },
+  {
+    name: 'OpenAI',
+    endpoint: 'https://api.openai.com/v1',
+    model: 'gpt-4o-mini',
+    hint: 'sk-... (gpt-4o / gpt-4o-mini)'
+  },
+  {
+    name: 'Groq',
+    endpoint: 'https://api.groq.com/openai/v1',
+    model: 'llama-3.3-70b-versatile',
+    hint: 'gsk_... (llama-3.3-70b-versatile)'
+  },
+  {
+    name: 'OpenRouter',
+    endpoint: 'https://openrouter.ai/api/v1',
+    model: 'deepseek/deepseek-r1',
+    hint: 'sk-or-... (deepseek/deepseek-r1)'
+  }
+];
 
 export default function Settings() {
   const {
     apiKey,
     setApiKey,
+    apiEndpoint,
+    setApiEndpoint,
+    apiModel,
+    setApiModel,
     cfWorkerUrl,
     setCfWorkerUrl,
     customImages,
@@ -37,19 +77,31 @@ export default function Settings() {
     LANGUAGES
   } = useContext(AppContext);
 
-  const [inputKey, setInputKey] = useState(apiKey);
-  const [inputWorkerUrl, setInputWorkerUrl] = useState(cfWorkerUrl);
+  const [inputKey, setInputKey] = useState(apiKey || '');
+  const [inputEndpoint, setInputEndpoint] = useState(apiEndpoint || 'https://api.deepseek.com/v1');
+  const [inputModel, setInputModel] = useState(apiModel || 'deepseek-chat');
+  const [inputWorkerUrl, setInputWorkerUrl] = useState(cfWorkerUrl || '');
   const [testing, setTesting] = useState(false);
   const [testResult, setTestResult] = useState(null);
   const importFileRef = useRef(null);
 
   const customList = Object.values(customImages || {});
 
+  const handleApplyPreset = (preset) => {
+    setInputEndpoint(preset.endpoint);
+    setInputModel(preset.model);
+  };
+
   const handleSave = (e) => {
     e.preventDefault();
     setApiKey(inputKey.trim());
+    setApiEndpoint(inputEndpoint.trim());
+    setApiModel(inputModel.trim());
     setCfWorkerUrl(inputWorkerUrl.trim());
-    setTestResult({ success: true, message: t ? t('settings.saveSuccess', 'Settings saved successfully!') : 'Settings saved successfully!' });
+    setTestResult({
+      success: true,
+      message: t ? t('settings.saveSuccess', 'Settings saved successfully!') : 'Settings saved successfully!'
+    });
   };
 
   const handleTestApi = async () => {
@@ -57,10 +109,12 @@ export default function Settings() {
     setTestResult(null);
     try {
       setApiKey(inputKey.trim());
+      setApiEndpoint(inputEndpoint.trim());
+      setApiModel(inputModel.trim());
       setCfWorkerUrl(inputWorkerUrl.trim());
 
-      const response = await callGroqAi({
-        prompt: 'Say "Hello, API connection successful!" in 5 words.',
+      const response = await callAiService({
+        prompt: 'Say "AI connection successful!" in under 5 words.',
       });
 
       setTestResult({
@@ -133,7 +187,7 @@ export default function Settings() {
           </div>
           <h1 style={{ marginBottom: '0.35rem' }}>{t ? t('settings.title', 'Preferences & Configuration') : 'Preferences & Configuration'}</h1>
           <p style={{ color: 'var(--text-secondary)', fontSize: '0.92rem' }}>
-            {t ? t('settings.subtitle', 'Configure AI API key, network proxy, language, and custom image overrides.') : 'Configure AI API key, network proxy, language, and custom image overrides.'}
+            {t ? t('settings.subtitle', 'Configure language, AI model endpoints, API keys, and custom image overrides.') : 'Configure language, AI model endpoints, API keys, and custom image overrides.'}
           </p>
         </div>
 
@@ -195,13 +249,193 @@ export default function Settings() {
           </div>
         </motion.div>
 
-        {/* ── Custom Image Overrides Section ── */}
+        {/* ── Universal AI Model & API Configuration Card ── */}
         <motion.div
           className="card-editorial"
           style={{ marginBottom: '2rem' }}
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.45, delay: 0.1, ease: EASE }}
+        >
+          <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '0.35rem' }}>
+            <Cpu size={18} style={{ color: 'var(--text-primary)' }} />
+            <h2 style={{ fontSize: '1.15rem', fontFamily: 'var(--font-serif)', margin: 0 }}>
+              {t ? t('settings.aiConfigTitle', 'AI Model & API Configuration') : 'AI Model & API Configuration'}
+            </h2>
+          </div>
+          <p style={{ fontSize: '0.82rem', color: 'var(--text-tertiary)', marginBottom: '1.25rem' }}>
+            {t ? t('settings.aiConfigDesc', 'Supports DeepSeek, Claude, OpenAI, Groq, OpenRouter, and custom endpoints.') : 'Supports DeepSeek, Claude, OpenAI, Groq, OpenRouter, and custom endpoints.'}
+          </p>
+
+          {/* Quick Provider Presets */}
+          <div style={{ marginBottom: '1.25rem' }}>
+            <div style={{ fontSize: '0.76rem', color: 'var(--text-tertiary)', marginBottom: '0.5rem', textTransform: 'uppercase', letterSpacing: '0.04em', fontWeight: 600 }}>
+              快速预设 / Quick Presets
+            </div>
+            <div style={{ display: 'flex', gap: '6px', flexWrap: 'wrap' }}>
+              {PROVIDER_PRESETS.map((p) => {
+                const isActive = inputEndpoint === p.endpoint;
+                return (
+                  <button
+                    key={p.name}
+                    type="button"
+                    onClick={() => handleApplyPreset(p)}
+                    style={{
+                      padding: '4px 10px',
+                      borderRadius: 'var(--radius-xs)',
+                      fontSize: '0.76rem',
+                      border: isActive ? '1px solid var(--accent-primary)' : '1px solid var(--border-hairline)',
+                      backgroundColor: isActive ? 'var(--bg-subtle)' : 'var(--bg-surface)',
+                      color: isActive ? 'var(--text-primary)' : 'var(--text-secondary)',
+                      fontWeight: isActive ? 600 : 450,
+                      cursor: 'pointer',
+                      display: 'flex',
+                      alignItems: 'center',
+                      gap: '4px'
+                    }}
+                  >
+                    <Sparkles size={11} style={{ opacity: isActive ? 1 : 0.4 }} />
+                    {p.name}
+                  </button>
+                );
+              })}
+            </div>
+          </div>
+
+          <form onSubmit={handleSave}>
+            {/* API Key Input */}
+            <div style={{ marginBottom: '1.25rem' }}>
+              <label style={{ display: 'flex', alignItems: 'center', gap: '6px', fontWeight: 550, fontSize: '0.88rem', marginBottom: '0.35rem', color: 'var(--text-primary)' }}>
+                <Key size={14} />
+                {t ? t('settings.apiKeyLabel', 'API Key') : 'API Key'}
+              </label>
+              <p style={{ fontSize: '0.78rem', color: 'var(--text-tertiary)', marginBottom: '0.5rem' }}>
+                {t ? t('settings.apiKeyHint', 'Stored locally in browser (e.g. DeepSeek sk-..., Claude sk-ant-..., OpenAI sk-...).') : 'Stored locally in browser.'}
+              </p>
+              <input
+                type="password"
+                className="input-field"
+                placeholder="sk-..."
+                value={inputKey}
+                onChange={(e) => setInputKey(e.target.value)}
+              />
+            </div>
+
+            {/* API Endpoint Base URL */}
+            <div style={{ marginBottom: '1.25rem' }}>
+              <label style={{ display: 'flex', alignItems: 'center', gap: '6px', fontWeight: 550, fontSize: '0.88rem', marginBottom: '0.35rem', color: 'var(--text-primary)' }}>
+                <Server size={14} />
+                {t ? t('settings.apiEndpointLabel', 'API Endpoint (Base URL)') : 'API Endpoint (Base URL)'}
+              </label>
+              <p style={{ fontSize: '0.78rem', color: 'var(--text-tertiary)', marginBottom: '0.5rem' }}>
+                {t ? t('settings.apiEndpointHint', 'e.g. https://api.deepseek.com/v1 or https://api.openai.com/v1') : 'Base URL of the AI provider API.'}
+              </p>
+              <input
+                type="text"
+                className="input-field"
+                placeholder="https://api.deepseek.com/v1"
+                value={inputEndpoint}
+                onChange={(e) => setInputEndpoint(e.target.value)}
+              />
+            </div>
+
+            {/* Model Name */}
+            <div style={{ marginBottom: '1.25rem' }}>
+              <label style={{ display: 'flex', alignItems: 'center', gap: '6px', fontWeight: 550, fontSize: '0.88rem', marginBottom: '0.35rem', color: 'var(--text-primary)' }}>
+                <Cpu size={14} />
+                {t ? t('settings.apiModelLabel', 'Model Name') : 'Model Name'}
+              </label>
+              <p style={{ fontSize: '0.78rem', color: 'var(--text-tertiary)', marginBottom: '0.5rem' }}>
+                {t ? t('settings.apiModelHint', 'e.g. deepseek-chat, deepseek-reasoner, claude-3-5-sonnet-20241022, gpt-4o-mini') : 'Model identifier.'}
+              </p>
+              <input
+                type="text"
+                className="input-field"
+                placeholder="deepseek-chat"
+                value={inputModel}
+                onChange={(e) => setInputModel(e.target.value)}
+              />
+            </div>
+
+            {/* Cloudflare Worker Proxy URL Input */}
+            <div style={{ marginBottom: '1.5rem' }}>
+              <label style={{ display: 'flex', alignItems: 'center', gap: '6px', fontWeight: 550, fontSize: '0.88rem', marginBottom: '0.35rem', color: 'var(--text-primary)' }}>
+                <Globe size={14} />
+                {t ? t('settings.proxyUrlLabel', 'Custom Proxy URL (Optional)') : 'Custom Proxy URL (Optional)'}
+              </label>
+              <p style={{ fontSize: '0.78rem', color: 'var(--text-tertiary)', marginBottom: '0.5rem' }}>
+                {t ? t('settings.proxyUrlHint', 'Optional Cloudflare Worker or reverse proxy URL if browser CORS is restricted.') : 'Optional Cloudflare Worker or reverse proxy URL if browser CORS is restricted.'}
+              </p>
+              <input
+                type="text"
+                className="input-field"
+                placeholder="https://my-proxy.workers.dev"
+                value={inputWorkerUrl}
+                onChange={(e) => setInputWorkerUrl(e.target.value)}
+              />
+            </div>
+
+            {/* Action Buttons */}
+            <div style={{ display: 'flex', gap: '0.75rem', flexWrap: 'wrap' }}>
+              <motion.button
+                type="submit"
+                className="btn btn-primary"
+                style={{ flex: 1 }}
+                whileHover={{ scale: 1.02 }}
+                whileTap={{ scale: 0.98 }}
+              >
+                {t ? t('settings.saveSettings', 'Save Settings') : 'Save Settings'}
+              </motion.button>
+              <motion.button
+                type="button"
+                className="btn btn-outline"
+                onClick={handleTestApi}
+                disabled={testing}
+                style={{ flex: 1 }}
+                whileHover={{ scale: 1.02 }}
+                whileTap={{ scale: 0.98 }}
+              >
+                {testing ? (
+                  <>
+                    <Loader2 size={14} className="animate-spin" />
+                    <span>{t ? t('settings.testingConnection', 'Testing connection...') : 'Testing connection...'}</span>
+                  </>
+                ) : (
+                  <span>{t ? t('settings.testConnection', 'Test Connection') : 'Test Connection'}</span>
+                )}
+              </motion.button>
+            </div>
+          </form>
+
+          {/* Test Status Banner */}
+          {testResult && (
+            <div
+              style={{
+                marginTop: '1.25rem',
+                padding: '0.85rem 1rem',
+                borderRadius: 'var(--radius-sm)',
+                display: 'flex',
+                alignItems: 'center',
+                gap: '8px',
+                fontSize: '0.86rem',
+                backgroundColor: testResult.success ? 'var(--accent-emerald-subtle)' : 'var(--accent-red-subtle)',
+                color: testResult.success ? 'var(--accent-emerald)' : 'var(--accent-red)',
+                border: `1px solid ${testResult.success ? 'rgba(5, 150, 105, 0.2)' : 'rgba(225, 29, 72, 0.2)'}`,
+              }}
+            >
+              {testResult.success ? <CheckCircle2 size={16} /> : <AlertCircle size={16} />}
+              <span>{testResult.message}</span>
+            </div>
+          )}
+        </motion.div>
+
+        {/* ── Custom Image Overrides Section ── */}
+        <motion.div
+          className="card-editorial"
+          style={{ marginBottom: '2rem' }}
+          initial={{ opacity: 0, y: 16 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.45, delay: 0.15, ease: EASE }}
         >
           <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '1.25rem', flexWrap: 'wrap', gap: '0.75rem' }}>
             <div>
@@ -278,163 +512,42 @@ export default function Settings() {
                     display: 'flex',
                     alignItems: 'center',
                     gap: '10px',
-                    padding: '8px 10px',
-                    backgroundColor: 'var(--bg-subtle)',
+                    padding: '0.5rem',
                     borderRadius: 'var(--radius-sm)',
-                    border: '1px solid var(--border-hairline)'
+                    border: '1px solid var(--border-hairline)',
+                    backgroundColor: 'var(--bg-surface)',
+                    position: 'relative'
                   }}
                 >
-                  <div style={{
-                    width: '42px',
-                    height: '42px',
-                    borderRadius: item.targetType === 'artist' ? '50%' : 'var(--radius-xs)',
-                    overflow: 'hidden',
-                    backgroundColor: 'var(--bg-surface)',
-                    flexShrink: 0,
-                    border: '1px solid var(--border-hairline)'
-                  }}>
-                    <img
-                      src={item.dataUrl}
-                      alt={item.title || item.id}
-                      style={{ width: '100%', height: '100%', objectFit: 'cover' }}
-                      onError={(e) => { e.target.style.display = 'none'; }}
-                    />
-                  </div>
-
+                  <img
+                    src={item.dataUrl}
+                    alt={item.title}
+                    style={{ width: '42px', height: '42px', borderRadius: '4px', objectFit: 'cover', backgroundColor: 'var(--bg-subtle)' }}
+                  />
                   <div style={{ flex: 1, minWidth: 0 }}>
-                    <div style={{
-                      fontSize: '0.82rem',
-                      fontWeight: 550,
-                      color: 'var(--text-primary)',
-                      whiteSpace: 'nowrap',
-                      overflow: 'hidden',
-                      textOverflow: 'ellipsis'
-                    }}>
+                    <div style={{ fontSize: '0.82rem', fontWeight: 550, color: 'var(--text-primary)', whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>
                       {item.title || item.id}
                     </div>
-                    <div style={{ fontSize: '0.7rem', color: 'var(--text-tertiary)' }}>
+                    <div style={{ fontSize: '0.72rem', color: 'var(--text-tertiary)' }}>
                       {item.targetType === 'artist' ? (t ? t('settings.artistAvatarType', 'Artist Avatar') : 'Artist Avatar') : (t ? t('settings.artworkImageType', 'Artwork Photo') : 'Artwork Photo')}
                     </div>
                   </div>
-
                   <button
+                    type="button"
                     onClick={() => removeCustomImage(item.id)}
                     style={{
                       background: 'none',
                       border: 'none',
                       color: 'var(--text-tertiary)',
                       cursor: 'pointer',
-                      padding: '4px',
-                      borderRadius: 'var(--radius-xs)',
-                      transition: 'color 0.2s ease'
+                      padding: '4px'
                     }}
-                    title={t ? t('settings.restoreTooltip', 'Restore default') : 'Restore default'}
-                    onMouseEnter={(e) => e.currentTarget.style.color = 'var(--accent-red)'}
-                    onMouseLeave={(e) => e.currentTarget.style.color = 'var(--text-tertiary)'}
+                    title={t ? t('settings.restoreTooltip', 'Restore default image') : 'Restore default image'}
                   >
-                    <Trash2 size={14} />
+                    <Trash2 size={13} />
                   </button>
                 </div>
               ))}
-            </div>
-          )}
-        </motion.div>
-
-        {/* ── API Form Card ── */}
-        <motion.div
-          className="card-editorial"
-          style={{ marginBottom: '2rem' }}
-          initial={{ opacity: 0, y: 16 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.45, delay: 0.15, ease: EASE }}
-        >
-          <form onSubmit={handleSave}>
-            {/* Groq API Key Input */}
-            <div style={{ marginBottom: '1.5rem' }}>
-              <label style={{ display: 'flex', alignItems: 'center', gap: '6px', fontWeight: 550, fontSize: '0.9rem', marginBottom: '0.35rem', color: 'var(--text-primary)' }}>
-                <Key size={14} />
-                {t ? t('settings.groqKeyLabel', 'Groq API Key') : 'Groq API Key'}
-              </label>
-              <p style={{ fontSize: '0.8rem', color: 'var(--text-tertiary)', marginBottom: '0.6rem' }}>
-                {t ? t('settings.groqKeyHint', 'Stored locally in browser. Enter key starting with gsk_...') : 'Stored locally in browser. Enter key starting with gsk_...'}
-              </p>
-              <input
-                type="password"
-                className="input-field"
-                placeholder="gsk_..."
-                value={inputKey}
-                onChange={(e) => setInputKey(e.target.value)}
-              />
-            </div>
-
-            {/* Cloudflare Worker Proxy URL Input */}
-            <div style={{ marginBottom: '1.75rem' }}>
-              <label style={{ display: 'flex', alignItems: 'center', gap: '6px', fontWeight: 550, fontSize: '0.9rem', marginBottom: '0.35rem', color: 'var(--text-primary)' }}>
-                <Globe size={14} />
-                {t ? t('settings.proxyUrlLabel', 'Custom Proxy URL (Optional)') : 'Custom Proxy URL (Optional)'}
-              </label>
-              <p style={{ fontSize: '0.8rem', color: 'var(--text-tertiary)', marginBottom: '0.6rem' }}>
-                {t ? t('settings.proxyUrlHint', 'Optional Cloudflare Worker or reverse proxy URL if direct access to Groq API is restricted.') : 'Optional Cloudflare Worker or reverse proxy URL if direct access to Groq API is restricted.'}
-              </p>
-              <input
-                type="text"
-                className="input-field"
-                placeholder="https://my-groq-proxy.workers.dev"
-                value={inputWorkerUrl}
-                onChange={(e) => setInputWorkerUrl(e.target.value)}
-              />
-            </div>
-
-            {/* Action Buttons */}
-            <div style={{ display: 'flex', gap: '0.75rem', flexWrap: 'wrap' }}>
-              <motion.button
-                type="submit"
-                className="btn btn-primary"
-                style={{ flex: 1 }}
-                whileHover={{ scale: 1.02 }}
-                whileTap={{ scale: 0.98 }}
-              >
-                {t ? t('settings.saveSettings', 'Save Settings') : 'Save Settings'}
-              </motion.button>
-              <motion.button
-                type="button"
-                className="btn btn-outline"
-                onClick={handleTestApi}
-                disabled={testing}
-                style={{ flex: 1 }}
-                whileHover={{ scale: 1.02 }}
-                whileTap={{ scale: 0.98 }}
-              >
-                {testing ? (
-                  <>
-                    <Loader2 size={14} className="animate-spin" />
-                    <span>{t ? t('settings.testingConnection', 'Testing connection...') : 'Testing connection...'}</span>
-                  </>
-                ) : (
-                  <span>{t ? t('settings.testConnection', 'Test Connection') : 'Test Connection'}</span>
-                )}
-              </motion.button>
-            </div>
-          </form>
-
-          {/* Test Status Banner */}
-          {testResult && (
-            <div
-              style={{
-                marginTop: '1.25rem',
-                padding: '0.85rem 1rem',
-                borderRadius: 'var(--radius-sm)',
-                display: 'flex',
-                alignItems: 'center',
-                gap: '8px',
-                fontSize: '0.86rem',
-                backgroundColor: testResult.success ? 'var(--accent-emerald-subtle)' : 'var(--accent-red-subtle)',
-                color: testResult.success ? 'var(--accent-emerald)' : 'var(--accent-red)',
-                border: `1px solid ${testResult.success ? 'rgba(5, 150, 105, 0.2)' : 'rgba(225, 29, 72, 0.2)'}`,
-              }}
-            >
-              {testResult.success ? <CheckCircle2 size={16} /> : <AlertCircle size={16} />}
-              <span>{testResult.message}</span>
             </div>
           )}
         </motion.div>
@@ -477,12 +590,14 @@ export default function Settings() {
         headers: {
           "Access-Control-Allow-Origin": "*",
           "Access-Control-Allow-Methods": "GET, POST, OPTIONS",
-          "Access-Control-Allow-Headers": "Content-Type, Authorization",
+          "Access-Control-Allow-Headers": "Content-Type, Authorization, x-api-key, anthropic-version",
         }
       });
     }
     const url = new URL(request.url);
-    const targetUrl = "https://api.groq.com" + url.pathname + url.search;
+    // Forward to configured upstream (e.g., https://api.deepseek.com or https://api.openai.com)
+    const upstreamHost = env.UPSTREAM_HOST || "https://api.deepseek.com";
+    const targetUrl = upstreamHost + url.pathname + url.search;
     const modifiedRequest = new Request(targetUrl, {
       method: request.method,
       headers: request.headers,
