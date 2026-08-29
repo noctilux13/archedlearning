@@ -39,7 +39,10 @@ export const artData = [
               "将人力与机器建设融入狂热的色彩运动中"
             ],
             "titleEn": "The City Rises",
-            "titleZh": "崛起中的城市"
+            "titleZh": "崛起中的城市",
+            "museum": "Museum of Modern Art (MoMA)",
+            "museumCity": "New York, USA",
+            "museumUrl": "https://www.moma.org/collection/works/79865"
           },
           {
             "id": "riot-gallery",
@@ -53,7 +56,10 @@ export const artData = [
               "光线折射与人群奔跑线条构成的夜间动态张力"
             ],
             "titleEn": "Riot in the Gallery",
-            "titleZh": "长廊骚乱"
+            "titleZh": "长廊骚乱",
+            "museum": "Pinacoteca di Brera",
+            "museumCity": "Milan, Italy",
+            "museumUrl": "https://pinacotecabrera.org/en/collezione-online/opere/rissa-in-galleria/"
           },
           {
             "id": "simultaneous-visions",
@@ -67,7 +73,10 @@ export const artData = [
               "内外空间的相互透叠与透视解构"
             ],
             "titleEn": "Simultaneous Visions",
-            "titleZh": "同时发生的景象"
+            "titleZh": "同时发生的景象",
+            "museum": "Von der Heydt-Museum",
+            "museumCity": "Wuppertal, Germany",
+            "museumUrl": "https://von-der-heydt-museum.de/"
           },
           {
             "id": "dynamism-cyclist",
@@ -81,7 +90,10 @@ export const artData = [
               "用几何面与急剧倾斜的力线重构速度感"
             ],
             "titleEn": "Dynamism of a Cyclist",
-            "titleZh": "自行车手的动力"
+            "titleZh": "自行车手的动力",
+            "museum": "Peggy Guggenheim Collection",
+            "museumCity": "Venice, Italy",
+            "museumUrl": "https://www.guggenheim-venice.it/en/art/works/dynamism-of-a-cyclist/"
           },
           {
             "id": "unique-forms",
@@ -96,7 +108,10 @@ export const artData = [
               "印制于意大利发行的20欧分硬币背图案"
             ],
             "titleEn": "Unique Forms of Continuity in Space",
-            "titleZh": "空间中连续性的独特形式"
+            "titleZh": "空间中连续性的独特形式",
+            "museum": "Museo del Novecento / MoMA",
+            "museumCity": "Milan / New York",
+            "museumUrl": "https://www.moma.org/collection/works/81179"
           },
           {
             "id": "development-bottle",
@@ -110,7 +125,10 @@ export const artData = [
               "展现物体内部结构向外扩散的几何连续性"
             ],
             "titleEn": "Development of a Bottle in Space",
-            "titleZh": "瓶子在空间中的展开"
+            "titleZh": "瓶子在空间中的展开",
+            "museum": "Metropolitan Museum of Art",
+            "museumCity": "New York, USA",
+            "museumUrl": "https://www.metmuseum.org/art/collection/search/488583"
           }
         ],
         "displayName": "Umberto Boccioni (翁贝托·波丘尼)"
@@ -135,7 +153,10 @@ export const artData = [
               "后印象派色彩点彩与速度感线的结合"
             ],
             "titleEn": "Piazza del Duomo a Milano",
-            "titleZh": "米兰大教堂广场"
+            "titleZh": "米兰大教堂广场",
+            "museum": "Pinacoteca di Brera",
+            "museumCity": "Milan, Italy",
+            "museumUrl": "https://pinacotecabrera.org/"
           },
           {
             "id": "theater-exit",
@@ -148,7 +169,10 @@ export const artData = [
               "色彩分割与光感气氛的探索"
             ],
             "titleEn": "Theater Exit",
-            "titleZh": "剧院出口"
+            "titleZh": "剧院出口",
+            "museum": "Pinacoteca di Brera (Mattioli Collection)",
+            "museumCity": "Milan, Italy",
+            "museumUrl": "https://pinacotecabrera.org/"
           },
           {
             "id": "funeral-galli",
@@ -162,7 +186,10 @@ export const artData = [
               "强烈斜线构成构图的剧烈动荡感"
             ],
             "titleEn": "The Funeral of the Anarchist Galli",
-            "titleZh": "无政府主义者加里之葬"
+            "titleZh": "无政府主义者加里之葬",
+            "museum": "Museum of Modern Art (MoMA)",
+            "museumCity": "New York, USA",
+            "museumUrl": "https://www.moma.org/collection/works/78694"
           },
           {
             "id": "interventionist-demo",
@@ -176,7 +203,10 @@ export const artData = [
               "用文字、声响模拟词汇与视觉符号构成漩涡"
             ],
             "titleEn": "Interventionist Demonstration",
-            "titleZh": "主张参战的示威"
+            "titleZh": "主张参战的示威",
+            "museum": "Peggy Guggenheim Collection",
+            "museumCity": "Venice, Italy",
+            "museumUrl": "https://www.guggenheim-venice.it/en/art/works/manifestazione-interventista/"
           },
           {
             "id": "knight-western-spirit",
@@ -190,7 +220,10 @@ export const artData = [
               "几何人偶与立体构图的引入"
             ],
             "titleEn": "Il cavaliere dello spirito occidentale",
-            "titleZh": "西方精神骑士"
+            "titleZh": "西方精神骑士",
+            "museum": "Private Collection",
+            "museumCity": "Turin, Italy",
+            "museumUrl": "https://en.wikipedia.org/wiki/Carlo_Carr%C3%A0"
           },
           {
             "id": "metaphysical-muse",
@@ -204,7 +237,10 @@ export const artData = [
               "从动感未来主义转向神秘沉思"
             ],
             "titleEn": "The Metaphysical Muse",
-            "titleZh": "形而上缪斯"
+            "titleZh": "形而上缪斯",
+            "museum": "Pinacoteca di Brera (Mattioli Collection)",
+            "museumCity": "Milan, Italy",
+            "museumUrl": "https://pinacotecabrera.org/"
           }
         ],
         "displayName": "Carlo Carrà (卡洛·卡拉)"
@@ -248,7 +284,10 @@ export const artData = [
               "军械库展览（Armory Show）成名战"
             ],
             "titleEn": "Nudo che scende le scale n. 2",
-            "titleZh": "炸弹般的名作《下楼梯的裸女2号"
+            "titleZh": "炸弹般的名作《下楼梯的裸女2号",
+            "museum": "Philadelphia Museum of Art",
+            "museumCity": "Philadelphia, USA",
+            "museumUrl": "https://www.philamuseum.org/collection/object/51449"
           },
           {
             "id": "fountain",
@@ -263,7 +302,10 @@ export const artData = [
               "开创现代概念艺术（Conceptual Art）先河"
             ],
             "titleEn": "Fountain - 现成品艺术终极形态",
-            "titleZh": "泉"
+            "titleZh": "泉",
+            "museum": "Tate Modern (Authorized Replica)",
+            "museumCity": "London, UK",
+            "museumUrl": "https://www.tate.org.uk/art/artworks/duchamp-fountain-t07573"
           },
           {
             "id": "lhooq",
@@ -277,7 +319,10 @@ export const artData = [
               "达达主义对古典权威艺术幽默反讽与反叛符号"
             ],
             "titleEn": "L.H.O.O.Q.",
-            "titleZh": "带有胡须的蒙娜丽莎"
+            "titleZh": "带有胡须的蒙娜丽莎",
+            "museum": "Centre Pompidou",
+            "museumCity": "Paris, France",
+            "museumUrl": "https://www.centrepompidou.fr/en/ressources/oeuvre/c6r4y9A"
           },
           {
             "id": "shelter",
@@ -290,7 +335,10 @@ export const artData = [
               "对日常生活物品的几何解构与重新定义"
             ],
             "titleEn": "Shelter",
-            "titleZh": "遮蔽物"
+            "titleZh": "遮蔽物",
+            "museum": "Private Collection",
+            "museumCity": "Paris, France",
+            "museumUrl": "https://en.wikipedia.org/wiki/Marcel_Duchamp"
           },
           {
             "id": "bicycle-wheel",
@@ -304,7 +352,10 @@ export const artData = [
               "将旋转的动态与无目的的观赏结合"
             ],
             "titleEn": "Bicycle Wheel",
-            "titleZh": "自行车轮"
+            "titleZh": "自行车轮",
+            "museum": "Museum of Modern Art (MoMA)",
+            "museumCity": "New York, USA",
+            "museumUrl": "https://www.moma.org/collection/works/81631"
           }
         ],
         "displayName": "Marcel Duchamp (马塞尔·杜尚)"
@@ -330,7 +381,10 @@ export const artData = [
               "探讨人体形态与器物符号的重叠结合"
             ],
             "titleEn": "Ingres's Violin",
-            "titleZh": "安格尔的小提琴"
+            "titleZh": "安格尔的小提琴",
+            "museum": "J. Paul Getty Museum",
+            "museumCity": "Los Angeles, USA",
+            "museumUrl": "https://www.getty.edu/art/collection/object/104P58"
           }
         ],
         "displayName": "Man Ray (曼·雷)"
@@ -374,7 +428,10 @@ export const artData = [
               "探讨硬与软、坚固与流逝、理性与梦境的对立"
             ],
             "titleEn": "The Persistence of Memory",
-            "titleZh": "记忆的永恒"
+            "titleZh": "记忆的永恒",
+            "museum": "Museum of Modern Art (MoMA)",
+            "museumCity": "New York, USA",
+            "museumUrl": "https://www.moma.org/collection/works/79018"
           },
           {
             "id": "great-masturbator",
@@ -388,7 +445,10 @@ export const artData = [
               "深度展现弗洛伊德潜意识焦虑、性与恐惧符号"
             ],
             "titleEn": "The Great Masturbator",
-            "titleZh": "伟大的手淫者"
+            "titleZh": "伟大的手淫者",
+            "museum": "Museo Nacional Centro de Arte Reina Sofía",
+            "museumCity": "Madrid, Spain",
+            "museumUrl": "https://www.museoreinasofia.es/en/collection/artwork/monument-visage-grand-masturbateur-visage-grand-masturbateur-monumento-rostro-gran"
           },
           {
             "id": "temptation-st-anthony",
@@ -402,7 +462,10 @@ export const artData = [
               "宗教信仰与超现实幻象的完美融汇"
             ],
             "titleEn": "The Temptation of St. Anthony",
-            "titleZh": "圣安东尼的诱惑"
+            "titleZh": "圣安东尼的诱惑",
+            "museum": "Royal Museums of Fine Arts of Belgium",
+            "museumCity": "Brussels, Belgium",
+            "museumUrl": "https://fine-arts-museum.be/en/collection/artwork/la-tentation-de-saint-antoine"
           }
         ],
         "displayName": "Salvador Dalí (萨尔瓦多·达利)"
@@ -427,7 +490,10 @@ export const artData = [
               "绿色人脸与羊对视构成的浓郁乡愁隐喻"
             ],
             "titleEn": "I and the Village",
-            "titleZh": "我与村庄"
+            "titleZh": "我与村庄",
+            "museum": "Museum of Modern Art (MoMA)",
+            "museumCity": "New York, USA",
+            "museumUrl": "https://www.moma.org/collection/works/78984"
           },
           {
             "id": "chagall-birthday",
@@ -441,7 +507,10 @@ export const artData = [
               "用浓烈的红地毯与不合物理常理的身体扭转传达爱的狂喜"
             ],
             "titleEn": "Birthday",
-            "titleZh": "生日"
+            "titleZh": "生日",
+            "museum": "Museum of Modern Art (MoMA)",
+            "museumCity": "New York, USA",
+            "museumUrl": "https://www.moma.org/collection/works/79249"
           },
           {
             "id": "romeo-juliette",
@@ -455,7 +524,10 @@ export const artData = [
               "将音乐、戏剧与超现实色彩梦境无缝统合"
             ],
             "titleEn": "Romeo and Juliette",
-            "titleZh": "罗密欧与朱丽叶"
+            "titleZh": "罗密欧与朱丽叶",
+            "museum": "Opéra Garnier (Ceiling Sketch) / Private Collection",
+            "museumCity": "Paris, France",
+            "museumUrl": "https://www.operadeparis.fr/en/magazine/the-chagall-ceiling"
           }
         ],
         "displayName": "Marc Chagall (马克·夏加尔)"
@@ -481,7 +553,10 @@ export const artData = [
               "对后现代观念艺术与波普艺术产生深远启发"
             ],
             "titleEn": "The Treachery of Images - 这不是烟斗",
-            "titleZh": "形象的叛逆"
+            "titleZh": "形象的叛逆",
+            "museum": "Los Angeles County Museum of Art (LACMA)",
+            "museumCity": "Los Angeles, USA",
+            "museumUrl": "https://collections.lacma.org/node/239578"
           },
           {
             "id": "the-lovers",
@@ -495,7 +570,10 @@ export const artData = [
               "探讨沟通的障碍、爱与无法透视的真实"
             ],
             "titleEn": "The Lovers",
-            "titleZh": "恋人"
+            "titleZh": "恋人",
+            "museum": "Museum of Modern Art (MoMA)",
+            "museumCity": "New York, USA",
+            "museumUrl": "https://www.moma.org/collection/works/79933"
           },
           {
             "id": "golconda",
@@ -509,7 +587,10 @@ export const artData = [
               "将日常平庸的社会群体符号转化为超现实奇观"
             ],
             "titleEn": "雨般降落的圆顶帽子绅士",
-            "titleZh": "戈尔孔达"
+            "titleZh": "戈尔孔达",
+            "museum": "The Menil Collection",
+            "museumCity": "Houston, USA",
+            "museumUrl": "https://www.menil.org/collection/objects/1980-043-golconda-golconde"
           },
           {
             "id": "menaced-assassin",
@@ -523,7 +604,10 @@ export const artData = [
               "对窥视癖、罪案与冷酷现实的奇特构图"
             ],
             "titleEn": "The Menaced Assassin",
-            "titleZh": "受威胁的凶手"
+            "titleZh": "受威胁的凶手",
+            "museum": "Museum of Modern Art (MoMA)",
+            "museumCity": "New York, USA",
+            "museumUrl": "https://www.moma.org/collection/works/79889"
           },
           {
             "id": "not-to-be-reproduced",
@@ -537,7 +621,10 @@ export const artData = [
               "探讨身份真实性与自我镜像的哲学悖论"
             ],
             "titleEn": "Not to Be Reproduced",
-            "titleZh": "禁止复制"
+            "titleZh": "禁止复制",
+            "museum": "Museum Boijmans Van Beuningen",
+            "museumCity": "Rotterdam, Netherlands",
+            "museumUrl": "https://www.boijmans.nl/en/collection/artworks/4060/la-reproduction-interdite"
           },
           {
             "id": "son-of-man",
@@ -551,7 +638,10 @@ export const artData = [
               "探讨隐藏与可见（What is hidden and what is visible）的心理冲突"
             ],
             "titleEn": "The Son of Man",
-            "titleZh": "人子"
+            "titleZh": "人子",
+            "museum": "Private Collection",
+            "museumCity": "New York / Brussels",
+            "museumUrl": "https://en.wikipedia.org/wiki/The_Son_of_Man"
           }
         ],
         "displayName": "René Magritte (雷内·马格里特)"
@@ -576,7 +666,10 @@ export const artData = [
               "将加泰罗尼亚乡土记忆转化为符号化细节集合"
             ],
             "titleEn": "The Farm",
-            "titleZh": "农场"
+            "titleZh": "农场",
+            "museum": "National Gallery of Art",
+            "museumCity": "Washington, D.C., USA",
+            "museumUrl": "https://www.nga.gov/collection/art-object-page.69342.html"
           },
           {
             "id": "the-tilled-field",
@@ -590,7 +683,10 @@ export const artData = [
               "将具象动物提炼为游走生命体符号"
             ],
             "titleEn": "The Tilled Field",
-            "titleZh": "耕地"
+            "titleZh": "耕地",
+            "museum": "Solomon R. Guggenheim Museum",
+            "museumCity": "New York, USA",
+            "museumUrl": "https://www.guggenheim.org/artwork/2934"
           },
           {
             "id": "maternity",
@@ -604,7 +700,10 @@ export const artData = [
               "用最精简的点线面重塑情绪与生命主题"
             ],
             "titleEn": "Maternity",
-            "titleZh": "母性"
+            "titleZh": "母性",
+            "museum": "National Galleries of Scotland",
+            "museumCity": "Edinburgh, UK",
+            "museumUrl": "https://www.nationalgalleries.org/art-and-artists/676/maternity"
           },
           {
             "id": "smile-flamboyant-wings",
@@ -617,7 +716,10 @@ export const artData = [
               "米罗晚期色彩纯度与符号韵律的完美展现"
             ],
             "titleEn": "The Smile of the Flamboyant Wings",
-            "titleZh": "绚丽翅膀的微笑"
+            "titleZh": "绚丽翅膀的微笑",
+            "museum": "Fundació Joan Miró / Private Collection",
+            "museumCity": "Barcelona, Spain",
+            "museumUrl": "https://www.fmirobcn.org/en/"
           },
           {
             "id": "woman-and-bird",
@@ -631,7 +733,10 @@ export const artData = [
               "彩色碎瓷拼贴（Trencadís）与米罗符号的结合"
             ],
             "titleEn": "Woman and Bird 巨型户外雕塑",
-            "titleZh": "女人与鸟"
+            "titleZh": "女人与鸟",
+            "museum": "Parc de Joan Miró",
+            "museumCity": "Barcelona, Spain",
+            "museumUrl": "https://www.barcelona.cat/en/what-to-do-in-bcn/parks-and-gardens/joan-miro-park_92086011921.html"
           }
         ],
         "displayName": "Joan Miró (胡安·米罗)"
@@ -657,7 +762,10 @@ export const artData = [
               "拍卖史上最昂贵的艺术雕塑作品之一"
             ],
             "titleEn": "L'Homme qui marche I",
-            "titleZh": "行走的人"
+            "titleZh": "行走的人",
+            "museum": "Fondation Giacometti / Tate Modern / Albright-Knox",
+            "museumCity": "Paris / London / Buffalo",
+            "museumUrl": "https://www.fondation-giacometti.fr/en/database/artwork/3874/homme-qui-marche-i"
           }
         ],
         "displayName": "Alberto Giacometti (阿尔贝托·贾科梅蒂)"
@@ -700,7 +808,10 @@ export const artData = [
               "运用不合理透视引发深层心理的孤独不安"
             ],
             "titleEn": "The Nostalgia of the Infinite",
-            "titleZh": "无限的乡愁"
+            "titleZh": "无限的乡愁",
+            "museum": "Museum of Modern Art (MoMA)",
+            "museumCity": "New York, USA",
+            "museumUrl": "https://www.moma.org/collection/works/80407"
           },
           {
             "id": "piazza-d-italia",
@@ -714,7 +825,10 @@ export const artData = [
               "古典建筑与现代蒸汽火车的时空错位叠加"
             ],
             "titleEn": "Piazza of Italy",
-            "titleZh": "意大利广场"
+            "titleZh": "意大利广场",
+            "museum": "Art Gallery of Ontario (AGO)",
+            "museumCity": "Toronto, Canada",
+            "museumUrl": "https://ago.ca/"
           },
           {
             "id": "mystery-melancholy-street",
@@ -728,7 +842,10 @@ export const artData = [
               "强烈倾斜的双重透视营造的忧郁神秘感"
             ],
             "titleEn": "Mystery and Melancholy of a Street",
-            "titleZh": "一条街的神秘与忧郁"
+            "titleZh": "一条街的神秘与忧郁",
+            "museum": "Private Collection",
+            "museumCity": "Rome / Geneva",
+            "museumUrl": "https://en.wikipedia.org/wiki/Mystery_and_Melancholy_of_a_Street"
           },
           {
             "id": "disquieting-muses",
@@ -742,7 +859,10 @@ export const artData = [
               "古典文明遗迹与工业现代文明的沉默对话"
             ],
             "titleEn": "The Disquieting Muses",
-            "titleZh": "令人不安的缪斯"
+            "titleZh": "令人不安的缪斯",
+            "museum": "Pinacoteca di Brera (Mattioli Collection)",
+            "museumCity": "Milan, Italy",
+            "museumUrl": "https://pinacotecabrera.org/"
           },
           {
             "id": "hector-and-andromache",
@@ -756,7 +876,10 @@ export const artData = [
               "无面木偶传达的命运无奈感与深沉情感"
             ],
             "titleEn": "Hector and Andromache",
-            "titleZh": "赫克托尔与安德洛玛刻"
+            "titleZh": "赫克托尔与安德洛玛刻",
+            "museum": "Galleria Nazionale d’Arte Moderna",
+            "museumCity": "Rome, Italy",
+            "museumUrl": "https://lagallerianazionale.com/"
           },
           {
             "id": "song-of-love",
@@ -770,7 +893,10 @@ export const artData = [
               "直接启发了马格里特与达利的超现实组合思考"
             ],
             "titleEn": "The Song of Love",
-            "titleZh": "爱之歌"
+            "titleZh": "爱之歌",
+            "museum": "Museum of Modern Art (MoMA)",
+            "museumCity": "New York, USA",
+            "museumUrl": "https://www.moma.org/collection/works/80419"
           }
         ],
         "displayName": "Giorgio de Chirico (乔治·德·基里科)"
@@ -813,7 +939,10 @@ export const artData = [
               "打破纯粹垂直水平线的倾斜动态探索"
             ],
             "titleEn": "Counter Composition XIII",
-            "titleZh": "反向构图第13号"
+            "titleZh": "反向构图第13号",
+            "museum": "Stedelijk Museum Amsterdam",
+            "museumCity": "Amsterdam, Netherlands",
+            "museumUrl": "https://www.stedelijk.nl/en"
           },
           {
             "id": "composition-decentralisee",
@@ -826,7 +955,10 @@ export const artData = [
               "去中心化构图与平面非对称平衡"
             ],
             "titleEn": "Composition decentralizzata",
-            "titleZh": "分散构图"
+            "titleZh": "分散构图",
+            "museum": "Private Collection",
+            "museumCity": "The Hague, Netherlands",
+            "museumUrl": "https://en.wikipedia.org/wiki/Theo_van_Doesburg"
           }
         ],
         "displayName": "Theo van Doesburg (特奥·范·杜斯堡)"
@@ -851,7 +983,10 @@ export const artData = [
               "分析立体主义向纯粹线条演进的见造"
             ],
             "titleEn": "Albero grigio",
-            "titleZh": "灰树"
+            "titleZh": "灰树",
+            "museum": "Kunstmuseum Den Haag",
+            "museumCity": "The Hague, Netherlands",
+            "museumUrl": "https://www.kunstmuseum.nl/en/collection/gray-tree"
           },
           {
             "id": "composition-red-blue-yellow",
@@ -866,7 +1001,10 @@ export const artData = [
               "影响了后世所有现代平面对齐与网页设计格栅网格"
             ],
             "titleEn": "Composition with Red, Blue and Yellow",
-            "titleZh": "红黄蓝构图"
+            "titleZh": "红黄蓝构图",
+            "museum": "Museum of Modern Art (MoMA)",
+            "museumCity": "New York, USA",
+            "museumUrl": "https://www.moma.org/collection/works/79817"
           },
           {
             "id": "broadway-boogie-woogie",
@@ -880,7 +1018,10 @@ export const artData = [
               "对现代大都市繁华街道网格与爵士乐（Boogie-Woogie）的赞歌"
             ],
             "titleEn": "Broadway Boogie-Woogie",
-            "titleZh": "百老汇爵士乐"
+            "titleZh": "百老汇爵士乐",
+            "museum": "Museum of Modern Art (MoMA)",
+            "museumCity": "New York, USA",
+            "museumUrl": "https://www.moma.org/collection/works/78682"
           }
         ],
         "displayName": "Piet Mondrian (皮特·蒙德里安)"
@@ -923,7 +1064,10 @@ export const artData = [
               "大众流行情感商品的冷静机械化再现"
             ],
             "titleEn": "Girls' Romances",
-            "titleZh": "少女浪漫连环画"
+            "titleZh": "少女浪漫连环画",
+            "museum": "Roy Lichtenstein Foundation / Private Collection",
+            "museumCity": "New York, USA",
+            "museumUrl": "https://lichtensteinfoundation.org/"
           },
           {
             "id": "look-mickey",
@@ -937,7 +1081,10 @@ export const artData = [
               "直接将迪士尼流行文化卡通引入美术馆"
             ],
             "titleEn": "Look Mickey",
-            "titleZh": "看，米奇！"
+            "titleZh": "看，米奇！",
+            "museum": "National Gallery of Art",
+            "museumCity": "Washington, D.C., USA",
+            "museumUrl": "https://www.nga.gov/collection/art-object-page.71479.html"
           }
         ],
         "displayName": "Roy Lichtenstein (罗伊·利希滕斯坦)"
@@ -963,7 +1110,10 @@ export const artData = [
               "对消费主义社会高度标准化与批量复制的宣示"
             ],
             "titleEn": "Campbell's Soup I",
-            "titleZh": "坎贝尔罐头汤"
+            "titleZh": "坎贝尔罐头汤",
+            "museum": "Museum of Modern Art (MoMA)",
+            "museumCity": "New York, USA",
+            "museumUrl": "https://www.moma.org/collection/works/79739"
           },
           {
             "id": "shot-marilyns",
@@ -978,7 +1128,10 @@ export const artData = [
               "拍卖史上最昂贵的20世纪艺术品"
             ],
             "titleEn": "Shot Marilyns",
-            "titleZh": "枪击玛丽莲·梦露"
+            "titleZh": "枪击玛丽莲·梦露",
+            "museum": "Private Collection (Sold at Christie’s 2022)",
+            "museumCity": "New York, USA",
+            "museumUrl": "https://www.christies.com/en/lot/lot-6367500"
           },
           {
             "id": "la-banana",
@@ -992,7 +1145,10 @@ export const artData = [
               "极简商业图案的流行文化符号传播"
             ],
             "titleEn": "地下丝绒乐队专辑封面",
-            "titleZh": "著名的黄色大香蕉"
+            "titleZh": "著名的黄色大香蕉",
+            "museum": "The Andy Warhol Museum",
+            "museumCity": "Pittsburgh, USA",
+            "museumUrl": "https://www.warhol.org/"
           },
           {
             "id": "elvis-presley",
@@ -1005,7 +1161,10 @@ export const artData = [
               "摇滚巨星符号与银色电影梦幻感"
             ],
             "titleEn": "Elvis Presley",
-            "titleZh": "猫王埃尔维斯·普雷斯利"
+            "titleZh": "猫王埃尔维斯·普雷斯利",
+            "museum": "Art Gallery of Ontario / MoMA",
+            "museumCity": "Toronto / New York",
+            "museumUrl": "https://www.moma.org/collection/works/79905"
           },
           {
             "id": "coca-cola",
@@ -1019,7 +1178,10 @@ export const artData = [
               "大众工业符号阵列化"
             ],
             "titleEn": "Coca cola",
-            "titleZh": "绿色可口可乐瓶"
+            "titleZh": "绿色可口可乐瓶",
+            "museum": "Whitney Museum of American Art",
+            "museumCity": "New York, USA",
+            "museumUrl": "https://whitney.org/collection/works/1531"
           }
         ],
         "displayName": "Andy Warhol (安迪·沃霍尔)"
@@ -1063,7 +1225,10 @@ export const artData = [
               "展现创作过程中肢体能量与颜料自由重力的碰撞"
             ],
             "titleEn": "Autumn Rhythm: Number 30",
-            "titleZh": "秋天的节奏"
+            "titleZh": "秋天的节奏",
+            "museum": "Metropolitan Museum of Art",
+            "museumCity": "New York, USA",
+            "museumUrl": "https://www.metmuseum.org/art/collection/search/488978"
           },
           {
             "id": "one-number-31",
@@ -1077,7 +1242,10 @@ export const artData = [
               "极端的抽象形式引发批评界对即时性与随机性的巨大轰动"
             ],
             "titleEn": "One: Number 31, 1950",
-            "titleZh": "第一号：1950年第31号"
+            "titleZh": "第一号：1950年第31号",
+            "museum": "Museum of Modern Art (MoMA)",
+            "museumCity": "New York, USA",
+            "museumUrl": "https://www.moma.org/collection/works/78386"
           }
         ],
         "displayName": "Paul Jackson Pollock (保罗·杰克逊·波洛克)"
@@ -1102,7 +1270,10 @@ export const artData = [
               "突破二维绘画框限，将三维光影与透洞结合"
             ],
             "titleEn": "打孔系列",
-            "titleZh": "空间概念"
+            "titleZh": "空间概念",
+            "museum": "Fondazione Lucio Fontana / Tate Modern",
+            "museumCity": "Milan / London",
+            "museumUrl": "https://fondazioneluciofontana.it/en/"
           },
           {
             "id": "concetto-spaziale-slashes",
@@ -1117,7 +1288,10 @@ export const artData = [
               "象征对传统艺术所有先决条件的彻底拒绝"
             ],
             "titleEn": "割痕系列 - 划破画布",
-            "titleZh": "空间概念"
+            "titleZh": "空间概念",
+            "museum": "Centre Pompidou / Peggy Guggenheim Collection",
+            "museumCity": "Paris / Venice",
+            "museumUrl": "https://www.centrepompidou.fr/"
           }
         ],
         "displayName": "Lucio Fontana (卢齐欧·封塔纳)"
@@ -1143,7 +1317,10 @@ export const artData = [
               "拍卖价格远超等重黄金的艺术奇观"
             ],
             "titleEn": "Artist's Shit",
-            "titleZh": "艺术家之粪"
+            "titleZh": "艺术家之粪",
+            "museum": "Tate Modern / Centre Pompidou / Museo del Novecento",
+            "museumCity": "London / Paris / Milan",
+            "museumUrl": "https://www.tate.org.uk/art/artworks/manzoni-artists-shit-t07667"
           }
         ],
         "displayName": "Piero Manzoni (皮耶罗·曼佐尼)"
@@ -1191,7 +1368,10 @@ export const artData = [
               "巴洛克总体艺术天顶画《耶稣圣名之胜利》（巴奇恰绘）"
             ],
             "titleEn": "耶稣会总会教堂",
-            "titleZh": "罗马耶稣堂"
+            "titleZh": "罗马耶稣堂",
+            "museum": "Church of the Gesù (Chiesa del Gesù)",
+            "museumCity": "Rome, Italy",
+            "museumUrl": "https://www.chiesadelgesu.org/"
           },
           {
             "id": "villa-giulia",
@@ -1206,7 +1386,10 @@ export const artData = [
               "精巧的下沉式泉水神殿与石雕水景"
             ],
             "titleEn": "教宗朱利叶斯三世庄园",
-            "titleZh": "茱莉亚别墅"
+            "titleZh": "茱莉亚别墅",
+            "museum": "Museo Nazionale Etrusco di Villa Giulia",
+            "museumCity": "Rome, Italy",
+            "museumUrl": "https://www.museoetru.it/"
           }
         ],
         "displayName": "Giacomo Barozzi da Vignola (贾科莫·巴罗齐·达·维尼奥拉)"
@@ -1232,7 +1415,10 @@ export const artData = [
               "成为天主教世界反宗教改革教堂立面的标准样板"
             ],
             "titleEn": "Façade of the Church of the Gesù",
-            "titleZh": "耶稣堂立面"
+            "titleZh": "耶稣堂立面",
+            "museum": "Church of the Gesù",
+            "museumCity": "Rome, Italy",
+            "museumUrl": "https://www.chiesadelgesu.org/"
           }
         ],
         "displayName": "Giacomo della Porta (贾科莫·德拉·波尔塔)"
@@ -1258,7 +1444,10 @@ export const artData = [
               "利用透视递减藻井营造虚幻深邃的穹顶天光"
             ],
             "titleEn": "圣卡利诺",
-            "titleZh": "四喷泉圣卡罗教堂"
+            "titleZh": "四喷泉圣卡罗教堂",
+            "museum": "Church of San Carlo alle Quattro Fontane",
+            "museumCity": "Rome, Italy",
+            "museumUrl": "https://www.sancarlino.eu/"
           },
           {
             "id": "sant-ivo-alla-sapienza",
@@ -1273,7 +1462,10 @@ export const artData = [
               "象征智慧与神圣理性的几何学代表作"
             ],
             "titleEn": "罗马智慧大学教堂",
-            "titleZh": "圣依佛堂"
+            "titleZh": "圣依佛堂",
+            "museum": "Church of Sant’Ivo alla Sapienza",
+            "museumCity": "Rome, Italy",
+            "museumUrl": "https://www.archiviodistatoroma.beniculturali.it/"
           }
         ],
         "displayName": "Francesco Borromini (弗朗切斯科·博罗米尼)"
@@ -1300,7 +1492,10 @@ export const artData = [
               "象征教会'张开双臂拥抱全世界信徒'（Maternal Arms）"
             ],
             "titleEn": "Piazza San Pietro",
-            "titleZh": "梵蒂冈圣伯多禄大广场"
+            "titleZh": "梵蒂冈圣伯多禄大广场",
+            "museum": "St. Peter’s Square (Vatican City)",
+            "museumCity": "Vatican City / Rome",
+            "museumUrl": "https://www.vatican.va/various/basiliche/san_pietro/index_it.htm"
           },
           {
             "id": "sant-andrea-quirinale",
@@ -1315,7 +1510,10 @@ export const artData = [
               "被贝尔尼尼自评为'唯一带给自己真正愉悦的建筑'"
             ],
             "titleEn": "Sant'Andrea al Quirinale",
-            "titleZh": "奎里纳尔圣安德肋堂"
+            "titleZh": "奎里纳尔圣安德肋堂",
+            "museum": "Church of Sant’Andrea al Quirinale",
+            "museumCity": "Rome, Italy",
+            "museumUrl": "https://www.gesuiti.it/"
           },
           {
             "id": "palazzo-montecitorio",
@@ -1330,7 +1528,10 @@ export const artData = [
               "后由卡洛·丰塔纳完成钟楼与最终修饰"
             ],
             "titleEn": "Palazzo Montecitorio",
-            "titleZh": "蒙特奇托里奥宫"
+            "titleZh": "蒙特奇托里奥宫",
+            "museum": "Palazzo Montecitorio (Chamber of Deputies)",
+            "museumCity": "Rome, Italy",
+            "museumUrl": "https://www.camera.it/"
           },
           {
             "id": "st-peters-baldachin",
@@ -1345,7 +1546,10 @@ export const artData = [
               "世界最大雕塑与建筑结合体之一，高29米"
             ],
             "titleEn": "St. Peter's Baldachin",
-            "titleZh": "圣彼得大教堂青铜华盖"
+            "titleZh": "圣彼得大教堂青铜华盖",
+            "museum": "St. Peter’s Basilica",
+            "museumCity": "Vatican City / Rome",
+            "museumUrl": "https://www.basilicasanpietro.va/"
           }
         ],
         "displayName": "Gian Lorenzo Bernini (吉安·洛伦佐·贝尔尼尼)"
@@ -1371,7 +1575,10 @@ export const artData = [
               "意大利复兴运动首届议会会址"
             ],
             "titleEn": "Palazzo Carignano",
-            "titleZh": "都灵卡里尼亚诺宫"
+            "titleZh": "都灵卡里尼亚诺宫",
+            "museum": "Museo Nazionale del Risorgimento Italiano (Palazzo Carignano)",
+            "museumCity": "Turin, Italy",
+            "museumUrl": "https://www.museorisorgimentotorino.it/"
           },
           {
             "id": "chapel-holy-shroud",
@@ -1386,7 +1593,10 @@ export const artData = [
               "巴洛克结构工程学与高等数学几何结合的最高成就"
             ],
             "titleEn": "圣裹尸布小堂",
-            "titleZh": "裹尸布礼拜堂"
+            "titleZh": "裹尸布礼拜堂",
+            "museum": "Turin Royal Museums (Musei Reali Torino)",
+            "museumCity": "Turin, Italy",
+            "museumUrl": "https://museireali.beniculturali.it/cappella-della-sindone/"
           }
         ],
         "displayName": "Guarino Guarini (瓜里诺·瓜里尼)"
@@ -1432,7 +1642,10 @@ export const artData = [
               "萨伏依王室墓地所在地，雪山映衬下的地标杰作"
             ],
             "titleEn": "Basilica of Superga",
-            "titleZh": "苏佩尔加大教堂"
+            "titleZh": "苏佩尔加大教堂",
+            "museum": "Basilica di Superga",
+            "museumCity": "Turin, Italy",
+            "museumUrl": "https://www.basilicadisuperga.com/"
           }
         ],
         "displayName": "Filippo Juvarra (菲利波·尤瓦拉)"
@@ -1458,7 +1671,10 @@ export const artData = [
               "联合国教科文组织世界文化遗产，古典严谨轴线与壮阔园林"
             ],
             "titleEn": "Royal Palace of Caserta",
-            "titleZh": "卡塞塔王宫"
+            "titleZh": "卡塞塔王宫",
+            "museum": "Reggia di Caserta (UNESCO World Heritage)",
+            "museumCity": "Caserta, Italy",
+            "museumUrl": "https://reggiadicaserta.cultura.gov.it/"
           },
           {
             "id": "palace-of-naples",
@@ -1472,7 +1688,10 @@ export const artData = [
               "那不勒斯城市核心政治与仪式中心"
             ],
             "titleEn": "Royal Palace of Naples",
-            "titleZh": "那不勒斯王宫"
+            "titleZh": "那不勒斯王宫",
+            "museum": "Palazzo Reale di Napoli",
+            "museumCity": "Naples, Italy",
+            "museumUrl": "https://palazzorealedinapoli.org/"
           }
         ],
         "displayName": "Luigi Vanvitelli (路易吉·万维泰利)"
@@ -1498,7 +1717,10 @@ export const artData = [
               "当代由建筑大师 Mario Botta 主持完成结构与舞台现代化扩建"
             ],
             "titleEn": "Teatro alla Scala",
-            "titleZh": "米兰斯卡拉大剧院"
+            "titleZh": "米兰斯卡拉大剧院",
+            "museum": "Teatro alla Scala & Museo Teatrale",
+            "museumCity": "Milan, Italy",
+            "museumUrl": "https://www.teatroallascala.org/"
           },
           {
             "id": "royal-palace-milan",
@@ -1512,7 +1734,10 @@ export const artData = [
               "严整的爱奥尼/科林斯壁柱节奏与平屋顶檐口"
             ],
             "titleEn": "Palazzo Reale",
-            "titleZh": "米兰王宫"
+            "titleZh": "米兰王宫",
+            "museum": "Palazzo Reale di Milano",
+            "museumCity": "Milan, Italy",
+            "museumUrl": "https://www.palazzorealemilano.it/"
           }
         ],
         "displayName": "Giuseppe Piermarini (朱塞佩·皮尔马里尼)"
@@ -1538,7 +1763,10 @@ export const artData = [
               "法国大革命前夕国家关税与城市防线地标"
             ],
             "titleEn": "La Rotonde de la Villette",
-            "titleZh": "巴黎拉维莱特圆亭"
+            "titleZh": "巴黎拉维莱特圆亭",
+            "museum": "La Rotonde Stalingrad (Claude-Nicolas Ledoux)",
+            "museumCity": "Paris, France",
+            "museumUrl": "https://www.paris.fr/"
           }
         ],
         "displayName": "Claude Nicolas Ledoux (克洛德·尼古拉·勒杜)"
@@ -1564,7 +1792,10 @@ export const artData = [
               "巴黎12条林荫大道汇聚的放射状几何轴线中心"
             ],
             "titleEn": "Arc de Triomphe",
-            "titleZh": "巴黎雄狮凯旋门"
+            "titleZh": "巴黎雄狮凯旋门",
+            "museum": "Centre des Monuments Nationaux (Arc de Triomphe)",
+            "museumCity": "Paris, France",
+            "museumUrl": "https://www.paris-arc-de-triomphe.fr/"
           },
           {
             "id": "simplon-gate",
@@ -1579,7 +1810,10 @@ export const artData = [
               "米兰拿破仑城市轴线'森皮奥内大道'的标志性门楼"
             ],
             "titleEn": "辛普朗门",
-            "titleZh": "米兰和平门"
+            "titleZh": "米兰和平门",
+            "museum": "Arco della Pace (Parco Sempione)",
+            "museumCity": "Milan, Italy",
+            "museumUrl": "https://www.turismo.milano.it/"
           },
           {
             "id": "uva-rotunda",
@@ -1594,7 +1828,10 @@ export const artData = [
               "世界文化遗产，美国'学术村'规划核心"
             ],
             "titleEn": "University of Virginia Rotunda",
-            "titleZh": "弗吉尼亚大学圆厅"
+            "titleZh": "弗吉尼亚大学圆厅",
+            "museum": "University of Virginia (UNESCO World Heritage)",
+            "museumCity": "Charlottesville, USA",
+            "museumUrl": "https://rotunda.virginia.edu/"
           },
           {
             "id": "white-house",
@@ -1609,7 +1846,10 @@ export const artData = [
               "爱奥尼双层门廊与对称庄重的国家元首府邸范本"
             ],
             "titleEn": "The White House",
-            "titleZh": "美国白宫"
+            "titleZh": "美国白宫",
+            "museum": "The White House Historical Association",
+            "museumCity": "Washington, D.C., USA",
+            "museumUrl": "https://www.whitehousehistory.org/"
           },
           {
             "id": "propylaea-munich",
@@ -1624,7 +1864,10 @@ export const artData = [
               "为纪念巴伐利亚与希腊独立建交而立的城门纪念碑"
             ],
             "titleEn": "Propylaea",
-            "titleZh": "慕尼黑国王广场山门"
+            "titleZh": "慕尼黑国王广场山门",
+            "museum": "Königsplatz & State Antiquities Collections",
+            "museumCity": "Munich, Germany",
+            "museumUrl": "https://www.antike-am-koenigsplatz.mwn.de/"
           }
         ],
         "displayName": "Neoclassical Monuments Masters (欧美新古典主义纪念碑群)"
@@ -1669,7 +1912,10 @@ export const artData = [
               "1851年首届伦敦世界博览会核心标志"
             ],
             "titleEn": "The Crystal Palace",
-            "titleZh": "伦敦水晶宫"
+            "titleZh": "伦敦水晶宫",
+            "museum": "The Crystal Palace Foundation Archives",
+            "museumCity": "London, UK",
+            "museumUrl": "http://www.crystalpalacefoundation.org.uk/"
           }
         ],
         "displayName": "Joseph Paxton (约瑟夫·帕克斯顿)"
@@ -1695,7 +1941,10 @@ export const artData = [
               "精密风洞计算与轻盈镂空桁架结构美学"
             ],
             "titleEn": "Eiffel Tower",
-            "titleZh": "埃菲尔铁塔"
+            "titleZh": "埃菲尔铁塔",
+            "museum": "La Tour Eiffel (Société d’Exploitation)",
+            "museumCity": "Paris, France",
+            "museumUrl": "https://www.toureiffel.paris/"
           }
         ],
         "displayName": "Gustave Eiffel (居斯塔夫·埃菲尔)"
@@ -1740,7 +1989,10 @@ export const artData = [
               "彻底打破传统布鲁塞尔联排住宅阴暗格局，引入中央玻璃天顶采光"
             ],
             "titleEn": "Hôtel Tassel",
-            "titleZh": "塔塞尔公馆"
+            "titleZh": "塔塞尔公馆",
+            "museum": "Hôtel Tassel (Victor Horta / UNESCO World Heritage)",
+            "museumCity": "Brussels, Belgium",
+            "museumUrl": "https://whc.unesco.org/en/list/1005/"
           }
         ],
         "displayName": "Victor Horta (维克多·奥塔)"
@@ -1766,7 +2018,10 @@ export const artData = [
               "馆内永久收藏古斯塔夫·克里姆特宏伟壁画《贝多芬饰带》"
             ],
             "titleEn": "Secession Building",
-            "titleZh": "维也纳分离派展览馆"
+            "titleZh": "维也纳分离派展览馆",
+            "museum": "Secession Building (Association of Visual Artists)",
+            "museumCity": "Vienna, Austria",
+            "museumUrl": "https://secession.at/en/"
           }
         ],
         "displayName": "Joseph Maria Olbrich (约瑟夫·玛丽亚·奥尔布里希)"
@@ -1792,7 +2047,10 @@ export const artData = [
               "著名的独创'新艺术地铁字体'（Metropolitain Lettering）"
             ],
             "titleEn": "Stazione metropolitana",
-            "titleZh": "巴黎地铁站出入口"
+            "titleZh": "巴黎地铁站出入口",
+            "museum": "RATP Heritage & Musée d’Orsay",
+            "museumCity": "Paris, France",
+            "museumUrl": "https://www.ratp.fr/"
           }
         ],
         "displayName": "Hector Guimard (埃克托尔·吉马尔)"
@@ -1837,7 +2095,10 @@ export const artData = [
               "内部包含高精度的太阳望远镜与地下光学物理实验室"
             ],
             "titleEn": "Einstein Tower (Einsteinturm)",
-            "titleZh": "爱因斯坦天文台"
+            "titleZh": "爱因斯坦天文台",
+            "museum": "Leibniz Institute for Astrophysics Potsdam (AIP)",
+            "museumCity": "Potsdam, Germany",
+            "museumUrl": "https://www.aip.de/en/institute/einsteinturm/"
           }
         ],
         "displayName": "Erich Mendelsohn (埃里希·门德尔松)"
@@ -1863,7 +2124,10 @@ export const artData = [
               "万花筒般的内部彩色光影阶梯与机械水幕"
             ],
             "titleEn": "Glass Pavilion (Glashaus)",
-            "titleZh": "科隆玻璃展馆"
+            "titleZh": "科隆玻璃展馆",
+            "museum": "Werkbundarchiv – Museum der Dinge",
+            "museumCity": "Berlin / Cologne, Germany",
+            "museumUrl": "https://www.museumderdinge.de/"
           }
         ],
         "displayName": "Bruno Taut (布鲁诺·陶特)"
@@ -1890,7 +2154,10 @@ export const artData = [
               "高迪遗体安葬于圣家堂地下圣堂（Crypt）"
             ],
             "titleEn": "圣家堂",
-            "titleZh": "圣家族大教堂"
+            "titleZh": "圣家族大教堂",
+            "museum": "Basílica de la Sagrada Família (UNESCO World Heritage)",
+            "museumCity": "Barcelona, Spain",
+            "museumUrl": "https://sagradafamilia.org/en/"
           },
           {
             "id": "casa-mila",
@@ -1905,7 +2172,10 @@ export const artData = [
               "魔幻屋顶露台：由武士头盔造型烟囱与排气道构成的雕塑花园"
             ],
             "titleEn": "采石场",
-            "titleZh": "米拉之家"
+            "titleZh": "米拉之家",
+            "museum": "Fundació Catalunya La Pedrera (Casa Milà)",
+            "museumCity": "Barcelona, Spain",
+            "museumUrl": "https://www.lapedrera.com/en"
           },
           {
             "id": "casa-batllo",
@@ -1920,7 +2190,10 @@ export const artData = [
               "骨骼形态支撑柱与波浪曲面玻璃大窗，无一处生硬直角"
             ],
             "titleEn": "Casa Batlló",
-            "titleZh": "巴特罗之家 (骨之屋"
+            "titleZh": "巴特罗之家 (骨之屋",
+            "museum": "Casa Batlló (Antoni Gaudí / UNESCO World Heritage)",
+            "museumCity": "Barcelona, Spain",
+            "museumUrl": "https://www.casabatllo.es/en/"
           }
         ],
         "displayName": "Antoni Gaudí (安东尼·高迪)"
@@ -1930,283 +2203,34 @@ export const artData = [
   }
 ];
 
-export const quizQuestions = [
-  {
-    "id": "arch_q1",
-    "category": "architecture",
-    "text": "The word 'echino' (海胆饰 / 垫盘) defines a part of which architectural element?",
-    "options": [
-      "Column (柱身)",
-      "Frieze (檐壁 / 额枋)",
-      "Capital (柱头)",
-      "Pediment (三角山花)",
-      "Cornice (檐口)"
-    ],
-    "correctAnswer": 2,
-    "explanation": "In classical Greek Doric order, the echinus (echino) is the round, cushion-like molding directly below the abacus forming the capital."
-  },
-  {
-    "id": "arch_q2",
-    "category": "architecture",
-    "text": "Which of the following works was NOT designed by Michelangelo?",
-    "options": [
-      "Dome of San Pietro",
-      "Laurentian Library",
-      "Porta Pia",
-      "The Palazzo Vecchio",
-      "Sagrestia Nuova"
-    ],
-    "correctAnswer": 3,
-    "explanation": "The Palazzo Vecchio in Florence was designed by Arnolfo di Cambio. Michelangelo designed the St. Peter's Dome, Laurentian Library, Porta Pia, and Sagrestia Nuova (New Sacristy)."
-  },
-  {
-    "id": "arch_q3",
-    "category": "architecture",
-    "text": "Palladio redesigned the Palazzo della Ragione in Vicenza, renaming it a 'basilica', in order to:",
-    "options": [
-      "The new function of a religious cult building",
-      "The overturned ship's hull roof",
-      "The imposing size of the building",
-      "The addition of the loggia to serlian (塞利奥式三联拱窗双层敞廊)",
-      "The tripartition into naves"
-    ],
-    "correctAnswer": 3,
-    "explanation": "Palladio encased the gothic structure with two-storey marble loggias featuring the famous Serlian window motif (Serliana / Palladian motif)."
-  },
-  {
-    "id": "arch_q4",
-    "category": "architecture",
-    "text": "The Domus Aurea (金宫) in ancient Rome was built as a lavish residence for which Roman Emperor?",
-    "options": [
-      "Caligula",
-      "Trajan",
-      "Nero (尼禄)",
-      "Vespasian",
-      "Hadrian"
-    ],
-    "correctAnswer": 2,
-    "explanation": "The Domus Aurea was a vast landscaped palace built by Emperor Nero in the heart of Rome after the great fire of 64 AD."
-  },
-  {
-    "id": "arch_q5",
-    "category": "architecture",
-    "text": "The Palazzo dei Diamanti (钻石宫) in Ferrara took its name from:",
-    "options": [
-      "From the square in which it is located",
-      "By the designer who conceived it",
-      "From the bossage (bugnato) that characterizes the external walls",
-      "From the precious stones kept inside",
-      "By its noble clients"
-    ],
-    "correctAnswer": 2,
-    "explanation": "It is named after the 8,500 diamond-point faceted marble blocks (bugnato a punta di diamante) that cover its exterior walls."
-  },
-  {
-    "id": "arch_q6",
-    "category": "architecture",
-    "text": "To which period and century does the Tempietto of San Pietro in Montorio (by Bramante) date?",
-    "options": [
-      "XV - Renaissance",
-      "XVII - Baroque",
-      "XVI - Renaissance (16世纪文艺复兴盛期)",
-      "XVI - Baroque",
-      "XVIII - Neoclassicism"
-    ],
-    "correctAnswer": 2,
-    "explanation": "Donato Bramante's Tempietto in Rome was commissioned around 1502 (early 16th century, High Renaissance)."
-  },
-  {
-    "id": "arch_q7",
-    "category": "architecture",
-    "text": "The architectural style of the Basilica di Sant'Ambrogio in Milan is:",
-    "options": [
-      "Gothic",
-      "Renaissance",
-      "Eclectic",
-      "Romanesque (罗马式 / 伦巴第罗曼风)",
-      "Baroque"
-    ],
-    "correctAnswer": 3,
-    "explanation": "Sant'Ambrogio in Milan is one of the most ancient and celebrated masterpieces of Lombard Romanesque architecture."
-  },
-  {
-    "id": "arch_q8",
-    "category": "architecture",
-    "text": "What is the primary architectural style of the Milan Cathedral (Duomo di Milano)?",
-    "options": [
-      "Gothic (哥特式 / 辐射状哥特)",
-      "Renaissance",
-      "Eclectic",
-      "Romanesque",
-      "Baroque"
-    ],
-    "correctAnswer": 0,
-    "explanation": "Duomo di Milano is the second-largest Catholic cathedral in the world, renowned for its flamboyant Gothic spires and pinnacles."
-  },
-  {
-    "id": "arch_q9",
-    "category": "architecture",
-    "text": "In what century did Filippo Brunelleschi, designer of the Florence Cathedral Dome, die?",
-    "options": [
-      "XV (15th century, 1446)",
-      "XIV",
-      "XIII",
-      "XVI",
-      "XII"
-    ],
-    "correctAnswer": 0,
-    "explanation": "Filippo Brunelleschi died in 1446 in Florence, which is the 15th century (XV)."
-  },
-  {
-    "id": "arch_q10",
-    "category": "architecture",
-    "text": "The construction of the Parthenon on the Athenian Acropolis began in which year?",
-    "options": [
-      "1444 b.c.",
-      "447 b.c.",
-      "823 b.c.",
-      "1700 b.c.",
-      "2478 b.c."
-    ],
-    "correctAnswer": 1,
-    "explanation": "Construction of the Parthenon in Athens began in 447 BC under the leadership of Pericles, by architects Ictinus and Callicrates."
-  },
-  {
-    "id": "arch_q11",
-    "category": "architecture",
-    "text": "Who designed the iconic wavy red-brick facade of Palazzo Carignano and the interlaced dome of the Chapel of the Holy Shroud in Turin?",
-    "options": [
-      "Francesco Borromini",
-      "Gian Lorenzo Bernini",
-      "Guarino Guarini",
-      "Luigi Vanvitelli"
-    ],
-    "correctAnswer": 2,
-    "explanation": "Guarino Guarini was the mathematical genius of Piedmontese Baroque who designed Palazzo Carignano and the Chapel of the Holy Shroud."
-  },
-  {
-    "id": "arch_q12",
-    "category": "architecture",
-    "text": "Which Belgian architect created Hôtel Tassel (1893) in Brussels, introducing the famous 'whiplash line' and visible ironwork to domestic interiors?",
-    "options": [
-      "Victor Horta",
-      "Hector Guimard",
-      "Joseph Maria Olbrich",
-      "Antoni Gaudí"
-    ],
-    "correctAnswer": 0,
-    "explanation": "Victor Horta's Hôtel Tassel in Brussels is universally acknowledged as the first mature Art Nouveau building."
-  },
-  {
-    "id": "arch_q13",
-    "category": "architecture",
-    "text": "Which building bears the famous motto 'Der Zeit ihre Kunst. Der Kunst ihre Freiheit' (To every age its art, to every art its freedom)?",
-    "options": [
-      "Secession Building (Vienna)",
-      "Einstein Tower",
-      "Glass Pavilion (Cologne)",
-      "Rotonde de la Villette"
-    ],
-    "correctAnswer": 0,
-    "explanation": "The Vienna Secession Building (1897) by Joseph Maria Olbrich bears this famous motto over its entrance."
-  },
-  {
-    "id": "arch_q14",
-    "category": "architecture",
-    "text": "Antoni Gaudí used which technique of recycled ceramic and tile mosaics in works like Sagrada Família and Casa Batlló?",
-    "options": [
-      "Trencadís",
-      "Sgraffito",
-      "Opus sectile",
-      "Intarsia"
-    ],
-    "correctAnswer": 0,
-    "explanation": "Trencadís is the Catalan mosaic technique created from broken tiles, dinnerware, and glass pioneered by Gaudí and Josep Maria Jujol."
-  },
-  {
-    "id": "arch_q15",
-    "category": "architecture",
-    "text": "The Crystal Palace (1851) in London was designed by which pioneer using modular prefabricated iron and plate glass?",
-    "options": [
-      "Gustave Eiffel",
-      "Joseph Paxton",
-      "Leo von Klenze",
-      "Claude Nicolas Ledoux"
-    ],
-    "correctAnswer": 1,
-    "explanation": "Sir Joseph Paxton drew on his greenhouse engineering experience to design the prefabricated iron and glass Crystal Palace for the 1851 Great Exhibition."
-  },
-  {
-    "id": "art_q1",
-    "category": "art",
-    "text": "Which movement celebrated modern technology, industrial machinery, and velocity?",
-    "options": [
-      "Futurism (未来主义)",
-      "Dadaism (达达主义)",
-      "Surrealism (超现实主义)",
-      "De Stijl (风格派)"
-    ],
-    "correctAnswer": 0,
-    "explanation": "Futurism, founded by Marinetti in 1909, exalted dynamism, technology, and speed."
-  },
-  {
-    "id": "art_q2",
-    "category": "art",
-    "text": "Who created the famous 'Readymade' titled 'Fountain' by signing a porcelain urinal 'R. Mutt 1917'?",
-    "options": [
-      "Man Ray",
-      "Marcel Duchamp",
-      "Salvador Dalí",
-      "Piet Mondrian"
-    ],
-    "correctAnswer": 1,
-    "explanation": "Marcel Duchamp submitted Fountain in 1917, sparking the modern conceptual art revolution."
-  },
-  {
-    "id": "art_q3",
-    "category": "art",
-    "text": "Which painting by René Magritte features a pipe with the text 'Ceci n'est pas une pipe'?",
-    "options": [
-      "The Son of Man",
-      "The Lovers",
-      "The Treachery of Images",
-      "Golconda"
-    ],
-    "correctAnswer": 2,
-    "explanation": "The Treachery of Images (1929) highlights the semiotic separation between a physical object and its visual representation."
-  },
-  {
-    "id": "art_q4",
-    "category": "art",
-    "text": "Which artist slashed canvases with a razor blade to explore 3D space in Spatialism?",
-    "options": [
-      "Jackson Pollock",
-      "Lucio Fontana",
-      "Piero Manzoni",
-      "Umberto Boccioni"
-    ],
-    "correctAnswer": 1,
-    "explanation": "Lucio Fontana's 'Concetto Spaziale: Attese' series featured deliberate cuts into monochrome canvases to transcend 2D surface limitations."
-  },
-  {
-    "id": "art_q5",
-    "category": "art",
-    "text": "What technique did Jackson Pollock pioneer by dripping enamel paint on canvases laid flat on the floor?",
-    "options": [
-      "Ben-Day Dots",
-      "Silkscreen Printing",
-      "Action Painting / Drip Technique",
-      "Photomontage"
-    ],
-    "correctAnswer": 2,
-    "explanation": "Pollock used drip technique and action painting to express rhythmic, physical unconscious energy across large canvases."
-  }
-];
-
-export const getQuizQuestions = (filterCategory) => {
-  let pool = [...quizQuestions];
-  if (filterCategory && filterCategory !== 'all') {
-    pool = pool.filter(q => q.category === filterCategory);
-  }
-  return pool.sort(() => Math.random() - 0.5);
+export const getQuizQuestions = (category = 'all') => {
+  const questions = [];
+  artData.forEach(movement => {
+    if (category !== 'all' && movement.category !== category) return;
+    movement.artists.forEach(artist => {
+      artist.artworks.forEach(work => {
+        if (work.knowledgePoints && work.knowledgePoints.length > 0) {
+          questions.push({
+            id: `${movement.id}-${artist.id}-${work.id}`,
+            movementId: movement.id,
+            movementName: movement.name,
+            artistId: artist.id,
+            artistName: artist.name,
+            artworkId: work.id,
+            artworkTitle: work.title,
+            artworkImage: work.image,
+            category: movement.category,
+            question: `作品《${work.titleZh || work.title}》属于哪位大师的代表作？`,
+            options: [
+              artist.name,
+              ...artData.flatMap(m => m.artists.filter(a => a.id !== artist.id).map(a => a.name)).slice(0, 3)
+            ].sort(() => 0.5 - Math.random()),
+            answer: artist.name,
+            explanation: work.notes
+          });
+        }
+      });
+    });
+  });
+  return questions.sort(() => 0.5 - Math.random()).slice(0, 10);
 };

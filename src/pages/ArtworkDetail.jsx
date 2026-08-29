@@ -7,13 +7,13 @@ import { generateArtworkDeepDive } from '../services/aiService';
 import MouseSpotlight from '../components/MouseSpotlight';
 import { ArtworkImage } from '../components/ArtworkImage';
 import ImageUploadModal from '../components/ImageUploadModal';
-import { ChevronRight, Heart, Sparkles, ZoomIn, Bot, Loader2, AlertCircle, Calendar, MapPin, Palette, CheckCircle2, Maximize2, X, Landmark, Camera, Edit3 } from 'lucide-react';
+import { ChevronRight, Heart, Sparkles, ZoomIn, Bot, Loader2, AlertCircle, Calendar, MapPin, Palette, CheckCircle2, Maximize2, X, Landmark, Camera, Edit3, ExternalLink, MessageSquareText } from 'lucide-react';
 
 const EASE = [0.16, 1, 0.3, 1];
 
 export default function ArtworkDetail() {
   const { movementId, artistId, id } = useParams();
-  const { markArtworkViewed, progress, toggleFavorite, apiKey, cfWorkerUrl, customImages, t, l, lArray } = useContext(AppContext) || {};
+  const { markArtworkViewed, progress, toggleFavorite, apiKey, cfWorkerUrl, customImages, t, l, lArray, openAiAssistant } = useContext(AppContext) || {};
 
   const [isZoomed, setIsZoomed] = useState(false);
   const [showUploadModal, setShowUploadModal] = useState(false);
@@ -146,9 +146,24 @@ export default function ArtworkDetail() {
             </div>
           </div>
 
-          <div style={{ display: 'flex', alignItems: 'center', gap: '5px', fontSize: '0.82rem', color: 'var(--text-tertiary)', borderTop: '1px solid var(--border-hairline)', paddingTop: '0.7rem' }}>
-            <MapPin size={13} />
-            <span>{artwork.location}</span>
+          <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexWrap: 'wrap', gap: '8px', borderTop: '1px solid var(--border-hairline)', paddingTop: '0.75rem' }}>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '6px', fontSize: '0.84rem', color: 'var(--text-secondary)' }}>
+              <Landmark size={14} style={{ color: 'var(--text-tertiary)' }} />
+              <span><strong>{artwork.museum || artwork.location}</strong>{artwork.museumCity ? ` · ${artwork.museumCity}` : ''}</span>
+            </div>
+            {artwork.museumUrl && (
+              <a
+                href={artwork.museumUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn btn-outline"
+                style={{ fontSize: '0.74rem', padding: '3px 9px', display: 'inline-flex', alignItems: 'center', gap: '5px', textDecoration: 'none' }}
+                title={t ? t('artwork.visitOfficialPage', 'Visit Official Museum Page') : 'Visit Official Page'}
+              >
+                <span>{t ? t('artwork.visitOfficialPage', 'Visit Official Page') : 'Official Museum Page'}</span>
+                <ExternalLink size={11} />
+              </a>
+            )}
           </div>
         </motion.div>
 
@@ -270,25 +285,44 @@ export default function ArtworkDetail() {
               </div>
             </div>
 
-            <motion.button
-              className="btn btn-primary"
-              onClick={handleAiAnalysis}
-              disabled={aiLoading}
-              whileHover={{ scale: 1.03 }}
-              whileTap={{ scale: 0.97 }}
-            >
-              {aiLoading ? (
-                <>
-                  <Loader2 size={14} className="animate-spin" />
-                  <span>{t ? t('artwork.aiGenerating', 'Analyzing...') : 'Analyzing...'}</span>
-                </>
-              ) : (
-                <>
-                  <Sparkles size={14} />
-                  <span>{t ? t('artwork.generateAi', 'Generate AI Analysis') : 'Generate AI Analysis'}</span>
-                </>
-              )}
-            </motion.button>
+            <div style={{ display: 'flex', gap: '0.6rem', flexWrap: 'wrap' }}>
+              <motion.button
+                className="btn btn-outline"
+                onClick={() => openAiAssistant && openAiAssistant({
+                  title: artwork.title,
+                  artistName: artist.name,
+                  movementName: movement.name,
+                  details: artwork.notes
+                })}
+                whileHover={{ scale: 1.03 }}
+                whileTap={{ scale: 0.97 }}
+                style={{ display: 'flex', alignItems: 'center', gap: '6px' }}
+                title="唤起 AI 助教悬浮窗深入研讨"
+              >
+                <MessageSquareText size={14} />
+                <span>{t ? t('artwork.discussWithAi', 'Discuss with AI Tutor') : 'Discuss with AI Tutor'}</span>
+              </motion.button>
+
+              <motion.button
+                className="btn btn-primary"
+                onClick={handleAiAnalysis}
+                disabled={aiLoading}
+                whileHover={{ scale: 1.03 }}
+                whileTap={{ scale: 0.97 }}
+              >
+                {aiLoading ? (
+                  <>
+                    <Loader2 size={14} className="animate-spin" />
+                    <span>{t ? t('artwork.aiGenerating', 'Analyzing...') : 'Analyzing...'}</span>
+                  </>
+                ) : (
+                  <>
+                    <Sparkles size={14} />
+                    <span>{t ? t('artwork.inPageAnalysis', 'In-Page Deep Dive') : 'In-Page Deep Dive'}</span>
+                  </>
+                )}
+              </motion.button>
+            </div>
           </div>
 
           {aiError && (

@@ -232,6 +232,40 @@ export const AppProvider = ({ children }) => {
     return custom?.dataUrl || defaultUrl;
   }, [customImages]);
 
+  // Global AI Floating Assistant & Chat Memory state
+  const [isAiOpen, setIsAiOpen] = useState(false);
+  const [aiContextData, setAiContextData] = useState(null);
+  const [chatHistory, setChatHistory] = useState(() => {
+    try {
+      const saved = localStorage.getItem('ai_chat_history');
+      return saved ? JSON.parse(saved) : [];
+    } catch (e) {
+      return [];
+    }
+  });
+
+  useEffect(() => {
+    try {
+      localStorage.setItem('ai_chat_history', JSON.stringify(chatHistory));
+    } catch (e) {
+      console.warn('Failed to persist chat history:', e);
+    }
+  }, [chatHistory]);
+
+  const clearChatHistory = useCallback(() => {
+    setChatHistory([]);
+    try {
+      localStorage.removeItem('ai_chat_history');
+    } catch (e) {}
+  }, []);
+
+  const openAiAssistant = useCallback((contextInfo = null, initialPrompt = '') => {
+    if (contextInfo) {
+      setAiContextData(contextInfo);
+    }
+    setIsAiOpen(true);
+  }, []);
+
   return (
     <AppContext.Provider value={{
       apiKey,
@@ -258,7 +292,15 @@ export const AppProvider = ({ children }) => {
       removeCustomImage,
       clearAllOverrides,
       resolveArtworkUrl,
-      resolveArtistAvatar
+      resolveArtistAvatar,
+      isAiOpen,
+      setIsAiOpen,
+      aiContextData,
+      setAiContextData,
+      chatHistory,
+      setChatHistory,
+      clearChatHistory,
+      openAiAssistant
     }}>
       {children}
     </AppContext.Provider>

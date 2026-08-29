@@ -4,7 +4,6 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { artData } from '../data/artData';
 import { AppContext } from '../context/AppContext';
 import MouseSpotlight from '../components/MouseSpotlight';
-import AIFloatingAssistant from '../components/AIFloatingAssistant';
 import { ArtworkImage } from '../components/ArtworkImage';
 import { ArrowRight, Search, BookOpen, Layers, Users, X, Landmark, Palette } from 'lucide-react';
 
@@ -279,7 +278,6 @@ export default function Home() {
           </div>
         )}
       </div>
-      <AIFloatingAssistant contextText="用户在流派与建筑史总览主页，可以解答关于西方现代艺术流派与经典建筑史的演变、核心考点问题。" />
     </MouseSpotlight>
   );
 }

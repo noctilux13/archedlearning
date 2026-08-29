@@ -3,12 +3,14 @@ import { HashRouter as Router, Routes, Route } from 'react-router-dom';
 import { AppProvider } from './context/AppContext';
 import Navbar from './components/Navbar';
 import Home from './pages/Home';
+import Timeline from './pages/Timeline';
 import MovementDetail from './pages/MovementDetail';
 import ArtistDetail from './pages/ArtistDetail';
 import ArtworkDetail from './pages/ArtworkDetail';
 import Quiz from './pages/Quiz';
 import Dashboard from './pages/Dashboard';
 import SettingsPage from './pages/Settings';
+import AIFloatingAssistant from './components/AIFloatingAssistant';
 
 function App() {
   return (
@@ -20,6 +22,7 @@ function App() {
           <main className="container" style={{ flex: 1 }}>
             <Routes>
               <Route path="/" element={<Home />} />
+              <Route path="/timeline" element={<Timeline />} />
               <Route path="/movement/:id" element={<MovementDetail />} />
               <Route path="/artist/:movementId/:id" element={<ArtistDetail />} />
               <Route path="/artwork/:movementId/:artistId/:id" element={<ArtworkDetail />} />
@@ -28,6 +31,9 @@ function App() {
               <Route path="/settings" element={<SettingsPage />} />
             </Routes>
           </main>
+
+          {/* Global AI Floating Assistant */}
+          <AIFloatingAssistant />
 
           <footer style={{ borderTop: '1px solid var(--border-color)', padding: '2rem 0', textAlign: 'center', color: 'var(--text-secondary)', fontSize: '0.9rem' }}>
             <div className="container" style={{ padding: 0 }}>

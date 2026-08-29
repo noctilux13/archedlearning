@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { artData } from '../data/artData';
 import MouseSpotlight from '../components/MouseSpotlight';
-import AIFloatingAssistant from '../components/AIFloatingAssistant';
 import { ArtworkImage } from '../components/ArtworkImage';
 import { RotateCw, ArrowLeft, ArrowRight, Shuffle, Layers, Palette, Landmark } from 'lucide-react';
 
@@ -241,7 +240,6 @@ export default function Flashcards() {
           </div>
         )}
       </motion.div>
-      <AIFloatingAssistant contextText={`用户在使用卡片速记。当前卡片是《${currentCard?.title}》。`} />
     </MouseSpotlight>
   );
 }

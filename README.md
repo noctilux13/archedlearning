@@ -14,4 +14,3 @@ A modern, minimalist, and interactive learning platform covering Western Art His
 ## 🚀 Automated Deployment to GitHub Pages
 
 This repository includes a GitHub Actions workflow (`.github/workflows/deploy.yml`) that automatically builds and deploys to GitHub Pages on every push to `main`.
-language support/语言支持：简体中文，English,Italiano,Espanol

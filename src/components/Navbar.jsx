@@ -2,7 +2,7 @@ import React, { useContext, useState, useRef, useEffect } from 'react';
 import { NavLink, useLocation } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { AppContext } from '../context/AppContext';
-import { Compass, Brain, Award, Settings as SettingsIcon, Globe, ChevronDown, Check } from 'lucide-react';
+import { Compass, History, Brain, Award, Settings as SettingsIcon, Globe, ChevronDown, Check } from 'lucide-react';
 
 export default function Navbar() {
   const location = useLocation();
@@ -14,6 +14,7 @@ export default function Navbar() {
 
   const NAV_ITEMS = [
     { to: '/', label: t('nav.overview', '全景'), icon: Compass, end: true },
+    { to: '/timeline', label: t('nav.timeline', '时间轴'), icon: History },
     { to: '/quiz', label: t('nav.quiz', '测验'), icon: Brain },
     { to: '/dashboard', label: t('nav.dashboard', '看板'), icon: Award },
     { to: '/settings', label: t('nav.settings', '设置'), icon: SettingsIcon },
