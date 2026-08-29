@@ -43,22 +43,21 @@ export const AppProvider = ({ children }) => {
   // Content localization helper for dynamic entities (movements, artists, artworks)
   const l = useCallback((item, field, category = 'artworks') => {
     if (!item) return '';
-    if (language === 'zh') return item[field] || '';
     
-    // Check in localizedContent dictionary
-    const dict = localizedContent[language] || localizedContent.en;
-    if (dict) {
-      if (dict[category] && dict[category][item.id] && dict[category][item.id][field]) {
-        return dict[category][item.id][field];
+    // Check in localizedContent dictionary for current language
+    const currentDict = localizedContent[language];
+    if (currentDict) {
+      if (currentDict[category] && currentDict[category][item.id] && currentDict[category][item.id][field]) {
+        return currentDict[category][item.id][field];
       }
-      if (dict[item.id] && dict[item.id][field]) {
-        return dict[item.id][field];
+      if (currentDict[item.id] && currentDict[item.id][field]) {
+        return currentDict[item.id][field];
       }
     }
 
-    // Fallback to English dictionary
-    const enDict = localizedContent.en;
-    if (enDict) {
+    // If not found, check English dictionary
+    if (language !== 'en' && localizedContent.en) {
+      const enDict = localizedContent.en;
       if (enDict[category] && enDict[category][item.id] && enDict[category][item.id][field]) {
         return enDict[category][item.id][field];
       }
@@ -70,20 +69,19 @@ export const AppProvider = ({ children }) => {
 
   const lArray = useCallback((item, field, category = 'artworks') => {
     if (!item) return [];
-    if (language === 'zh') return item[field] || [];
     
-    const dict = localizedContent[language] || localizedContent.en;
-    if (dict) {
-      if (dict[category] && dict[category][item.id] && dict[category][item.id][field]) {
-        return dict[category][item.id][field];
+    const currentDict = localizedContent[language];
+    if (currentDict) {
+      if (currentDict[category] && currentDict[category][item.id] && currentDict[category][item.id][field]) {
+        return currentDict[category][item.id][field];
       }
-      if (dict[item.id] && dict[item.id][field]) {
-        return dict[item.id][field];
+      if (currentDict[item.id] && currentDict[item.id][field]) {
+        return currentDict[item.id][field];
       }
     }
 
-    const enDict = localizedContent.en;
-    if (enDict) {
+    if (language !== 'en' && localizedContent.en) {
+      const enDict = localizedContent.en;
       if (enDict[category] && enDict[category][item.id] && enDict[category][item.id][field]) {
         return enDict[category][item.id][field];
       }

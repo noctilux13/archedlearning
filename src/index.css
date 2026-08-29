@@ -6,23 +6,23 @@
 
 :root {
   /* ── Surface & Base ── */
-  --bg-main: #f9fafb;
+  --bg-main: #fcfcfc;
   --bg-surface: #ffffff;
-  --bg-subtle: #f3f4f6;
-  --bg-muted: #e5e7eb;
-  --glass-bg: rgba(255, 255, 255, 0.82);
+  --bg-subtle: #f4f4f5;
+  --bg-muted: #e4e4e7;
+  --glass-bg: rgba(252, 252, 252, 0.88);
 
   /* ── Typography Colors ── */
-  --text-primary: #111827;
-  --text-secondary: #4b5563;
-  --text-tertiary: #9ca3af;
+  --text-primary: #18181b;
+  --text-secondary: #52525b;
+  --text-tertiary: #a1a1aa;
   --text-inverse: #ffffff;
 
   /* ── Borders & Dividers ── */
   --border-hairline: rgba(0, 0, 0, 0.06);
-  --border-subtle: #e5e7eb;
-  --border-hover: rgba(0, 0, 0, 0.18);
-  --border-focus: #111827;
+  --border-subtle: #e4e4e7;
+  --border-hover: rgba(0, 0, 0, 0.15);
+  --border-focus: #18181b;
 
   /* ── Accent Colors (restrained) ── */
   --accent-primary: #18181b;
@@ -56,10 +56,10 @@
   --radius-pill: 9999px;
 
   /* ── Elevation (light, functional shadows) ── */
-  --shadow-subtle: 0 1px 2px rgba(0, 0, 0, 0.04);
-  --shadow-card: 0 1px 3px rgba(0, 0, 0, 0.04), 0 4px 12px rgba(0, 0, 0, 0.02);
-  --shadow-card-hover: 0 12px 32px -8px rgba(0, 0, 0, 0.08);
-  --shadow-float: 0 20px 48px -12px rgba(0, 0, 0, 0.12);
+  --shadow-subtle: 0 1px 2px rgba(0, 0, 0, 0.03);
+  --shadow-card: 0 1px 3px rgba(0, 0, 0, 0.03), 0 6px 16px -4px rgba(0, 0, 0, 0.02);
+  --shadow-card-hover: 0 12px 28px -6px rgba(0, 0, 0, 0.06);
+  --shadow-float: 0 20px 40px -10px rgba(0, 0, 0, 0.08);
   --shadow-lightbox: 0 25px 60px -15px rgba(0, 0, 0, 0.35);
 
   /* ── Motion ── */
@@ -75,24 +75,24 @@
     --bg-surface: #121316;
     --bg-subtle: #1c1d22;
     --bg-muted: #27272a;
-    --glass-bg: rgba(9, 9, 11, 0.82);
+    --glass-bg: rgba(9, 9, 11, 0.88);
 
     --text-primary: #f4f4f5;
     --text-secondary: #a1a1aa;
     --text-tertiary: #71717a;
     --text-inverse: #09090b;
 
-    --border-hairline: rgba(255, 255, 255, 0.08);
+    --border-hairline: rgba(255, 255, 255, 0.07);
     --border-subtle: rgba(255, 255, 255, 0.12);
     --border-hover: rgba(255, 255, 255, 0.2);
     --border-focus: #ffffff;
 
     --accent-primary: #ffffff;
 
-    --shadow-subtle: 0 1px 2px rgba(0, 0, 0, 0.4);
-    --shadow-card: 0 1px 3px rgba(0, 0, 0, 0.3);
-    --shadow-card-hover: 0 12px 32px -8px rgba(0, 0, 0, 0.5);
-    --shadow-float: 0 20px 48px -12px rgba(0, 0, 0, 0.6);
+    --shadow-subtle: 0 1px 2px rgba(0, 0, 0, 0.3);
+    --shadow-card: 0 1px 3px rgba(0, 0, 0, 0.25);
+    --shadow-card-hover: 0 12px 28px -6px rgba(0, 0, 0, 0.45);
+    --shadow-float: 0 20px 40px -10px rgba(0, 0, 0, 0.55);
   }
 }
 
