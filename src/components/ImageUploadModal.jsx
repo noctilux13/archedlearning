@@ -1,18 +1,12 @@
 import React, { useState, useRef, useEffect, useContext } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { AppContext } from '../context/AppContext';
-import { Upload, Link as LinkIcon, Image as ImageIcon, RotateCcw, Check, X, AlertCircle, Loader2 } from 'lucide-react';
+import { Upload, Link as LinkIcon, RotateCcw, Check, X, AlertCircle, Loader2 } from 'lucide-react';
 
 const EASE = [0.16, 1, 0.3, 1];
 
 /**
  * Image Upload & Replacement Modal
- * @param {boolean} isOpen
- * @param {function} onClose
- * @param {string} targetType - 'artwork' | 'artist'
- * @param {string} targetId - e.g. 'starry-night' or 'vincent-van-gogh'
- * @param {string} title - Human-readable title
- * @param {string} currentDefaultUrl - Current fallback/default image URL
  */
 export default function ImageUploadModal({
   isOpen,
@@ -22,7 +16,7 @@ export default function ImageUploadModal({
   title = '',
   currentDefaultUrl = ''
 }) {
-  const { customImages, setCustomImage, removeCustomImage } = useContext(AppContext);
+  const { customImages, setCustomImage, removeCustomImage, t } = useContext(AppContext);
   const fullKey = `${targetType}:${targetId}`;
   const existingCustom = customImages[fullKey] || customImages[targetId];
 
@@ -69,7 +63,7 @@ export default function ImageUploadModal({
   const processFile = (file) => {
     if (!file) return;
     if (!file.type.startsWith('image/')) {
-      setError('请上传有效的图片文件 (JPG, PNG, WebP, SVG 等)');
+      setError(t ? t('modal.fileTypeError', '请上传有效的图片文件 (JPG, PNG, WebP, SVG 等)') : 'Please upload a valid image file');
       return;
     }
 
@@ -116,7 +110,7 @@ export default function ImageUploadModal({
       }
     };
     reader.onerror = () => {
-      setError('文件读取失败，请重试');
+      setError(t ? t('modal.fileReadError', '文件读取失败，请重试') : 'Failed to read file');
       setLoading(false);
     };
     reader.readAsDataURL(file);
@@ -146,7 +140,7 @@ export default function ImageUploadModal({
 
   const handleSave = async () => {
     if (!previewUrl) {
-      setError('请先选取本地图片或输入有效的图片网址');
+      setError(t ? t('modal.emptyError', '请先选取本地图片或输入有效的图片网址') : 'Please select an image first');
       return;
     }
     setLoading(true);
@@ -165,7 +159,7 @@ export default function ImageUploadModal({
   };
 
   const handleReset = async () => {
-    if (window.confirm('确认恢复为系统默认图片？')) {
+    if (window.confirm(t ? t('modal.restoreConfirm', '确认恢复为系统默认图片？') : 'Restore to default image?')) {
       setLoading(true);
       try {
         await removeCustomImage(fullKey);
@@ -207,7 +201,7 @@ export default function ImageUploadModal({
           <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: '1.25rem' }}>
             <div>
               <div className="chip chip-neutral" style={{ marginBottom: '0.4rem', fontSize: '0.72rem' }}>
-                {targetType === 'artist' ? '艺术家肖像替换' : '作品图片替换'}
+                {targetType === 'artist' ? (t ? t('modal.replaceAvatarTitle', '艺术家肖像替换') : 'Replace Avatar') : (t ? t('modal.replaceArtworkTitle', '作品图片替换') : 'Replace Artwork')}
               </div>
               <h3 style={{ fontFamily: 'var(--font-serif)', fontSize: '1.25rem', margin: 0, color: 'var(--text-primary)' }}>
                 {title || targetId}
@@ -225,14 +219,14 @@ export default function ImageUploadModal({
               onClick={() => setMode('file')}
             >
               <Upload size={13} />
-              <span>本地图片上传</span>
+              <span>{t ? t('modal.localTab', '本地图片上传') : 'Upload File'}</span>
             </button>
             <button
               className={`tab-item ${mode === 'url' ? 'active' : ''}`}
               onClick={() => setMode('url')}
             >
               <LinkIcon size={13} />
-              <span>网络图片链接</span>
+              <span>{t ? t('modal.urlTab', '网络图片链接') : 'Image URL'}</span>
             </button>
           </div>
 
@@ -263,10 +257,10 @@ export default function ImageUploadModal({
               />
               <Upload size={28} style={{ color: 'var(--text-tertiary)', margin: '0 auto 0.75rem auto' }} />
               <div style={{ fontSize: '0.9rem', fontWeight: 550, color: 'var(--text-primary)', marginBottom: '0.25rem' }}>
-                点击选取或拖拽图片至此处
+                {t ? t('modal.dragDropTitle', '点击选取或拖拽图片至此处') : 'Choose or drag image here'}
               </div>
               <div style={{ fontSize: '0.78rem', color: 'var(--text-tertiary)' }}>
-                支持 JPG, PNG, WebP, SVG（保存在本地浏览器，离线可用）
+                {t ? t('modal.dragDropDesc', '支持 JPG, PNG, WebP, SVG（保存在本地浏览器，离线可用）') : 'Supports JPG, PNG, WebP, SVG'}
               </div>
             </div>
           )}
@@ -275,18 +269,18 @@ export default function ImageUploadModal({
           {mode === 'url' && (
             <div style={{ marginBottom: '1.25rem' }}>
               <label style={{ display: 'block', fontSize: '0.82rem', fontWeight: 550, color: 'var(--text-primary)', marginBottom: '0.4rem' }}>
-                图片直链地址 (URL)
+                {t ? t('modal.urlLabel', '图片直链地址 (URL)') : 'Image URL'}
               </label>
               <input
                 type="text"
                 className="input-field"
-                placeholder="https://upload.wikimedia.org/.../artwork.jpg"
+                placeholder={t ? t('modal.urlPlaceholder', 'https://upload.wikimedia.org/.../artwork.jpg') : 'https://...'}
                 value={urlInput}
                 onChange={(e) => handleUrlChange(e.target.value)}
                 style={{ fontSize: '0.85rem' }}
               />
               <p style={{ fontSize: '0.75rem', color: 'var(--text-tertiary)', marginTop: '0.35rem' }}>
-                提示：支持维基百科、各大博物馆官网或图片托管站点的直接图片链接。
+                {t ? t('modal.urlHint', '提示：支持维基百科、各大博物馆官网或图片托管站点的直接图片链接。') : 'Direct link from Wikipedia, museums, etc.'}
               </p>
             </div>
           )}
@@ -314,7 +308,7 @@ export default function ImageUploadModal({
           {previewUrl && (
             <div style={{ marginBottom: '1.5rem' }}>
               <div style={{ fontSize: '0.78rem', fontWeight: 600, color: 'var(--text-tertiary)', textTransform: 'uppercase', letterSpacing: '0.04em', marginBottom: '0.5rem' }}>
-                替换后效果预览
+                {t ? t('modal.previewLabel', '替换后效果预览') : 'Preview'}
               </div>
               <div style={{
                 width: '100%',
@@ -339,7 +333,7 @@ export default function ImageUploadModal({
                     height: targetType === 'artist' ? '120px' : 'auto',
                     boxShadow: targetType === 'artist' ? 'var(--shadow-card)' : 'none'
                   }}
-                  onError={() => setError('图片加载失败，请检查文件或链接是否有效')}
+                  onError={() => setError(t ? t('modal.previewLoadError', '图片加载失败，请检查文件或链接是否有效') : 'Failed to load image')}
                 />
               </div>
             </div>
@@ -358,7 +352,7 @@ export default function ImageUploadModal({
                 whileTap={{ scale: 0.98 }}
               >
                 <RotateCcw size={13} />
-                <span>恢复默认</span>
+                <span>{t ? t('modal.restoreDefault', '恢复默认') : 'Restore Default'}</span>
               </motion.button>
             )}
 
@@ -370,7 +364,7 @@ export default function ImageUploadModal({
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
             >
-              取消
+              {t ? t('modal.cancel', '取消') : 'Cancel'}
             </motion.button>
 
             <motion.button
@@ -384,12 +378,12 @@ export default function ImageUploadModal({
               {loading ? (
                 <>
                   <Loader2 size={13} className="animate-spin" />
-                  <span>保存中...</span>
+                  <span>{t ? t('modal.saving', '保存中...') : 'Saving...'}</span>
                 </>
               ) : (
                 <>
                   <Check size={13} />
-                  <span>保存替换</span>
+                  <span>{t ? t('modal.save', '保存替换') : 'Save Override'}</span>
                 </>
               )}
             </motion.button>

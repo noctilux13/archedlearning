@@ -5,14 +5,22 @@ import { AppContext } from '../context/AppContext';
 import { chatWithFloatingAssistant } from '../services/aiService';
 
 export default function AIFloatingAssistant({ contextText }) {
-  const { apiKey } = useContext(AppContext);
+  const { apiKey, t, language } = useContext(AppContext);
   const [isOpen, setIsOpen] = useState(false);
-  const [messages, setMessages] = useState([
-    { role: 'assistant', content: 'Hello! I am your AI Art & Architecture tutor. Ask me anything about movements, artists, or landmarks!' }
-  ]);
+  const [messages, setMessages] = useState([]);
   const [inputValue, setInputValue] = useState('');
   const [isLoading, setIsLoading] = useState(false);
   const messagesEndRef = useRef(null);
+
+  // Initialize greeting with translation when language changes or first load
+  useEffect(() => {
+    setMessages([
+      {
+        role: 'assistant',
+        content: t ? t('assistant.greeting', 'Hello! I am your AI Art & Architecture tutor. Ask me anything about movements, artists, or landmarks!') : 'Hello! I am your AI Art & Architecture tutor.'
+      }
+    ]);
+  }, [language, t]);
 
   const scrollToBottom = () => {
     messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
@@ -31,7 +39,7 @@ export default function AIFloatingAssistant({ contextText }) {
       setMessages(prev => [
         ...prev,
         { role: 'user', content: inputValue },
-        { role: 'assistant', content: 'Please configure your Groq API Key in Settings first.' }
+        { role: 'assistant', content: t ? t('assistant.configureKey', 'Please configure your Groq API Key in Settings first.') : 'Please configure your Groq API Key in Settings first.' }
       ]);
       setInputValue('');
       return;
@@ -83,7 +91,7 @@ export default function AIFloatingAssistant({ contextText }) {
             transition={{ type: 'spring', stiffness: 350, damping: 25 }}
           >
             <Bot size={17} />
-            <span>AI Tutor</span>
+            <span>{t ? t('assistant.title', 'AI Tutor') : 'AI Tutor'}</span>
           </motion.button>
         )}
       </AnimatePresence>
@@ -123,10 +131,10 @@ export default function AIFloatingAssistant({ contextText }) {
             }}>
               <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
                 <span className="chip chip-neutral" style={{ padding: '3px 8px' }}>
-                  <Sparkles size={10} /> AI Tutor
+                  <Sparkles size={10} /> {t ? t('assistant.title', 'AI Tutor') : 'AI Tutor'}
                 </span>
                 <span style={{ fontSize: '0.84rem', fontWeight: 600, color: 'var(--text-primary)' }}>
-                  Interactive Assistant
+                  {t ? t('assistant.title', 'Interactive Assistant') : 'Interactive Assistant'}
                 </span>
               </div>
               <motion.button
@@ -191,7 +199,7 @@ export default function AIFloatingAssistant({ contextText }) {
               <input
                 type="text"
                 className="input-field"
-                placeholder="Ask about this topic..."
+                placeholder={t ? t('assistant.placeholder', 'Ask about this topic...') : 'Ask about this topic...'}
                 value={inputValue}
                 onChange={e => setInputValue(e.target.value)}
                 onKeyDown={e => e.key === 'Enter' && handleSend()}

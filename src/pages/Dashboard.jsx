@@ -11,7 +11,7 @@ import { Trophy, BookOpen, Heart, Sparkles, Bot, Loader2, RotateCcw, AlertCircle
 const EASE = [0.16, 1, 0.3, 1];
 
 export default function Dashboard() {
-  const { progress, resetProgress, apiKey } = useContext(AppContext);
+  const { progress, resetProgress, apiKey, t } = useContext(AppContext);
   const [report, setReport] = useState('');
   const [loadingReport, setLoadingReport] = useState(false);
   const [errorReport, setErrorReport] = useState('');
@@ -41,7 +41,7 @@ export default function Dashboard() {
       const res = await generateStudyReport(progress);
       setReport(res);
     } catch (err) {
-      setErrorReport(err.message || 'Report generation failed. Please check API settings.');
+      setErrorReport(err.message || (t ? t('dashboard.emptyFavorites', 'Report generation failed. Please check API settings.') : 'Report generation failed. Please check API settings.'));
     } finally {
       setLoadingReport(false);
     }
@@ -59,11 +59,11 @@ export default function Dashboard() {
         {/* Header */}
         <div style={{ textAlign: 'center', marginBottom: '2.5rem' }}>
           <div className="chip chip-neutral" style={{ marginBottom: '0.75rem' }}>
-            <Award size={11} /> Dashboard
+            <Award size={11} /> {t ? t('nav.dashboard', 'Dashboard') : 'Dashboard'}
           </div>
-          <h1 style={{ marginBottom: '0.3rem' }}>Study Progress</h1>
+          <h1 style={{ marginBottom: '0.3rem' }}>{t ? t('dashboard.title', 'Study Progress') : 'Study Progress'}</h1>
           <p style={{ color: 'var(--text-secondary)', fontSize: '0.92rem', maxWidth: '560px', margin: '0 auto' }}>
-            Track exploration coverage and mastery level across art history and architecture.
+            {t ? t('dashboard.subtitle', 'Track exploration coverage and mastery level across art history and architecture.') : 'Track exploration coverage and mastery level across art history and architecture.'}
           </p>
         </div>
 
@@ -77,7 +77,7 @@ export default function Dashboard() {
             transition={{ duration: 0.4, delay: 0.1, ease: EASE }}
           >
             <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '0.75rem' }}>
-              <span className="chip chip-blue"><BookOpen size={11} /> Coverage</span>
+              <span className="chip chip-blue"><BookOpen size={11} /> {t ? t('dashboard.viewedCount', 'Coverage') : 'Coverage'}</span>
               <span style={{ fontSize: '0.82rem', color: 'var(--accent-blue)', fontWeight: 600 }}>{viewPercentage}%</span>
             </div>
             <div style={{ fontSize: '2.4rem', fontWeight: 600, fontFamily: 'var(--font-serif)', marginBottom: '0.25rem' }}>
@@ -103,31 +103,26 @@ export default function Dashboard() {
             transition={{ duration: 0.4, delay: 0.15, ease: EASE }}
           >
             <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '0.75rem' }}>
-              <span className="chip chip-green"><Trophy size={11} /> Mastery</span>
-              <span style={{ fontSize: '0.78rem', color: 'var(--text-tertiary)' }}>{(progress.quizScores || []).length} quizzes</span>
+              <span className="chip chip-green"><Trophy size={11} /> {t ? t('dashboard.masteryRate', 'Mastery') : 'Mastery'}</span>
+              <span style={{ fontSize: '0.78rem', color: 'var(--text-tertiary)' }}>{(progress.quizScores || []).length} {t ? t('dashboard.quizCount', 'quizzes') : 'quizzes'}</span>
             </div>
             <div style={{ fontSize: '2.4rem', fontWeight: 600, fontFamily: 'var(--font-serif)', marginBottom: '0.25rem' }}>
               {masteryPercentage}%
             </div>
             <p style={{ color: 'var(--text-secondary)', fontSize: '0.8rem', marginTop: '1rem' }}>
-              Calculated from quiz scores and flashcard sessions.
+              {t ? t('dashboard.masteryDesc', 'Calculated from quiz scores and study exploration coverage.') : 'Calculated from quiz scores and study exploration coverage.'}
             </p>
           </motion.div>
         </div>
 
         {/* Favorites */}
-        {favoritedArtworks.length > 0 && (
-          <motion.div
-            style={{ marginBottom: '2.5rem' }}
-            initial={{ opacity: 0, y: 16 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.4, delay: 0.2, ease: EASE }}
-          >
-            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline', marginBottom: '1rem', paddingBottom: '0.5rem', borderBottom: '1px solid var(--border-hairline)' }}>
-              <h2 style={{ fontFamily: 'var(--font-serif)', fontSize: '1.3rem', fontWeight: 500 }}>
-                Saved Works <span style={{ fontSize: '0.82rem', color: 'var(--text-tertiary)', fontFamily: 'var(--font-sans)' }}>({favoritedArtworks.length})</span>
-              </h2>
-            </div>
+        <div style={{ marginBottom: '2.5rem' }}>
+          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline', marginBottom: '1rem', paddingBottom: '0.5rem', borderBottom: '1px solid var(--border-hairline)' }}>
+            <h2 style={{ fontFamily: 'var(--font-serif)', fontSize: '1.3rem', fontWeight: 500 }}>
+              {t ? t('dashboard.favoritesTitle', 'Saved Works') : 'Saved Works'} <span style={{ fontSize: '0.82rem', color: 'var(--text-tertiary)', fontFamily: 'var(--font-sans)' }}>({favoritedArtworks.length})</span>
+            </h2>
+          </div>
+          {favoritedArtworks.length > 0 ? (
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(240px, 1fr))', gap: '1rem' }}>
               {favoritedArtworks.map((w, idx) => (
                 <motion.div
@@ -153,8 +148,12 @@ export default function Dashboard() {
                 </motion.div>
               ))}
             </div>
-          </motion.div>
-        )}
+          ) : (
+            <div style={{ padding: '2rem', backgroundColor: 'var(--bg-surface)', borderRadius: 'var(--radius-sm)', border: '1px solid var(--border-hairline)', textAlign: 'center', color: 'var(--text-secondary)', fontSize: '0.88rem' }}>
+              {t ? t('dashboard.emptyFavorites', 'No saved works yet. Click "Save" on any artwork page to curate your collection!') : 'No saved works yet. Click "Save" on any artwork page to curate your collection!'}
+            </div>
+          )}
+        </div>
 
         {/* AI Report */}
         <motion.div
@@ -209,12 +208,12 @@ export default function Dashboard() {
         <div style={{ textAlign: 'center', borderTop: '1px solid var(--border-hairline)', paddingTop: '1.5rem' }}>
           <motion.button
             className="btn btn-outline"
-            onClick={() => { if (window.confirm('Reset all progress and quiz records?')) resetProgress(); }}
+            onClick={() => { if (window.confirm(t ? t('dashboard.clearConfirm', 'Reset all progress?') : 'Reset all progress?')) resetProgress(); }}
             style={{ fontSize: '0.78rem', color: 'var(--text-tertiary)' }}
             whileHover={{ scale: 1.03 }}
             whileTap={{ scale: 0.97 }}
           >
-            <RotateCcw size={13} /> Reset All Progress
+            <RotateCcw size={13} /> {t ? t('dashboard.clearProgress', 'Reset All Progress') : 'Reset All Progress'}
           </motion.button>
         </div>
       </motion.div>

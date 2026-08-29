@@ -12,14 +12,14 @@ const EASE = [0.16, 1, 0.3, 1];
 
 export default function MovementDetail() {
   const { id } = useParams();
-  const { resolveArtistAvatar } = useContext(AppContext) || {};
+  const { resolveArtistAvatar, t } = useContext(AppContext) || {};
   const movement = artData.find(m => m.id === id);
 
   if (!movement) {
     return (
       <div className="container" style={{ textAlign: 'center', padding: '6rem 0' }}>
-        <h2 style={{ fontFamily: 'var(--font-serif)', marginBottom: '1rem' }}>Movement not found</h2>
-        <Link to="/" className="btn btn-primary">Back to Overview</Link>
+        <h2 style={{ fontFamily: 'var(--font-serif)', marginBottom: '1rem' }}>{t ? t('movement.notFound', '未找到该流派信息') : 'Movement not found'}</h2>
+        <Link to="/" className="btn btn-primary">{t ? t('movement.backOverview', '返回总览') : 'Back to Overview'}</Link>
       </div>
     );
   }
@@ -36,7 +36,7 @@ export default function MovementDetail() {
       >
         {/* Breadcrumb */}
         <div className="breadcrumb">
-          <Link to="/">Overview</Link>
+          <Link to="/">{t ? t('movement.backOverview', 'Overview') : 'Overview'}</Link>
           <ChevronRight size={12} />
           <span style={{ color: 'var(--text-primary)', fontWeight: 500 }}>{movement.englishName}</span>
         </div>
@@ -55,7 +55,7 @@ export default function MovementDetail() {
             </span>
             <span className="chip chip-neutral" style={{ gap: '4px' }}>
               {isArch ? <Landmark size={11} /> : <Palette size={11} />}
-              {isArch ? 'Architecture' : 'Art Movement'}
+              {isArch ? (t ? t('movement.archMovement', 'Architecture') : 'Architecture') : (t ? t('movement.artMovement', 'Art Movement') : 'Art Movement')}
             </span>
           </div>
 
@@ -77,7 +77,7 @@ export default function MovementDetail() {
             borderLeft: '3px solid var(--accent-primary)'
           }}>
             <div style={{ fontSize: '0.72rem', textTransform: 'uppercase', letterSpacing: '0.05em', color: 'var(--text-tertiary)', marginBottom: '0.3rem', fontWeight: 600 }}>
-              Historical Context
+              {t ? t('movement.historicalContext', 'Historical Context') : 'Historical Context'}
             </div>
             <p style={{ fontSize: '0.92rem', color: 'var(--text-primary)', lineHeight: '1.7', margin: 0 }}>
               {movement.historicalContext}
@@ -88,7 +88,7 @@ export default function MovementDetail() {
           {movement.keyFeatures && (
             <div>
               <div style={{ fontSize: '0.72rem', textTransform: 'uppercase', letterSpacing: '0.05em', color: 'var(--text-tertiary)', marginBottom: '0.5rem', fontWeight: 600 }}>
-                Key Features
+                {t ? t('movement.keyFeatures', 'Key Features') : 'Key Features'}
               </div>
               <div style={{ display: 'flex', flexWrap: 'wrap', gap: '6px' }}>
                 {movement.keyFeatures.map((feat, idx) => (
@@ -108,10 +108,10 @@ export default function MovementDetail() {
           borderBottom: '1px solid var(--border-hairline)'
         }}>
           <h2 style={{ fontFamily: 'var(--font-serif)', fontWeight: 500 }}>
-            Artists & Works
+            {t ? t('movement.selectedArtists', 'Key Masters & Architects') : 'Key Masters & Architects'}
           </h2>
           <span style={{ fontSize: '0.8rem', color: 'var(--text-tertiary)' }}>
-            {movement.artists.length} artists
+            {movement.artists.length} {t ? t('movement.artistsCount', 'artists') : 'artists'}
           </span>
         </div>
 
@@ -176,7 +176,7 @@ export default function MovementDetail() {
                       display: 'flex', alignItems: 'center', justifyContent: 'space-between',
                       color: 'var(--text-primary)', fontWeight: 550, fontSize: '0.82rem'
                     }}>
-                      <span>{artist.artworks.length} works</span>
+                      <span>{artist.artworks.length} {t ? t('artist.worksCount', 'works') : 'works'}</span>
                       <ArrowRight size={14} />
                     </div>
                   </div>

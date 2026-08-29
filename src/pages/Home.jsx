@@ -1,7 +1,8 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { artData } from '../data/artData';
+import { AppContext } from '../context/AppContext';
 import MouseSpotlight from '../components/MouseSpotlight';
 import AIFloatingAssistant from '../components/AIFloatingAssistant';
 import { ArtworkImage } from '../components/ArtworkImage';
@@ -17,16 +18,16 @@ const fadeBlurUp = {
   exit: { opacity: 0, y: -10, filter: 'blur(4px)' },
 };
 
-// Category tab data
-const CATEGORIES = [
-  { key: 'all', label: 'All' },
-  { key: 'art', label: 'Art History', icon: Palette },
-  { key: 'architecture', label: 'Architecture', icon: Landmark },
-];
-
 export default function Home() {
+  const { t } = useContext(AppContext);
   const [searchTerm, setSearchTerm] = useState('');
   const [activeCategory, setActiveCategory] = useState('all');
+
+  const CATEGORIES = [
+    { key: 'all', label: t('home.all', 'All') },
+    { key: 'art', label: t('home.art', 'Art History'), icon: Palette },
+    { key: 'architecture', label: t('home.architecture', 'Architecture'), icon: Landmark },
+  ];
 
   const totalArtists = artData.reduce((acc, m) => acc + m.artists.length, 0);
   const totalArtworks = artData.reduce((acc, m) => acc + m.artists.reduce((a2, a) => a2 + a.artworks.length, 0), 0);
@@ -54,11 +55,11 @@ export default function Home() {
           style={{ textAlign: 'center', maxWidth: '760px', margin: '1rem auto 3rem auto' }}
         >
           <div className="chip chip-neutral" style={{ marginBottom: '1rem' }}>
-            Western Art History & European Architecture
+            {t('home.tagline', 'Western Art History & European Architecture')}
           </div>
 
           <h1 style={{ marginBottom: '1rem' }}>
-            Movements, Masters & Masterworks
+            {t('home.heroTitle', 'Movements, Masters & Masterworks')}
           </h1>
 
           <p style={{
@@ -68,7 +69,7 @@ export default function Home() {
             maxWidth: '620px',
             margin: '0 auto 2rem auto'
           }}>
-            从巴洛克到当代艺术，从哥特式大教堂到现代主义建筑。系统化的流派脉络、艺术家档案与核心考点。
+            {t('home.heroSubtitle', '从古典巴洛克到当代前卫，从哥特式大教堂到现代主义建筑。构建结构化流派脉络、艺术大师全景档案与核心考点深度解析。')}
           </p>
 
           {/* Quick Stats */}
@@ -87,17 +88,17 @@ export default function Home() {
           >
             <div style={{ display: 'flex', alignItems: 'center', gap: '5px' }}>
               <Layers size={14} style={{ color: 'var(--text-primary)' }} />
-              <span><strong>{artData.length}</strong> movements</span>
+              <span><strong>{artData.length}</strong> {t('home.movementsCount', 'movements')}</span>
             </div>
             <span style={{ color: 'var(--border-subtle)' }}>·</span>
             <div style={{ display: 'flex', alignItems: 'center', gap: '5px' }}>
               <Users size={14} style={{ color: 'var(--text-primary)' }} />
-              <span><strong>{totalArtists}</strong> artists</span>
+              <span><strong>{totalArtists}</strong> {t('home.artistsCount', 'artists')}</span>
             </div>
             <span style={{ color: 'var(--border-subtle)' }}>·</span>
             <div style={{ display: 'flex', alignItems: 'center', gap: '5px' }}>
               <BookOpen size={14} style={{ color: 'var(--text-primary)' }} />
-              <span><strong>{totalArtworks}</strong> works</span>
+              <span><strong>{totalArtworks}</strong> {t('home.artworksCount', 'works')}</span>
             </div>
           </motion.div>
 
@@ -113,7 +114,7 @@ export default function Home() {
               type="text"
               className="input-field"
               style={{ paddingLeft: '40px', paddingRight: searchTerm ? '40px' : '14px', height: '44px' }}
-              placeholder="Search movements, artists, or works..."
+              placeholder={t('home.searchPlaceholder', 'Search movements, artists, or works...')}
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
             />
@@ -167,99 +168,116 @@ export default function Home() {
           borderBottom: '1px solid var(--border-hairline)'
         }}>
           <h2 style={{ fontFamily: 'var(--font-serif)', fontWeight: 500 }}>
-            {activeCategory === 'architecture' ? 'Architecture' : activeCategory === 'art' ? 'Art Movements' : 'All Movements'}
+            {activeCategory === 'architecture' ? t('home.architecture', 'Architecture') : activeCategory === 'art' ? t('home.art', 'Art Movements') : t('home.all', 'All Movements')}
           </h2>
           <span style={{ fontSize: '0.8rem', color: 'var(--text-tertiary)' }}>
-            {filteredMovements.length} results
+            {filteredMovements.length} {t('home.movementsCount', 'results')}
           </span>
         </div>
 
         {/* ── Movements Grid with staggered blur entrance ── */}
-        <div className="grid">
-          <AnimatePresence mode="popLayout">
-            {filteredMovements.map((movement, idx) => {
-              const firstArtwork = movement.artists[0]?.artworks[0];
-              const isArch = movement.category === 'architecture';
-              return (
-                <motion.div
-                  key={movement.id}
-                  layout
-                  {...fadeBlurUp}
-                  transition={{
-                    duration: 0.4,
-                    delay: idx * STAGGER_DELAY,
-                    ease: EASE_SPRING,
-                    layout: { type: 'spring', bounce: 0.15, duration: 0.5 }
-                  }}
-                  whileHover={{ y: -5, transition: { type: 'spring', stiffness: 400, damping: 25 } }}
-                  whileTap={{ scale: 0.98 }}
-                >
-                  <Link to={`/movement/${movement.id}`}>
-                    <div className="card" style={{ height: '100%', display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
-                      <div>
-                        {/* Thumbnail */}
-                        {firstArtwork && (
-                          <div className="image-box" style={{ height: '160px', marginBottom: '1rem' }}>
-                            <ArtworkImage artworkId={firstArtwork.id} alt={firstArtwork.title} className="w-full h-full object-cover" />
+        {filteredMovements.length === 0 ? (
+          <div style={{
+            textAlign: 'center',
+            padding: '4rem 1rem',
+            backgroundColor: 'var(--bg-surface)',
+            borderRadius: 'var(--radius-md)',
+            border: '1px solid var(--border-hairline)',
+            margin: '1rem 0'
+          }}>
+            <h3 style={{ fontFamily: 'var(--font-serif)', marginBottom: '0.5rem' }}>{t('home.noResultsTitle', 'No matching items found')}</h3>
+            <p style={{ color: 'var(--text-secondary)', fontSize: '0.9rem', marginBottom: '1.5rem' }}>{t('home.noResultsDesc', 'Try different keywords (e.g. Van Gogh, Gothic, Impressionism, Baroque)')}</p>
+            <button className="btn btn-outline" onClick={() => { setSearchTerm(''); setActiveCategory('all'); }}>
+              {t('home.resetSearch', 'Reset Search')}
+            </button>
+          </div>
+        ) : (
+          <div className="grid">
+            <AnimatePresence mode="popLayout">
+              {filteredMovements.map((movement, idx) => {
+                const firstArtwork = movement.artists[0]?.artworks[0];
+                const isArch = movement.category === 'architecture';
+                return (
+                  <motion.div
+                    key={movement.id}
+                    layout
+                    {...fadeBlurUp}
+                    transition={{
+                      duration: 0.4,
+                      delay: idx * STAGGER_DELAY,
+                      ease: EASE_SPRING,
+                      layout: { type: 'spring', bounce: 0.15, duration: 0.5 }
+                    }}
+                    whileHover={{ y: -5, transition: { type: 'spring', stiffness: 400, damping: 25 } }}
+                    whileTap={{ scale: 0.98 }}
+                  >
+                    <Link to={`/movement/${movement.id}`}>
+                      <div className="card" style={{ height: '100%', display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
+                        <div>
+                          {/* Thumbnail */}
+                          {firstArtwork && (
+                            <div className="image-box" style={{ height: '160px', marginBottom: '1rem' }}>
+                              <ArtworkImage artworkId={firstArtwork.id} alt={firstArtwork.title} className="w-full h-full object-cover" />
+                            </div>
+                          )}
+
+                          {/* Meta */}
+                          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '0.6rem' }}>
+                            <span className="chip chip-neutral" style={{ gap: '3px' }}>
+                              {isArch ? <Landmark size={10} /> : <Palette size={10} />}
+                              {movement.years}
+                            </span>
+                            <span style={{ fontSize: '0.72rem', color: 'var(--text-tertiary)', fontWeight: 500 }}>
+                              {movement.artists.length} {t('home.artistsInMovement', 'artists')} · {movement.artists.reduce((sum, a) => sum + a.artworks.length, 0)} {t('home.worksCount', 'works')}
+                            </span>
                           </div>
-                        )}
 
-                        {/* Meta */}
-                        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '0.6rem' }}>
-                          <span className="chip chip-neutral" style={{ gap: '3px' }}>
-                            {isArch ? <Landmark size={10} /> : <Palette size={10} />}
-                            {movement.years}
-                          </span>
-                          <span style={{ fontSize: '0.72rem', color: 'var(--text-tertiary)', fontWeight: 500 }}>
-                            {movement.artists.length} artists · {movement.artists.reduce((sum, a) => sum + a.artworks.length, 0)} works
-                          </span>
-                        </div>
-
-                        {/* Title — English primary */}
-                        <h3 style={{ fontSize: '1.15rem', fontFamily: 'var(--font-serif)', marginBottom: '0.15rem', fontWeight: 600 }}>
-                          {movement.englishName}
-                        </h3>
-                        <div style={{ fontSize: '0.78rem', color: 'var(--text-tertiary)', marginBottom: '0.6rem' }}>
-                          {movement.name}
-                        </div>
-
-                        <p style={{
-                          color: 'var(--text-secondary)', fontSize: '0.84rem', lineHeight: '1.6',
-                          marginBottom: '1rem',
-                          display: '-webkit-box', WebkitLineClamp: 3, WebkitBoxOrient: 'vertical', overflow: 'hidden'
-                        }}>
-                          {movement.description}
-                        </p>
-                      </div>
-
-                      {/* Footer */}
-                      <div>
-                        {movement.keyFeatures && (
-                          <div style={{ display: 'flex', flexWrap: 'wrap', gap: '4px', marginBottom: '1rem' }}>
-                            {movement.keyFeatures.slice(0, 2).map((feat, fIdx) => (
-                              <span key={fIdx} style={{ fontSize: '0.7rem', padding: '2px 7px', borderRadius: '3px', backgroundColor: 'var(--bg-subtle)', color: 'var(--text-tertiary)' }}>
-                                {feat}
-                              </span>
-                            ))}
+                          {/* Title — English primary */}
+                          <h3 style={{ fontSize: '1.15rem', fontFamily: 'var(--font-serif)', marginBottom: '0.15rem', fontWeight: 600 }}>
+                            {movement.englishName}
+                          </h3>
+                          <div style={{ fontSize: '0.78rem', color: 'var(--text-tertiary)', marginBottom: '0.6rem' }}>
+                            {movement.name}
                           </div>
-                        )}
 
-                        <div style={{
-                          borderTop: '1px solid var(--border-hairline)', paddingTop: '0.75rem',
-                          display: 'flex', alignItems: 'center', justifyContent: 'space-between',
-                          color: 'var(--text-primary)', fontWeight: 550, fontSize: '0.82rem'
-                        }}>
-                          <span>Explore</span>
-                          <ArrowRight size={14} />
+                          <p style={{
+                            color: 'var(--text-secondary)', fontSize: '0.84rem', lineHeight: '1.6',
+                            marginBottom: '1rem',
+                            display: '-webkit-box', WebkitLineClamp: 3, WebkitBoxOrient: 'vertical', overflow: 'hidden'
+                          }}>
+                            {movement.description}
+                          </p>
+                        </div>
+
+                        {/* Footer */}
+                        <div>
+                          {movement.keyFeatures && (
+                            <div style={{ display: 'flex', flexWrap: 'wrap', gap: '4px', marginBottom: '1rem' }}>
+                              {movement.keyFeatures.slice(0, 2).map((feat, fIdx) => (
+                                <span key={fIdx} style={{ fontSize: '0.7rem', padding: '2px 7px', borderRadius: '3px', backgroundColor: 'var(--bg-subtle)', color: 'var(--text-tertiary)' }}>
+                                  {feat}
+                                </span>
+                              ))}
+                            </div>
+                          )}
+
+                          <div style={{
+                            borderTop: '1px solid var(--border-hairline)', paddingTop: '0.75rem',
+                            display: 'flex', alignItems: 'center', justifyContent: 'space-between',
+                            color: 'var(--text-primary)', fontWeight: 550, fontSize: '0.82rem'
+                          }}>
+                            <span>{t('home.exploreNow', 'Explore')}</span>
+                            <ArrowRight size={14} />
+                          </div>
                         </div>
                       </div>
-                    </div>
-                  </Link>
-                </motion.div>
-              );
-            })}
-          </AnimatePresence>
-        </div>
+                    </Link>
+                  </motion.div>
+                );
+              })}
+            </AnimatePresence>
+          </div>
+        )}
       </div>
       <AIFloatingAssistant contextText="用户在流派与建筑史总览主页，可以解答关于西方现代艺术流派与经典建筑史的演变、核心考点问题。" />
     </MouseSpotlight>

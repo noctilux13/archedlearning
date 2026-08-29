@@ -1,12 +1,44 @@
 import React, { createContext, useState, useEffect, useCallback } from 'react';
 import { getAllCustomImages, saveCustomImage, deleteCustomImage, clearAllCustomImages } from '../utils/imageStorage';
+import { translations, LANGUAGES } from '../i18n/translations';
 
 export const AppContext = createContext();
 
 export const AppProvider = ({ children }) => {
   const [apiKey, setApiKey] = useState(localStorage.getItem('groqApiKey') || '');
   const [cfWorkerUrl, setCfWorkerUrl] = useState(localStorage.getItem('cfWorkerUrl') || '');
+  const [language, setLanguageState] = useState(() => localStorage.getItem('app_lang') || 'zh');
   
+  const setLanguage = useCallback((lang) => {
+    setLanguageState(lang);
+    localStorage.setItem('app_lang', lang);
+  }, []);
+
+  // Translation helper function
+  const t = useCallback((path, fallback = '') => {
+    const langDict = translations[language] || translations.zh;
+    const parts = path.split('.');
+    let current = langDict;
+    for (const part of parts) {
+      if (current && typeof current === 'object' && part in current) {
+        current = current[part];
+      } else {
+        // Fallback to English, then Chinese, then provided fallback
+        let fallbackVal = translations.en;
+        for (const p of parts) {
+          if (fallbackVal && typeof fallbackVal === 'object' && p in fallbackVal) {
+            fallbackVal = fallbackVal[p];
+          } else {
+            fallbackVal = null;
+            break;
+          }
+        }
+        return fallbackVal || fallback || path;
+      }
+    }
+    return typeof current === 'string' ? current : (fallback || path);
+  }, [language]);
+
   const [progress, setProgress] = useState(() => {
     const defaults = {
       viewedArtworks: [],
@@ -144,6 +176,10 @@ export const AppProvider = ({ children }) => {
       setApiKey,
       cfWorkerUrl,
       setCfWorkerUrl,
+      language,
+      setLanguage,
+      t,
+      LANGUAGES,
       progress,
       markArtworkViewed,
       toggleFavorite,

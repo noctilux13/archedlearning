@@ -17,7 +17,7 @@ const CATEGORIES = [
 ];
 
 export default function Quiz() {
-  const { apiKey, addQuizScore } = useContext(AppContext);
+  const { apiKey, addQuizScore, t } = useContext(AppContext);
 
   const [selectedCategory, setSelectedCategory] = useState('all');
   const [questions, setQuestions] = useState([]);
@@ -29,6 +29,12 @@ export default function Quiz() {
   const [loading, setLoading] = useState(false);
   const [aiGenerated, setAiGenerated] = useState(false);
   const [errorMsg, setErrorMsg] = useState('');
+
+  const CATEGORIES = [
+    { key: 'all', label: t ? t('quiz.all', 'All') : 'All' },
+    { key: 'architecture', label: t ? t('quiz.architecture', 'Architecture') : 'Architecture', icon: Landmark },
+    { key: 'art', label: t ? t('quiz.art', 'Art') : 'Art', icon: Palette },
+  ];
 
   useEffect(() => { loadQuestions(selectedCategory); }, [selectedCategory]);
 
@@ -98,8 +104,8 @@ export default function Quiz() {
     return (
       <div className="container" style={{ textAlign: 'center', padding: '6rem 0' }}>
         <Sparkles size={32} className="animate-spin" style={{ color: 'var(--text-primary)', marginBottom: '1rem', display: 'inline-block' }} />
-        <h2 style={{ fontFamily: 'var(--font-serif)', marginBottom: '0.4rem' }}>Generating Quiz...</h2>
-        <p style={{ color: 'var(--text-secondary)', fontSize: '0.9rem' }}>AI is crafting questions from the curriculum.</p>
+        <h2 style={{ fontFamily: 'var(--font-serif)', marginBottom: '0.4rem' }}>{t ? t('quiz.aiGenerating', 'Generating Quiz...') : 'Generating Quiz...'}</h2>
+        <p style={{ color: 'var(--text-secondary)', fontSize: '0.9rem' }}>{t ? t('quiz.startAiQuiz', 'AI is crafting questions from the curriculum.') : 'AI is crafting questions from the curriculum.'}</p>
       </div>
     );
   }
@@ -118,9 +124,9 @@ export default function Quiz() {
         >
           <div className="card-editorial" style={{ padding: '2.5rem 2rem' }}>
             <Award size={48} style={{ color: 'var(--text-primary)', marginBottom: '1rem' }} />
-            <h1 style={{ fontSize: '2rem', marginBottom: '0.3rem' }}>Quiz Complete</h1>
+            <h1 style={{ fontSize: '2rem', marginBottom: '0.3rem' }}>{t ? t('quiz.resultsTitle', 'Quiz Completed!') : 'Quiz Complete'}</h1>
             <p style={{ color: 'var(--text-secondary)', fontSize: '0.9rem', marginBottom: '1.75rem' }}>
-              {aiGenerated ? 'AI-generated quiz' : 'Standard quiz'}
+              {percentage === 100 ? (t ? t('quiz.perfectScore', 'Flawless! 🏆') : 'Flawless! 🏆') : percentage >= 70 ? (t ? t('quiz.goodScore', 'Good job! 🎉') : 'Good job! 🎉') : (t ? t('quiz.passScore', 'Keep exploring! 👍') : 'Keep exploring! 👍')}
             </p>
 
             <div style={{ backgroundColor: 'var(--bg-subtle)', borderRadius: 'var(--radius-sm)', padding: '1.5rem', marginBottom: '1.75rem' }}>
@@ -128,17 +134,20 @@ export default function Quiz() {
                 {score} <span style={{ fontSize: '1.2rem', color: 'var(--text-tertiary)', fontFamily: 'var(--font-sans)', fontWeight: 400 }}>/ {questions.length}</span>
               </div>
               <div style={{ fontSize: '0.9rem', fontWeight: 500, color: 'var(--text-secondary)', marginTop: '0.25rem' }}>
-                Accuracy: <strong>{percentage}%</strong>
+                {t ? t('quiz.score', 'Score') : 'Accuracy'}: <strong>{percentage}%</strong>
               </div>
             </div>
 
             <div style={{ display: 'flex', gap: '0.75rem', justifyContent: 'center', flexWrap: 'wrap' }}>
               <motion.button className="btn btn-outline" onClick={() => loadQuestions(selectedCategory)} whileHover={{ scale: 1.03 }} whileTap={{ scale: 0.97 }}>
-                <RotateCcw size={14} /> Retry
+                <RotateCcw size={14} /> {t ? t('quiz.restartQuiz', 'Retry') : 'Retry'}
               </motion.button>
               <motion.button className="btn btn-primary" onClick={handleGenerateAiQuiz} whileHover={{ scale: 1.03 }} whileTap={{ scale: 0.97 }}>
-                <Sparkles size={14} /> New AI Quiz
+                <Sparkles size={14} /> {t ? t('quiz.startAiQuiz', 'New AI Quiz') : 'New AI Quiz'}
               </motion.button>
+              <Link to="/dashboard" className="btn btn-outline" style={{ display: 'inline-flex', alignItems: 'center', gap: '5px' }}>
+                {t ? t('quiz.viewDashboard', 'View Dashboard') : 'View Dashboard'}
+              </Link>
             </div>
           </div>
         </motion.div>
@@ -162,9 +171,10 @@ export default function Quiz() {
         <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '1.5rem', flexWrap: 'wrap', gap: '1rem' }}>
           <div>
             <div className="chip chip-neutral" style={{ marginBottom: '0.4rem' }}>
-              <Brain size={11} /> Quiz
+              <Brain size={11} /> {t ? t('nav.quiz', 'Quiz') : 'Quiz'}
             </div>
-            <h1 style={{ fontSize: '1.8rem', margin: 0 }}>Knowledge Check</h1>
+            <h1 style={{ fontSize: '1.8rem', margin: 0 }}>{t ? t('quiz.title', 'Knowledge Check') : 'Knowledge Check'}</h1>
+            <p style={{ color: 'var(--text-secondary)', fontSize: '0.88rem', margin: '0.2rem 0 0 0' }}>{t ? t('quiz.subtitle', 'Test your understanding') : 'Test your understanding'}</p>
           </div>
 
           <motion.button
@@ -174,7 +184,7 @@ export default function Quiz() {
             whileHover={{ scale: 1.03 }}
             whileTap={{ scale: 0.97 }}
           >
-            <Sparkles size={13} /> AI Quiz
+            <Sparkles size={13} /> {t ? t('quiz.startAiQuiz', 'AI Quiz') : 'AI Quiz'}
           </motion.button>
         </div>
 
@@ -224,8 +234,8 @@ export default function Quiz() {
           >
             {/* Progress */}
             <div style={{ display: 'flex', justifyContent: 'space-between', color: 'var(--text-tertiary)', fontSize: '0.8rem', fontWeight: 500, marginBottom: '1rem' }}>
-              <span style={{ fontFamily: 'var(--font-mono)' }}>{currentIdx + 1}/{questions.length}</span>
-              <span>Score: {score}</span>
+              <span style={{ fontFamily: 'var(--font-mono)' }}>{t ? t('quiz.questionPrefix', 'Question') : 'Question'} {currentIdx + 1} {t ? t('quiz.of', '/') : '/'} {questions.length}</span>
+              <span>{t ? t('quiz.score', 'Score') : 'Score'}: {score}</span>
             </div>
 
             <h2 style={{ fontSize: '1.15rem', marginBottom: '1.75rem', lineHeight: '1.5', fontFamily: 'var(--font-serif)' }}>
@@ -286,16 +296,16 @@ export default function Quiz() {
               >
                 <div style={{ marginBottom: '1.25rem', backgroundColor: 'var(--bg-subtle)', padding: '0.85rem 1rem', borderRadius: 'var(--radius-sm)' }}>
                   <div style={{ fontSize: '0.7rem', textTransform: 'uppercase', letterSpacing: '0.04em', color: 'var(--text-tertiary)', fontWeight: 600, marginBottom: '0.2rem' }}>
-                    Explanation
+                    {t ? t('quiz.explanation', 'Explanation:') : 'Explanation:'}
                   </div>
                   <span style={{ color: 'var(--text-primary)', fontSize: '0.88rem', lineHeight: '1.6' }}>
-                    {currentQ.explanation || 'Review the historical context and key theories for this topic.'}
+                    {currentQ.explanation || (t ? t('quiz.explanation', 'Review the historical context.') : 'Review the historical context.')}
                   </span>
                 </div>
 
                 <div style={{ textAlign: 'right' }}>
                   <motion.button className="btn btn-primary" onClick={handleNextQuestion} whileHover={{ scale: 1.03 }} whileTap={{ scale: 0.97 }}>
-                    <span>{currentIdx + 1 === questions.length ? 'View Results' : 'Next'}</span>
+                    <span>{currentIdx + 1 === questions.length ? (t ? t('quiz.finishQuiz', 'View Results') : 'View Results') : (t ? t('quiz.nextQuestion', 'Next') : 'Next')}</span>
                     <ArrowRight size={14} />
                   </motion.button>
                 </div>

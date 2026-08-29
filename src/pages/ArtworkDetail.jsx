@@ -13,7 +13,7 @@ const EASE = [0.16, 1, 0.3, 1];
 
 export default function ArtworkDetail() {
   const { movementId, artistId, id } = useParams();
-  const { markArtworkViewed, progress, toggleFavorite, apiKey, customImages } = useContext(AppContext) || {};
+  const { markArtworkViewed, progress, toggleFavorite, apiKey, cfWorkerUrl, customImages, t } = useContext(AppContext) || {};
 
   const [isZoomed, setIsZoomed] = useState(false);
   const [showUploadModal, setShowUploadModal] = useState(false);
@@ -42,8 +42,8 @@ export default function ArtworkDetail() {
   if (!artwork || !artist || !movement) {
     return (
       <div className="container" style={{ textAlign: 'center', padding: '6rem 0' }}>
-        <h2 style={{ fontFamily: 'var(--font-serif)', marginBottom: '1rem' }}>Work not found</h2>
-        <Link to="/" className="btn btn-primary">Back to Overview</Link>
+        <h2 style={{ fontFamily: 'var(--font-serif)', marginBottom: '1rem' }}>{t ? t('artwork.notFound', '未找到该作品信息') : 'Work not found'}</h2>
+        <Link to="/" className="btn btn-primary">{t ? t('artwork.backOverview', '返回总览') : 'Back to Overview'}</Link>
       </div>
     );
   }
@@ -60,7 +60,7 @@ export default function ArtworkDetail() {
       );
       setAiAnalysis(res);
     } catch (err) {
-      setAiError(err.message || 'AI analysis failed. Please configure API Key in Settings.');
+      setAiError(err.message || (t ? t('artwork.aiNeedKey', '请在设置中配置 API Key 以启用 AI 对话') : 'AI analysis failed. Please configure API Key in Settings.'));
     } finally {
       setAiLoading(false);
     }
@@ -76,7 +76,7 @@ export default function ArtworkDetail() {
       >
         {/* Breadcrumb */}
         <div className="breadcrumb">
-          <Link to="/">Overview</Link>
+          <Link to="/">{t ? t('movement.backOverview', 'Overview') : 'Overview'}</Link>
           <ChevronRight size={12} />
           <Link to={`/movement/${movement.id}`}>{movement.englishName}</Link>
           <ChevronRight size={12} />
@@ -105,7 +105,7 @@ export default function ArtworkDetail() {
                 </span>
                 {isCustomized && (
                   <span className="chip chip-blue" style={{ fontSize: '0.72rem' }}>
-                    已自定义图片
+                    {t ? t('artwork.customizedImage', '已自定义图片') : '已自定义图片'}
                   </span>
                 )}
               </div>
@@ -130,7 +130,7 @@ export default function ArtworkDetail() {
                 title="更换或修正此作品图片"
               >
                 <Camera size={13} />
-                <span>更换图片</span>
+                <span>{t ? t('artwork.replaceImage', '更换图片') : '更换图片'}</span>
               </motion.button>
 
               <motion.button
@@ -141,7 +141,7 @@ export default function ArtworkDetail() {
                 style={{ padding: '0.45rem 0.85rem', fontSize: '0.84rem' }}
               >
                 <Heart size={14} fill={isFav ? '#e11d48' : 'none'} color={isFav ? '#e11d48' : 'var(--text-secondary)'} />
-                <span>{isFav ? 'Saved' : 'Save'}</span>
+                <span>{isFav ? (t ? t('artwork.saved', 'Saved') : 'Saved') : (t ? t('artwork.save', 'Save') : 'Save')}</span>
               </motion.button>
             </div>
           </div>
@@ -197,7 +197,7 @@ export default function ArtworkDetail() {
                 }}
                 title="更换或修正此作品图片"
               >
-                <Camera size={12} /> 更换图片
+                <Camera size={12} /> {t ? t('artwork.replaceImage', '更换图片') : '更换图片'}
               </button>
 
               <div style={{
@@ -207,7 +207,7 @@ export default function ArtworkDetail() {
                 fontSize: '0.72rem', backdropFilter: 'blur(6px)',
                 display: 'flex', alignItems: 'center', gap: '5px'
               }}>
-                <Maximize2 size={11} /> View full size
+                <Maximize2 size={11} /> {t ? t('artwork.viewFullSize', 'View full size') : 'View full size'}
               </div>
             </div>
           </motion.div>
@@ -222,7 +222,7 @@ export default function ArtworkDetail() {
               transition={{ duration: 0.4, delay: 0.2, ease: EASE }}
             >
               <div style={{ fontSize: '0.72rem', textTransform: 'uppercase', letterSpacing: '0.05em', color: 'var(--text-tertiary)', fontWeight: 600, marginBottom: '0.5rem' }}>
-                Curatorial Notes
+                {t ? t('artwork.curatorialNotes', 'Curatorial Notes') : 'Curatorial Notes'}
               </div>
               <p style={{ fontSize: '0.94rem', lineHeight: '1.75', color: 'var(--text-primary)', margin: 0 }}>
                 {artwork.notes}
@@ -238,7 +238,7 @@ export default function ArtworkDetail() {
                 transition={{ duration: 0.4, delay: 0.25, ease: EASE }}
               >
                 <div style={{ fontSize: '0.72rem', textTransform: 'uppercase', letterSpacing: '0.05em', color: 'var(--text-tertiary)', fontWeight: 600, marginBottom: '0.65rem' }}>
-                  Key Points
+                  {t ? t('artwork.keyPoints', 'Key Examination Points') : 'Key Points'}
                 </div>
                 <div style={{ display: 'flex', flexDirection: 'column', gap: '0.6rem' }}>
                   {artwork.knowledgePoints.map((kp, idx) => (
@@ -265,8 +265,8 @@ export default function ArtworkDetail() {
             <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
               <Bot size={20} style={{ color: 'var(--text-primary)' }} />
               <div>
-                <h3 style={{ fontSize: '1.1rem', fontFamily: 'var(--font-serif)', margin: 0 }}>AI Analysis</h3>
-                <div style={{ fontSize: '0.76rem', color: 'var(--text-tertiary)' }}>Formal analysis, iconography & historical context</div>
+                <h3 style={{ fontSize: '1.1rem', fontFamily: 'var(--font-serif)', margin: 0 }}>{t ? t('artwork.aiSectionTitle', 'AI Analysis') : 'AI Analysis'}</h3>
+                <div style={{ fontSize: '0.76rem', color: 'var(--text-tertiary)' }}>{t ? t('artwork.aiSectionDesc', 'Formal analysis, iconography & historical context') : 'Formal analysis, iconography & historical context'}</div>
               </div>
             </div>
 
@@ -280,12 +280,12 @@ export default function ArtworkDetail() {
               {aiLoading ? (
                 <>
                   <Loader2 size={14} className="animate-spin" />
-                  <span>Analyzing...</span>
+                  <span>{t ? t('artwork.aiGenerating', 'Analyzing...') : 'Analyzing...'}</span>
                 </>
               ) : (
                 <>
                   <Sparkles size={14} />
-                  <span>Generate AI Analysis</span>
+                  <span>{t ? t('artwork.generateAi', 'Generate AI Analysis') : 'Generate AI Analysis'}</span>
                 </>
               )}
             </motion.button>
@@ -311,7 +311,7 @@ export default function ArtworkDetail() {
               borderRadius: 'var(--radius-sm)', marginTop: '0.5rem',
               textAlign: 'center', color: 'var(--text-tertiary)', fontSize: '0.84rem'
             }}>
-              Click "Generate AI Analysis" to receive an in-depth academic interpretation.
+              {t ? t('artwork.aiPlaceholder', 'Click "Generate AI Analysis" to receive an in-depth academic interpretation.') : 'Click "Generate AI Analysis" to receive an in-depth academic interpretation.'}
             </div>
           )}
         </motion.div>

@@ -13,7 +13,7 @@ const EASE = [0.16, 1, 0.3, 1];
 
 export default function ArtistDetail() {
   const { movementId, id } = useParams();
-  const { resolveArtistAvatar, customImages } = useContext(AppContext) || {};
+  const { resolveArtistAvatar, customImages, t } = useContext(AppContext) || {};
   const [showUploadModal, setShowUploadModal] = useState(false);
   const [artworkModalTarget, setArtworkModalTarget] = useState(null);
 
@@ -23,8 +23,8 @@ export default function ArtistDetail() {
   if (!movement || !artist) {
     return (
       <div className="container" style={{ textAlign: 'center', padding: '6rem 0' }}>
-        <h2 style={{ fontFamily: 'var(--font-serif)', marginBottom: '1rem' }}>Artist not found</h2>
-        <Link to="/" className="btn btn-primary">Back to Overview</Link>
+        <h2 style={{ fontFamily: 'var(--font-serif)', marginBottom: '1rem' }}>{t ? t('artist.notFound', '未找到该大师信息') : 'Artist not found'}</h2>
+        <Link to="/" className="btn btn-primary">{t ? t('artist.backOverview', '返回总览') : 'Back to Overview'}</Link>
       </div>
     );
   }
@@ -44,7 +44,7 @@ export default function ArtistDetail() {
       >
         {/* Breadcrumb */}
         <div className="breadcrumb">
-          <Link to="/">Overview</Link>
+          <Link to="/">{t ? t('movement.backOverview', 'Overview') : 'Overview'}</Link>
           <ChevronRight size={12} />
           <Link to={`/movement/${movement.id}`}>{movement.englishName}</Link>
           <ChevronRight size={12} />
@@ -94,7 +94,7 @@ export default function ArtistDetail() {
                 onMouseLeave={(e) => e.currentTarget.style.opacity = '0'}
               >
                 <Camera size={18} style={{ marginBottom: '2px' }} />
-                <span>更换肖像</span>
+                <span>{t ? t('artist.changeAvatar', '更换肖像') : '更换肖像'}</span>
               </div>
             </motion.div>
 
@@ -109,7 +109,7 @@ export default function ArtistDetail() {
                 </span>
                 {isCustomized && (
                   <span className="chip chip-blue" style={{ fontSize: '0.72rem' }}>
-                    已自定义肖像
+                    {t ? t('artist.customizedAvatar', '已自定义肖像') : '已自定义肖像'}
                   </span>
                 )}
                 <button
@@ -117,7 +117,7 @@ export default function ArtistDetail() {
                   className="btn btn-outline"
                   style={{ padding: '2px 8px', fontSize: '0.72rem', height: '22px', marginLeft: 'auto' }}
                 >
-                  <Edit3 size={10} /> 更换肖像
+                  <Edit3 size={10} /> {t ? t('artist.changeAvatar', '更换肖像') : '更换肖像'}
                 </button>
               </div>
 
@@ -163,7 +163,7 @@ export default function ArtistDetail() {
           borderBottom: '1px solid var(--border-hairline)'
         }}>
           <h2 style={{ fontFamily: 'var(--font-serif)', fontWeight: 500 }}>
-            Selected Works
+            {t ? t('artist.selectedWorks', 'Selected Works') : 'Selected Works'}
             <span style={{ fontSize: '0.9rem', color: 'var(--text-tertiary)', fontFamily: 'var(--font-sans)', fontWeight: 400, marginLeft: '0.5rem' }}>
               ({artist.artworks.length})
             </span>
@@ -213,7 +213,7 @@ export default function ArtistDetail() {
                             borderRadius: 'var(--radius-pill)'
                           }}
                         >
-                          <Camera size={11} /> 更换
+                          <Camera size={11} /> {t ? t('artwork.replaceImage', '更换') : '更换'}
                         </button>
                       </div>
 
@@ -221,7 +221,7 @@ export default function ArtistDetail() {
                         <span className="chip chip-neutral">{work.date}</span>
                         {hasCustomImg && (
                           <span className="chip chip-blue" style={{ fontSize: '0.68rem', padding: '1px 6px' }}>
-                            已自定义
+                            {t ? t('artwork.customizedImage', '已自定义') : '已自定义'}
                           </span>
                         )}
                       </div>
@@ -250,7 +250,7 @@ export default function ArtistDetail() {
                       display: 'flex', alignItems: 'center', justifyContent: 'space-between',
                       color: 'var(--text-primary)', fontWeight: 550, fontSize: '0.82rem'
                     }}>
-                      <span>Details</span>
+                      <span>{t ? t('artist.details', 'Details') : 'Details'}</span>
                       <ArrowRight size={14} />
                     </div>
                   </div>
