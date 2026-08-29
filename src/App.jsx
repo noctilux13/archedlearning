@@ -8,7 +8,6 @@ import ArtistDetail from './pages/ArtistDetail';
 import ArtworkDetail from './pages/ArtworkDetail';
 import Quiz from './pages/Quiz';
 import Dashboard from './pages/Dashboard';
-import Flashcards from './pages/Flashcards';
 import SettingsPage from './pages/Settings';
 
 function App() {
@@ -24,7 +23,6 @@ function App() {
               <Route path="/movement/:id" element={<MovementDetail />} />
               <Route path="/artist/:movementId/:id" element={<ArtistDetail />} />
               <Route path="/artwork/:movementId/:artistId/:id" element={<ArtworkDetail />} />
-              <Route path="/flashcards" element={<Flashcards />} />
               <Route path="/quiz" element={<Quiz />} />
               <Route path="/dashboard" element={<Dashboard />} />
               <Route path="/settings" element={<SettingsPage />} />

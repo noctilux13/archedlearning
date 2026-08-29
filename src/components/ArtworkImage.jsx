@@ -1,6 +1,7 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import { ImageOff, ExternalLink, CheckCircle2 } from 'lucide-react';
 import { getAssetUrl } from '../utils/assetUrl';
+import { AppContext } from '../context/AppContext';
 import embeddedArtworksCache from '../data/artworksCache.json';
 
 export const ArtworkImage = ({ 
@@ -15,10 +16,13 @@ export const ArtworkImage = ({
 }) => {
   const [loaded, setLoaded] = useState(false);
   const [error, setError] = useState(false);
+  const { resolveArtworkUrl } = useContext(AppContext) || { resolveArtworkUrl: (_, d) => d };
 
   const data = embeddedArtworksCache?.[artworkId];
+  const defaultUrl = data?.image_url ? getAssetUrl(data.image_url) : '';
+  const finalImageUrl = resolveArtworkUrl ? resolveArtworkUrl(artworkId, defaultUrl) : defaultUrl;
 
-  if (!data || !data.image_url || error) {
+  if (!finalImageUrl || error) {
     return (
       <div 
         className={`flex flex-col items-center justify-center bg-zinc-50 dark:bg-zinc-900 border border-zinc-200/60 dark:border-zinc-800 rounded-md text-zinc-400 p-4 text-center ${className}`}
@@ -33,7 +37,6 @@ export const ArtworkImage = ({
     );
   }
 
-  const finalImageUrl = getAssetUrl(data.image_url);
   const resolvedFit = className.includes('object-contain') ? 'contain' : (className.includes('object-cover') ? 'cover' : fit);
 
   return (

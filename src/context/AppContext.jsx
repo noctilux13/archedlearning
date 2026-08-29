@@ -1,4 +1,5 @@
-import React, { createContext, useState, useEffect } from 'react';
+import React, { createContext, useState, useEffect, useCallback } from 'react';
+import { getAllCustomImages, saveCustomImage, deleteCustomImage, clearAllCustomImages } from '../utils/imageStorage';
 
 export const AppContext = createContext();
 
@@ -25,10 +26,18 @@ export const AppProvider = ({ children }) => {
     return defaults;
   });
 
-  const [customImageMap, setCustomImageMap] = useState(() => {
-    const saved = localStorage.getItem('customImageMap');
-    return saved ? JSON.parse(saved) : {};
-  });
+  const [customImages, setCustomImages] = useState({});
+
+  // Load custom images from IndexedDB on startup
+  useEffect(() => {
+    getAllCustomImages().then(map => {
+      if (map && Object.keys(map).length > 0) {
+        setCustomImages(map);
+      }
+    }).catch(err => {
+      console.warn('Failed to load custom images:', err);
+    });
+  }, []);
 
   useEffect(() => {
     localStorage.setItem('groqApiKey', apiKey);
@@ -41,10 +50,6 @@ export const AppProvider = ({ children }) => {
   useEffect(() => {
     localStorage.setItem('artProgress', JSON.stringify(progress));
   }, [progress]);
-
-  useEffect(() => {
-    localStorage.setItem('customImageMap', JSON.stringify(customImageMap));
-  }, [customImageMap]);
 
   const markArtworkViewed = (id) => {
     if (!(progress.viewedArtworks || []).includes(id)) {
@@ -83,12 +88,40 @@ export const AppProvider = ({ children }) => {
     localStorage.setItem('artProgress', JSON.stringify(fresh));
   };
 
-  const updateArtworkImage = (artworkId, newImageUrl) => {
-    setCustomImageMap(prev => ({
+  // Custom image handlers
+  const setCustomImage = useCallback(async (id, dataUrl, meta = {}) => {
+    const record = await saveCustomImage(id, dataUrl, meta);
+    setCustomImages(prev => ({
       ...prev,
-      [artworkId]: newImageUrl
+      [id]: record
     }));
-  };
+    return record;
+  }, []);
+
+  const removeCustomImage = useCallback(async (id) => {
+    await deleteCustomImage(id);
+    setCustomImages(prev => {
+      const next = { ...prev };
+      delete next[id];
+      return next;
+    });
+  }, []);
+
+  const clearAllOverrides = useCallback(async () => {
+    await clearAllCustomImages();
+    setCustomImages({});
+  }, []);
+
+  // Fast helper to resolve an image URL with custom override priority
+  const resolveArtworkUrl = useCallback((artworkId, defaultUrl) => {
+    const custom = customImages[`artwork:${artworkId}`] || customImages[artworkId];
+    return custom ? custom.dataUrl : defaultUrl;
+  }, [customImages]);
+
+  const resolveArtistAvatar = useCallback((artistId, defaultUrl) => {
+    const custom = customImages[`artist:${artistId}`] || customImages[artistId];
+    return custom ? custom.dataUrl : defaultUrl;
+  }, [customImages]);
 
   return (
     <AppContext.Provider value={{
@@ -101,8 +134,12 @@ export const AppProvider = ({ children }) => {
       toggleFavorite,
       addQuizScore,
       resetProgress,
-      customImageMap,
-      updateArtworkImage
+      customImages,
+      setCustomImage,
+      removeCustomImage,
+      clearAllOverrides,
+      resolveArtworkUrl,
+      resolveArtistAvatar
     }}>
       {children}
     </AppContext.Provider>

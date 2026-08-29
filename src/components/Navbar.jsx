@@ -5,7 +5,6 @@ import { Compass, Layers, Brain, Award, Settings as SettingsIcon } from 'lucide-
 
 const NAV_ITEMS = [
   { to: '/', label: '全景', icon: Compass, end: true },
-  { to: '/flashcards', label: '卡片', icon: Layers },
   { to: '/quiz', label: '测验', icon: Brain },
   { to: '/dashboard', label: '看板', icon: Award },
   { to: '/settings', label: '设置', icon: SettingsIcon },

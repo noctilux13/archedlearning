@@ -1,19 +1,31 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext, useState, useRef } from 'react';
 import { motion } from 'framer-motion';
 import { AppContext } from '../context/AppContext';
 import { callGroqAi } from '../services/aiService';
 import MouseSpotlight from '../components/MouseSpotlight';
-import { Settings as SettingsIcon, Key, Globe, CheckCircle2, AlertCircle, Loader2, Sparkles, Server } from 'lucide-react';
+import { Settings as SettingsIcon, Key, Globe, CheckCircle2, AlertCircle, Loader2, Sparkles, Server, Image as ImageIcon, Trash2, Download, Upload, RotateCcw } from 'lucide-react';
 
 const EASE = [0.16, 1, 0.3, 1];
 
 export default function Settings() {
-  const { apiKey, setApiKey, cfWorkerUrl, setCfWorkerUrl } = useContext(AppContext);
+  const {
+    apiKey,
+    setApiKey,
+    cfWorkerUrl,
+    setCfWorkerUrl,
+    customImages,
+    removeCustomImage,
+    clearAllOverrides,
+    setCustomImage
+  } = useContext(AppContext);
 
   const [inputKey, setInputKey] = useState(apiKey);
   const [inputWorkerUrl, setInputWorkerUrl] = useState(cfWorkerUrl);
   const [testing, setTesting] = useState(false);
   const [testResult, setTestResult] = useState(null);
+  const importFileRef = useRef(null);
+
+  const customList = Object.values(customImages || {});
 
   const handleSave = (e) => {
     e.preventDefault();
@@ -47,6 +59,46 @@ export default function Settings() {
     }
   };
 
+  // Export custom images as a JSON file
+  const handleExportBackup = () => {
+    const dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(customImages, null, 2));
+    const downloadAnchor = document.createElement('a');
+    downloadAnchor.setAttribute("href", dataStr);
+    downloadAnchor.setAttribute("download", `art_learning_custom_images_${new Date().toISOString().slice(0, 10)}.json`);
+    document.body.appendChild(downloadAnchor);
+    downloadAnchor.click();
+    downloadAnchor.remove();
+  };
+
+  // Import custom images from JSON file
+  const handleImportBackup = (e) => {
+    const file = e.target.files?.[0];
+    if (!file) return;
+
+    const reader = new FileReader();
+    reader.onload = async (event) => {
+      try {
+        const parsed = JSON.parse(event.target.result);
+        if (typeof parsed === 'object' && parsed !== null) {
+          for (const [key, val] of Object.entries(parsed)) {
+            if (val && (val.dataUrl || typeof val === 'string')) {
+              const dataUrl = val.dataUrl || val;
+              await setCustomImage(key, dataUrl, {
+                title: val.title || key,
+                targetType: val.targetType || (key.startsWith('artist:') ? 'artist' : 'artwork')
+              });
+            }
+          }
+          alert(`成功导入 ${Object.keys(parsed).length} 项自定义图片配置！`);
+        }
+      } catch (err) {
+        alert('导入失败：文件格式不正确 (' + err.message + ')');
+      }
+    };
+    reader.readAsText(file);
+    e.target.value = '';
+  };
+
   return (
     <MouseSpotlight>
       <motion.div
@@ -54,18 +106,163 @@ export default function Settings() {
         animate={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
         transition={{ duration: 0.5, ease: EASE }}
         className="container"
-        style={{ maxWidth: '720px' }}
+        style={{ maxWidth: '780px' }}
       >
         {/* Header */}
         <div style={{ textAlign: 'center', marginBottom: '2.5rem' }}>
           <div className="chip chip-neutral" style={{ marginBottom: '0.75rem' }}>
             <SettingsIcon size={11} /> Settings
           </div>
-          <h1 style={{ marginBottom: '0.35rem' }}>AI & Network</h1>
+          <h1 style={{ marginBottom: '0.35rem' }}>Preferences & Configuration</h1>
           <p style={{ color: 'var(--text-secondary)', fontSize: '0.92rem' }}>
-            Configure Groq API key and optional proxy to enable AI tutoring, quiz generation, and deep-dive analysis.
+            Configure AI API key, network proxy, and manage custom image replacements.
           </p>
         </div>
+
+        {/* Custom Image Overrides Section */}
+        <motion.div
+          className="card-editorial"
+          style={{ marginBottom: '2.5rem' }}
+          initial={{ opacity: 0, y: 16 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.45, delay: 0.05, ease: EASE }}
+        >
+          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '1.25rem', flexWrap: 'wrap', gap: '0.75rem' }}>
+            <div>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                <ImageIcon size={18} style={{ color: 'var(--text-primary)' }} />
+                <h2 style={{ fontSize: '1.15rem', fontFamily: 'var(--font-serif)', margin: 0 }}>
+                  自定义图片管理 ({customList.length})
+                </h2>
+              </div>
+              <p style={{ fontSize: '0.8rem', color: 'var(--text-tertiary)', margin: '0.25rem 0 0 0' }}>
+                您手动上传或更换的艺术家肖像与作品图片（保存在本地浏览器中）
+              </p>
+            </div>
+
+            <div style={{ display: 'flex', gap: '0.5rem', flexWrap: 'wrap' }}>
+              <input
+                ref={importFileRef}
+                type="file"
+                accept=".json"
+                onChange={handleImportBackup}
+                style={{ display: 'none' }}
+              />
+              <button
+                type="button"
+                className="btn btn-outline"
+                onClick={() => importFileRef.current?.click()}
+                style={{ padding: '0.35rem 0.75rem', fontSize: '0.78rem' }}
+                title="导入之前导出的图片配置 JSON"
+              >
+                <Upload size={12} /> 导入配置
+              </button>
+
+              {customList.length > 0 && (
+                <>
+                  <button
+                    type="button"
+                    className="btn btn-outline"
+                    onClick={handleExportBackup}
+                    style={{ padding: '0.35rem 0.75rem', fontSize: '0.78rem' }}
+                    title="备份所有自定义图片配置为 JSON 文件"
+                  >
+                    <Download size={12} /> 导出备份
+                  </button>
+                  <button
+                    type="button"
+                    className="btn btn-outline"
+                    onClick={() => { if (window.confirm('确认清空所有自定义替换的图片？')) clearAllOverrides(); }}
+                    style={{ padding: '0.35rem 0.75rem', fontSize: '0.78rem', color: 'var(--accent-red)' }}
+                  >
+                    <RotateCcw size={12} /> 清空全部
+                  </button>
+                </>
+              )}
+            </div>
+          </div>
+
+          {customList.length === 0 ? (
+            <div style={{
+              padding: '2rem 1rem',
+              backgroundColor: 'var(--bg-subtle)',
+              borderRadius: 'var(--radius-sm)',
+              textAlign: 'center',
+              color: 'var(--text-tertiary)',
+              fontSize: '0.86rem'
+            }}>
+              暂无自定义替换的图片。您可以在任何艺术家或作品详情页点击「更换图片」手动上传修正！
+            </div>
+          ) : (
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(220px, 1fr))', gap: '0.85rem' }}>
+              {customList.map((item) => (
+                <div
+                  key={item.id}
+                  style={{
+                    display: 'flex',
+                    alignItems: 'center',
+                    gap: '10px',
+                    padding: '8px 10px',
+                    backgroundColor: 'var(--bg-subtle)',
+                    borderRadius: 'var(--radius-sm)',
+                    border: '1px solid var(--border-hairline)'
+                  }}
+                >
+                  <div style={{
+                    width: '42px',
+                    height: '42px',
+                    borderRadius: item.targetType === 'artist' ? '50%' : 'var(--radius-xs)',
+                    overflow: 'hidden',
+                    backgroundColor: 'var(--bg-surface)',
+                    flexShrink: 0,
+                    border: '1px solid var(--border-hairline)'
+                  }}>
+                    <img
+                      src={item.dataUrl}
+                      alt={item.title || item.id}
+                      style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+                      onError={(e) => { e.target.style.display = 'none'; }}
+                    />
+                  </div>
+
+                  <div style={{ flex: 1, minWidth: 0 }}>
+                    <div style={{
+                      fontSize: '0.82rem',
+                      fontWeight: 550,
+                      color: 'var(--text-primary)',
+                      whiteSpace: 'nowrap',
+                      overflow: 'hidden',
+                      textOverflow: 'ellipsis'
+                    }}>
+                      {item.title || item.id}
+                    </div>
+                    <div style={{ fontSize: '0.7rem', color: 'var(--text-tertiary)' }}>
+                      {item.targetType === 'artist' ? '艺术家肖像' : '作品图片'}
+                    </div>
+                  </div>
+
+                  <button
+                    onClick={() => removeCustomImage(item.id)}
+                    style={{
+                      background: 'none',
+                      border: 'none',
+                      color: 'var(--text-tertiary)',
+                      cursor: 'pointer',
+                      padding: '4px',
+                      borderRadius: 'var(--radius-xs)',
+                      transition: 'color 0.2s ease'
+                    }}
+                    title="恢复为默认图片"
+                    onMouseEnter={(e) => e.currentTarget.style.color = 'var(--accent-red)'}
+                    onMouseLeave={(e) => e.currentTarget.style.color = 'var(--text-tertiary)'}
+                  >
+                    <Trash2 size={14} />
+                  </button>
+                </div>
+              ))}
+            </div>
+          )}
+        </motion.div>
 
         {/* API Form Card */}
         <motion.div

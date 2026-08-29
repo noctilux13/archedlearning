@@ -1,16 +1,21 @@
-import React from 'react';
+import React, { useState, useContext } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { artData } from '../data/artData';
+import { AppContext } from '../context/AppContext';
 import MouseSpotlight from '../components/MouseSpotlight';
 import { ArtworkImage } from '../components/ArtworkImage';
+import ImageUploadModal from '../components/ImageUploadModal';
 import { getAssetUrl } from '../utils/assetUrl';
-import { ArrowRight, ChevronRight, Calendar, Landmark, Palette } from 'lucide-react';
+import { ArrowRight, ChevronRight, Calendar, Landmark, Palette, Camera, Edit3 } from 'lucide-react';
 
 const EASE = [0.16, 1, 0.3, 1];
 
 export default function ArtistDetail() {
   const { movementId, id } = useParams();
+  const { resolveArtistAvatar, customImages } = useContext(AppContext) || {};
+  const [showUploadModal, setShowUploadModal] = useState(false);
+
   const movement = artData.find(m => m.id === movementId);
   const artist = movement?.artists.find(a => a.id === id);
 
@@ -24,6 +29,9 @@ export default function ArtistDetail() {
   }
 
   const isArch = movement.category === 'architecture';
+  const defaultAvatarUrl = getAssetUrl(artist.avatar);
+  const avatarUrl = resolveArtistAvatar ? resolveArtistAvatar(artist.id, defaultAvatarUrl) : defaultAvatarUrl;
+  const isCustomized = Boolean(customImages?.[`artist:${artist.id}`] || customImages?.[artist.id]);
 
   return (
     <MouseSpotlight>
@@ -51,24 +59,42 @@ export default function ArtistDetail() {
           transition={{ duration: 0.45, delay: 0.1, ease: EASE }}
         >
           <div style={{ display: 'flex', gap: '2rem', alignItems: 'flex-start', flexWrap: 'wrap' }}>
-            {/* Avatar */}
+            {/* Avatar with hover edit overlay */}
             <motion.div
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.4, delay: 0.15, ease: EASE }}
+              onClick={() => setShowUploadModal(true)}
               style={{
-                width: '100px', height: '100px', borderRadius: '50%',
+                width: '108px', height: '108px', borderRadius: '50%',
                 overflow: 'hidden', backgroundColor: 'var(--bg-subtle)',
                 flexShrink: 0, border: '1px solid var(--border-hairline)',
-                boxShadow: 'var(--shadow-card)'
+                boxShadow: 'var(--shadow-card)', position: 'relative',
+                cursor: 'pointer'
               }}
+              title="点击更换/修正肖像图片"
             >
               <img
-                src={getAssetUrl(artist.avatar)}
+                src={avatarUrl}
                 alt={artist.englishName || artist.name}
                 style={{ width: '100%', height: '100%', objectFit: 'cover' }}
                 onError={(e) => { e.target.style.display = 'none'; }}
               />
+              <div
+                style={{
+                  position: 'absolute', inset: 0,
+                  backgroundColor: 'rgba(0,0,0,0.45)',
+                  display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center',
+                  opacity: 0, transition: 'opacity 0.2s ease', color: '#fff',
+                  fontSize: '0.7rem', fontWeight: 500, backdropFilter: 'blur(2px)'
+                }}
+                className="hover-reveal"
+                onMouseEnter={(e) => e.currentTarget.style.opacity = '1'}
+                onMouseLeave={(e) => e.currentTarget.style.opacity = '0'}
+              >
+                <Camera size={18} style={{ marginBottom: '2px' }} />
+                <span>更换肖像</span>
+              </div>
             </motion.div>
 
             <div style={{ flex: '1 1 320px' }}>
@@ -80,6 +106,18 @@ export default function ArtistDetail() {
                   {isArch ? <Landmark size={11} /> : <Palette size={11} />}
                   {movement.englishName}
                 </span>
+                {isCustomized && (
+                  <span className="chip chip-blue" style={{ fontSize: '0.72rem' }}>
+                    已自定义肖像
+                  </span>
+                )}
+                <button
+                  onClick={() => setShowUploadModal(true)}
+                  className="btn btn-outline"
+                  style={{ padding: '2px 8px', fontSize: '0.72rem', height: '22px', marginLeft: 'auto' }}
+                >
+                  <Edit3 size={10} /> 更换肖像
+                </button>
               </div>
 
               <h1 style={{ fontSize: 'clamp(1.8rem, 3.5vw, 2.4rem)', marginBottom: '0.25rem' }}>
@@ -95,6 +133,16 @@ export default function ArtistDetail() {
             </div>
           </div>
         </motion.div>
+
+        {/* Upload Modal */}
+        <ImageUploadModal
+          isOpen={showUploadModal}
+          onClose={() => setShowUploadModal(false)}
+          targetType="artist"
+          targetId={artist.id}
+          title={artist.englishName || artist.name}
+          currentDefaultUrl={defaultAvatarUrl}
+        />
 
         {/* Section Title */}
         <div style={{

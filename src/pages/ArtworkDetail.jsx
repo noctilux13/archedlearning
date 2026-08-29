@@ -6,15 +6,17 @@ import { AppContext } from '../context/AppContext';
 import { generateArtworkDeepDive } from '../services/aiService';
 import MouseSpotlight from '../components/MouseSpotlight';
 import { ArtworkImage } from '../components/ArtworkImage';
-import { ChevronRight, Heart, Sparkles, ZoomIn, Bot, Loader2, AlertCircle, Calendar, MapPin, Palette, CheckCircle2, Maximize2, X, Landmark } from 'lucide-react';
+import ImageUploadModal from '../components/ImageUploadModal';
+import { ChevronRight, Heart, Sparkles, ZoomIn, Bot, Loader2, AlertCircle, Calendar, MapPin, Palette, CheckCircle2, Maximize2, X, Landmark, Camera, Edit3 } from 'lucide-react';
 
 const EASE = [0.16, 1, 0.3, 1];
 
 export default function ArtworkDetail() {
   const { movementId, artistId, id } = useParams();
-  const { markArtworkViewed, progress, toggleFavorite, apiKey } = useContext(AppContext);
+  const { markArtworkViewed, progress, toggleFavorite, apiKey, customImages } = useContext(AppContext) || {};
 
   const [isZoomed, setIsZoomed] = useState(false);
+  const [showUploadModal, setShowUploadModal] = useState(false);
   const [aiAnalysis, setAiAnalysis] = useState('');
   const [aiLoading, setAiLoading] = useState(false);
   const [aiError, setAiError] = useState('');
@@ -23,11 +25,12 @@ export default function ArtworkDetail() {
   const artist = movement?.artists.find(a => a.id === artistId);
   const artwork = artist?.artworks.find(a => a.id === id);
 
-  const isFav = (progress.favorites || []).includes(artwork?.id);
+  const isFav = (progress?.favorites || []).includes(artwork?.id);
   const isArch = movement?.category === 'architecture';
+  const isCustomized = Boolean(customImages?.[`artwork:${artwork?.id}`] || customImages?.[artwork?.id]);
 
   useEffect(() => {
-    if (artwork) markArtworkViewed(artwork.id);
+    if (artwork && markArtworkViewed) markArtworkViewed(artwork.id);
   }, [artwork, markArtworkViewed]);
 
   useEffect(() => {
@@ -92,7 +95,7 @@ export default function ArtworkDetail() {
         >
           <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', flexWrap: 'wrap', gap: '1rem', marginBottom: '1rem' }}>
             <div>
-              <div style={{ display: 'flex', gap: '6px', flexWrap: 'wrap', marginBottom: '0.5rem' }}>
+              <div style={{ display: 'flex', gap: '6px', flexWrap: 'wrap', marginBottom: '0.5rem', alignItems: 'center' }}>
                 <span className="chip chip-neutral" style={{ gap: '3px' }}>
                   {isArch ? <Landmark size={10} /> : <Palette size={10} />}
                   {movement.englishName}
@@ -100,6 +103,11 @@ export default function ArtworkDetail() {
                 <span className="chip chip-neutral">
                   <Calendar size={10} /> {artwork.date}
                 </span>
+                {isCustomized && (
+                  <span className="chip chip-blue" style={{ fontSize: '0.72rem' }}>
+                    已自定义图片
+                  </span>
+                )}
               </div>
 
               <h1 style={{ fontSize: 'clamp(1.8rem, 3.5vw, 2.4rem)', margin: '0 0 0.25rem 0' }}>
@@ -112,16 +120,30 @@ export default function ArtworkDetail() {
               </div>
             </div>
 
-            <motion.button
-              className="btn btn-outline"
-              onClick={() => toggleFavorite(artwork.id)}
-              whileHover={{ scale: 1.03 }}
-              whileTap={{ scale: 0.97 }}
-              style={{ padding: '0.45rem 0.85rem', fontSize: '0.84rem' }}
-            >
-              <Heart size={14} fill={isFav ? '#e11d48' : 'none'} color={isFav ? '#e11d48' : 'var(--text-secondary)'} />
-              <span>{isFav ? 'Saved' : 'Save'}</span>
-            </motion.button>
+            <div style={{ display: 'flex', gap: '8px', alignItems: 'center' }}>
+              <motion.button
+                className="btn btn-outline"
+                onClick={() => setShowUploadModal(true)}
+                whileHover={{ scale: 1.03 }}
+                whileTap={{ scale: 0.97 }}
+                style={{ padding: '0.45rem 0.85rem', fontSize: '0.84rem' }}
+                title="更换或修正此作品图片"
+              >
+                <Camera size={13} />
+                <span>更换图片</span>
+              </motion.button>
+
+              <motion.button
+                className="btn btn-outline"
+                onClick={() => toggleFavorite && toggleFavorite(artwork.id)}
+                whileHover={{ scale: 1.03 }}
+                whileTap={{ scale: 0.97 }}
+                style={{ padding: '0.45rem 0.85rem', fontSize: '0.84rem' }}
+              >
+                <Heart size={14} fill={isFav ? '#e11d48' : 'none'} color={isFav ? '#e11d48' : 'var(--text-secondary)'} />
+                <span>{isFav ? 'Saved' : 'Save'}</span>
+              </motion.button>
+            </div>
           </div>
 
           <div style={{ display: 'flex', alignItems: 'center', gap: '5px', fontSize: '0.82rem', color: 'var(--text-tertiary)', borderTop: '1px solid var(--border-hairline)', paddingTop: '0.7rem' }}>
@@ -313,6 +335,15 @@ export default function ArtworkDetail() {
             </motion.div>
           )}
         </AnimatePresence>
+
+        {/* Image Upload Modal */}
+        <ImageUploadModal
+          isOpen={showUploadModal}
+          onClose={() => setShowUploadModal(false)}
+          targetType="artwork"
+          targetId={artwork.id}
+          title={artwork.title}
+        />
       </motion.div>
     </MouseSpotlight>
   );
