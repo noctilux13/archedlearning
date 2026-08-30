@@ -182,14 +182,11 @@ export async function callAiService({ prompt, systemPrompt = '', jsonFormat = fa
   }
 }
 
-// Backward compatible export
-export const callGroqAi = callAiService;
-
 /**
  * Generate AI Quiz
  */
 export async function generateAiQuizFromContent(movementName, count = 3) {
-  const systemPrompt = `You are an expert art history professor. Return valid JSON only with a "questions" array.`;
+  const systemPrompt = `You are a concise art history examination author. Return pure JSON only with a "questions" array. No preamble or markdown conversation.`;
   
   const prompt = `Generate ${count} multiple-choice quiz questions about "${movementName || '20th Century Modern Art movements like Futurism, Dadaism, Surrealism, De Stijl, Pop Art, and European Architecture'}".
 Format strictly as a JSON object:
@@ -210,7 +207,6 @@ Format strictly as a JSON object:
     const parsed = JSON.parse(jsonString);
     return parsed.questions || parsed;
   } catch (e) {
-    // If wrapped in markdown code fence
     const match = jsonString.match(/```(?:json)?\s*([\s\S]*?)\s*```/);
     if (match) {
       const parsed = JSON.parse(match[1]);
@@ -221,53 +217,66 @@ Format strictly as a JSON object:
 }
 
 /**
- * Generate Deep Explanation for Artwork
+ * Generate Deep Explanation for Artwork (Concise & Razor-Sharp)
  */
 export async function generateArtworkDeepDive(artworkTitle, artistName, movementName, knowledgePoints = []) {
-  const systemPrompt = `你是一位严谨的艺术史学者与策展人。请对指定的艺术作品进行学术级的形式分析、时代背景考据与视觉语言剖析。`;
+  const systemPrompt = `你是一位精炼严谨的艺术史学者与学术导师。
+【严格输出规范】
+1. 直奔核心，严禁任何问候寒暄、讲课式口癖（如“大家好”、“今天我们来分析”）或结语套话。
+2. 语言高密度、精炼沉稳、学术准确，杜绝空洞铺垫与浮夸修辞。
+3. 篇幅严格控制在 250–350 字之间，条理清晰、一针见血。`;
 
-  const prompt = `请针对以下艺术作品生成学术解析报告：
+  const prompt = `请对以下艺术作品进行精炼学术解析：
 - 作品名称：${artworkTitle}
 - 艺术家/建筑师：${artistName}
 - 艺术流派：${movementName}
-- 核心要点：${knowledgePoints.join('；')}
+${knowledgePoints && knowledgePoints.length > 0 ? `- 核心要点：${knowledgePoints.join('；')}` : ''}
 
-请按以下结构阐述：
-1. 【历史背景与时代语境】（阐释该时期的文化与思想源流）
-2. 【画面形式与视觉语言分析】（深入剖析构图法则、色彩配置、线条动势或空间力学结构）
-3. 【艺术史定位与考点要义】（客观归纳在艺术史谱系中的地位及学术考查重点）`;
+请直接按以下三点精要阐述：
+1. 【时代语境与思想源流】（概括历史背景与核心观念）
+2. 【视觉语言与形式分析】（深入构图法则、色彩光影、线条动势或空间结构）
+3. 【艺术史考点要义】（提炼该作在研考与艺术史谱系中的核心考点）`;
 
   return await callAiService({ prompt, systemPrompt });
 }
 
 /**
- * Generate Comprehensive Study Report
+ * Generate Comprehensive Study Report (Concise & Actionable)
  */
 export async function generateStudyReport(progressData) {
-  const systemPrompt = `你是一位严谨的艺术史教学导师。请根据用户的研读进度和测验成绩，生成客观结构化的学习归纳与复习建议报告。`;
+  const systemPrompt = `你是一位精炼严谨的艺术史教学导师。
+【准则】直奔要点，杜绝客套废话，结构清晰，篇幅控制在 250 字内。`;
 
-  const prompt = `请根据以下学习数据生成复习归纳报告：
+  const prompt = `请根据研考学习数据生成精要复习建议：
 - 已研读作品数：${progressData.viewedArtworks.length} 件
-- 平均掌握度：${Math.round(progressData.masteryLevel || 0)}%
+- 综合掌握度：${Math.round(progressData.masteryLevel || 0)}%
 - 测验轮次：${progressData.quizScores.length} 次
 
-请包含：
-1. 【研读进展客观评估】
-2. 【重点流派与考点巩固建议】
-3. 【艺术史脉络梳理要领】`;
+按三项要点精炼列出：
+1. 【进度与掌握度评估】
+2. 【重点查漏补缺方向】
+3. 【后续高效复习建议】`;
 
   return await callAiService({ prompt, systemPrompt });
 }
 
 /**
- * Interactive Assistant Chat Response
+ * Interactive Assistant Chat Response (Concise & Direct)
  */
 export async function generateAssistantChatResponse(userMessage, context = {}) {
-  const systemPrompt = `你是一位精通西方艺术史与欧洲经典建筑的随身 AI 研学助手。请以严谨、优雅且沉稳的学术口吻解答用户的艺术史疑问。`;
+  const systemPrompt = `你是一位精练严谨的艺术史随身学术助教。
+【严格准则】
+1. 直截了当回答问题，严禁寒暄问候、自我介绍或多余客套。
+2. 语言精炼高密、论述客观，紧扣艺术史事实、形式语言与考点逻辑。
+3. 篇幅适度精简（通常 150–250 字），重点明确，拒绝冗长车轱辘话。`;
   return await callAiService({ prompt: userMessage, systemPrompt });
 }
 
 export async function chatWithFloatingAssistant(contextText, userMessage) {
-  const systemPrompt = `你是一位精通西方艺术史与欧洲经典建筑的随身 AI 研学助手。当前学习语境：${contextText}。请以严谨、优雅且沉稳的学术口吻解答用户的艺术史疑问。`;
+  const systemPrompt = `你是一位精练严谨的艺术史随身学术助教。当前研学语境：${contextText}。
+【严格准则】
+1. 直截了当回答问题，严禁任何寒暄问候（如“你好”、“很高兴解答”）、自我介绍或讲课式口吻。
+2. 语言精炼高密、论述客观，紧扣艺术史事实、形式语言与考点逻辑。
+3. 篇幅适度精简（通常 150–250 字），直击要害，避免冗长铺垫。`;
   return await callAiService({ prompt: userMessage, systemPrompt });
 }
