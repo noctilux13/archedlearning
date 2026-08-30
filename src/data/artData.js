@@ -2200,11 +2200,1145 @@ export const artData = [
       }
     ],
     "displayName": "Expressionist Architecture & Catalan Modernisme (表现主义建筑与高迪现代主义)"
+  },
+{
+    "id": "romanesque-architecture",
+    "name": "罗马式建筑",
+    "englishName": "Romanesque Architecture",
+    "years": "900 - 1150",
+    "category": "architecture",
+    "bgClass": "romanesque-theme",
+    "description": "罗马式建筑（又称罗曼式建筑）盛行于10至12世纪西欧，以半圆拱（Semicircular Arch）、厚重实体石墙、筒形拱顶（Barrel Vault）、十字拱顶（Groin Vault）、盲拱廊（Blind Arcade）、贴墙浅壁柱（Lesene）与独立洗礼堂（Baptistery）为核心特征，构筑出中世纪坚固沉稳的宗教与世俗空间。",
+    "historicalContext": "在中世纪盛期修道院改革、朝圣热潮与封建城邦兴起背景下发展。建筑多兼具宗教礼拜与防御庇护功能，开创了欧洲中世纪大型拱顶结构体系。",
+    "keyFeatures": [
+      "半圆拱（Semicircular Arch）与厚重实体石砌墙体",
+      "筒形拱顶（Barrel Vault）与十字拱顶（Groin Vault）",
+      "节奏跨度中殿与独立集中式洗礼堂（Baptistery）",
+      "贴墙浅壁柱（Lesene）与装饰性盲拱廊（Blind Arcade）",
+      "单券窗（Monofora）、双联拱窗（Bifora）与三联拱窗（Trifora）"
+    ],
+    "artists": [
+      {
+        "id": "lombard-romanesque-masters",
+        "name": "伦巴第罗曼建筑行会",
+        "englishName": "Lombard Romanesque Masters",
+        "years": "10th - 12th Century",
+        "avatar": "/images/artists/lombard-masters.jpg",
+        "bio": "活跃于北意大利伦巴第地区的石匠行会，开创了红砖罗曼建筑、节奏中殿跨度、贴墙浅壁柱（Lesene）与独立洗礼堂范式。",
+        "artworks": [
+          {
+            "id": "sant-ambrogio-milan",
+            "title": "Basilica of Sant'Ambrogio (米兰圣安布罗焦圣殿)",
+            "titleEn": "Basilica of Sant'Ambrogio",
+            "titleZh": "米兰圣安布罗焦圣殿",
+            "date": "379 - 1099",
+            "location": "米兰 (Milan, Italy)",
+            "image": "/images/artworks/sant-ambrogio.jpg",
+            "notes": "伦巴第罗曼式建筑最高成就。拥有开阔的四方列柱前庭（Atrium）、双钟楼、两层拱廊与八角形穹顶，开创了节奏中殿跨度与砖石肋穹结构。",
+            "knowledgePoints": [
+              "伦巴第罗曼式建筑代表作，中殿具节奏跨度（Rhythmic Span）",
+              "包含四方列柱中庭（Atrium）与高低不对称双钟楼",
+              "广泛运用贴墙浅壁柱（Lesene）与早期砖石交叉拱顶"
+            ],
+            "museum": "Basilica di Sant'Ambrogio",
+            "museumCity": "Milan, Italy",
+            "museumUrl": "https://www.basilicasantambrogio.it"
+          },
+          {
+            "id": "baptistery-parma",
+            "title": "Baptistery of Parma (帕尔马洗礼堂)",
+            "titleEn": "Baptistery of Parma",
+            "titleZh": "帕尔马洗礼堂",
+            "date": "1196 - 1270",
+            "location": "帕尔马 (Parma, Italy)",
+            "image": "/images/artworks/baptistery-parma.jpg",
+            "notes": "由贝内代托·安特拉米（Benedetto Antelami）设计的八角形粉红大理石独立洗礼堂。外立面环绕四层平过梁式开敞凉廊（Architraved Loggias），标志着罗曼式向哥特式的过渡。",
+            "knowledgePoints": [
+              "八边形独立洗礼堂平面，连接罗曼式与早期哥特式过渡",
+              "外墙由四层平过梁开敞凉廊（Architraved Loggias）环绕",
+              "安特拉米雕刻的精美中世纪浮雕与十六边形伞状穹顶"
+            ],
+            "museum": "Battistero di Parma (Piazza Duomo)",
+            "museumCity": "Parma, Italy",
+            "museumUrl": "https://www.piazzaduomoparma.com/battistero/"
+          }
+        ]
+      },
+      {
+        "id": "pisan-romanesque-masters",
+        "name": "比萨罗曼建筑学派",
+        "englishName": "Pisan Romanesque Masters",
+        "years": "11th - 14th Century",
+        "avatar": "/images/artists/pisan-masters.jpg",
+        "bio": "以比萨奇迹广场为代表的托斯卡纳罗曼学派，以纯白与灰色大理石斑马条纹、多层开敞式拱廊与精美雕刻闻名。",
+        "artworks": [
+          {
+            "id": "piazza-dei-miracoli-pisa",
+            "title": "Piazza dei Miracoli & Leaning Tower (比萨奇迹广场与比萨斜塔)",
+            "titleEn": "Piazza dei Miracoli & Leaning Tower",
+            "titleZh": "比萨奇迹广场与比萨斜塔",
+            "date": "1063 - 1350",
+            "location": "比萨 (Pisa, Italy)",
+            "image": "/images/artworks/pisa-miracoli.jpg",
+            "notes": "由大教堂、圆形洗礼堂、圆柱形钟楼（比萨斜塔）与洗石纪念公墓构成的世界遗产建筑群。大教堂立面拥有四层开敞拱廊，纯白大理石展现极致韵律。",
+            "knowledgePoints": [
+              "托斯卡纳罗曼式建筑巅峰，白色大理石多层开敞拱廊立面",
+              "独立式圆形洗礼堂、拉丁十字大教堂与圆柱钟楼（斜塔）组群",
+              "联合国教科文组织世界文化遗产"
+            ],
+            "museum": "Opera della Primaziale Pisana (Piazza dei Miracoli)",
+            "museumCity": "Pisa, Italy",
+            "museumUrl": "https://www.opapisa.it/en/"
+          }
+        ]
+      },
+      {
+        "id": "french-romanesque-masters",
+        "name": "法兰西罗曼建筑行会",
+        "englishName": "French Romanesque Masters",
+        "years": "10th - 12th Century",
+        "avatar": "/images/artists/french-romanesque-masters.jpg",
+        "bio": "法国北部与香槟地区的罗曼式大教堂建造行会，发展了宏伟的长巴西利卡中殿与双塔立面，为哥特式诞生奠定基础。",
+        "artworks": [
+          {
+            "id": "basilica-saint-remi",
+            "title": "Basilica of Saint-Remi, Reims (兰斯圣雷米圣殿)",
+            "titleEn": "Basilica of Saint-Remi",
+            "titleZh": "兰斯圣雷米圣殿",
+            "date": "c. 1000",
+            "location": "兰斯 (Reims, France)",
+            "image": "/images/artworks/saint-remi-reims.jpg",
+            "notes": "法国加洛林与早期罗曼式长巴西利卡建筑，保留了纯正的罗曼式宽阔中殿与厚重石柱，是欧洲最古老宏伟的朝圣圣殿之一。",
+            "knowledgePoints": [
+              "早期罗曼式向哥特式过渡的宏伟朝圣巴西利卡",
+              "纯正的罗马式长跨度中殿与厚重石柱结构",
+              "联合国教科文组织世界文化遗产"
+            ],
+            "museum": "Basilique Saint-Remi de Reims",
+            "museumCity": "Reims, France",
+            "museumUrl": "https://www.reims.fr/culture-patrimoine/patrimoine-et-histoire/la-basilique-saint-remi"
+          }
+        ]
+      },
+      {
+        "id": "arnolfo-di-cambio",
+        "name": "阿诺尔福·迪·坎比奥",
+        "englishName": "Arnolfo di Cambio",
+        "years": "1240 - 1302",
+        "avatar": "/images/artists/arnolfo-di-cambio.jpg",
+        "bio": "意大利托斯卡纳著名建筑师与雕塑家，设计了佛罗伦萨旧宫、圣十字大殿并主持了佛罗伦萨圣母百花大教堂的初始规划。",
+        "artworks": [
+          {
+            "id": "palazzo-vecchio",
+            "title": "Palazzo Vecchio / Old Palace (佛罗伦萨旧宫 / 领主宫)",
+            "titleEn": "Palazzo Vecchio",
+            "titleZh": "佛罗伦萨旧宫 / 领主宫",
+            "date": "1299",
+            "location": "佛罗伦萨领主广场 (Florence, Italy)",
+            "image": "/images/artworks/palazzo-vecchio.jpg",
+            "notes": "佛罗伦萨市政厅堡垒式民用建筑，粗琢石墙面（Rustication）、齿状凸垛与高耸偏置的94米阿诺尔福钟楼，体现了中世纪晚期自治城邦的权力与防御象征。",
+            "knowledgePoints": [
+              "中世纪晚期托斯卡纳世俗市政宫殿（Palazzo Civile）典范",
+              "粗琢石（Rustication）外立面与94米偏心防御钟楼（Torre di Arnolfo）",
+              "领主广场（Piazza della Signoria）核心政治象征"
+            ],
+            "museum": "Museo di Palazzo Vecchio",
+            "museumCity": "Florence, Italy",
+            "museumUrl": "https://cultura.comune.fi.it/pagina/musei-civici-fiorentini/museo-di-palazzo-vecchio"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "gothic-architecture",
+    "name": "哥特式建筑",
+    "englishName": "Gothic Architecture",
+    "years": "1150 - 1400",
+    "category": "architecture",
+    "bgClass": "gothic-theme",
+    "description": "哥特式建筑发源于12世纪中叶的法兰西岛，是欧洲中世纪建筑力学与空间美学的巅峰革命。通过交叉肋拱（Ribbed Vault）、尖拱（Pointed Arch）与外部飞扶壁（Flying Buttress / Arc-boutant），打破了厚实墙体的承重限制，使教堂得以向天空极度拔高，并开辟出巨大面积的彩色玻璃花窗与玫瑰花窗（Rose Window），营造神圣通透的'天国之光'。",
+    "historicalContext": "伴随中世纪城市自治繁荣、经院哲学与主教座堂建造热潮兴起，建筑师利用几何受力分析摆脱传统重墙，开创了以骨架与光线为核心的哥特大教堂时代。",
+    "keyFeatures": [
+      "交叉肋拱顶（Ribbed Vaulting）与垂直力线",
+      "飞扶壁（Flying Buttress / Arc-boutant）跨空传导侧推力",
+      "尖拱（Pointed Arch）与高耸束柱（Fasciculate Pillars / Polystyles）",
+      "大面积彩色玻璃花窗（Stained Glass）与玫瑰花窗（Rose Window）",
+      "高耸尖塔（Spire）与兼具受力配重功能的小尖塔（Pinnacle）"
+    ],
+    "artists": [
+      {
+        "id": "french-gothic-masters",
+        "name": "法兰西哥特大教堂工匠行会",
+        "englishName": "French High Gothic Masters",
+        "years": "12th - 13th Century",
+        "avatar": "/images/artists/french-gothic-masters.jpg",
+        "bio": "法兰西岛与香槟地区的哥特建筑大师行会，建造了亚眠、巴黎圣母院与沙特尔大教堂等古典盛期哥特式范本。",
+        "artworks": [
+          {
+            "id": "amiens-cathedral",
+            "title": "Amiens Cathedral (亚眠大教堂)",
+            "titleEn": "Amiens Cathedral",
+            "titleZh": "亚眠大教堂",
+            "date": "1220 - 1270",
+            "location": "亚眠 (Amiens, France)",
+            "image": "/images/artworks/amiens-cathedral.jpg",
+            "notes": "法国盛期哥特式（High Gothic）规模最大、中殿净高最高（42.3米）的大教堂。拥有极为成熟的双层飞扶壁系统与繁复华丽的立面雕刻群。",
+            "knowledgePoints": [
+              "法国盛期哥特式大教堂典范，中殿拱顶高达42.3米",
+              "极为成熟的双层飞扶壁与三层立面透光体系",
+              "联合国教科文组织世界文化遗产"
+            ],
+            "museum": "Cathédrale Notre-Dame d'Amiens",
+            "museumCity": "Amiens, France",
+            "museumUrl": "https://www.cathedrale-amiens.fr"
+          },
+          {
+            "id": "notre-dame-paris",
+            "title": "Notre-Dame de Paris (巴黎圣母院)",
+            "titleEn": "Notre-Dame de Paris",
+            "titleZh": "巴黎圣母院",
+            "date": "1163 - 1250",
+            "location": "巴黎西堤岛 (Paris, France)",
+            "image": "/images/artworks/notre-dame-paris.jpg",
+            "notes": "早期哥特式向盛期演进的永恒丰碑。拥有西立面三大宏伟雕刻门（圣母之门、最后审判之门、圣安娜之门）、壮丽的辐射式玫瑰花窗与标志性悬空飞扶壁。",
+            "knowledgePoints": [
+              "早期哥特式向盛期哥特式演进的经典地标",
+              "西立面三门雕塑群（圣母之门、最后审判之门、圣安娜之门）",
+              "辐射式玫瑰花窗与跨度巨大的飞扶壁体系"
+            ],
+            "museum": "Cathédrale Notre-Dame de Paris",
+            "museumCity": "Paris, France",
+            "museumUrl": "https://www.notredamedeparis.fr"
+          }
+        ]
+      },
+      {
+        "id": "german-gothic-masters",
+        "name": "德意志高耸哥特工匠行会",
+        "englishName": "German Gothic Masters",
+        "years": "13th - 19th Century",
+        "avatar": "/images/artists/german-gothic-masters.jpg",
+        "bio": "莱茵河谷的德意志哥特石匠大师，将哥特式垂直向上、剔透如石雕蕾丝的尖塔技术推向世界之巅。",
+        "artworks": [
+          {
+            "id": "cologne-cathedral",
+            "title": "Cologne Cathedral (科隆大教堂)",
+            "titleEn": "Cologne Cathedral",
+            "titleZh": "科隆大教堂",
+            "date": "1248 - 1880",
+            "location": "科隆 (Cologne, Germany)",
+            "image": "/images/artworks/cologne-cathedral.jpg",
+            "notes": "双塔高达157米的哥特式旷世杰作。历经六百年修建，拥有欧洲最宏伟的哥特式唱诗班席、巨大的飞扶壁与华丽的石雕小尖塔群（Pinnacles）。",
+            "knowledgePoints": [
+              "世界第三高教堂建筑，双塔高达157米",
+              "极致的垂直性与如织锦般的哥特石雕小尖塔（Pinnacles）",
+              "联合国教科文组织世界文化遗产"
+            ],
+            "museum": "Kölner Dom (Hohe Domkirche Sankt Petrus)",
+            "museumCity": "Cologne, Germany",
+            "museumUrl": "https://www.koelner-dom.de"
+          }
+        ]
+      },
+      {
+        "id": "italian-gothic-masters",
+        "name": "意大利哥特建筑学派",
+        "englishName": "Italian Gothic Masters",
+        "years": "13th - 15th Century",
+        "avatar": "/images/artists/italian-gothic-masters.jpg",
+        "bio": "融合地中海古典光影、大理石色彩斑马纹镶嵌与哥特式骨架的意大利哥特学派。",
+        "artworks": [
+          {
+            "id": "duomo-milano",
+            "title": "Milan Cathedral / Duomo di Milano (米兰大教堂)",
+            "titleEn": "Milan Cathedral",
+            "titleZh": "米兰大教堂",
+            "date": "1386 - 1965",
+            "location": "米兰主教堂广场 (Milan, Italy)",
+            "image": "/images/artworks/duomo-milano.jpg",
+            "notes": "世界规模最大的白色坎多利亚大理石哥特教堂。拥有135座尖塔与三千余座雕像，顶部镀金圣母像（Madonnina）傲视全城，是伦巴第国际哥特式的绝唱。",
+            "knowledgePoints": [
+              "世界最大的大理石哥特式主教座堂",
+              "135座石雕尖塔与顶部镀金圣母像（Madonnina）",
+              "融合北欧哥特垂直骨架与意大利古典宽阔空间感"
+            ],
+            "museum": "Duomo di Milano (Veneranda Fabbrica del Duomo)",
+            "museumCity": "Milan, Italy",
+            "museumUrl": "https://www.duomomilano.it/en/"
+          },
+          {
+            "id": "siena-cathedral",
+            "title": "Siena Cathedral (锡耶纳大教堂)",
+            "titleEn": "Siena Cathedral",
+            "titleZh": "锡耶纳大教堂",
+            "date": "1215 - 1263",
+            "location": "锡耶纳 (Siena, Italy)",
+            "image": "/images/artworks/siena-cathedral.jpg",
+            "notes": "托斯卡纳哥特式建筑典范。黑白相间的大理石斑马纹横条纹、乔瓦尼·皮萨诺雕刻的华丽西立面与精绝天下的大理石镶嵌地坪（Pavimento）。",
+            "knowledgePoints": [
+              "托斯卡纳哥特式大理石色彩斑马纹结构",
+              "乔瓦尼·皮萨诺设计的华美西立面雕刻群",
+              "举世无双的大理石镶嵌画地坪（Pavimento del Duomo）"
+            ],
+            "museum": "Complesso Monumentale del Duomo di Siena",
+            "museumCity": "Siena, Italy",
+            "museumUrl": "https://operaduomo.siena.it/en/"
+          },
+          {
+            "id": "doges-palace-venice",
+            "title": "Doge's Palace / Palazzo Ducale (威尼斯总督宫)",
+            "titleEn": "Doge's Palace",
+            "titleZh": "威尼斯总督宫",
+            "date": "1340 - 1424",
+            "location": "威尼斯圣马可广场 (Venice, Italy)",
+            "image": "/images/artworks/doges-palace.jpg",
+            "notes": "威尼斯哥特式（Venetian Gothic）世俗建筑巅峰。底层开敞式尖拱凉廊、二层精美四叶饰花窗与粉白几何大理石墙面，轻盈飘逸如水上漂浮的宫殿。",
+            "knowledgePoints": [
+              "威尼斯哥特式世俗行政与宫殿建筑最高杰作",
+              "底层与二层连续开敞尖券与四叶饰拱廊（Loggias）",
+              "毗邻叹息桥（Bridge of Sighs）与圣马可广场"
+            ],
+            "museum": "Palazzo Ducale (Fondazione Musei Civici di Venezia)",
+            "museumCity": "Venice, Italy",
+            "museumUrl": "https://palazzoducale.visitmuve.it/en/"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "renaissance-architecture",
+    "name": "文艺复兴建筑",
+    "englishName": "Renaissance Architecture",
+    "years": "1400 - 1600",
+    "category": "architecture",
+    "bgClass": "renaissance-theme",
+    "description": "15至16世纪发源于佛罗伦萨的建筑革命，以人文主义精神与古希腊罗马古典规范（柱式、比例、对称与纯粹几何）的复兴为标志。通过线性透视法的空间建构、《论建筑》与《建筑四书》的理论化、以及'理想城市'（Ideal City）规划，彻底终结了中世纪哥特风格，开启了西方近代建筑学的新纪元。",
+    "historicalContext": "伴随美第奇家族等城市贵族的赞助、古典文献的再发现以及科学与透视学的发展，建筑师从工匠上升为博学的人文主义学者与工程师。",
+    "keyFeatures": [
+      "线性透视法（Linear Perspective）在空间中的严谨应用",
+      "古典柱式系统（五大柱式）与完美几何比例（圆、正方形）",
+      "理想城市（Ideal City）规划与集中式平面（Centralized Plan）",
+      "塞利奥拱 / 帕拉迪奥母题（Serliana / Palladian Motif）",
+      "民用宫殿（Palazzo Civile）的三段式立面与糙石外墙（Rustication）"
+    ],
+    "artists": [
+      {
+        "id": "filippo-brunelleschi",
+        "name": "菲利波·布鲁内莱斯基",
+        "englishName": "Filippo Brunelleschi",
+        "years": "1377 - 1466",
+        "avatar": "/images/artists/filippo-brunelleschi.jpg",
+        "bio": "意大利文艺复兴建筑奠基人，第一位现代工程师、规划师与专利获得者（1421）。发明了线性透视法，成功筑造了佛罗伦萨圣母百花大教堂的无脚手架双层大穹顶。",
+        "artworks": [
+          {
+            "id": "florence-cathedral-dome",
+            "title": "Dome of Florence Cathedral (佛罗伦萨圣母百花大教堂穹顶)",
+            "titleEn": "Dome of Florence Cathedral",
+            "titleZh": "佛罗伦萨圣母百花大教堂穹顶",
+            "date": "1420 - 1436",
+            "location": "佛罗伦萨 (Florence, Italy)",
+            "image": "/images/artworks/florence-dome.jpg",
+            "notes": "文艺复兴建筑第一座丰碑。布鲁内莱斯基发明鱼骨形砌砖法（Spina di Pesce）与双层穹顶结构，在无地面支撑脚手架的情况下跨越了45米八角形鼓座。",
+            "knowledgePoints": [
+              "文艺复兴建筑开山之作，跨度45米无脚手架双层穹顶",
+              "自承重鱼骨砌砖法（Spina di pesce）与八角形鼓座采光亭",
+              "西方工程史与结构力学史里程碑"
+            ],
+            "museum": "Opera di Santa Maria del Fiore",
+            "museumCity": "Florence, Italy",
+            "museumUrl": "https://duomo.firenze.it/en"
+          },
+          {
+            "id": "pazzi-chapel",
+            "title": "Pazzi Chapel (帕齐礼拜堂)",
+            "titleEn": "Pazzi Chapel",
+            "titleZh": "帕齐礼拜堂",
+            "date": "1440",
+            "location": "佛罗伦萨圣十字大殿 (Florence, Italy)",
+            "image": "/images/artworks/pazzi-chapel.jpg",
+            "notes": "位于佛罗伦萨圣十字大殿回廊内，以灰绿色砂岩（Pietra Serena）线条勾勒白墙，呈现出极致纯粹的几何对称与和谐比例。",
+            "knowledgePoints": [
+              "文艺复兴早期完美比例与几何纯粹性的教科书典范",
+              "灰绿色石材（Pietra Serena）勾勒严谨的几何与伞形穹顶"
+            ],
+            "museum": "Complesso Monumentale di Santa Croce (Cappella Pazzi)",
+            "museumCity": "Florence, Italy",
+            "museumUrl": "https://www.santacroceopera.it"
+          },
+          {
+            "id": "santo-spirito-florence",
+            "title": "Basilica of Santo Spirito (佛罗伦萨圣灵大教堂)",
+            "titleEn": "Basilica of Santo Spirito",
+            "titleZh": "佛罗伦萨圣灵大教堂",
+            "date": "1444",
+            "location": "佛罗伦萨 (Florence, Italy)",
+            "image": "/images/artworks/santo-spirito.jpg",
+            "notes": "布鲁内莱斯基生前最后一座巴西利卡教堂，拉丁十字平面，内部圆柱列廊与侧礼拜堂展现出无与伦比的透视纵深感与数学韵律。",
+            "knowledgePoints": [
+              "古典科林斯列柱构成的完美透视巴西利卡",
+              "模数化设计：各开间尺寸呈严谨的数学比例递进"
+            ],
+            "museum": "Basilica Santo Spirito",
+            "museumCity": "Florence, Italy",
+            "museumUrl": "https://www.basilicasantospirito.it"
+          }
+        ]
+      },
+      {
+        "id": "lorenzo-ghiberti",
+        "name": "洛伦佐·吉贝尔蒂",
+        "englishName": "Lorenzo Ghiberti",
+        "years": "1378 - 1455",
+        "avatar": "/images/artists/lorenzo-ghiberti.jpg",
+        "bio": "佛罗伦萨金匠、雕塑家与建筑师，耗时27年铸造了被米开朗基罗盛赞为'天堂之门'的圣若望洗礼堂东门浮雕。",
+        "artworks": [
+          {
+            "id": "doors-of-paradise",
+            "title": "Doors of Paradise (天堂之门)",
+            "titleEn": "Doors of Paradise",
+            "titleZh": "天堂之门",
+            "date": "1425 - 1452",
+            "location": "佛罗伦萨圣若望洗礼堂 (Florence, Italy)",
+            "image": "/images/artworks/doors-paradise.jpg",
+            "notes": "佛罗伦萨圣若望洗礼堂东门十面镀金青铜浮雕，融合高低浮雕与线性透视法，将多幕圣经叙事生动呈现于单一空间深度中。",
+            "knowledgePoints": [
+              "文艺复兴雕塑与建筑立面浮雕巅峰杰作",
+              "运用线性透视法与薄浮雕（Schiacciato）构建深邃空间",
+              "被米开朗基罗赞誉为'适合作为天堂大门'"
+            ],
+            "museum": "Museo dell'Opera del Duomo (Firenze)",
+            "museumCity": "Florence, Italy",
+            "museumUrl": "https://duomo.firenze.it/en/discover/opera-duomo-museum"
+          }
+        ]
+      },
+      {
+        "id": "donato-bramante",
+        "name": "多纳托·伯拉孟特",
+        "englishName": "Donato Bramante",
+        "years": "1444 - 1514",
+        "avatar": "/images/artists/donato-bramante.jpg",
+        "bio": "盛期文艺复兴建筑开创者，将文艺复兴风格从米兰推向罗马，为教皇尤利乌斯二世设计了圣彼得大教堂的初始希腊十字集中式方案。",
+        "artworks": [
+          {
+            "id": "tempietto-san-pietro",
+            "title": "Tempietto di San Pietro in Montorio (蒙托里奥圣彼得坦比哀多)",
+            "titleEn": "Tempietto di San Pietro in Montorio",
+            "titleZh": "蒙托里奥圣彼得坦比哀多",
+            "date": "1502 - 1510",
+            "location": "罗马 (Rome, Italy)",
+            "image": "/images/artworks/tempietto-bramante.jpg",
+            "notes": "罗马盛期文艺复兴建筑宣言。建于圣彼得殉道处，圆形多立克柱廊环绕穹顶小神庙，实现了古罗马神庙与基督教集中式平面的完美合一。",
+            "knowledgePoints": [
+              "盛期文艺复兴建筑完美范式，多立克回廊式集中圆形小庙",
+              "对古典比例、凹凸光影与穹顶纯粹几何的极致演绎"
+            ],
+            "museum": "Real Academia de España en Roma (Tempietto del Bramante)",
+            "museumCity": "Rome, Italy",
+            "museumUrl": "https://www.accademiaspagna.org/il-tempietto/"
+          },
+          {
+            "id": "santa-maria-delle-grazie-milan",
+            "title": "Santa Maria delle Grazie Tribune & Dome (米兰圣母感恩教堂东部穹顶后殿)",
+            "titleEn": "Santa Maria delle Grazie Tribune",
+            "titleZh": "米兰圣母感恩教堂东部穹顶后殿",
+            "date": "1492 - 1497",
+            "location": "米兰 (Milan, Italy)",
+            "image": "/images/artworks/grazie-tribune.jpg",
+            "notes": "伯拉孟特受斯福尔扎家族委托扩建的陵寝部分，宏伟的八角形交叉部穹顶与半圆形后殿展现出北意大利文艺复兴的恢弘尺度。",
+            "knowledgePoints": [
+              "伯拉孟特在米兰时期的最高建筑成就",
+              "宏大的十六边形采光鼓座与八角形内部穹顶"
+            ],
+            "museum": "Complesso Monumentale di Santa Maria delle Grazie",
+            "museumCity": "Milan, Italy",
+            "museumUrl": "https://cenacolovinciano.org"
+          },
+          {
+            "id": "belvedere-courtyard",
+            "title": "Courtyard of the Belvedere (梵蒂冈美景宫庭院)",
+            "titleEn": "Courtyard of the Belvedere",
+            "titleZh": "梵蒂冈美景宫庭院",
+            "date": "1505",
+            "location": "梵蒂冈 (Vatican City)",
+            "image": "/images/artworks/belvedere-courtyard.jpg",
+            "notes": "连接梵蒂冈宫与美景宫别墅的宏大三级台地园林与露天剧场空间，开创了文艺复兴大型轴线景观与台地建筑先河。",
+            "knowledgePoints": [
+              "西方景观建筑史里程碑：多层台地轴线透视空间",
+              "融合了古罗马别墅与露天剧场（Cavea）的宏伟尺度"
+            ],
+            "museum": "Vatican Museums (Cortile del Belvedere)",
+            "museumCity": "Vatican City",
+            "museumUrl": "https://www.museivaticani.va"
+          }
+        ]
+      },
+      {
+        "id": "leon-battista-alberti",
+        "name": "莱昂·巴蒂斯塔·阿尔贝蒂",
+        "englishName": "Leon Battista Alberti",
+        "years": "1404 - 1472",
+        "avatar": "/images/artists/leon-battista-alberti.jpg",
+        "bio": "文艺复兴时期博学家、人文学者与建筑理论家，著有里程碑式理论巨著《论建筑》（De re aedificatoria），将罗马凯旋门母题引入教堂立面设计。",
+        "artworks": [
+          {
+            "id": "sant-andrea-mantua",
+            "title": "Basilica of Sant'Andrea, Mantua (曼图亚圣安德烈亚大教堂)",
+            "titleEn": "Basilica of Sant'Andrea",
+            "titleZh": "曼图亚圣安德烈亚大教堂",
+            "date": "1472",
+            "location": "曼图亚 (Mantua, Italy)",
+            "image": "/images/artworks/sant-andrea-mantua.jpg",
+            "notes": "阿尔贝蒂建筑理论的集大成者。立面融合罗马凯旋门与古典神殿山墙，内部以宏伟的格子天花巨大筒形拱顶（Barrel Vault）替代传统侧廊柱列。",
+            "knowledgePoints": [
+              "立面开创性融合古罗马凯旋门（Triumphal Arch）与神庙门头",
+              "单中殿巨大藻井筒形拱顶（Barrel Vault），深刻影响后世巴洛克教堂布局"
+            ],
+            "museum": "Basilica Concattedrale di Sant'Andrea",
+            "museumCity": "Mantua, Italy",
+            "museumUrl": "https://www.diocesidimantova.it"
+          },
+          {
+            "id": "tempio-malatestiano",
+            "title": "Tempio Malatestiano, Rimini (里米尼马拉泰斯塔圣殿)",
+            "titleEn": "Tempio Malatestiano",
+            "titleZh": "里米尼马拉泰斯塔圣殿",
+            "date": "1468",
+            "location": "里米尼 (Rimini, Italy)",
+            "image": "/images/artworks/tempio-malatestiano.jpg",
+            "notes": "阿尔贝蒂受马拉泰斯塔委托将哥特旧堂改造为文艺复兴人文主义陵庙，外立面直接借鉴里米尼古罗马奥古斯都凯旋门。",
+            "knowledgePoints": [
+              "用古典大理石外壳包裹中世纪哥特建筑的典范",
+              "侧面深凹大拱券用于安放人文主义学者石棺"
+            ],
+            "museum": "Tempio Malatestiano (Cattedrale di Santa Colomba)",
+            "museumCity": "Rimini, Italy",
+            "museumUrl": "https://www.diocesi.rimini.it"
+          }
+        ]
+      },
+      {
+        "id": "michelangelo-buonarroti-arch",
+        "name": "米开朗基罗·博那罗蒂",
+        "englishName": "Michelangelo Buonarroti",
+        "years": "1475 - 1564",
+        "avatar": "/images/artists/michelangelo.jpg",
+        "bio": "文艺复兴与风格主义大师。71岁接掌圣彼得大教堂工程并设计了宏伟的双层大穹顶；设计了劳伦齐阿纳图书馆的流动大台阶与罗马卡比托利欧广场。",
+        "artworks": [
+          {
+            "id": "laurentian-library",
+            "title": "Laurentian Library & Staircase (劳伦齐阿纳图书馆与大台阶)",
+            "titleEn": "Laurentian Library & Staircase",
+            "titleZh": "劳伦齐阿纳图书馆与大台阶",
+            "date": "1524 - 1559",
+            "location": "佛罗伦萨圣洛伦佐大殿 (Florence, Italy)",
+            "image": "/images/artworks/laurentian-library.jpg",
+            "notes": "风格主义建筑开山之作。前厅采用内嵌式壁柱与故意反常规的构件比例，三股如熔岩流淌般曲面大台阶展现出强烈的动态张力。",
+            "knowledgePoints": [
+              "风格主义（Mannerism）建筑里程碑，打破古典和谐定式",
+              "前厅反常规的内嵌墙柱、虚假托架与雕塑般流动三轨大台阶"
+            ],
+            "museum": "Biblioteca Medicea Laurenziana",
+            "museumCity": "Florence, Italy",
+            "museumUrl": "https://www.bmlonline.it"
+          },
+          {
+            "id": "porta-pia",
+            "title": "Porta Pia, Rome (罗马皮亚门)",
+            "titleEn": "Porta Pia",
+            "titleZh": "罗马皮亚门",
+            "date": "1561 - 1565",
+            "location": "罗马奥勒良城墙 (Rome, Italy)",
+            "image": "/images/artworks/porta-pia.jpg",
+            "notes": "米开朗基罗生前最后的建筑杰作。城门内侧立面充满大胆自由的怪诞装饰、交错的山墙与反常的比例，展现晚期风格主义的不羁探索。",
+            "knowledgePoints": [
+              "米开朗基罗晚期建筑实验作品",
+              "复合山墙与不规则古典构件的非传统重构"
+            ],
+            "museum": "Porta Pia (Museo Storico dei Bersaglieri)",
+            "museumCity": "Rome, Italy",
+            "museumUrl": "https://www.sovraintendenzaroma.it/i_luoghi/roma_medioevale_e_moderna/mura/porta_pia"
+          },
+          {
+            "id": "piazza-del-campidoglio",
+            "title": "Piazza del Campidoglio (罗马卡比托利欧广场)",
+            "titleEn": "Piazza del Campidoglio",
+            "titleZh": "罗马卡比托利欧广场",
+            "date": "1536 - 1546",
+            "location": "罗马卡比托利欧山 (Rome, Italy)",
+            "image": "/images/artworks/campidoglio.jpg",
+            "notes": "梯形透视广场与椭圆形十二角星地面铺装，中央安放马可·奥勒留骑马青铜像，两侧为新宫与保守宫，开创了现代城市广场景观规划新纪元。",
+            "knowledgePoints": [
+              "梯形广场抵消透视变形，开创城市轴线公共空间设计",
+              "椭圆形地面十二角星几何铺装与巨柱式（Giant Order）立面"
+            ],
+            "museum": "Musei Capitolini (Piazza del Campidoglio)",
+            "museumCity": "Rome, Italy",
+            "museumUrl": "https://www.museicapitolini.org"
+          },
+          {
+            "id": "st-peters-basilica-dome",
+            "title": "St. Peter's Basilica Dome & Plan (圣彼得大教堂穹顶与平面重构)",
+            "titleEn": "St. Peter's Basilica Dome",
+            "titleZh": "圣彼得大教堂穹顶与平面重构",
+            "date": "1547 - 1564",
+            "location": "梵蒂冈 (Vatican City)",
+            "image": "/images/artworks/st-peter-dome.jpg",
+            "notes": "米开朗基罗简化了复杂设计，确立了雄浑集中的希腊十字核心，并设计了高达136米的双层肋拱大穹顶（后由波尔塔与马代尔诺续建）。",
+            "knowledgePoints": [
+              "世界最高天主教大教堂穹顶（内部净高136.5米）",
+              "双层石构肋拱体系与外部成对科林斯巨柱鼓座",
+              "后由卡洛·马代尔诺（Carlo Maderno）向西延伸为拉丁十字中殿与前立面"
+            ],
+            "museum": "Basilica Papale di San Pietro in Vaticano",
+            "museumCity": "Vatican City",
+            "museumUrl": "https://www.basilicasanpietro.va"
+          }
+        ]
+      },
+      {
+        "id": "renaissance-palazzo-masters",
+        "name": "文艺复兴民用宫殿大师",
+        "englishName": "Renaissance Palazzo Masters",
+        "years": "15th - 16th Century",
+        "avatar": "/images/artists/renaissance-palazzo-masters.jpg",
+        "bio": "塑造了佛罗伦萨与罗马文艺复兴世俗贵族宫殿（Palazzo Civile）标准三段式与糙石立面体系的代表建筑师群。",
+        "artworks": [
+          {
+            "id": "palazzo-medici-riccardi",
+            "title": "Palazzo Medici Riccardi (美第奇-里卡迪宫)",
+            "titleEn": "Palazzo Medici Riccardi",
+            "titleZh": "美第奇-里卡迪宫",
+            "date": "1430 - 1444",
+            "location": "佛罗伦萨 (Florence, Italy)",
+            "image": "/images/artworks/palazzo-medici.jpg",
+            "notes": "文艺复兴早期民用宫殿典范。外立面三层递减：底层厚重糙石（Rustication）、二层平滑分缝石、三层平整细石，顶部挑出巨大的古典檐口，内部设优雅柱廊内院。",
+            "knowledgePoints": [
+              "文艺复兴住宅宫殿范式：立面由下至上三层石材糙度与高度递减",
+              "内部方形柱廊中央庭院（Cortile）与顶部巨型古典檐口"
+            ],
+            "museum": "Museo di Palazzo Medici Riccardi",
+            "museumCity": "Florence, Italy",
+            "museumUrl": "https://www.palazzomediciriccardi.it"
+          },
+          {
+            "id": "palazzo-dei-diamanti",
+            "title": "Palazzo dei Diamanti, Ferrara (费拉拉钻石宫)",
+            "titleEn": "Palazzo dei Diamanti",
+            "titleZh": "费拉拉钻石宫",
+            "date": "1493",
+            "location": "费拉拉 (Ferrara, Italy)",
+            "image": "/images/artworks/palazzo-diamanti.jpg",
+            "notes": "费拉拉文艺复兴城市扩建核心地标。外墙铺贴超过8500块金字塔形立体钻石切割大理石块，以光影折射与街角阳台形成戏剧性的透视视觉。",
+            "knowledgePoints": [
+              "8500余块金字塔形钻石琢石（Diamond-point Rustication）构成独特外立面",
+              "文艺复兴理想城市扩张计划（Addizione Erculea）的街角视觉焦点"
+            ],
+            "museum": "Gallerie d'Arte Moderna e Contemporanea (Palazzo dei Diamanti)",
+            "museumCity": "Ferrara, Italy",
+            "museumUrl": "https://www.palazzodiamanti.it"
+          },
+          {
+            "id": "palazzo-farnese",
+            "title": "Palazzo Farnese, Rome (罗马法尔内塞宫)",
+            "titleEn": "Palazzo Farnese",
+            "titleZh": "罗马法尔内塞宫",
+            "date": "1517 - 1589",
+            "location": "罗马 (Rome, Italy)",
+            "image": "/images/artworks/palazzo-farnese.jpg",
+            "notes": "罗马盛期文艺复兴最宏伟的贵族宫殿。小桑加洛规划了严谨对称的立面与中庭，米开朗基罗设计了二层中央大阳台与极度宏伟的顶部雕花檐口。",
+            "knowledgePoints": [
+              "罗马盛期文艺复兴宫殿的巅峰之作",
+              "小桑加洛设计的严谨三层山花窗格与米开朗基罗操刀的宏大悬挑挑檐"
+            ],
+            "museum": "Palazzo Farnese (Ambassade de France en Italie)",
+            "museumCity": "Rome, Italy",
+            "museumUrl": "https://it.ambafrance.org/-Palazzo-Farnese-"
+          }
+        ]
+      },
+      {
+        "id": "andrea-palladio",
+        "name": "安德烈亚·帕拉迪奥",
+        "englishName": "Andrea Palladio",
+        "years": "1508 - 1580",
+        "avatar": "/images/artists/andrea-palladio.jpg",
+        "bio": "威尼斯共和国文艺复兴最伟大的建筑师，著有《建筑四书》（I quattro libri dell'architettura），发明了塞利奥拱（Serliana / 帕拉迪奥母题），其对称严谨的帕拉迪奥主义（Palladianism）深远影响英美乃至全球古典建筑。",
+        "artworks": [
+          {
+            "id": "basilica-palladiana",
+            "title": "Basilica Palladiana, Vicenza (维琴察帕拉迪奥巴西利卡)",
+            "titleEn": "Basilica Palladiana",
+            "titleZh": "维琴察帕拉迪奥巴西利卡",
+            "date": "1549",
+            "location": "维琴察 (Vicenza, Italy)",
+            "image": "/images/artworks/basilica-palladiana.jpg",
+            "notes": "帕拉迪奥成名作。为旧哥特宫殿加建双层开敞大理石拱廊，巧妙运用圆拱配合两侧小矩形过梁的'塞利奥拱 / 帕拉迪奥母题'（Serliana），化解了不规则原有开间的结构难题。",
+            "knowledgePoints": [
+              "'帕拉迪奥母题 / 塞利奥拱'（Serliana / Palladian Motif）经典应用",
+              "成功将古典和谐比例与灵活开间结构相统一的典范"
+            ],
+            "museum": "Museo Civico di Palazzo Chiericati e Basilica Palladiana",
+            "museumCity": "Vicenza, Italy",
+            "museumUrl": "https://www.museicivicivicenza.it/it/mcp/basilica_palladiana.php"
+          },
+          {
+            "id": "villa-la-rotonda",
+            "title": "Villa La Rotonda / Villa Capra (圆厅别墅 / 卡普拉别墅)",
+            "titleEn": "Villa La Rotonda",
+            "titleZh": "圆厅别墅 / 卡普拉别墅",
+            "date": "1551 - 1567",
+            "location": "维琴察 (Vicenza, Italy)",
+            "image": "/images/artworks/villa-rotonda.jpg",
+            "notes": "建筑史上最著名的乡间住宅。正方形绝对对称平面，中央为穹顶圆厅，四面均设有六柱爱奥尼神庙式门廊，将建筑与周围田园风景完美融为一体。",
+            "knowledgePoints": [
+              "四面对称的六柱爱奥尼门廊与中央穹顶圆厅",
+              "住宅建筑首次采用神庙门廊，确立了帕拉迪奥主义（Palladianism）国际范式",
+              "联合国教科文组织世界文化遗产"
+            ],
+            "museum": "Villa La Rotonda (Fondazione Aldo e Fernando Valmarana)",
+            "museumCity": "Vicenza, Italy",
+            "museumUrl": "https://www.villalarotonda.it"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "modernist-architecture",
+    "name": "现代主义建筑",
+    "englishName": "Modernist Architecture",
+    "years": "1871 - 1970",
+    "category": "architecture",
+    "bgClass": "modernist-theme",
+    "description": "20世纪主导全球的建筑运动与风格，横跨芝加哥学派、包豪斯、国际风格（International Style）与有机建筑。基于钢材、玻璃与钢筋混凝土等新型建材，确立了'形式追随功能'（Form follows function）、极简主义与全面摒弃传统附着装饰的现代空间美学。",
+    "historicalContext": "以1871年芝加哥大火后的灾后商业高层重建与电梯应用为起点，经历欧洲一战后工业化大生产与包豪斯设计教育，彻底重塑了20世纪现代城市景观。",
+    "keyFeatures": [
+      "芝加哥学派钢框架结构与商业摩天大楼（Skyscraper）",
+      "功能主义（Functionalism）：形式服从功能（Form follows function）",
+      "新材料技术革命：钢材、大面积玻璃幕墙与清水混凝土",
+      "包豪斯学派与国际风格（International Style）",
+      "有机建筑（Organic Architecture）与新建筑五点（Five Points of Architecture）"
+    ],
+    "artists": [
+      {
+        "id": "chicago-school-architects",
+        "name": "芝加哥建筑学派",
+        "englishName": "Chicago School of Architecture",
+        "years": "1871 - 1910",
+        "avatar": "/images/artists/chicago-school.jpg",
+        "bio": "19世纪末至20世纪初活跃于芝加哥的先驱建筑师群体。在1871年芝加哥大火后的灾后重建中，率先将钢框架结构、安全电梯与大面积采光窗应用于高层商业摩天大楼，提出'形式服从功能'。",
+        "artworks": [
+          {
+            "id": "chicago-skyscraper-movement",
+            "title": "First Chicago School Skyscraper Era (芝加哥第一学派摩天大楼时代)",
+            "titleEn": "First Chicago School Skyscraper Era",
+            "titleZh": "芝加哥第一学派摩天大楼时代",
+            "date": "1885 - 1904",
+            "location": "芝加哥 (Chicago, USA)",
+            "image": "/images/artworks/chicago-skyscrapers.jpg",
+            "notes": "在市中心用地紧张背景下诞生的钢框架商业高层建筑。沙利文与珍妮等探讨了新技术与垂直立面造型，为欧洲现代主义与国际风格提供了直接启蒙。",
+            "knowledgePoints": [
+              "1871年芝加哥大火催生的钢框架高层商业建筑革命",
+              "安全电梯普及与大面积三段式芝加哥窗（Chicago Window）",
+              "路易斯·沙利文提出'形式服从功能'（Form follows function）名言"
+            ],
+            "museum": "Chicago Architecture Center (CAC)",
+            "museumCity": "Chicago, USA",
+            "museumUrl": "https://www.architecture.org"
+          }
+        ]
+      },
+      {
+        "id": "walter-gropius",
+        "name": "瓦尔特·格罗皮乌斯",
+        "englishName": "Walter Gropius",
+        "years": "1883 - 1969",
+        "avatar": "/images/artists/walter-gropius.jpg",
+        "bio": "德裔美国建筑师，包豪斯公立学校（Bauhaus）创办人与首任校长，国际风格的主要推动者，后任教于哈佛大学设计研究生院（GSD）。",
+        "artworks": [
+          {
+            "id": "bauhaus-dessau",
+            "title": "Bauhaus Building, Dessau (德绍包豪斯校舍)",
+            "titleEn": "Bauhaus Building, Dessau",
+            "titleZh": "德绍包豪斯校舍",
+            "date": "1925 - 1932",
+            "location": "德绍 (Dessau, Germany)",
+            "image": "/images/artworks/bauhaus-dessau.jpg",
+            "notes": "现代主义建筑里程碑。风车形不对称自由功能布局，全钢结构与三层通高无立柱转角玻璃幕墙（Glass Curtain Wall），体现了艺术与技术的高度统一。",
+            "knowledgePoints": [
+              "现代主义建筑开山纲领式建筑",
+              "三层通高通透转角悬挑玻璃幕墙（Curtain Wall）",
+              "风车状自由功能分区：教学、工坊、礼堂与宿舍连通",
+              "联合国教科文组织世界文化遗产"
+            ],
+            "museum": "Bauhaus Dessau Foundation",
+            "museumCity": "Dessau, Germany",
+            "museumUrl": "https://www.bauhaus-dessau.de/en/"
+          }
+        ]
+      },
+      {
+        "id": "mies-van-der-rohe",
+        "name": "路德维希·密斯·凡·德·罗",
+        "englishName": "Ludwig Mies van der Rohe",
+        "years": "1886 - 1969",
+        "avatar": "/images/artists/mies-van-der-rohe.jpg",
+        "bio": "德裔美国现代主义建筑先驱，包豪斯最后一任校长，伊利诺伊理工学院（IIT）建筑系主任。提出'少即是多'（Less is more）与'流通空间'哲学。",
+        "artworks": [
+          {
+            "id": "brick-country-house",
+            "title": "Brick Country House Project (砖造乡村住宅方案)",
+            "titleEn": "Brick Country House Project",
+            "titleZh": "砖造乡村住宅方案",
+            "date": "1923",
+            "location": "柏林/纸上建筑 (Berlin, Germany)",
+            "image": "/images/artworks/brick-country-house.jpg",
+            "notes": "密斯早期受风格派与马列维奇影响的纸上建筑杰作。独立的砖墙向周围自然无限延伸，打破了传统封闭房间的内外边界，开创了'流动空间'理念。",
+            "knowledgePoints": [
+              "现代主义'流动空间'（Fluid Space）理论先驱方案",
+              "受荷兰风格派（De Stijl）二维抽象平面启发的离心式墙体延伸"
+            ],
+            "museum": "Museum of Modern Art (MoMA Architecture Collection)",
+            "museumCity": "New York, USA",
+            "museumUrl": "https://www.moma.org/collection/works/81335"
+          },
+          {
+            "id": "barcelona-pavilion",
+            "title": "Barcelona Pavilion (巴塞罗那德国馆)",
+            "titleEn": "Barcelona Pavilion",
+            "titleZh": "巴塞罗那德国馆",
+            "date": "1928 - 1929",
+            "location": "巴塞罗那蒙特惠奇 (Barcelona, Spain)",
+            "image": "/images/artworks/barcelona-pavilion.jpg",
+            "notes": "1929年世博会德国国家馆。十字形镀铬钢柱支撑超轻屋顶，绿玛瑙大理石隔断、灰色玻璃与水池倒影构成纯净连续的流动空间，配备经典的巴塞罗那椅。",
+            "knowledgePoints": [
+              "'少即是多'（Less is more）的终极实体表达",
+              "8根十字形镀铬钢柱实现墙体完全非承重与空间自由流动",
+              "绿玛瑙大理石隔断与黎明女神雕像倒影水池"
+            ],
+            "museum": "Fundació Mies van der Rohe (Pavelló Mies van der Rohe)",
+            "museumCity": "Barcelona, Spain",
+            "museumUrl": "https://miesbcn.com"
+          },
+          {
+            "id": "farnsworth-house",
+            "title": "Farnsworth House (范斯沃斯住宅)",
+            "titleEn": "Farnsworth House",
+            "titleZh": "范斯沃斯住宅",
+            "date": "1951",
+            "location": "伊利诺伊州普莱诺 (Plano, Illinois, USA)",
+            "image": "/images/artworks/farnsworth-house.jpg",
+            "notes": "伊利诺伊州福克斯河畔的全玻璃透明住宅。8根白色工字钢立柱将整座建筑架空于地面之上，四周全透明落地玻璃幕墙，将建筑消隐于自然之中。",
+            "knowledgePoints": [
+              "极简主义住宅巅峰：工字钢架空与全景落地玻璃幕墙",
+              "彻底模糊室内外生活边界，纯粹的结构与漂浮感"
+            ],
+            "museum": "Edith Farnsworth House (National Trust for Historic Preservation)",
+            "museumCity": "Plano, Illinois, USA",
+            "museumUrl": "https://edithfarnsworthhouse.org"
+          },
+          {
+            "id": "seagram-building",
+            "title": "Seagram Building (西格拉姆大厦)",
+            "titleEn": "Seagram Building",
+            "titleZh": "西格拉姆大厦",
+            "date": "1958",
+            "location": "纽约曼哈顿公园大道 (New York, USA)",
+            "image": "/images/artworks/seagram-building.jpg",
+            "notes": "纽约曼哈顿公园大道38层高品质摩天大楼。古铜色玻璃幕墙配合非承重外附装饰性青铜工字钢龙骨，退让出开阔的公共喷泉前庭广场。",
+            "knowledgePoints": [
+              "国际风格（International Style）摩天大楼终极标准范式",
+              "古铜色中空玻璃幕墙与外挂青铜工字钢竖梃",
+              "主动退让城市街道营造开阔公共喷泉广场（Plaza）"
+            ],
+            "museum": "Seagram Building (375 Park Avenue)",
+            "museumCity": "New York, USA",
+            "museumUrl": "https://www.nycgo.com/attractions/seagram-building/"
+          },
+          {
+            "id": "neue-nationalgalerie",
+            "title": "Neue Nationalgalerie (柏林新国家美术馆)",
+            "titleEn": "Neue Nationalgalerie",
+            "titleZh": "柏林新国家美术馆",
+            "date": "1968",
+            "location": "柏林文化广场 (Berlin, Germany)",
+            "image": "/images/artworks/neue-nationalgalerie.jpg",
+            "notes": "密斯生前最后一座杰作。8根外立面十字钢柱支撑巨大的黑色正方形华盖钢屋顶，地面上为全透明无柱通透大展厅，所有次要功能沉入地下。",
+            "knowledgePoints": [
+              "纯粹的'通用无柱空间'（Universal Space）结构",
+              "8根外部钢柱支撑超大跨度双向正交钢网架屋顶",
+              "全玻璃无遮挡外墙展现工业建造的终极秩序与纪念性"
+            ],
+            "museum": "Neue Nationalgalerie (Staatliche Museen zu Berlin)",
+            "museumCity": "Berlin, Germany",
+            "museumUrl": "https://www.smb.museum/en/museums-institutions/neue-nationalgalerie/home/"
+          }
+        ]
+      },
+      {
+        "id": "frank-lloyd-wright",
+        "name": "弗兰克·劳埃德·赖特",
+        "englishName": "Frank Lloyd Wright",
+        "years": "1867 - 1959",
+        "avatar": "/images/artists/frank-lloyd-wright.jpg",
+        "bio": "美国历史上最著名的建筑大师，有机建筑（Organic Architecture）与草原学派（Prairie School）开创者，塔里埃森学徒计划导师，一生设计了千余座建筑。",
+        "artworks": [
+          {
+            "id": "robie-house",
+            "title": "Robie House (罗比住宅)",
+            "titleEn": "Robie House",
+            "titleZh": "罗比住宅",
+            "date": "1909",
+            "location": "芝加哥海德公园 (Chicago, Illinois, USA)",
+            "image": "/images/artworks/robie-house.jpg",
+            "notes": "芝加哥草原学派（Prairie House）巅峰之作。极度舒展的水平低坡屋顶、深挑檐、罗马长砖砌筑与中央壁炉核心，打破了传统维多利亚式封闭盒子空间。",
+            "knowledgePoints": [
+              "草原学派（Prairie School）代表杰作",
+              "极度延伸的水平挑檐（Cantilever）与连通起居室流动空间",
+              "中央壁炉核心与彩色艺术铅封玻璃窗"
+            ],
+            "museum": "Frederick C. Robie House (Frank Lloyd Wright Trust)",
+            "museumCity": "Chicago, Illinois, USA",
+            "museumUrl": "https://flwright.org/researchexplore/robiehouse"
+          },
+          {
+            "id": "fallingwater",
+            "title": "Fallingwater (流水别墅 / 落水山庄)",
+            "titleEn": "Fallingwater",
+            "titleZh": "流水别墅 / 落水山庄",
+            "date": "1936 - 1937",
+            "location": "宾夕法尼亚熊跑溪 (Mill Run, Pennsylvania, USA)",
+            "image": "/images/artworks/fallingwater.jpg",
+            "notes": "被誉为'美国建筑史上最伟大作品'。建于宾夕法尼亚熊跑溪瀑布之上，钢筋混凝土悬挑阳台与就地开采的粗糙石墙交错，建筑与溪流巨石融为一体。",
+            "knowledgePoints": [
+              "有机建筑（Organic Architecture）世界级巅峰",
+              "钢筋混凝土大跨度悬挑（Cantilever）平台凌空于天然瀑布之上",
+              "就地取材天然粗石砌体与自然地貌完美共生",
+              "联合国教科文组织世界文化遗产"
+            ],
+            "museum": "Fallingwater (Western Pennsylvania Conservancy)",
+            "museumCity": "Mill Run, Pennsylvania, USA",
+            "museumUrl": "https://fallingwater.org"
+          },
+          {
+            "id": "guggenheim-museum-ny",
+            "title": "The Solomon R. Guggenheim Museum (纽约古根海姆博物馆)",
+            "titleEn": "The Solomon R. Guggenheim Museum",
+            "titleZh": "纽约古根海姆博物馆",
+            "date": "1937 / 1959",
+            "location": "纽约曼哈顿第五大道 (New York, USA)",
+            "image": "/images/artworks/guggenheim-ny.jpg",
+            "notes": "赖特晚年划时代杰作。白色连续螺旋上升的无柱中庭坡道，观众乘电梯至顶层沿螺旋斜坡缓缓向下观展，天顶为巨大十二角几何玻璃穹顶。",
+            "knowledgePoints": [
+              "连续倒圆台形无柱螺旋展廊（Spiral Ramp）中庭",
+              "颠覆传统房间式观展流线，从顶层沿斜坡环形向下",
+              "联合国教科文组织世界文化遗产"
+            ],
+            "museum": "Solomon R. Guggenheim Museum",
+            "museumCity": "New York, USA",
+            "museumUrl": "https://www.guggenheim.org"
+          }
+        ]
+      },
+      {
+        "id": "le-corbusier",
+        "name": "勒·柯布西耶",
+        "englishName": "Le Corbusier",
+        "years": "1887 - 1965",
+        "avatar": "/images/artists/le-corbusier.jpg",
+        "bio": "瑞士-法国建筑师、城市规划师与画家，现代建筑运动核心先驱，国际现代建筑大会（CIAM）创始成员，提出'住房是居住的机器'与'新建筑五点'。",
+        "artworks": [
+          {
+            "id": "villa-savoye",
+            "title": "Villa Savoye (萨伏伊别墅)",
+            "titleEn": "Villa Savoye",
+            "titleZh": "萨伏伊别墅",
+            "date": "1928 - 1931",
+            "location": "普瓦西 (Poissy, France)",
+            "image": "/images/artworks/villa-savoye.jpg",
+            "notes": "现代主义新建筑五点（底层架空柱、屋顶花园、自由平面、横向长窗、自由立面）的完美教科书范例，纯白几何形体宛若漂浮于绿野之上的机器。",
+            "knowledgePoints": [
+              "现代主义'新建筑五点'（Les 5 points d'une architecture nouvelle）完整体现",
+              "底层架空立柱（Pilotis）、屋顶花园（Toit-jardin）、自由平面（Plan libre）、横向长窗（Fenêtre en longueur）、自由立面（Façade libre）",
+              "联合国教科文组织世界文化遗产"
+            ],
+            "museum": "Villa Savoye (Centre des monuments nationaux)",
+            "museumCity": "Poissy, France",
+            "museumUrl": "https://www.villa-savoye.fr"
+          },
+          {
+            "id": "unite-dhabitation",
+            "title": "Unité d'Habitation, Marseille (马赛公寓)",
+            "titleEn": "Unité d'Habitation, Marseille",
+            "titleZh": "马赛公寓",
+            "date": "1952",
+            "location": "马赛 (Marseille, France)",
+            "image": "/images/artworks/unite-dhabitation.jpg",
+            "notes": "二战后现代集体住宅划时代杰作。粗野主义清水混凝土（Béton Brut）结构，内嵌双层跃层咬合住宅单元、空中商业街、托儿所与雕塑感屋顶跑道活动平台。",
+            "knowledgePoints": [
+              "现代粗野主义（Brutalism）与模度（Modulor）人体比例体系典范",
+              "双层'L'形咬合紧凑剖面单元与第七层室内空中街道",
+              "雕塑感混凝土屋顶公共活动平台与幼儿戏水池",
+              "联合国教科文组织世界文化遗产"
+            ],
+            "museum": "Cité Radieuse (Unité d'Habitation de Marseille)",
+            "museumCity": "Marseille, France",
+            "museumUrl": "https://www.marseille-tourisme.com"
+          },
+          {
+            "id": "notre-dame-du-haut",
+            "title": "Chapelle Notre-Dame du Haut, Ronchamp (朗香教堂 / 穹顶圣母圣殿)",
+            "titleEn": "Notre-Dame du Haut, Ronchamp",
+            "titleZh": "朗香教堂 / 穹顶圣母圣殿",
+            "date": "1955",
+            "location": "朗香 (Ronchamp, France)",
+            "image": "/images/artworks/ronchamp.jpg",
+            "notes": "柯布西耶晚期极具表现主义与雕塑感的宗教建筑。如蟹壳般向上翘起的深色现浇混凝土屋顶与不规则厚墙中开凿的彩色光漏窗，创造出神秘莫测的光影空间。",
+            "knowledgePoints": [
+              "现代主义向雕塑表现主义转型的旷世之作",
+              "悬浮脱开的蟹壳状曲面混凝土屋顶（产生一条细缝天光）",
+              "南立面厚重斜墙中大小不一、内大外小的彩色玻璃漏光窗洞",
+              "联合国教科文组织世界文化遗产"
+            ],
+            "museum": "Colline Notre-Dame du Haut (Association des Amis de Sainte-Barbe)",
+            "museumCity": "Ronchamp, France",
+            "museumUrl": "https://www.collinenotredameduhaut.com"
+          }
+        ]
+      },
+      {
+        "id": "adolf-loos",
+        "name": "阿道夫·洛斯",
+        "englishName": "Adolf Loos",
+        "years": "1870 - 1933",
+        "avatar": "/images/artists/adolf-loos.jpg",
+        "bio": "奥地利-捷克建筑师、理论家与论战家，发表著名的《装饰与罪恶》（Ornament and Crime），开创了三维立体错层空间规划理论（Raumplan）。",
+        "artworks": [
+          {
+            "id": "rufer-house",
+            "title": "Rufer House (鲁弗住宅)",
+            "titleEn": "Rufer House",
+            "titleZh": "鲁弗住宅",
+            "date": "1922",
+            "location": "维也纳 (Vienna, Austria)",
+            "image": "/images/artworks/rufer-house.jpg",
+            "notes": "位于维也纳的早期现代住宅。外部为极度克制的纯白无装饰立方体，内部各个房间根据功能需要拥有不同净高与错层连通，是'空间规划'（Raumplan）的早期实验。",
+            "knowledgePoints": [
+              "实践《装饰与罪恶》论断的无装饰纯白外立面",
+              "空间规划（Raumplan）早期探索：内部房间根据功能具有不同标高与层高"
+            ],
+            "museum": "Rufer House (Schlickgasse / Adolf Loos Archive)",
+            "museumCity": "Vienna, Austria",
+            "museumUrl": "https://www.wien.info/en"
+          },
+          {
+            "id": "villa-muller",
+            "title": "Villa Müller, Prague (米勒别墅)",
+            "titleEn": "Villa Müller",
+            "titleZh": "米勒别墅",
+            "date": "1930",
+            "location": "布拉格 (Prague, Czech Republic)",
+            "image": "/images/artworks/villa-muller.jpg",
+            "notes": "空间规划（Raumplan）的终极成熟杰作。内部大客厅、起居室、女主人闺房错落穿插于不同标高上，通过视线对流与精选名贵大理石饰面展现内在的奢华与严谨。",
+            "knowledgePoints": [
+              "空间规划（Raumplan）的集大成代表作",
+              "外部极简纯白体块与内部错层流线、西波里诺大理石（Cipollino Marble）奢华材质的鲜明对比"
+            ],
+            "museum": "City of Prague Museum (Villa Müller)",
+            "museumCity": "Prague, Czech Republic",
+            "museumUrl": "https://www.muzeumprahy.cz/en/villa-muller"
+          }
+        ]
+      }
+    ]
+  }
+];
+
+// 米理建筑与艺术史研考核心真题与自适应题库
+export const ARCHITECTURE_EXAM_QUESTIONS = [
+  {
+    id: "exam-greek-theatre",
+    category: "architecture",
+    question: "在古希腊与古罗马剧场形制对比中，依山而建、拥有超过半圆马蹄形观众席（Koilon/Cavea）与圆形乐池（Orchestra）的剧场属于：",
+    options: ["希腊剧场 (Greek Theatre)", "罗马剧场 (Roman Theatre)", "伊特鲁里亚剧场 (Etruscan)", "凯尔特剧场 (Celtic)"],
+    answer: "希腊剧场 (Greek Theatre)",
+    explanation: "古希腊剧场通常依自然山坡地势而建，观众席超过180度半圆；而古罗马剧场是建立在连续混凝土拱券结构之上的独立半圆形建筑。"
+  },
+  {
+    id: "exam-orders-match",
+    category: "architecture",
+    question: "古典建筑柱式从左至右依次为：无柱础厚重圆柱配简单柱头、带卷涡（Volute）柱头、带有莨苕叶（Acanthus）华丽花篮柱头，其对应柱式是：",
+    options: [
+      "A-多立克 (Doric), B-爱奥尼 (Ionic), C-科林斯 (Corinthian)",
+      "A-多立克 (Doric), B-科林斯 (Corinthian), C-爱奥尼 (Ionic)",
+      "A-塔斯干 (Tuscan), B-爱奥尼 (Ionic), C-米诺斯 (Minoan)",
+      "A-爱奥尼 (Ionic), B-多立克 (Doric), C-复合柱式 (Composite)"
+    ],
+    answer: "A-多立克 (Doric), B-爱奥尼 (Ionic), C-科林斯 (Corinthian)",
+    explanation: "古希腊三大经典柱式发展序列：朴实有力的多立克柱式 -> 优雅卷涡的爱奥尼柱式 -> 繁复莨苕叶花篮的科林斯柱式。"
+  },
+  {
+    id: "exam-temple-peripteros",
+    category: "architecture",
+    question: "四周完全被单排独立连续列柱（Peristyle）环绕的古典神庙平面形制称为：",
+    options: ["围柱式 (Peripteros)", "假围柱式 (Pseudoperipteros)", "前廊式 (Prostyle)", "双头前廊式 (Amphiprostyle)"],
+    answer: "围柱式 (Peripteros)",
+    explanation: "围柱式（Peripteros）是指神庙核心内殿（Cella）四周被单圈柱廊（Colonnade）环绕的典型希腊神庙平面（如帕特农神庙）。"
+  },
+  {
+    id: "exam-latin-cross",
+    category: "architecture",
+    question: "在基督教大教堂平面形制中，纵向中殿（Longitudinal Arm）长于横向耳堂（Transverse Arm）的十字形平面被称为：",
+    options: ["拉丁十字 (Latin Cross)", "希腊十字 (Greek Cross)", "陶形十字 (Tau Cross / T形)", "圣安德烈十字 (St. Andrew's Cross)"],
+    answer: "拉丁十字 (Latin Cross)",
+    explanation: "纵向长臂大于横向短臂的为拉丁十字（西欧大教堂最主流形制）；四臂等长对称的为希腊十字（拜占庭与文艺复兴集中式推崇）。"
+  },
+  {
+    id: "exam-rocchio-shaft",
+    category: "architecture",
+    question: "在古典柱式建造技术中，构成石柱柱身（Shaft）的每一块独立圆柱形叠合石块在建筑术语中被称为：",
+    options: ["柱鼓 (Rocchio / Rocchi)", "柱础 (Base)", "柱顶过梁 (Architrave)", "柱顶饰 (Cippo)"],
+    answer: "柱鼓 (Rocchio / Rocchi)",
+    explanation: "石柱柱身通常由数块圆柱形石块叠合而成，每块称为柱鼓（Rocchio），中间通过金属销钉与熔铅固定。"
+  },
+  {
+    id: "exam-grotesque-domus-aurea",
+    category: "architecture",
+    question: "文艺复兴时期流行的建筑与室内装饰纹样'怪诞纹饰'（Grotesque / Grottesche）最初源自对哪处古罗马遗址地下彩绘的发掘：",
+    options: ["尼禄金宫 (Domus Aurea)", "庞贝古城壁画 (Pompeian Fresco)", "埃特鲁斯坎墓穴 (Etruscan Tombs)", "罗马万神庙 (Pantheon)"],
+    answer: "尼禄金宫 (Domus Aurea)",
+    explanation: "文艺复兴学者在地底洞穴（Grotte）中发掘出古罗马尼禄皇帝金宫（Domus Aurea）轻盈奇幻的彩绘壁画，因而定名为 Grottesche。"
+  },
+  {
+    id: "exam-flying-buttress",
+    category: "architecture",
+    question: "哥特式大教堂中，从外墙上部跨空延伸至独立厚重墩柱（Pier）上以传递拱顶外推力的倾斜拱券结构被称为：",
+    options: ["飞扶壁 (Flying Buttress / Arc-boutant)", "暗楼盲拱 (Triforium)", "贴墙浅柱 (Lesene)", "塞利奥拱 (Serliana)"],
+    answer: "飞扶壁 (Flying Buttress / Arc-boutant)",
+    explanation: "飞扶壁（Flying Buttress）是哥特力学革命核心，它将高耸中殿肋拱顶产生的巨大侧向外推力跨空传导至外侧的巨型墩柱上，使外墙得以彻底开窗。"
+  },
+  {
+    id: "exam-parma-baptistery",
+    category: "architecture",
+    question: "帕尔马洗礼堂（Baptistery of Parma）外立面最显著的建筑形式特征是：",
+    options: [
+      "四层连续平过梁式开敞凉廊 (A succession of architraved loggias)",
+      "尖券盲拱体系 (Pointed blind arcades)",
+      "全封闭无开口糙石外墙 (Rusticated blind walls)",
+      "双塔哥特式门廊 (Twin tower portal)"
+    ],
+    answer: "四层连续平过梁式开敞凉廊 (A succession of architraved loggias)",
+    explanation: "帕尔马洗礼堂由安特拉米建造，外立面八角形红大理石环绕着四层平过梁式开敞柱廊（Architraved Loggias），极具韵律感。"
   }
 ];
 
 export const getQuizQuestions = (category = 'all') => {
   const questions = [];
+  
+  // 1. Add questions generated from artworks & architecture
   artData.forEach(movement => {
     if (category !== 'all' && movement.category !== category) return;
     movement.artists.forEach(artist => {
@@ -2220,7 +3354,7 @@ export const getQuizQuestions = (category = 'all') => {
             artworkTitle: work.title,
             artworkImage: work.image,
             category: movement.category,
-            question: `作品《${work.titleZh || work.title}》属于哪位大师的代表作？`,
+            question: `作品/地标《${work.titleZh || work.title}》属于哪位大师/学派的代表作？`,
             options: [
               artist.name,
               ...artData.flatMap(m => m.artists.filter(a => a.id !== artist.id).map(a => a.name)).slice(0, 3)
@@ -2232,5 +3366,21 @@ export const getQuizQuestions = (category = 'all') => {
       });
     });
   });
+
+  // 2. Add authentic architectural exam questions if applicable
+  if (category === 'all' || category === 'architecture') {
+    ARCHITECTURE_EXAM_QUESTIONS.forEach(eq => {
+      questions.push({
+        id: eq.id,
+        category: 'architecture',
+        movementName: '建筑历史与构造考点',
+        question: eq.question,
+        options: eq.options,
+        answer: eq.answer,
+        explanation: eq.explanation
+      });
+    });
+  }
+
   return questions.sort(() => 0.5 - Math.random()).slice(0, 10);
 };

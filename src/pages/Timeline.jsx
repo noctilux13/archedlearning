@@ -24,7 +24,7 @@ const EASE = [0.16, 1, 0.3, 1];
 // Parse numeric starting year for accurate chronological sorting
 function getStartYear(yearsStr) {
   if (!yearsStr) return 9999;
-  const match = yearsStr.match(/\d{4}/);
+  const match = yearsStr.match(/\d{3,4}/);
   return match ? parseInt(match[0], 10) : 9999;
 }
 

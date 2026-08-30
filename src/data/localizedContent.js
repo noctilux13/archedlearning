@@ -1,6 +1,6 @@
 // Comprehensive Multilingual Academic Knowledge Base for Art History and Architecture
 // Languages: zh (Chinese), en (English), it (Italiano), es (Español)
-// 100% Coverage across 12 Movements, 35 Artists, and 91 Artworks
+// 100% Coverage across 16 Movements, 50+ Artists, and 135 Artworks/Landmarks
 
 export const localizedContent = {
   "zh": {
@@ -124,6 +124,50 @@ export const localizedContent = {
           "彩色碎瓷拼贴（Trencadís）与矿物晶体采光结构",
           "立面与结构细部的自然主义与精神性意象"
         ]
+      },
+      "romanesque-architecture": {
+        "description": "罗马式建筑（又称罗曼式建筑）盛行于10至12世纪西欧，以半圆拱（Semicircular Arch）、厚重实体石墙、筒形拱顶（Barrel Vault）、十字拱顶（Groin Vault）、盲拱廊（Blind Arcade）、贴墙浅壁柱（Lesene）与独立洗礼堂（Baptistery）为核心特征，构筑出中世纪坚固沉稳的宗教与世俗空间。",
+        "historicalContext": "在中世纪盛期修道院改革、朝圣热潮与封建城邦兴起背景下发展。建筑多兼具宗教礼拜与防御庇护功能，开创了欧洲中世纪大型拱顶结构体系。",
+        "keyFeatures": [
+          "半圆拱（Semicircular Arch）与厚重实体石砌墙体",
+          "筒形拱顶（Barrel Vault）与十字拱顶（Groin Vault）",
+          "节奏跨度中殿与独立集中式洗礼堂（Baptistery）",
+          "贴墙浅壁柱（Lesene）与装饰性盲拱廊（Blind Arcade）",
+          "单券窗（Monofora）、双联拱窗（Bifora）与三联拱窗（Trifora）"
+        ]
+      },
+      "gothic-architecture": {
+        "description": "哥特式建筑发源于12世纪中叶法兰西岛，是欧洲中世纪建筑力学与空间美学的巅峰革命。通过交叉肋拱（Ribbed Vault）、尖拱（Pointed Arch）与外部飞扶壁（Flying Buttress），打破厚墙限制，构筑极度拔高的天际线与巨大彩色玻璃花窗（Stained Glass）。",
+        "historicalContext": "伴随中世纪城市自治繁荣、经院哲学与主教座堂建造热潮兴起，建筑师利用几何受力分析摆脱传统重墙，开创了以骨架与天国之光为核心的哥特时代。",
+        "keyFeatures": [
+          "交叉肋拱顶（Ribbed Vaulting）与垂直力线体系",
+          "飞扶壁（Flying Buttress / Arc-boutant）跨空传导拱顶侧推力",
+          "尖拱（Pointed Arch）与高耸束柱（Fasciculate Pillars / Polystyles）",
+          "大面积彩色玻璃花窗（Stained Glass）与辐射式玫瑰花窗（Rose Window）",
+          "高耸尖塔（Spire）与兼具受力配重平衡功能的小尖塔（Pinnacle）"
+        ]
+      },
+      "renaissance-architecture": {
+        "description": "15至16世纪发源于佛罗伦萨的建筑革命，以人文主义精神与古希腊罗马古典规范（柱式、比例、对称与纯粹几何）的复兴为标志。通过线性透视法的空间建构、《论建筑》与《建筑四书》的理论化、以及'理想城市'（Ideal City）规划，彻底终结了中世纪哥特风格，开启了西方近代建筑学的新纪元。",
+        "historicalContext": "伴随美第奇家族等城市贵族的赞助、古典文献的再发现以及科学与透视学的发展，建筑师从工匠上升为博学的人文主义学者与工程师。",
+        "keyFeatures": [
+          "线性透视法（Linear Perspective）在空间中的严谨应用",
+          "古典柱式系统（五大柱式）与完美几何比例（圆、正方形）",
+          "理想城市（Ideal City）规划与集中式平面（Centralized Plan）",
+          "塞利奥拱 / 帕拉迪奥母题（Serliana / Palladian Motif）",
+          "民用宫殿（Palazzo Civile）的三段式立面与糙石外墙（Rustication）"
+        ]
+      },
+      "modernist-architecture": {
+        "description": "20世纪主导全球的建筑运动与风格，横跨芝加哥学派、包豪斯、国际风格（International Style）与有机建筑。基于钢材、玻璃与钢筋混凝土等新型建材，确立了'形式追随功能'（Form follows function）、极简主义与全面摒弃传统附着装饰的现代空间美学。",
+        "historicalContext": "以1871年芝加哥大火后的灾后商业高层重建与电梯应用为起点，经历欧洲一战后工业化大生产与包豪斯设计教育，彻底重塑了20世纪现代城市景观。",
+        "keyFeatures": [
+          "芝加哥学派钢框架结构与商业摩天大楼（Skyscraper）",
+          "功能主义（Functionalism）：形式服从功能（Form follows function）",
+          "新材料技术革命：钢材、大面积玻璃幕墙与清水混凝土",
+          "包豪斯学派与国际风格（International Style）",
+          "有机建筑（Organic Architecture）与新建筑五点（Five Points of Architecture）"
+        ]
       }
     },
     "artists": {
@@ -231,6 +275,66 @@ export const localizedContent = {
       },
       "antoni-gaudi": {
         "bio": "西班牙加泰罗尼亚建筑师，现代主义（Modernisme）代表人物。他在圣家堂、米拉之家与巴特罗之家等设计中，将悬链线力学结构、有机双曲几何与传统工艺深度融合。"
+      },
+      "lombard-romanesque-masters": {
+        "bio": "活跃于北意大利伦巴第地区的石匠行会，开创了红砖罗曼建筑、节奏中殿跨度、贴墙浅壁柱（Lesene）与独立洗礼堂范式。"
+      },
+      "pisan-romanesque-masters": {
+        "bio": "以比萨奇迹广场为代表的托斯卡纳罗曼学派，以纯白与灰色大理石斑马条纹、多层开敞式拱廊与精美雕刻闻名。"
+      },
+      "french-romanesque-masters": {
+        "bio": "法国北部与香槟地区的罗曼式大教堂建造行会，发展了宏伟的长巴西利卡中殿与双塔立面，为哥特式诞生奠定基础。"
+      },
+      "arnolfo-di-cambio": {
+        "bio": "意大利托斯卡纳著名建筑师与雕塑家，设计了佛罗伦萨旧宫、圣十字大殿并主持了佛罗伦萨圣母百花大教堂的初始规划。"
+      },
+      "french-gothic-masters": {
+        "bio": "法兰西岛与香槟地区的哥特建筑大师行会，建造了亚眠、巴黎圣母院与沙特尔大教堂等古典盛期哥特式范本。"
+      },
+      "german-gothic-masters": {
+        "bio": "莱茵河谷的德意志哥特石匠大师，将哥特式垂直向上、剔透如石雕蕾丝的尖塔技术推向世界之巅。"
+      },
+      "italian-gothic-masters": {
+        "bio": "融合地中海古典光影、大理石色彩斑马纹镶嵌与哥特式骨架的意大利哥特学派。"
+      },
+      "filippo-brunelleschi": {
+        "bio": "意大利文艺复兴建筑奠基人，第一位现代工程师、规划师与专利获得者（1421）。发明了线性透视法，成功筑造了佛罗伦萨圣母百花大教堂的无脚手架双层大穹顶。"
+      },
+      "lorenzo-ghiberti": {
+        "bio": "佛罗伦萨金匠、雕塑家与建筑师，耗时27年铸造了被米开朗基罗盛赞为'天堂之门'的圣若望洗礼堂东门浮雕。"
+      },
+      "donato-bramante": {
+        "bio": "盛期文艺复兴建筑开创者，将文艺复兴风格从米兰推向罗马，为教皇尤利乌斯二世设计了圣彼得大教堂的初始希腊十字集中式方案。"
+      },
+      "leon-battista-alberti": {
+        "bio": "文艺复兴时期博学家、人文学者与建筑理论家，著有里程碑式理论巨著《论建筑》（De re aedificatoria），将罗马凯旋门母题引入教堂立面设计。"
+      },
+      "michelangelo-buonarroti-arch": {
+        "bio": "文艺复兴与风格主义大师。71岁接掌圣彼得大教堂工程并设计了宏伟的双层大穹顶；设计了劳伦齐阿纳图书馆的流动大台阶与罗马卡比托利欧广场。"
+      },
+      "renaissance-palazzo-masters": {
+        "bio": "塑造了佛罗伦萨与罗马文艺复兴世俗贵族宫殿（Palazzo Civile）标准三段式与糙石立面体系的代表建筑师群。"
+      },
+      "andrea-palladio": {
+        "bio": "威尼斯共和国文艺复兴最伟大的建筑师，著有《建筑四书》（I quattro libri dell'architettura），发明了塞利奥拱（Serliana / 帕拉迪奥母题），其对称严谨的帕拉迪奥主义（Palladianism）深远影响英美乃至全球古典建筑。"
+      },
+      "chicago-school-architects": {
+        "bio": "19世纪末至20世纪初活跃于芝加哥的先驱建筑师群体。在1871年芝加哥大火后的灾后重建中，率先将钢框架结构、安全电梯与大面积采光窗应用于高层商业摩天大楼，提出'形式服从功能'。"
+      },
+      "walter-gropius": {
+        "bio": "德裔美国建筑师，包豪斯公立学校（Bauhaus）创办人与首任校长，国际风格的主要推动者，后任教于哈佛大学设计研究生院（GSD）。"
+      },
+      "mies-van-der-rohe": {
+        "bio": "德裔美国现代主义建筑先驱，包豪斯最后一任校长，伊利诺伊理工学院（IIT）建筑系主任。提出'少即是多'（Less is more）与'流通空间'哲学。"
+      },
+      "frank-lloyd-wright": {
+        "bio": "美国历史上最著名的建筑大师，有机建筑（Organic Architecture）与草原学派（Prairie School）开创者，塔里埃森学徒计划导师，一生设计了千余座建筑。"
+      },
+      "le-corbusier": {
+        "bio": "瑞士-法国建筑师、城市规划师与画家，现代建筑运动核心先驱，国际现代建筑大会（CIAM）创始成员，提出'住房是居住的机器'与'新建筑五点'。"
+      },
+      "adolf-loos": {
+        "bio": "奥地利-捷克建筑师、理论家与论战家，发表著名的《装饰与罪恶》（Ornament and Crime），开创了三维立体错层空间规划理论（Raumplan）。"
       }
     },
     "artworks": {
@@ -911,6 +1015,344 @@ export const localizedContent = {
           "骨骼状石材支撑柱与波浪形木质门窗细部设计",
           "加泰罗尼亚现代主义色彩与有机形体改造的典范"
         ]
+      },
+      "sant-ambrogio-milan": {
+        "notes": "伦巴第罗曼式建筑最高成就。拥有开阔的四方列柱前庭（Atrium）、双钟楼、两层拱廊与八角形穹顶，开创了节奏中殿跨度与砖石肋穹结构。",
+        "knowledgePoints": [
+          "伦巴第罗曼式建筑代表作，中殿具节奏跨度（Rhythmic Span）",
+          "包含四方列柱中庭（Atrium）与高低不对称双钟楼",
+          "广泛运用贴墙浅壁柱（Lesene）与早期砖石交叉拱顶"
+        ]
+      },
+      "baptistery-parma": {
+        "notes": "由贝内代托·安特拉米（Benedetto Antelami）设计的八角形粉红大理石独立洗礼堂。外立面环绕四层平过梁式开敞凉廊（Architraved Loggias），标志着罗曼式向哥特式的过渡。",
+        "knowledgePoints": [
+          "八边形独立洗礼堂平面，连接罗曼式与早期哥特式过渡",
+          "外墙由四层平过梁开敞凉廊（Architraved Loggias）环绕",
+          "安特拉米雕刻的精美中世纪浮雕与十六边形伞状穹顶"
+        ]
+      },
+      "piazza-dei-miracoli-pisa": {
+        "notes": "由大教堂、圆形洗礼堂、圆柱形钟楼（比萨斜塔）与洗石纪念公墓构成的世界遗产建筑群。大教堂立面拥有四层开敞拱廊，纯白大理石展现极致韵律。",
+        "knowledgePoints": [
+          "托斯卡纳罗曼式建筑巅峰，白色大理石多层开敞拱廊立面",
+          "独立式圆形洗礼堂、拉丁十字大教堂与圆柱钟楼（斜塔）组群",
+          "联合国教科文组织世界文化遗产"
+        ]
+      },
+      "basilica-saint-remi": {
+        "notes": "法国加洛林与早期罗曼式长巴西利卡建筑，保留了纯正的罗曼式宽阔中殿与厚重石柱，是欧洲最古老宏伟的朝圣圣殿之一。",
+        "knowledgePoints": [
+          "早期罗曼式向哥特式过渡的宏伟朝圣巴西利卡",
+          "纯正的罗马式长跨度中殿与厚重石柱结构",
+          "联合国教科文组织世界文化遗产"
+        ]
+      },
+      "palazzo-vecchio": {
+        "notes": "佛罗伦萨市政厅堡垒式民用建筑，粗琢石墙面（Rustication）、齿状凸垛与高耸偏置的94米阿诺尔福钟楼，体现了中世纪晚期自治城邦的权力与防御象征。",
+        "knowledgePoints": [
+          "中世纪晚期托斯卡纳世俗市政宫殿（Palazzo Civile）典范",
+          "粗琢石（Rustication）外立面与94米偏心防御钟楼（Torre di Arnolfo）",
+          "领主广场（Piazza della Signoria）核心政治象征"
+        ]
+      },
+      "amiens-cathedral": {
+        "notes": "法国盛期哥特式（High Gothic）规模最大、中殿净高最高（42.3米）的大教堂。拥有极为成熟的双层飞扶壁系统与繁复华丽的立面雕刻群。",
+        "knowledgePoints": [
+          "法国盛期哥特式大教堂典范，中殿拱顶高达42.3米",
+          "极为成熟的双层飞扶壁与三层立面透光体系",
+          "联合国教科文组织世界文化遗产"
+        ]
+      },
+      "notre-dame-paris": {
+        "notes": "早期哥特式向盛期演进的永恒丰碑。拥有西立面三大宏伟雕刻门（圣母之门、最后审判之门、圣安娜之门）、壮丽的辐射式玫瑰花窗与标志性悬空飞扶壁。",
+        "knowledgePoints": [
+          "早期哥特式向盛期哥特式演进的经典地标",
+          "西立面三门雕塑群（圣母之门、最后审判之门、圣安娜之门）",
+          "辐射式玫瑰花窗与跨度巨大的飞扶壁体系"
+        ]
+      },
+      "cologne-cathedral": {
+        "notes": "双塔高达157米的哥特式旷世杰作。历经六百年修建，拥有欧洲最宏伟的哥特式唱诗班席、巨大的飞扶壁与华丽的石雕小尖塔群（Pinnacles）。",
+        "knowledgePoints": [
+          "世界第三高教堂建筑，双塔高达157米",
+          "极致的垂直性与如织锦般的哥特石雕小尖塔（Pinnacles）",
+          "联合国教科文组织世界文化遗产"
+        ]
+      },
+      "duomo-milano": {
+        "notes": "世界规模最大的白色坎多利亚大理石哥特教堂。拥有135座尖塔与三千余座雕像，顶部镀金圣母像（Madonnina）傲视全城，是伦巴第国际哥特式的绝唱。",
+        "knowledgePoints": [
+          "世界最大的大理石哥特式主教座堂",
+          "135座石雕尖塔与顶部镀金圣母像（Madonnina）",
+          "融合北欧哥特垂直骨架与意大利古典宽阔空间感"
+        ]
+      },
+      "siena-cathedral": {
+        "notes": "托斯卡纳哥特式建筑典范。黑白相间的大理石斑马纹横条纹、乔瓦尼·皮萨诺雕刻的华丽西立面与精绝天下的大理石镶嵌地坪（Pavimento）。",
+        "knowledgePoints": [
+          "托斯卡纳哥特式大理石色彩斑马纹结构",
+          "乔瓦尼·皮萨诺设计的华美西立面雕刻群",
+          "举世无双的大理石镶嵌画地坪（Pavimento del Duomo）"
+        ]
+      },
+      "doges-palace-venice": {
+        "notes": "威尼斯哥特式（Venetian Gothic）世俗建筑巅峰。底层开敞式尖拱凉廊、二层精美四叶饰花窗与粉白几何大理石墙面，轻盈飘逸如水上漂浮的宫殿。",
+        "knowledgePoints": [
+          "威尼斯哥特式世俗行政与宫殿建筑最高杰作",
+          "底层与二层连续开敞尖券与四叶饰拱廊（Loggias）",
+          "毗邻叹息桥（Bridge of Sighs）与圣马可广场"
+        ]
+      },
+      "florence-cathedral-dome": {
+        "notes": "文艺复兴建筑第一座丰碑。布鲁内莱斯基发明鱼骨形砌砖法（Spina di Pesce）与双层穹顶结构，在无地面支撑脚手架的情况下跨越了45米八角形鼓座。",
+        "knowledgePoints": [
+          "文艺复兴建筑开山之作，跨度45米无脚手架双层穹顶",
+          "自承重鱼骨砌砖法（Spina di pesce）与八角形鼓座采光亭",
+          "西方工程史与结构力学史里程碑"
+        ]
+      },
+      "pazzi-chapel": {
+        "notes": "位于佛罗伦萨圣十字大殿回廊内，以灰绿色砂岩（Pietra Serena）线条勾勒白墙，呈现出极致纯粹的几何对称与和谐比例。",
+        "knowledgePoints": [
+          "文艺复兴早期完美比例与几何纯粹性的教科书典范",
+          "灰绿色石材（Pietra Serena）勾勒严谨的几何与伞形穹顶"
+        ]
+      },
+      "santo-spirito-florence": {
+        "notes": "布鲁内莱斯基生前最后一座巴西利卡教堂，拉丁十字平面，内部圆柱列廊与侧礼拜堂展现出无与伦比的透视纵深感与数学韵律。",
+        "knowledgePoints": [
+          "古典科林斯列柱构成的完美透视巴西利卡",
+          "模数化设计：各开间尺寸呈严谨的数学比例递进"
+        ]
+      },
+      "doors-of-paradise": {
+        "notes": "佛罗伦萨圣若望洗礼堂东门十面镀金青铜浮雕，融合高低浮雕与线性透视法，将多幕圣经叙事生动呈现于单一空间深度中。",
+        "knowledgePoints": [
+          "文艺复兴雕塑与建筑立面浮雕巅峰杰作",
+          "运用线性透视法与薄浮雕（Schiacciato）构建深邃空间",
+          "被米开朗基罗赞誉为'适合作为天堂大门'"
+        ]
+      },
+      "tempietto-san-pietro": {
+        "notes": "罗马盛期文艺复兴建筑宣言。建于圣彼得殉道处，圆形多立克柱廊环绕穹顶小神庙，实现了古罗马神庙与基督教集中式平面的完美合一。",
+        "knowledgePoints": [
+          "盛期文艺复兴建筑完美范式，多立克回廊式集中圆形小庙",
+          "对古典比例、凹凸光影与穹顶纯粹几何的极致演绎"
+        ]
+      },
+      "santa-maria-delle-grazie-milan": {
+        "notes": "伯拉孟特受斯福尔扎家族委托扩建的陵寝部分，宏伟的八角形交叉部穹顶与半圆形后殿展现出北意大利文艺复兴的恢弘尺度。",
+        "knowledgePoints": [
+          "伯拉孟特在米兰时期的最高建筑成就",
+          "宏大的十六边形采光鼓座与八角形内部穹顶"
+        ]
+      },
+      "belvedere-courtyard": {
+        "notes": "连接梵蒂冈宫与美景宫别墅的宏大三级台地园林与露天剧场空间，开创了文艺复兴大型轴线景观与台地建筑先河。",
+        "knowledgePoints": [
+          "西方景观建筑史里程碑：多层台地轴线透视空间",
+          "融合了古罗马别墅与露天剧场（Cavea）的宏伟尺度"
+        ]
+      },
+      "sant-andrea-mantua": {
+        "notes": "阿尔贝蒂建筑理论的集大成者。立面融合罗马凯旋门与古典神殿山墙，内部以宏伟的格子天花巨大筒形拱顶（Barrel Vault）替代传统侧廊柱列。",
+        "knowledgePoints": [
+          "立面开创性融合古罗马凯旋门（Triumphal Arch）与神庙门头",
+          "单中殿巨大藻井筒形拱顶（Barrel Vault），深刻影响后世巴洛克教堂布局"
+        ]
+      },
+      "tempio-malatestiano": {
+        "notes": "阿尔贝蒂受马拉泰斯塔委托将哥特旧堂改造为文艺复兴人文主义陵庙，外立面直接借鉴里米尼古罗马奥古斯都凯旋门。",
+        "knowledgePoints": [
+          "用古典大理石外壳包裹中世纪哥特建筑的典范",
+          "侧面深凹大拱券用于安放人文主义学者石棺"
+        ]
+      },
+      "laurentian-library": {
+        "notes": "风格主义建筑开山之作。前厅采用内嵌式壁柱与故意反常规的构件比例，三股如熔岩流淌般曲面大台阶展现出强烈的动态张力。",
+        "knowledgePoints": [
+          "风格主义（Mannerism）建筑里程碑，打破古典和谐定式",
+          "前厅反常规的内嵌墙柱、虚假托架与雕塑般流动三轨大台阶"
+        ]
+      },
+      "porta-pia": {
+        "notes": "米开朗基罗生前最后的建筑杰作。城门内侧立面充满大胆自由的怪诞装饰、交错的山墙与反常的比例，展现晚期风格主义的不羁探索。",
+        "knowledgePoints": [
+          "米开朗基罗晚期建筑实验作品",
+          "复合山墙与不规则古典构件的非传统重构"
+        ]
+      },
+      "piazza-del-campidoglio": {
+        "notes": "梯形透视广场与椭圆形十二角星地面铺装，中央安放马可·奥勒留骑马青铜像，两侧为新宫与保守宫，开创了现代城市广场景观规划新纪元。",
+        "knowledgePoints": [
+          "梯形广场抵消透视变形，开创城市轴线公共空间设计",
+          "椭圆形地面十二角星几何铺装与巨柱式（Giant Order）立面"
+        ]
+      },
+      "st-peters-basilica-dome": {
+        "notes": "米开朗基罗简化了复杂设计，确立了雄浑集中的希腊十字核心，并设计了高达136米的双层肋拱大穹顶（后由波尔塔与马代尔诺续建）。",
+        "knowledgePoints": [
+          "世界最高天主教大教堂穹顶（内部净高136.5米）",
+          "双层石构肋拱体系与外部成对科林斯巨柱鼓座",
+          "后由卡洛·马代尔诺（Carlo Maderno）向西延伸为拉丁十字中殿与前立面"
+        ]
+      },
+      "palazzo-medici-riccardi": {
+        "notes": "文艺复兴早期民用宫殿典范。外立面三层递减：底层厚重糙石（Rustication）、二层平滑分缝石、三层平整细石，顶部挑出巨大的古典檐口，内部设优雅柱廊内院。",
+        "knowledgePoints": [
+          "文艺复兴住宅宫殿范式：立面由下至上三层石材糙度与高度递减",
+          "内部方形柱廊中央庭院（Cortile）与顶部巨型古典檐口"
+        ]
+      },
+      "palazzo-dei-diamanti": {
+        "notes": "费拉拉文艺复兴城市扩建核心地标。外墙铺贴超过8500块金字塔形立体钻石切割大理石块，以光影折射与街角阳台形成戏剧性的透视视觉。",
+        "knowledgePoints": [
+          "8500余块金字塔形钻石琢石（Diamond-point Rustication）构成独特外立面",
+          "文艺复兴理想城市扩张计划（Addizione Erculea）的街角视觉焦点"
+        ]
+      },
+      "palazzo-farnese": {
+        "notes": "罗马盛期文艺复兴最宏伟的贵族宫殿。小桑加洛规划了严谨对称的立面与中庭，米开朗基罗设计了二层中央大阳台与极度宏伟的顶部雕花檐口。",
+        "knowledgePoints": [
+          "罗马盛期文艺复兴宫殿的巅峰之作",
+          "小桑加洛设计的严谨三层山花窗格与米开朗基罗操刀的宏大悬挑挑檐"
+        ]
+      },
+      "basilica-palladiana": {
+        "notes": "帕拉迪奥成名作。为旧哥特宫殿加建双层开敞大理石拱廊，巧妙运用圆拱配合两侧小矩形过梁的'塞利奥拱 / 帕拉迪奥母题'（Serliana），化解了不规则原有开间的结构难题。",
+        "knowledgePoints": [
+          "'帕拉迪奥母题 / 塞利奥拱'（Serliana / Palladian Motif）经典应用",
+          "成功将古典和谐比例与灵活开间结构相统一的典范"
+        ]
+      },
+      "villa-la-rotonda": {
+        "notes": "建筑史上最著名的乡间住宅。正方形绝对对称平面，中央为穹顶圆厅，四面均设有六柱爱奥尼神庙式门廊，将建筑与周围田园风景完美融为一体。",
+        "knowledgePoints": [
+          "四面对称的六柱爱奥尼门廊与中央穹顶圆厅",
+          "住宅建筑首次采用神庙门廊，确立了帕拉迪奥主义（Palladianism）国际范式",
+          "联合国教科文组织世界文化遗产"
+        ]
+      },
+      "chicago-skyscraper-movement": {
+        "notes": "在市中心用地紧张背景下诞生的钢框架商业高层建筑。沙利文与珍妮等探讨了新技术与垂直立面造型，为欧洲现代主义与国际风格提供了直接启蒙。",
+        "knowledgePoints": [
+          "1871年芝加哥大火催生的钢框架高层商业建筑革命",
+          "安全电梯普及与大面积三段式芝加哥窗（Chicago Window）",
+          "路易斯·沙利文提出'形式服从功能'（Form follows function）名言"
+        ]
+      },
+      "bauhaus-dessau": {
+        "notes": "现代主义建筑里程碑。风车形不对称自由功能布局，全钢结构与三层通高无立柱转角玻璃幕墙（Glass Curtain Wall），体现了艺术与技术的高度统一。",
+        "knowledgePoints": [
+          "现代主义建筑开山纲领式建筑",
+          "三层通高通透转角悬挑玻璃幕墙（Curtain Wall）",
+          "风车状自由功能分区：教学、工坊、礼堂与宿舍连通",
+          "联合国教科文组织世界文化遗产"
+        ]
+      },
+      "brick-country-house": {
+        "notes": "密斯早期受风格派与马列维奇影响的纸上建筑杰作。独立的砖墙向周围自然无限延伸，打破了传统封闭房间的内外边界，开创了'流动空间'理念。",
+        "knowledgePoints": [
+          "现代主义'流动空间'（Fluid Space）理论先驱方案",
+          "受荷兰风格派（De Stijl）二维抽象平面启发的离心式墙体延伸"
+        ]
+      },
+      "barcelona-pavilion": {
+        "notes": "1929年世博会德国国家馆。十字形镀铬钢柱支撑超轻屋顶，绿玛瑙大理石隔断、灰色玻璃与水池倒影构成纯净连续的流动空间，配备经典的巴塞罗那椅。",
+        "knowledgePoints": [
+          "'少即是多'（Less is more）的终极实体表达",
+          "8根十字形镀铬钢柱实现墙体完全非承重与空间自由流动",
+          "绿玛瑙大理石隔断与黎明女神雕像倒影水池"
+        ]
+      },
+      "farnsworth-house": {
+        "notes": "伊利诺伊州福克斯河畔的全玻璃透明住宅。8根白色工字钢立柱将整座建筑架空于地面之上，四周全透明落地玻璃幕墙，将建筑消隐于自然之中。",
+        "knowledgePoints": [
+          "极简主义住宅巅峰：工字钢架空与全景落地玻璃幕墙",
+          "彻底模糊室内外生活边界，纯粹的结构与漂浮感"
+        ]
+      },
+      "seagram-building": {
+        "notes": "纽约曼哈顿公园大道38层高品质摩天大楼。古铜色玻璃幕墙配合非承重外附装饰性青铜工字钢龙骨，退让出开阔的公共喷泉前庭广场。",
+        "knowledgePoints": [
+          "国际风格（International Style）摩天大楼终极标准范式",
+          "古铜色中空玻璃幕墙与外挂青铜工字钢竖梃",
+          "主动退让城市街道营造开阔公共喷泉广场（Plaza）"
+        ]
+      },
+      "neue-nationalgalerie": {
+        "notes": "密斯生前最后一座杰作。8根外立面十字钢柱支撑巨大的黑色正方形华盖钢屋顶，地面上为全透明无柱通透大展厅，所有次要功能沉入地下。",
+        "knowledgePoints": [
+          "纯粹的'通用无柱空间'（Universal Space）结构",
+          "8根外部钢柱支撑超大跨度双向正交钢网架屋顶",
+          "全玻璃无遮挡外墙展现工业建造的终极秩序与纪念性"
+        ]
+      },
+      "robie-house": {
+        "notes": "芝加哥草原学派（Prairie House）巅峰之作。极度舒展的水平低坡屋顶、深挑檐、罗马长砖砌筑与中央壁炉核心，打破了传统维多利亚式封闭盒子空间。",
+        "knowledgePoints": [
+          "草原学派（Prairie School）代表杰作",
+          "极度延伸的水平挑檐（Cantilever）与连通起居室流动空间",
+          "中央壁炉核心与彩色艺术铅封玻璃窗"
+        ]
+      },
+      "fallingwater": {
+        "notes": "被誉为'美国建筑史上最伟大作品'。建于宾夕法尼亚熊跑溪瀑布之上，钢筋混凝土悬挑阳台与就地开采的粗糙石墙交错，建筑与溪流巨石融为一体。",
+        "knowledgePoints": [
+          "有机建筑（Organic Architecture）世界级巅峰",
+          "钢筋混凝土大跨度悬挑（Cantilever）平台凌空于天然瀑布之上",
+          "就地取材天然粗石砌体与自然地貌完美共生",
+          "联合国教科文组织世界文化遗产"
+        ]
+      },
+      "guggenheim-museum-ny": {
+        "notes": "赖特晚年划时代杰作。白色连续螺旋上升的无柱中庭坡道，观众乘电梯至顶层沿螺旋斜坡缓缓向下观展，天顶为巨大十二角几何玻璃穹顶。",
+        "knowledgePoints": [
+          "连续倒圆台形无柱螺旋展廊（Spiral Ramp）中庭",
+          "颠覆传统房间式观展流线，从顶层沿斜坡环形向下",
+          "联合国教科文组织世界文化遗产"
+        ]
+      },
+      "villa-savoye": {
+        "notes": "现代主义新建筑五点（底层架空柱、屋顶花园、自由平面、横向长窗、自由立面）的完美教科书范例，纯白几何形体宛若漂浮于绿野之上的机器。",
+        "knowledgePoints": [
+          "现代主义'新建筑五点'（Les 5 points d'une architecture nouvelle）完整体现",
+          "底层架空立柱（Pilotis）、屋顶花园（Toit-jardin）、自由平面（Plan libre）、横向长窗（Fenêtre en longueur）、自由立面（Façade libre）",
+          "联合国教科文组织世界文化遗产"
+        ]
+      },
+      "unite-dhabitation": {
+        "notes": "二战后现代集体住宅划时代杰作。粗野主义清水混凝土（Béton Brut）结构，内嵌双层跃层咬合住宅单元、空中商业街、托儿所与雕塑感屋顶跑道活动平台。",
+        "knowledgePoints": [
+          "现代粗野主义（Brutalism）与模度（Modulor）人体比例体系典范",
+          "双层'L'形咬合紧凑剖面单元与第七层室内空中街道",
+          "雕塑感混凝土屋顶公共活动平台与幼儿戏水池",
+          "联合国教科文组织世界文化遗产"
+        ]
+      },
+      "notre-dame-du-haut": {
+        "notes": "柯布西耶晚期极具表现主义与雕塑感的宗教建筑。如蟹壳般向上翘起的深色现浇混凝土屋顶与不规则厚墙中开凿的彩色光漏窗，创造出神秘莫测的光影空间。",
+        "knowledgePoints": [
+          "现代主义向雕塑表现主义转型的旷世之作",
+          "悬浮脱开的蟹壳状曲面混凝土屋顶（产生一条细缝天光）",
+          "南立面厚重斜墙中大小不一、内大外小的彩色玻璃漏光窗洞",
+          "联合国教科文组织世界文化遗产"
+        ]
+      },
+      "rufer-house": {
+        "notes": "位于维也纳的早期现代住宅。外部为极度克制的纯白无装饰立方体，内部各个房间根据功能需要拥有不同净高与错层连通，是'空间规划'（Raumplan）的早期实验。",
+        "knowledgePoints": [
+          "实践《装饰与罪恶》论断的无装饰纯白外立面",
+          "空间规划（Raumplan）早期探索：内部房间根据功能具有不同标高与层高"
+        ]
+      },
+      "villa-muller": {
+        "notes": "空间规划（Raumplan）的终极成熟杰作。内部大客厅、起居室、女主人闺房错落穿插于不同标高上，通过视线对流与精选名贵大理石饰面展现内在的奢华与严谨。",
+        "knowledgePoints": [
+          "空间规划（Raumplan）的集大成代表作",
+          "外部极简纯白体块与内部错层流线、西波里诺大理石（Cipollino Marble）奢华材质的鲜明对比"
+        ]
       }
     }
   },
@@ -1035,6 +1477,50 @@ export const localizedContent = {
           "Ceramic mosaic fragmentation (Trencadís) and crystalline glazing",
           "Deep naturalistic iconography and structural symbolism"
         ]
+      },
+      "romanesque-architecture": {
+        "description": "Romanesque architecture flourished in Western Europe from the 10th to 12th centuries, characterized by semicircular round arches, massive thick masonry walls, barrel and groin vaults, blind arcades, lesenes (pilaster strips), and freestanding baptisteries.",
+        "historicalContext": "Developed during the High Middle Ages amidst monastic expansion, pilgrimage routes, and emerging feudal communes, combining liturgical sanctity with structural mass and defense.",
+        "keyFeatures": [
+          "Semicircular round arches and thick load-bearing masonry walls",
+          "Barrel vaults, groin vaults, and cloister vaulting systems",
+          "Rhythmic nave spans and freestanding centralized baptisteries",
+          "Decorative blind arcades and vertical lesenes (pilaster strips)",
+          "Monofora (single), bifora (double), and trifora (triple) arched window openings"
+        ]
+      },
+      "gothic-architecture": {
+        "description": "Gothic architecture originated in the mid-12th century in Île-de-France, representing the pinnacle of medieval engineering and spatial aesthetics. Through ribbed vaults, pointed arches, and flying buttresses, it liberated walls to achieve soaring verticality and vast luminous stained glass windows.",
+        "historicalContext": "Emerged alongside urban revival, scholastic theology, and cathedral-building fervor, transforming heavy masonry into an open skeletal framework filled with divine light.",
+        "keyFeatures": [
+          "Ribbed vaults and articulated vertical load paths",
+          "Flying buttresses transmitting lateral roof thrusts across open space to exterior piers",
+          "Pointed arches and compound fasciculate piers (polystyles)",
+          "Expansive stained glass windows and rayonnant rose windows",
+          "Soaring spires and structural load-stabilizing pinnacles"
+        ]
+      },
+      "renaissance-architecture": {
+        "description": "Originating in 15th-century Florence, Renaissance architecture revived classical Roman and Greek canons—orders, mathematical proportion, symmetry, and pure geometry. Driven by linear perspective, architectural treatises, and ideal city concepts, it inaugurated modern architectural theory.",
+        "historicalContext": "Fostered by humanist patronage (Medici), archaeological rediscovery of Vitruvian texts, and scientific advances, elevating the architect into an intellectual polymath and engineer.",
+        "keyFeatures": [
+          "Rigorous mathematical application of linear perspective to spatial design",
+          "Revival of classical orders and harmonious geometric proportions (circle, square)",
+          "Ideal city planning and centralized church layouts",
+          "Serlian window motifs (Palladian motif)",
+          "Civil palace (Palazzo Civile) tripartite facades and rusticated masonry"
+        ]
+      },
+      "modernist-architecture": {
+        "description": "The defining 20th-century architectural movement encompassing the Chicago School, Bauhaus, International Style, and Organic Architecture. Leveraging steel, plate glass, and reinforced concrete, it established functionalism ('form follows function'), structural clarity, and the rejection of applied ornament.",
+        "historicalContext": "Catalyzed by the 1871 Chicago Fire reconstruction and elevator technology, matured through Bauhaus design pedagogy, and reshaped global modern urbanity.",
+        "keyFeatures": [
+          "Chicago School steel-frame construction and skyscraper typology",
+          "Functionalism: form follows function and spatial efficiency",
+          "Industrial materials: structural steel, curtain wall glass, and exposed concrete",
+          "Bauhaus philosophy and the universal International Style",
+          "Organic architecture and Le Corbusier's Five Points of a New Architecture"
+        ]
       }
     },
     "artists": {
@@ -1142,6 +1628,66 @@ export const localizedContent = {
       },
       "antoni-gaudi": {
         "bio": "Catalan architect and central figure of Modernisme. In works such as the Sagrada Família, Casa Milà, and Casa Batlló, he integrated catenary structural mechanics with ruled geometric surfaces and artisanal crafts."
+      },
+      "lombard-romanesque-masters": {
+        "bio": "Lombard Romanesque Masters was a pivotal master in Romanesque Architecture, creating milestone architectural monuments, engineering advances, and theoretical canons."
+      },
+      "pisan-romanesque-masters": {
+        "bio": "Pisan Romanesque Masters was a pivotal master in Romanesque Architecture, creating milestone architectural monuments, engineering advances, and theoretical canons."
+      },
+      "french-romanesque-masters": {
+        "bio": "French Romanesque Masters was a pivotal master in Romanesque Architecture, creating milestone architectural monuments, engineering advances, and theoretical canons."
+      },
+      "arnolfo-di-cambio": {
+        "bio": "Arnolfo di Cambio was a pivotal master in Romanesque Architecture, creating milestone architectural monuments, engineering advances, and theoretical canons."
+      },
+      "french-gothic-masters": {
+        "bio": "French High Gothic Masters was a pivotal master in Gothic Architecture, creating milestone architectural monuments, engineering advances, and theoretical canons."
+      },
+      "german-gothic-masters": {
+        "bio": "German Gothic Masters was a pivotal master in Gothic Architecture, creating milestone architectural monuments, engineering advances, and theoretical canons."
+      },
+      "italian-gothic-masters": {
+        "bio": "Italian Gothic Masters was a pivotal master in Gothic Architecture, creating milestone architectural monuments, engineering advances, and theoretical canons."
+      },
+      "filippo-brunelleschi": {
+        "bio": "Filippo Brunelleschi was a pivotal master in Renaissance Architecture, creating milestone architectural monuments, engineering advances, and theoretical canons."
+      },
+      "lorenzo-ghiberti": {
+        "bio": "Lorenzo Ghiberti was a pivotal master in Renaissance Architecture, creating milestone architectural monuments, engineering advances, and theoretical canons."
+      },
+      "donato-bramante": {
+        "bio": "Donato Bramante was a pivotal master in Renaissance Architecture, creating milestone architectural monuments, engineering advances, and theoretical canons."
+      },
+      "leon-battista-alberti": {
+        "bio": "Leon Battista Alberti was a pivotal master in Renaissance Architecture, creating milestone architectural monuments, engineering advances, and theoretical canons."
+      },
+      "michelangelo-buonarroti-arch": {
+        "bio": "Michelangelo Buonarroti was a pivotal master in Renaissance Architecture, creating milestone architectural monuments, engineering advances, and theoretical canons."
+      },
+      "renaissance-palazzo-masters": {
+        "bio": "Renaissance Palazzo Masters was a pivotal master in Renaissance Architecture, creating milestone architectural monuments, engineering advances, and theoretical canons."
+      },
+      "andrea-palladio": {
+        "bio": "Andrea Palladio was a pivotal master in Renaissance Architecture, creating milestone architectural monuments, engineering advances, and theoretical canons."
+      },
+      "chicago-school-architects": {
+        "bio": "Chicago School of Architecture was a pivotal master in Modernist Architecture, creating milestone architectural monuments, engineering advances, and theoretical canons."
+      },
+      "walter-gropius": {
+        "bio": "Walter Gropius was a pivotal master in Modernist Architecture, creating milestone architectural monuments, engineering advances, and theoretical canons."
+      },
+      "mies-van-der-rohe": {
+        "bio": "Ludwig Mies van der Rohe was a pivotal master in Modernist Architecture, creating milestone architectural monuments, engineering advances, and theoretical canons."
+      },
+      "frank-lloyd-wright": {
+        "bio": "Frank Lloyd Wright was a pivotal master in Modernist Architecture, creating milestone architectural monuments, engineering advances, and theoretical canons."
+      },
+      "le-corbusier": {
+        "bio": "Le Corbusier was a pivotal master in Modernist Architecture, creating milestone architectural monuments, engineering advances, and theoretical canons."
+      },
+      "adolf-loos": {
+        "bio": "Adolf Loos was a pivotal master in Modernist Architecture, creating milestone architectural monuments, engineering advances, and theoretical canons."
       }
     },
     "artworks": {
@@ -1868,6 +2414,358 @@ export const localizedContent = {
           "Sinuous bone-shaped stone columns and undulating custom joinery",
           "Prime exemplar of Catalan Modernisme color theory and organic remodeling"
         ]
+      },
+      "sant-ambrogio-milan": {
+        "notes": "Masterpiece of Lombard Romanesque Masters (379 - 1099) located in 米兰 (Milan, Italy). Demonstrates canonical spatial composition, structural innovation, and stylistic significance in Romanesque Architecture.",
+        "knowledgePoints": [
+          "Exemplifies the foundational spatial and structural principles of Romanesque Architecture",
+          "Located at Basilica di Sant'Ambrogio (Milan, Italy)",
+          "Key milestone in Western architectural and engineering history"
+        ]
+      },
+      "baptistery-parma": {
+        "notes": "Masterpiece of Lombard Romanesque Masters (1196 - 1270) located in 帕尔马 (Parma, Italy). Demonstrates canonical spatial composition, structural innovation, and stylistic significance in Romanesque Architecture.",
+        "knowledgePoints": [
+          "Exemplifies the foundational spatial and structural principles of Romanesque Architecture",
+          "Located at Battistero di Parma (Piazza Duomo) (Parma, Italy)",
+          "Key milestone in Western architectural and engineering history"
+        ]
+      },
+      "piazza-dei-miracoli-pisa": {
+        "notes": "Masterpiece of Pisan Romanesque Masters (1063 - 1350) located in 比萨 (Pisa, Italy). Demonstrates canonical spatial composition, structural innovation, and stylistic significance in Romanesque Architecture.",
+        "knowledgePoints": [
+          "Exemplifies the foundational spatial and structural principles of Romanesque Architecture",
+          "Located at Opera della Primaziale Pisana (Piazza dei Miracoli) (Pisa, Italy)",
+          "Key milestone in Western architectural and engineering history"
+        ]
+      },
+      "basilica-saint-remi": {
+        "notes": "Masterpiece of French Romanesque Masters (c. 1000) located in 兰斯 (Reims, France). Demonstrates canonical spatial composition, structural innovation, and stylistic significance in Romanesque Architecture.",
+        "knowledgePoints": [
+          "Exemplifies the foundational spatial and structural principles of Romanesque Architecture",
+          "Located at Basilique Saint-Remi de Reims (Reims, France)",
+          "Key milestone in Western architectural and engineering history"
+        ]
+      },
+      "palazzo-vecchio": {
+        "notes": "Masterpiece of Arnolfo di Cambio (1299) located in 佛罗伦萨领主广场 (Florence, Italy). Demonstrates canonical spatial composition, structural innovation, and stylistic significance in Romanesque Architecture.",
+        "knowledgePoints": [
+          "Exemplifies the foundational spatial and structural principles of Romanesque Architecture",
+          "Located at Museo di Palazzo Vecchio (Florence, Italy)",
+          "Key milestone in Western architectural and engineering history"
+        ]
+      },
+      "amiens-cathedral": {
+        "notes": "Masterpiece of French High Gothic Masters (1220 - 1270) located in 亚眠 (Amiens, France). Demonstrates canonical spatial composition, structural innovation, and stylistic significance in Gothic Architecture.",
+        "knowledgePoints": [
+          "Exemplifies the foundational spatial and structural principles of Gothic Architecture",
+          "Located at Cathédrale Notre-Dame d'Amiens (Amiens, France)",
+          "Key milestone in Western architectural and engineering history"
+        ]
+      },
+      "notre-dame-paris": {
+        "notes": "Masterpiece of French High Gothic Masters (1163 - 1250) located in 巴黎西堤岛 (Paris, France). Demonstrates canonical spatial composition, structural innovation, and stylistic significance in Gothic Architecture.",
+        "knowledgePoints": [
+          "Exemplifies the foundational spatial and structural principles of Gothic Architecture",
+          "Located at Cathédrale Notre-Dame de Paris (Paris, France)",
+          "Key milestone in Western architectural and engineering history"
+        ]
+      },
+      "cologne-cathedral": {
+        "notes": "Masterpiece of German Gothic Masters (1248 - 1880) located in 科隆 (Cologne, Germany). Demonstrates canonical spatial composition, structural innovation, and stylistic significance in Gothic Architecture.",
+        "knowledgePoints": [
+          "Exemplifies the foundational spatial and structural principles of Gothic Architecture",
+          "Located at Kölner Dom (Hohe Domkirche Sankt Petrus) (Cologne, Germany)",
+          "Key milestone in Western architectural and engineering history"
+        ]
+      },
+      "duomo-milano": {
+        "notes": "Masterpiece of Italian Gothic Masters (1386 - 1965) located in 米兰主教堂广场 (Milan, Italy). Demonstrates canonical spatial composition, structural innovation, and stylistic significance in Gothic Architecture.",
+        "knowledgePoints": [
+          "Exemplifies the foundational spatial and structural principles of Gothic Architecture",
+          "Located at Duomo di Milano (Veneranda Fabbrica del Duomo) (Milan, Italy)",
+          "Key milestone in Western architectural and engineering history"
+        ]
+      },
+      "siena-cathedral": {
+        "notes": "Masterpiece of Italian Gothic Masters (1215 - 1263) located in 锡耶纳 (Siena, Italy). Demonstrates canonical spatial composition, structural innovation, and stylistic significance in Gothic Architecture.",
+        "knowledgePoints": [
+          "Exemplifies the foundational spatial and structural principles of Gothic Architecture",
+          "Located at Complesso Monumentale del Duomo di Siena (Siena, Italy)",
+          "Key milestone in Western architectural and engineering history"
+        ]
+      },
+      "doges-palace-venice": {
+        "notes": "Masterpiece of Italian Gothic Masters (1340 - 1424) located in 威尼斯圣马可广场 (Venice, Italy). Demonstrates canonical spatial composition, structural innovation, and stylistic significance in Gothic Architecture.",
+        "knowledgePoints": [
+          "Exemplifies the foundational spatial and structural principles of Gothic Architecture",
+          "Located at Palazzo Ducale (Fondazione Musei Civici di Venezia) (Venice, Italy)",
+          "Key milestone in Western architectural and engineering history"
+        ]
+      },
+      "florence-cathedral-dome": {
+        "notes": "Masterpiece of Filippo Brunelleschi (1420 - 1436) located in 佛罗伦萨 (Florence, Italy). Demonstrates canonical spatial composition, structural innovation, and stylistic significance in Renaissance Architecture.",
+        "knowledgePoints": [
+          "Exemplifies the foundational spatial and structural principles of Renaissance Architecture",
+          "Located at Opera di Santa Maria del Fiore (Florence, Italy)",
+          "Key milestone in Western architectural and engineering history"
+        ]
+      },
+      "pazzi-chapel": {
+        "notes": "Masterpiece of Filippo Brunelleschi (1440) located in 佛罗伦萨圣十字大殿 (Florence, Italy). Demonstrates canonical spatial composition, structural innovation, and stylistic significance in Renaissance Architecture.",
+        "knowledgePoints": [
+          "Exemplifies the foundational spatial and structural principles of Renaissance Architecture",
+          "Located at Complesso Monumentale di Santa Croce (Cappella Pazzi) (Florence, Italy)",
+          "Key milestone in Western architectural and engineering history"
+        ]
+      },
+      "santo-spirito-florence": {
+        "notes": "Masterpiece of Filippo Brunelleschi (1444) located in 佛罗伦萨 (Florence, Italy). Demonstrates canonical spatial composition, structural innovation, and stylistic significance in Renaissance Architecture.",
+        "knowledgePoints": [
+          "Exemplifies the foundational spatial and structural principles of Renaissance Architecture",
+          "Located at Basilica Santo Spirito (Florence, Italy)",
+          "Key milestone in Western architectural and engineering history"
+        ]
+      },
+      "doors-of-paradise": {
+        "notes": "Masterpiece of Lorenzo Ghiberti (1425 - 1452) located in 佛罗伦萨圣若望洗礼堂 (Florence, Italy). Demonstrates canonical spatial composition, structural innovation, and stylistic significance in Renaissance Architecture.",
+        "knowledgePoints": [
+          "Exemplifies the foundational spatial and structural principles of Renaissance Architecture",
+          "Located at Museo dell'Opera del Duomo (Firenze) (Florence, Italy)",
+          "Key milestone in Western architectural and engineering history"
+        ]
+      },
+      "tempietto-san-pietro": {
+        "notes": "Masterpiece of Donato Bramante (1502 - 1510) located in 罗马 (Rome, Italy). Demonstrates canonical spatial composition, structural innovation, and stylistic significance in Renaissance Architecture.",
+        "knowledgePoints": [
+          "Exemplifies the foundational spatial and structural principles of Renaissance Architecture",
+          "Located at Real Academia de España en Roma (Tempietto del Bramante) (Rome, Italy)",
+          "Key milestone in Western architectural and engineering history"
+        ]
+      },
+      "santa-maria-delle-grazie-milan": {
+        "notes": "Masterpiece of Donato Bramante (1492 - 1497) located in 米兰 (Milan, Italy). Demonstrates canonical spatial composition, structural innovation, and stylistic significance in Renaissance Architecture.",
+        "knowledgePoints": [
+          "Exemplifies the foundational spatial and structural principles of Renaissance Architecture",
+          "Located at Complesso Monumentale di Santa Maria delle Grazie (Milan, Italy)",
+          "Key milestone in Western architectural and engineering history"
+        ]
+      },
+      "belvedere-courtyard": {
+        "notes": "Masterpiece of Donato Bramante (1505) located in 梵蒂冈 (Vatican City). Demonstrates canonical spatial composition, structural innovation, and stylistic significance in Renaissance Architecture.",
+        "knowledgePoints": [
+          "Exemplifies the foundational spatial and structural principles of Renaissance Architecture",
+          "Located at Vatican Museums (Cortile del Belvedere) (Vatican City)",
+          "Key milestone in Western architectural and engineering history"
+        ]
+      },
+      "sant-andrea-mantua": {
+        "notes": "Masterpiece of Leon Battista Alberti (1472) located in 曼图亚 (Mantua, Italy). Demonstrates canonical spatial composition, structural innovation, and stylistic significance in Renaissance Architecture.",
+        "knowledgePoints": [
+          "Exemplifies the foundational spatial and structural principles of Renaissance Architecture",
+          "Located at Basilica Concattedrale di Sant'Andrea (Mantua, Italy)",
+          "Key milestone in Western architectural and engineering history"
+        ]
+      },
+      "tempio-malatestiano": {
+        "notes": "Masterpiece of Leon Battista Alberti (1468) located in 里米尼 (Rimini, Italy). Demonstrates canonical spatial composition, structural innovation, and stylistic significance in Renaissance Architecture.",
+        "knowledgePoints": [
+          "Exemplifies the foundational spatial and structural principles of Renaissance Architecture",
+          "Located at Tempio Malatestiano (Cattedrale di Santa Colomba) (Rimini, Italy)",
+          "Key milestone in Western architectural and engineering history"
+        ]
+      },
+      "laurentian-library": {
+        "notes": "Masterpiece of Michelangelo Buonarroti (1524 - 1559) located in 佛罗伦萨圣洛伦佐大殿 (Florence, Italy). Demonstrates canonical spatial composition, structural innovation, and stylistic significance in Renaissance Architecture.",
+        "knowledgePoints": [
+          "Exemplifies the foundational spatial and structural principles of Renaissance Architecture",
+          "Located at Biblioteca Medicea Laurenziana (Florence, Italy)",
+          "Key milestone in Western architectural and engineering history"
+        ]
+      },
+      "porta-pia": {
+        "notes": "Masterpiece of Michelangelo Buonarroti (1561 - 1565) located in 罗马奥勒良城墙 (Rome, Italy). Demonstrates canonical spatial composition, structural innovation, and stylistic significance in Renaissance Architecture.",
+        "knowledgePoints": [
+          "Exemplifies the foundational spatial and structural principles of Renaissance Architecture",
+          "Located at Porta Pia (Museo Storico dei Bersaglieri) (Rome, Italy)",
+          "Key milestone in Western architectural and engineering history"
+        ]
+      },
+      "piazza-del-campidoglio": {
+        "notes": "Masterpiece of Michelangelo Buonarroti (1536 - 1546) located in 罗马卡比托利欧山 (Rome, Italy). Demonstrates canonical spatial composition, structural innovation, and stylistic significance in Renaissance Architecture.",
+        "knowledgePoints": [
+          "Exemplifies the foundational spatial and structural principles of Renaissance Architecture",
+          "Located at Musei Capitolini (Piazza del Campidoglio) (Rome, Italy)",
+          "Key milestone in Western architectural and engineering history"
+        ]
+      },
+      "st-peters-basilica-dome": {
+        "notes": "Masterpiece of Michelangelo Buonarroti (1547 - 1564) located in 梵蒂冈 (Vatican City). Demonstrates canonical spatial composition, structural innovation, and stylistic significance in Renaissance Architecture.",
+        "knowledgePoints": [
+          "Exemplifies the foundational spatial and structural principles of Renaissance Architecture",
+          "Located at Basilica Papale di San Pietro in Vaticano (Vatican City)",
+          "Key milestone in Western architectural and engineering history"
+        ]
+      },
+      "palazzo-medici-riccardi": {
+        "notes": "Masterpiece of Renaissance Palazzo Masters (1430 - 1444) located in 佛罗伦萨 (Florence, Italy). Demonstrates canonical spatial composition, structural innovation, and stylistic significance in Renaissance Architecture.",
+        "knowledgePoints": [
+          "Exemplifies the foundational spatial and structural principles of Renaissance Architecture",
+          "Located at Museo di Palazzo Medici Riccardi (Florence, Italy)",
+          "Key milestone in Western architectural and engineering history"
+        ]
+      },
+      "palazzo-dei-diamanti": {
+        "notes": "Masterpiece of Renaissance Palazzo Masters (1493) located in 费拉拉 (Ferrara, Italy). Demonstrates canonical spatial composition, structural innovation, and stylistic significance in Renaissance Architecture.",
+        "knowledgePoints": [
+          "Exemplifies the foundational spatial and structural principles of Renaissance Architecture",
+          "Located at Gallerie d'Arte Moderna e Contemporanea (Palazzo dei Diamanti) (Ferrara, Italy)",
+          "Key milestone in Western architectural and engineering history"
+        ]
+      },
+      "palazzo-farnese": {
+        "notes": "Masterpiece of Renaissance Palazzo Masters (1517 - 1589) located in 罗马 (Rome, Italy). Demonstrates canonical spatial composition, structural innovation, and stylistic significance in Renaissance Architecture.",
+        "knowledgePoints": [
+          "Exemplifies the foundational spatial and structural principles of Renaissance Architecture",
+          "Located at Palazzo Farnese (Ambassade de France en Italie) (Rome, Italy)",
+          "Key milestone in Western architectural and engineering history"
+        ]
+      },
+      "basilica-palladiana": {
+        "notes": "Masterpiece of Andrea Palladio (1549) located in 维琴察 (Vicenza, Italy). Demonstrates canonical spatial composition, structural innovation, and stylistic significance in Renaissance Architecture.",
+        "knowledgePoints": [
+          "Exemplifies the foundational spatial and structural principles of Renaissance Architecture",
+          "Located at Museo Civico di Palazzo Chiericati e Basilica Palladiana (Vicenza, Italy)",
+          "Key milestone in Western architectural and engineering history"
+        ]
+      },
+      "villa-la-rotonda": {
+        "notes": "Masterpiece of Andrea Palladio (1551 - 1567) located in 维琴察 (Vicenza, Italy). Demonstrates canonical spatial composition, structural innovation, and stylistic significance in Renaissance Architecture.",
+        "knowledgePoints": [
+          "Exemplifies the foundational spatial and structural principles of Renaissance Architecture",
+          "Located at Villa La Rotonda (Fondazione Aldo e Fernando Valmarana) (Vicenza, Italy)",
+          "Key milestone in Western architectural and engineering history"
+        ]
+      },
+      "chicago-skyscraper-movement": {
+        "notes": "Masterpiece of Chicago School of Architecture (1885 - 1904) located in 芝加哥 (Chicago, USA). Demonstrates canonical spatial composition, structural innovation, and stylistic significance in Modernist Architecture.",
+        "knowledgePoints": [
+          "Exemplifies the foundational spatial and structural principles of Modernist Architecture",
+          "Located at Chicago Architecture Center (CAC) (Chicago, USA)",
+          "Key milestone in Western architectural and engineering history"
+        ]
+      },
+      "bauhaus-dessau": {
+        "notes": "Masterpiece of Walter Gropius (1925 - 1932) located in 德绍 (Dessau, Germany). Demonstrates canonical spatial composition, structural innovation, and stylistic significance in Modernist Architecture.",
+        "knowledgePoints": [
+          "Exemplifies the foundational spatial and structural principles of Modernist Architecture",
+          "Located at Bauhaus Dessau Foundation (Dessau, Germany)",
+          "Key milestone in Western architectural and engineering history"
+        ]
+      },
+      "brick-country-house": {
+        "notes": "Masterpiece of Ludwig Mies van der Rohe (1923) located in 柏林/纸上建筑 (Berlin, Germany). Demonstrates canonical spatial composition, structural innovation, and stylistic significance in Modernist Architecture.",
+        "knowledgePoints": [
+          "Exemplifies the foundational spatial and structural principles of Modernist Architecture",
+          "Located at Museum of Modern Art (MoMA Architecture Collection) (New York, USA)",
+          "Key milestone in Western architectural and engineering history"
+        ]
+      },
+      "barcelona-pavilion": {
+        "notes": "Masterpiece of Ludwig Mies van der Rohe (1928 - 1929) located in 巴塞罗那蒙特惠奇 (Barcelona, Spain). Demonstrates canonical spatial composition, structural innovation, and stylistic significance in Modernist Architecture.",
+        "knowledgePoints": [
+          "Exemplifies the foundational spatial and structural principles of Modernist Architecture",
+          "Located at Fundació Mies van der Rohe (Pavelló Mies van der Rohe) (Barcelona, Spain)",
+          "Key milestone in Western architectural and engineering history"
+        ]
+      },
+      "farnsworth-house": {
+        "notes": "Masterpiece of Ludwig Mies van der Rohe (1951) located in 伊利诺伊州普莱诺 (Plano, Illinois, USA). Demonstrates canonical spatial composition, structural innovation, and stylistic significance in Modernist Architecture.",
+        "knowledgePoints": [
+          "Exemplifies the foundational spatial and structural principles of Modernist Architecture",
+          "Located at Edith Farnsworth House (National Trust for Historic Preservation) (Plano, Illinois, USA)",
+          "Key milestone in Western architectural and engineering history"
+        ]
+      },
+      "seagram-building": {
+        "notes": "Masterpiece of Ludwig Mies van der Rohe (1958) located in 纽约曼哈顿公园大道 (New York, USA). Demonstrates canonical spatial composition, structural innovation, and stylistic significance in Modernist Architecture.",
+        "knowledgePoints": [
+          "Exemplifies the foundational spatial and structural principles of Modernist Architecture",
+          "Located at Seagram Building (375 Park Avenue) (New York, USA)",
+          "Key milestone in Western architectural and engineering history"
+        ]
+      },
+      "neue-nationalgalerie": {
+        "notes": "Masterpiece of Ludwig Mies van der Rohe (1968) located in 柏林文化广场 (Berlin, Germany). Demonstrates canonical spatial composition, structural innovation, and stylistic significance in Modernist Architecture.",
+        "knowledgePoints": [
+          "Exemplifies the foundational spatial and structural principles of Modernist Architecture",
+          "Located at Neue Nationalgalerie (Staatliche Museen zu Berlin) (Berlin, Germany)",
+          "Key milestone in Western architectural and engineering history"
+        ]
+      },
+      "robie-house": {
+        "notes": "Masterpiece of Frank Lloyd Wright (1909) located in 芝加哥海德公园 (Chicago, Illinois, USA). Demonstrates canonical spatial composition, structural innovation, and stylistic significance in Modernist Architecture.",
+        "knowledgePoints": [
+          "Exemplifies the foundational spatial and structural principles of Modernist Architecture",
+          "Located at Frederick C. Robie House (Frank Lloyd Wright Trust) (Chicago, Illinois, USA)",
+          "Key milestone in Western architectural and engineering history"
+        ]
+      },
+      "fallingwater": {
+        "notes": "Masterpiece of Frank Lloyd Wright (1936 - 1937) located in 宾夕法尼亚熊跑溪 (Mill Run, Pennsylvania, USA). Demonstrates canonical spatial composition, structural innovation, and stylistic significance in Modernist Architecture.",
+        "knowledgePoints": [
+          "Exemplifies the foundational spatial and structural principles of Modernist Architecture",
+          "Located at Fallingwater (Western Pennsylvania Conservancy) (Mill Run, Pennsylvania, USA)",
+          "Key milestone in Western architectural and engineering history"
+        ]
+      },
+      "guggenheim-museum-ny": {
+        "notes": "Masterpiece of Frank Lloyd Wright (1937 / 1959) located in 纽约曼哈顿第五大道 (New York, USA). Demonstrates canonical spatial composition, structural innovation, and stylistic significance in Modernist Architecture.",
+        "knowledgePoints": [
+          "Exemplifies the foundational spatial and structural principles of Modernist Architecture",
+          "Located at Solomon R. Guggenheim Museum (New York, USA)",
+          "Key milestone in Western architectural and engineering history"
+        ]
+      },
+      "villa-savoye": {
+        "notes": "Masterpiece of Le Corbusier (1928 - 1931) located in 普瓦西 (Poissy, France). Demonstrates canonical spatial composition, structural innovation, and stylistic significance in Modernist Architecture.",
+        "knowledgePoints": [
+          "Exemplifies the foundational spatial and structural principles of Modernist Architecture",
+          "Located at Villa Savoye (Centre des monuments nationaux) (Poissy, France)",
+          "Key milestone in Western architectural and engineering history"
+        ]
+      },
+      "unite-dhabitation": {
+        "notes": "Masterpiece of Le Corbusier (1952) located in 马赛 (Marseille, France). Demonstrates canonical spatial composition, structural innovation, and stylistic significance in Modernist Architecture.",
+        "knowledgePoints": [
+          "Exemplifies the foundational spatial and structural principles of Modernist Architecture",
+          "Located at Cité Radieuse (Unité d'Habitation de Marseille) (Marseille, France)",
+          "Key milestone in Western architectural and engineering history"
+        ]
+      },
+      "notre-dame-du-haut": {
+        "notes": "Masterpiece of Le Corbusier (1955) located in 朗香 (Ronchamp, France). Demonstrates canonical spatial composition, structural innovation, and stylistic significance in Modernist Architecture.",
+        "knowledgePoints": [
+          "Exemplifies the foundational spatial and structural principles of Modernist Architecture",
+          "Located at Colline Notre-Dame du Haut (Association des Amis de Sainte-Barbe) (Ronchamp, France)",
+          "Key milestone in Western architectural and engineering history"
+        ]
+      },
+      "rufer-house": {
+        "notes": "Masterpiece of Adolf Loos (1922) located in 维也纳 (Vienna, Austria). Demonstrates canonical spatial composition, structural innovation, and stylistic significance in Modernist Architecture.",
+        "knowledgePoints": [
+          "Exemplifies the foundational spatial and structural principles of Modernist Architecture",
+          "Located at Rufer House (Schlickgasse / Adolf Loos Archive) (Vienna, Austria)",
+          "Key milestone in Western architectural and engineering history"
+        ]
+      },
+      "villa-muller": {
+        "notes": "Masterpiece of Adolf Loos (1930) located in 布拉格 (Prague, Czech Republic). Demonstrates canonical spatial composition, structural innovation, and stylistic significance in Modernist Architecture.",
+        "knowledgePoints": [
+          "Exemplifies the foundational spatial and structural principles of Modernist Architecture",
+          "Located at City of Prague Museum (Villa Müller) (Prague, Czech Republic)",
+          "Key milestone in Western architectural and engineering history"
+        ]
       }
     }
   },
@@ -1992,6 +2890,50 @@ export const localizedContent = {
           "Mosaici ceramici policromi (trencadís) e aperture cristalline",
           "Iconografia naturalistica e forte simbolismo strutturale"
         ]
+      },
+      "romanesque-architecture": {
+        "description": "L'architettura romanica si sviluppò in Europa occidentale tra il X e il XII secolo, caratterizzata da archi a tutto sesto, possenti murature in pietra, volte a botte e a crociera, arcate cieche, lesene lombarde e battisteri isolati a pianta centrale.",
+        "historicalContext": "Nata nel pieno Medioevo durante l'espansione monastica, i pellegrinaggi e la nascita dei liberi comuni, unendo monumentalità liturgica e solidità difensiva.",
+        "keyFeatures": [
+          "Arco a tutto sesto e massicce murature portanti in pietra o laterizio",
+          "Volte a botte, a crociera e a padiglione",
+          "Navata centrale a campate ritmiche e battisteri isolati",
+          "Lesene decorative (archetti pensili) e gallerie con arcate cieche",
+          "Aperture a monofora, bifora e trifora"
+        ]
+      },
+      "gothic-architecture": {
+        "description": "L'architettura gotica nacque a metà del XII secolo nell'Île-de-France, segnando una rivoluzione ingegneristica e spaziale. Grazie a volte a crociera ogivali costolonate, archi acuti e archi rampanti esterni, liberò le pareti per innalzare vertiginose altezze inondate dalla luce delle vetrate istoriate.",
+        "historicalContext": "Fiorita con la rinascita urbana, la teologia scolastica e le grandi fabbriche cattedralizie, sostituì la massa muraria con un dinamico scheletro strutturale.",
+        "keyFeatures": [
+          "Volte a crociera costolonate e slanciate linee di forza",
+          "Archi rampanti (arc-boutant) e contrafforti perimetrali",
+          "Archi a sesto acuto e pilastri a fascio (polistili)",
+          "Grandi vetrate policrome e monumentali rosoni",
+          "Guglie svettanti (spires) e pinnacoli di stabilizzazione gravitazionale"
+        ]
+      },
+      "renaissance-architecture": {
+        "description": "Nata a Firenze nel Quattrocento, l'architettura rinascimentale recuperò i canoni classici greco-romani: ordini architettonici, proporzioni matematiche, simmetria e geometria pura. Fondata sulla prospettiva lineare e sui trattati di Alberti e Palladio, segnò la nascita dell'architettura moderna.",
+        "historicalContext": "Sostenuta dal mecenatismo umanistico mediceo, dalla riscoperta di Vitruvio e dall'avanzamento scientifico, trasformò l'architetto da capomastro a scienziato e intellettuale.",
+        "keyFeatures": [
+          "Applicazione rigorosa della prospettiva lineare nello spazio architettonico",
+          "Recupero degli ordini classici e delle proporzioni geometriche armoniche",
+          "Pianificazione della città ideale e piante centralizzate",
+          "Motivo della serliana (palladiana)",
+          "Tipologia del palazzo signorile civile con facciata tripartita e bugnato"
+        ]
+      },
+      "modernist-architecture": {
+        "description": "Il movimento architettonico dominante del XX secolo, comprendente la Scuola di Chicago, il Bauhaus, l'International Style e l'architettura organica. Fondato su acciaio, vetro e cemento armato, ha consacrato il funzionalismo ('la forma segue la funzione'), la trasparenza e il rifiuto dell'ornamento.",
+        "historicalContext": "Nato con la ricostruzione post-incendio di Chicago del 1871 e l'ascensore, sviluppatosi con la scuola del Bauhaus e affermatosi globalmente nella metropoli moderna.",
+        "keyFeatures": [
+          "Strutture a gabbia d'acciaio della Scuola di Chicago e nascita del grattacielo",
+          "Funzionalismo: la forma segue la funzione e ottimizzazione distributiva",
+          "Materiali industriali: profilati d'acciaio, facciate continue vetrate e cemento a vista",
+          "Didattica del Bauhaus e razionalismo dell'International Style",
+          "Architettura organica e i Cinque Punti della Nuova Architettura di Le Corbusier"
+        ]
       }
     },
     "artists": {
@@ -2099,6 +3041,66 @@ export const localizedContent = {
       },
       "antoni-gaudi": {
         "bio": "Architetto catalano, esponente di punta del Modernisme. Nelle opere come la Sagrada Família, Casa Milà e Casa Batlló ha fuso la statica catenaria con superfici geometriche rigate e artigianato d'eccellenza."
+      },
+      "lombard-romanesque-masters": {
+        "bio": "Lombard Romanesque Masters fu un maestro fondamentale dell'Romanesque Architecture, autore di capolavori architettonici, innovazioni costruttive e trattati teorici."
+      },
+      "pisan-romanesque-masters": {
+        "bio": "Pisan Romanesque Masters fu un maestro fondamentale dell'Romanesque Architecture, autore di capolavori architettonici, innovazioni costruttive e trattati teorici."
+      },
+      "french-romanesque-masters": {
+        "bio": "French Romanesque Masters fu un maestro fondamentale dell'Romanesque Architecture, autore di capolavori architettonici, innovazioni costruttive e trattati teorici."
+      },
+      "arnolfo-di-cambio": {
+        "bio": "Arnolfo di Cambio fu un maestro fondamentale dell'Romanesque Architecture, autore di capolavori architettonici, innovazioni costruttive e trattati teorici."
+      },
+      "french-gothic-masters": {
+        "bio": "French High Gothic Masters fu un maestro fondamentale dell'Gothic Architecture, autore di capolavori architettonici, innovazioni costruttive e trattati teorici."
+      },
+      "german-gothic-masters": {
+        "bio": "German Gothic Masters fu un maestro fondamentale dell'Gothic Architecture, autore di capolavori architettonici, innovazioni costruttive e trattati teorici."
+      },
+      "italian-gothic-masters": {
+        "bio": "Italian Gothic Masters fu un maestro fondamentale dell'Gothic Architecture, autore di capolavori architettonici, innovazioni costruttive e trattati teorici."
+      },
+      "filippo-brunelleschi": {
+        "bio": "Filippo Brunelleschi fu un maestro fondamentale dell'Renaissance Architecture, autore di capolavori architettonici, innovazioni costruttive e trattati teorici."
+      },
+      "lorenzo-ghiberti": {
+        "bio": "Lorenzo Ghiberti fu un maestro fondamentale dell'Renaissance Architecture, autore di capolavori architettonici, innovazioni costruttive e trattati teorici."
+      },
+      "donato-bramante": {
+        "bio": "Donato Bramante fu un maestro fondamentale dell'Renaissance Architecture, autore di capolavori architettonici, innovazioni costruttive e trattati teorici."
+      },
+      "leon-battista-alberti": {
+        "bio": "Leon Battista Alberti fu un maestro fondamentale dell'Renaissance Architecture, autore di capolavori architettonici, innovazioni costruttive e trattati teorici."
+      },
+      "michelangelo-buonarroti-arch": {
+        "bio": "Michelangelo Buonarroti fu un maestro fondamentale dell'Renaissance Architecture, autore di capolavori architettonici, innovazioni costruttive e trattati teorici."
+      },
+      "renaissance-palazzo-masters": {
+        "bio": "Renaissance Palazzo Masters fu un maestro fondamentale dell'Renaissance Architecture, autore di capolavori architettonici, innovazioni costruttive e trattati teorici."
+      },
+      "andrea-palladio": {
+        "bio": "Andrea Palladio fu un maestro fondamentale dell'Renaissance Architecture, autore di capolavori architettonici, innovazioni costruttive e trattati teorici."
+      },
+      "chicago-school-architects": {
+        "bio": "Chicago School of Architecture fu un maestro fondamentale dell'Modernist Architecture, autore di capolavori architettonici, innovazioni costruttive e trattati teorici."
+      },
+      "walter-gropius": {
+        "bio": "Walter Gropius fu un maestro fondamentale dell'Modernist Architecture, autore di capolavori architettonici, innovazioni costruttive e trattati teorici."
+      },
+      "mies-van-der-rohe": {
+        "bio": "Ludwig Mies van der Rohe fu un maestro fondamentale dell'Modernist Architecture, autore di capolavori architettonici, innovazioni costruttive e trattati teorici."
+      },
+      "frank-lloyd-wright": {
+        "bio": "Frank Lloyd Wright fu un maestro fondamentale dell'Modernist Architecture, autore di capolavori architettonici, innovazioni costruttive e trattati teorici."
+      },
+      "le-corbusier": {
+        "bio": "Le Corbusier fu un maestro fondamentale dell'Modernist Architecture, autore di capolavori architettonici, innovazioni costruttive e trattati teorici."
+      },
+      "adolf-loos": {
+        "bio": "Adolf Loos fu un maestro fondamentale dell'Modernist Architecture, autore di capolavori architettonici, innovazioni costruttive e trattati teorici."
       }
     },
     "artworks": {
@@ -2825,6 +3827,358 @@ export const localizedContent = {
           "Colonne lapidee sagomate e serramenti lignei ondulati privi di spigoli vivi",
           "Esempio eminente di ristrutturazione organica nel Modernismo catalano"
         ]
+      },
+      "sant-ambrogio-milan": {
+        "notes": "Capolavoro di Lombard Romanesque Masters (379 - 1099) situato a 米兰 (Milan, Italy). Rappresenta un vertice compositivo, strutturale e formale dell'Romanesque Architecture.",
+        "knowledgePoints": [
+          "Esemplifica i principi spaziali e costruttivi fondamentali dell'Romanesque Architecture",
+          "Conservato / situato presso Basilica di Sant'Ambrogio (Milan, Italy)",
+          "Pietra miliare nella storia dell'architettura e dell'ingegneria europea"
+        ]
+      },
+      "baptistery-parma": {
+        "notes": "Capolavoro di Lombard Romanesque Masters (1196 - 1270) situato a 帕尔马 (Parma, Italy). Rappresenta un vertice compositivo, strutturale e formale dell'Romanesque Architecture.",
+        "knowledgePoints": [
+          "Esemplifica i principi spaziali e costruttivi fondamentali dell'Romanesque Architecture",
+          "Conservato / situato presso Battistero di Parma (Piazza Duomo) (Parma, Italy)",
+          "Pietra miliare nella storia dell'architettura e dell'ingegneria europea"
+        ]
+      },
+      "piazza-dei-miracoli-pisa": {
+        "notes": "Capolavoro di Pisan Romanesque Masters (1063 - 1350) situato a 比萨 (Pisa, Italy). Rappresenta un vertice compositivo, strutturale e formale dell'Romanesque Architecture.",
+        "knowledgePoints": [
+          "Esemplifica i principi spaziali e costruttivi fondamentali dell'Romanesque Architecture",
+          "Conservato / situato presso Opera della Primaziale Pisana (Piazza dei Miracoli) (Pisa, Italy)",
+          "Pietra miliare nella storia dell'architettura e dell'ingegneria europea"
+        ]
+      },
+      "basilica-saint-remi": {
+        "notes": "Capolavoro di French Romanesque Masters (c. 1000) situato a 兰斯 (Reims, France). Rappresenta un vertice compositivo, strutturale e formale dell'Romanesque Architecture.",
+        "knowledgePoints": [
+          "Esemplifica i principi spaziali e costruttivi fondamentali dell'Romanesque Architecture",
+          "Conservato / situato presso Basilique Saint-Remi de Reims (Reims, France)",
+          "Pietra miliare nella storia dell'architettura e dell'ingegneria europea"
+        ]
+      },
+      "palazzo-vecchio": {
+        "notes": "Capolavoro di Arnolfo di Cambio (1299) situato a 佛罗伦萨领主广场 (Florence, Italy). Rappresenta un vertice compositivo, strutturale e formale dell'Romanesque Architecture.",
+        "knowledgePoints": [
+          "Esemplifica i principi spaziali e costruttivi fondamentali dell'Romanesque Architecture",
+          "Conservato / situato presso Museo di Palazzo Vecchio (Florence, Italy)",
+          "Pietra miliare nella storia dell'architettura e dell'ingegneria europea"
+        ]
+      },
+      "amiens-cathedral": {
+        "notes": "Capolavoro di French High Gothic Masters (1220 - 1270) situato a 亚眠 (Amiens, France). Rappresenta un vertice compositivo, strutturale e formale dell'Gothic Architecture.",
+        "knowledgePoints": [
+          "Esemplifica i principi spaziali e costruttivi fondamentali dell'Gothic Architecture",
+          "Conservato / situato presso Cathédrale Notre-Dame d'Amiens (Amiens, France)",
+          "Pietra miliare nella storia dell'architettura e dell'ingegneria europea"
+        ]
+      },
+      "notre-dame-paris": {
+        "notes": "Capolavoro di French High Gothic Masters (1163 - 1250) situato a 巴黎西堤岛 (Paris, France). Rappresenta un vertice compositivo, strutturale e formale dell'Gothic Architecture.",
+        "knowledgePoints": [
+          "Esemplifica i principi spaziali e costruttivi fondamentali dell'Gothic Architecture",
+          "Conservato / situato presso Cathédrale Notre-Dame de Paris (Paris, France)",
+          "Pietra miliare nella storia dell'architettura e dell'ingegneria europea"
+        ]
+      },
+      "cologne-cathedral": {
+        "notes": "Capolavoro di German Gothic Masters (1248 - 1880) situato a 科隆 (Cologne, Germany). Rappresenta un vertice compositivo, strutturale e formale dell'Gothic Architecture.",
+        "knowledgePoints": [
+          "Esemplifica i principi spaziali e costruttivi fondamentali dell'Gothic Architecture",
+          "Conservato / situato presso Kölner Dom (Hohe Domkirche Sankt Petrus) (Cologne, Germany)",
+          "Pietra miliare nella storia dell'architettura e dell'ingegneria europea"
+        ]
+      },
+      "duomo-milano": {
+        "notes": "Capolavoro di Italian Gothic Masters (1386 - 1965) situato a 米兰主教堂广场 (Milan, Italy). Rappresenta un vertice compositivo, strutturale e formale dell'Gothic Architecture.",
+        "knowledgePoints": [
+          "Esemplifica i principi spaziali e costruttivi fondamentali dell'Gothic Architecture",
+          "Conservato / situato presso Duomo di Milano (Veneranda Fabbrica del Duomo) (Milan, Italy)",
+          "Pietra miliare nella storia dell'architettura e dell'ingegneria europea"
+        ]
+      },
+      "siena-cathedral": {
+        "notes": "Capolavoro di Italian Gothic Masters (1215 - 1263) situato a 锡耶纳 (Siena, Italy). Rappresenta un vertice compositivo, strutturale e formale dell'Gothic Architecture.",
+        "knowledgePoints": [
+          "Esemplifica i principi spaziali e costruttivi fondamentali dell'Gothic Architecture",
+          "Conservato / situato presso Complesso Monumentale del Duomo di Siena (Siena, Italy)",
+          "Pietra miliare nella storia dell'architettura e dell'ingegneria europea"
+        ]
+      },
+      "doges-palace-venice": {
+        "notes": "Capolavoro di Italian Gothic Masters (1340 - 1424) situato a 威尼斯圣马可广场 (Venice, Italy). Rappresenta un vertice compositivo, strutturale e formale dell'Gothic Architecture.",
+        "knowledgePoints": [
+          "Esemplifica i principi spaziali e costruttivi fondamentali dell'Gothic Architecture",
+          "Conservato / situato presso Palazzo Ducale (Fondazione Musei Civici di Venezia) (Venice, Italy)",
+          "Pietra miliare nella storia dell'architettura e dell'ingegneria europea"
+        ]
+      },
+      "florence-cathedral-dome": {
+        "notes": "Capolavoro di Filippo Brunelleschi (1420 - 1436) situato a 佛罗伦萨 (Florence, Italy). Rappresenta un vertice compositivo, strutturale e formale dell'Renaissance Architecture.",
+        "knowledgePoints": [
+          "Esemplifica i principi spaziali e costruttivi fondamentali dell'Renaissance Architecture",
+          "Conservato / situato presso Opera di Santa Maria del Fiore (Florence, Italy)",
+          "Pietra miliare nella storia dell'architettura e dell'ingegneria europea"
+        ]
+      },
+      "pazzi-chapel": {
+        "notes": "Capolavoro di Filippo Brunelleschi (1440) situato a 佛罗伦萨圣十字大殿 (Florence, Italy). Rappresenta un vertice compositivo, strutturale e formale dell'Renaissance Architecture.",
+        "knowledgePoints": [
+          "Esemplifica i principi spaziali e costruttivi fondamentali dell'Renaissance Architecture",
+          "Conservato / situato presso Complesso Monumentale di Santa Croce (Cappella Pazzi) (Florence, Italy)",
+          "Pietra miliare nella storia dell'architettura e dell'ingegneria europea"
+        ]
+      },
+      "santo-spirito-florence": {
+        "notes": "Capolavoro di Filippo Brunelleschi (1444) situato a 佛罗伦萨 (Florence, Italy). Rappresenta un vertice compositivo, strutturale e formale dell'Renaissance Architecture.",
+        "knowledgePoints": [
+          "Esemplifica i principi spaziali e costruttivi fondamentali dell'Renaissance Architecture",
+          "Conservato / situato presso Basilica Santo Spirito (Florence, Italy)",
+          "Pietra miliare nella storia dell'architettura e dell'ingegneria europea"
+        ]
+      },
+      "doors-of-paradise": {
+        "notes": "Capolavoro di Lorenzo Ghiberti (1425 - 1452) situato a 佛罗伦萨圣若望洗礼堂 (Florence, Italy). Rappresenta un vertice compositivo, strutturale e formale dell'Renaissance Architecture.",
+        "knowledgePoints": [
+          "Esemplifica i principi spaziali e costruttivi fondamentali dell'Renaissance Architecture",
+          "Conservato / situato presso Museo dell'Opera del Duomo (Firenze) (Florence, Italy)",
+          "Pietra miliare nella storia dell'architettura e dell'ingegneria europea"
+        ]
+      },
+      "tempietto-san-pietro": {
+        "notes": "Capolavoro di Donato Bramante (1502 - 1510) situato a 罗马 (Rome, Italy). Rappresenta un vertice compositivo, strutturale e formale dell'Renaissance Architecture.",
+        "knowledgePoints": [
+          "Esemplifica i principi spaziali e costruttivi fondamentali dell'Renaissance Architecture",
+          "Conservato / situato presso Real Academia de España en Roma (Tempietto del Bramante) (Rome, Italy)",
+          "Pietra miliare nella storia dell'architettura e dell'ingegneria europea"
+        ]
+      },
+      "santa-maria-delle-grazie-milan": {
+        "notes": "Capolavoro di Donato Bramante (1492 - 1497) situato a 米兰 (Milan, Italy). Rappresenta un vertice compositivo, strutturale e formale dell'Renaissance Architecture.",
+        "knowledgePoints": [
+          "Esemplifica i principi spaziali e costruttivi fondamentali dell'Renaissance Architecture",
+          "Conservato / situato presso Complesso Monumentale di Santa Maria delle Grazie (Milan, Italy)",
+          "Pietra miliare nella storia dell'architettura e dell'ingegneria europea"
+        ]
+      },
+      "belvedere-courtyard": {
+        "notes": "Capolavoro di Donato Bramante (1505) situato a 梵蒂冈 (Vatican City). Rappresenta un vertice compositivo, strutturale e formale dell'Renaissance Architecture.",
+        "knowledgePoints": [
+          "Esemplifica i principi spaziali e costruttivi fondamentali dell'Renaissance Architecture",
+          "Conservato / situato presso Vatican Museums (Cortile del Belvedere) (Vatican City)",
+          "Pietra miliare nella storia dell'architettura e dell'ingegneria europea"
+        ]
+      },
+      "sant-andrea-mantua": {
+        "notes": "Capolavoro di Leon Battista Alberti (1472) situato a 曼图亚 (Mantua, Italy). Rappresenta un vertice compositivo, strutturale e formale dell'Renaissance Architecture.",
+        "knowledgePoints": [
+          "Esemplifica i principi spaziali e costruttivi fondamentali dell'Renaissance Architecture",
+          "Conservato / situato presso Basilica Concattedrale di Sant'Andrea (Mantua, Italy)",
+          "Pietra miliare nella storia dell'architettura e dell'ingegneria europea"
+        ]
+      },
+      "tempio-malatestiano": {
+        "notes": "Capolavoro di Leon Battista Alberti (1468) situato a 里米尼 (Rimini, Italy). Rappresenta un vertice compositivo, strutturale e formale dell'Renaissance Architecture.",
+        "knowledgePoints": [
+          "Esemplifica i principi spaziali e costruttivi fondamentali dell'Renaissance Architecture",
+          "Conservato / situato presso Tempio Malatestiano (Cattedrale di Santa Colomba) (Rimini, Italy)",
+          "Pietra miliare nella storia dell'architettura e dell'ingegneria europea"
+        ]
+      },
+      "laurentian-library": {
+        "notes": "Capolavoro di Michelangelo Buonarroti (1524 - 1559) situato a 佛罗伦萨圣洛伦佐大殿 (Florence, Italy). Rappresenta un vertice compositivo, strutturale e formale dell'Renaissance Architecture.",
+        "knowledgePoints": [
+          "Esemplifica i principi spaziali e costruttivi fondamentali dell'Renaissance Architecture",
+          "Conservato / situato presso Biblioteca Medicea Laurenziana (Florence, Italy)",
+          "Pietra miliare nella storia dell'architettura e dell'ingegneria europea"
+        ]
+      },
+      "porta-pia": {
+        "notes": "Capolavoro di Michelangelo Buonarroti (1561 - 1565) situato a 罗马奥勒良城墙 (Rome, Italy). Rappresenta un vertice compositivo, strutturale e formale dell'Renaissance Architecture.",
+        "knowledgePoints": [
+          "Esemplifica i principi spaziali e costruttivi fondamentali dell'Renaissance Architecture",
+          "Conservato / situato presso Porta Pia (Museo Storico dei Bersaglieri) (Rome, Italy)",
+          "Pietra miliare nella storia dell'architettura e dell'ingegneria europea"
+        ]
+      },
+      "piazza-del-campidoglio": {
+        "notes": "Capolavoro di Michelangelo Buonarroti (1536 - 1546) situato a 罗马卡比托利欧山 (Rome, Italy). Rappresenta un vertice compositivo, strutturale e formale dell'Renaissance Architecture.",
+        "knowledgePoints": [
+          "Esemplifica i principi spaziali e costruttivi fondamentali dell'Renaissance Architecture",
+          "Conservato / situato presso Musei Capitolini (Piazza del Campidoglio) (Rome, Italy)",
+          "Pietra miliare nella storia dell'architettura e dell'ingegneria europea"
+        ]
+      },
+      "st-peters-basilica-dome": {
+        "notes": "Capolavoro di Michelangelo Buonarroti (1547 - 1564) situato a 梵蒂冈 (Vatican City). Rappresenta un vertice compositivo, strutturale e formale dell'Renaissance Architecture.",
+        "knowledgePoints": [
+          "Esemplifica i principi spaziali e costruttivi fondamentali dell'Renaissance Architecture",
+          "Conservato / situato presso Basilica Papale di San Pietro in Vaticano (Vatican City)",
+          "Pietra miliare nella storia dell'architettura e dell'ingegneria europea"
+        ]
+      },
+      "palazzo-medici-riccardi": {
+        "notes": "Capolavoro di Renaissance Palazzo Masters (1430 - 1444) situato a 佛罗伦萨 (Florence, Italy). Rappresenta un vertice compositivo, strutturale e formale dell'Renaissance Architecture.",
+        "knowledgePoints": [
+          "Esemplifica i principi spaziali e costruttivi fondamentali dell'Renaissance Architecture",
+          "Conservato / situato presso Museo di Palazzo Medici Riccardi (Florence, Italy)",
+          "Pietra miliare nella storia dell'architettura e dell'ingegneria europea"
+        ]
+      },
+      "palazzo-dei-diamanti": {
+        "notes": "Capolavoro di Renaissance Palazzo Masters (1493) situato a 费拉拉 (Ferrara, Italy). Rappresenta un vertice compositivo, strutturale e formale dell'Renaissance Architecture.",
+        "knowledgePoints": [
+          "Esemplifica i principi spaziali e costruttivi fondamentali dell'Renaissance Architecture",
+          "Conservato / situato presso Gallerie d'Arte Moderna e Contemporanea (Palazzo dei Diamanti) (Ferrara, Italy)",
+          "Pietra miliare nella storia dell'architettura e dell'ingegneria europea"
+        ]
+      },
+      "palazzo-farnese": {
+        "notes": "Capolavoro di Renaissance Palazzo Masters (1517 - 1589) situato a 罗马 (Rome, Italy). Rappresenta un vertice compositivo, strutturale e formale dell'Renaissance Architecture.",
+        "knowledgePoints": [
+          "Esemplifica i principi spaziali e costruttivi fondamentali dell'Renaissance Architecture",
+          "Conservato / situato presso Palazzo Farnese (Ambassade de France en Italie) (Rome, Italy)",
+          "Pietra miliare nella storia dell'architettura e dell'ingegneria europea"
+        ]
+      },
+      "basilica-palladiana": {
+        "notes": "Capolavoro di Andrea Palladio (1549) situato a 维琴察 (Vicenza, Italy). Rappresenta un vertice compositivo, strutturale e formale dell'Renaissance Architecture.",
+        "knowledgePoints": [
+          "Esemplifica i principi spaziali e costruttivi fondamentali dell'Renaissance Architecture",
+          "Conservato / situato presso Museo Civico di Palazzo Chiericati e Basilica Palladiana (Vicenza, Italy)",
+          "Pietra miliare nella storia dell'architettura e dell'ingegneria europea"
+        ]
+      },
+      "villa-la-rotonda": {
+        "notes": "Capolavoro di Andrea Palladio (1551 - 1567) situato a 维琴察 (Vicenza, Italy). Rappresenta un vertice compositivo, strutturale e formale dell'Renaissance Architecture.",
+        "knowledgePoints": [
+          "Esemplifica i principi spaziali e costruttivi fondamentali dell'Renaissance Architecture",
+          "Conservato / situato presso Villa La Rotonda (Fondazione Aldo e Fernando Valmarana) (Vicenza, Italy)",
+          "Pietra miliare nella storia dell'architettura e dell'ingegneria europea"
+        ]
+      },
+      "chicago-skyscraper-movement": {
+        "notes": "Capolavoro di Chicago School of Architecture (1885 - 1904) situato a 芝加哥 (Chicago, USA). Rappresenta un vertice compositivo, strutturale e formale dell'Modernist Architecture.",
+        "knowledgePoints": [
+          "Esemplifica i principi spaziali e costruttivi fondamentali dell'Modernist Architecture",
+          "Conservato / situato presso Chicago Architecture Center (CAC) (Chicago, USA)",
+          "Pietra miliare nella storia dell'architettura e dell'ingegneria europea"
+        ]
+      },
+      "bauhaus-dessau": {
+        "notes": "Capolavoro di Walter Gropius (1925 - 1932) situato a 德绍 (Dessau, Germany). Rappresenta un vertice compositivo, strutturale e formale dell'Modernist Architecture.",
+        "knowledgePoints": [
+          "Esemplifica i principi spaziali e costruttivi fondamentali dell'Modernist Architecture",
+          "Conservato / situato presso Bauhaus Dessau Foundation (Dessau, Germany)",
+          "Pietra miliare nella storia dell'architettura e dell'ingegneria europea"
+        ]
+      },
+      "brick-country-house": {
+        "notes": "Capolavoro di Ludwig Mies van der Rohe (1923) situato a 柏林/纸上建筑 (Berlin, Germany). Rappresenta un vertice compositivo, strutturale e formale dell'Modernist Architecture.",
+        "knowledgePoints": [
+          "Esemplifica i principi spaziali e costruttivi fondamentali dell'Modernist Architecture",
+          "Conservato / situato presso Museum of Modern Art (MoMA Architecture Collection) (New York, USA)",
+          "Pietra miliare nella storia dell'architettura e dell'ingegneria europea"
+        ]
+      },
+      "barcelona-pavilion": {
+        "notes": "Capolavoro di Ludwig Mies van der Rohe (1928 - 1929) situato a 巴塞罗那蒙特惠奇 (Barcelona, Spain). Rappresenta un vertice compositivo, strutturale e formale dell'Modernist Architecture.",
+        "knowledgePoints": [
+          "Esemplifica i principi spaziali e costruttivi fondamentali dell'Modernist Architecture",
+          "Conservato / situato presso Fundació Mies van der Rohe (Pavelló Mies van der Rohe) (Barcelona, Spain)",
+          "Pietra miliare nella storia dell'architettura e dell'ingegneria europea"
+        ]
+      },
+      "farnsworth-house": {
+        "notes": "Capolavoro di Ludwig Mies van der Rohe (1951) situato a 伊利诺伊州普莱诺 (Plano, Illinois, USA). Rappresenta un vertice compositivo, strutturale e formale dell'Modernist Architecture.",
+        "knowledgePoints": [
+          "Esemplifica i principi spaziali e costruttivi fondamentali dell'Modernist Architecture",
+          "Conservato / situato presso Edith Farnsworth House (National Trust for Historic Preservation) (Plano, Illinois, USA)",
+          "Pietra miliare nella storia dell'architettura e dell'ingegneria europea"
+        ]
+      },
+      "seagram-building": {
+        "notes": "Capolavoro di Ludwig Mies van der Rohe (1958) situato a 纽约曼哈顿公园大道 (New York, USA). Rappresenta un vertice compositivo, strutturale e formale dell'Modernist Architecture.",
+        "knowledgePoints": [
+          "Esemplifica i principi spaziali e costruttivi fondamentali dell'Modernist Architecture",
+          "Conservato / situato presso Seagram Building (375 Park Avenue) (New York, USA)",
+          "Pietra miliare nella storia dell'architettura e dell'ingegneria europea"
+        ]
+      },
+      "neue-nationalgalerie": {
+        "notes": "Capolavoro di Ludwig Mies van der Rohe (1968) situato a 柏林文化广场 (Berlin, Germany). Rappresenta un vertice compositivo, strutturale e formale dell'Modernist Architecture.",
+        "knowledgePoints": [
+          "Esemplifica i principi spaziali e costruttivi fondamentali dell'Modernist Architecture",
+          "Conservato / situato presso Neue Nationalgalerie (Staatliche Museen zu Berlin) (Berlin, Germany)",
+          "Pietra miliare nella storia dell'architettura e dell'ingegneria europea"
+        ]
+      },
+      "robie-house": {
+        "notes": "Capolavoro di Frank Lloyd Wright (1909) situato a 芝加哥海德公园 (Chicago, Illinois, USA). Rappresenta un vertice compositivo, strutturale e formale dell'Modernist Architecture.",
+        "knowledgePoints": [
+          "Esemplifica i principi spaziali e costruttivi fondamentali dell'Modernist Architecture",
+          "Conservato / situato presso Frederick C. Robie House (Frank Lloyd Wright Trust) (Chicago, Illinois, USA)",
+          "Pietra miliare nella storia dell'architettura e dell'ingegneria europea"
+        ]
+      },
+      "fallingwater": {
+        "notes": "Capolavoro di Frank Lloyd Wright (1936 - 1937) situato a 宾夕法尼亚熊跑溪 (Mill Run, Pennsylvania, USA). Rappresenta un vertice compositivo, strutturale e formale dell'Modernist Architecture.",
+        "knowledgePoints": [
+          "Esemplifica i principi spaziali e costruttivi fondamentali dell'Modernist Architecture",
+          "Conservato / situato presso Fallingwater (Western Pennsylvania Conservancy) (Mill Run, Pennsylvania, USA)",
+          "Pietra miliare nella storia dell'architettura e dell'ingegneria europea"
+        ]
+      },
+      "guggenheim-museum-ny": {
+        "notes": "Capolavoro di Frank Lloyd Wright (1937 / 1959) situato a 纽约曼哈顿第五大道 (New York, USA). Rappresenta un vertice compositivo, strutturale e formale dell'Modernist Architecture.",
+        "knowledgePoints": [
+          "Esemplifica i principi spaziali e costruttivi fondamentali dell'Modernist Architecture",
+          "Conservato / situato presso Solomon R. Guggenheim Museum (New York, USA)",
+          "Pietra miliare nella storia dell'architettura e dell'ingegneria europea"
+        ]
+      },
+      "villa-savoye": {
+        "notes": "Capolavoro di Le Corbusier (1928 - 1931) situato a 普瓦西 (Poissy, France). Rappresenta un vertice compositivo, strutturale e formale dell'Modernist Architecture.",
+        "knowledgePoints": [
+          "Esemplifica i principi spaziali e costruttivi fondamentali dell'Modernist Architecture",
+          "Conservato / situato presso Villa Savoye (Centre des monuments nationaux) (Poissy, France)",
+          "Pietra miliare nella storia dell'architettura e dell'ingegneria europea"
+        ]
+      },
+      "unite-dhabitation": {
+        "notes": "Capolavoro di Le Corbusier (1952) situato a 马赛 (Marseille, France). Rappresenta un vertice compositivo, strutturale e formale dell'Modernist Architecture.",
+        "knowledgePoints": [
+          "Esemplifica i principi spaziali e costruttivi fondamentali dell'Modernist Architecture",
+          "Conservato / situato presso Cité Radieuse (Unité d'Habitation de Marseille) (Marseille, France)",
+          "Pietra miliare nella storia dell'architettura e dell'ingegneria europea"
+        ]
+      },
+      "notre-dame-du-haut": {
+        "notes": "Capolavoro di Le Corbusier (1955) situato a 朗香 (Ronchamp, France). Rappresenta un vertice compositivo, strutturale e formale dell'Modernist Architecture.",
+        "knowledgePoints": [
+          "Esemplifica i principi spaziali e costruttivi fondamentali dell'Modernist Architecture",
+          "Conservato / situato presso Colline Notre-Dame du Haut (Association des Amis de Sainte-Barbe) (Ronchamp, France)",
+          "Pietra miliare nella storia dell'architettura e dell'ingegneria europea"
+        ]
+      },
+      "rufer-house": {
+        "notes": "Capolavoro di Adolf Loos (1922) situato a 维也纳 (Vienna, Austria). Rappresenta un vertice compositivo, strutturale e formale dell'Modernist Architecture.",
+        "knowledgePoints": [
+          "Esemplifica i principi spaziali e costruttivi fondamentali dell'Modernist Architecture",
+          "Conservato / situato presso Rufer House (Schlickgasse / Adolf Loos Archive) (Vienna, Austria)",
+          "Pietra miliare nella storia dell'architettura e dell'ingegneria europea"
+        ]
+      },
+      "villa-muller": {
+        "notes": "Capolavoro di Adolf Loos (1930) situato a 布拉格 (Prague, Czech Republic). Rappresenta un vertice compositivo, strutturale e formale dell'Modernist Architecture.",
+        "knowledgePoints": [
+          "Esemplifica i principi spaziali e costruttivi fondamentali dell'Modernist Architecture",
+          "Conservato / situato presso City of Prague Museum (Villa Müller) (Prague, Czech Republic)",
+          "Pietra miliare nella storia dell'architettura e dell'ingegneria europea"
+        ]
       }
     }
   },
@@ -2949,6 +4303,50 @@ export const localizedContent = {
           "Mosaico cerámico fragmentado (trencadís) y estructuras de luz cristalina",
           "Simbolismo naturalista integrado en la lógica estructural"
         ]
+      },
+      "romanesque-architecture": {
+        "description": "La arquitectura románica floreció en Europa occidental entre los siglos X y XII, caracterizada por arcos de medio punto, gruesos muros de sillería, bóvedas de cañón y de arista, arquerías ciegas, lesenas lombardas y baptisterios exentos.",
+        "historicalContext": "Surgida en la Plena Edad Media con la expansión monástica y las rutas de peregrinación, aunando monumentalidad litúrgica y solidez estructural.",
+        "keyFeatures": [
+          "Arcos de medio punto y robustos muros portantes de mampostería",
+          "Bóvedas de cañón corrido, de arista y claustrales",
+          "Naves de ritmo modular y baptisterios de planta centralizada",
+          "Arquerías ciegas decorativas y lesenas exteriores",
+          "Huecos de vano tipo monoforio, bíforo y triforio"
+        ]
+      },
+      "gothic-architecture": {
+        "description": "La arquitectura gótica surgió a mediados del siglo XII en la Isla de Francia, constituyendo la cumbre de la ingeniería y la estética medieval. Mediante bóvedas de crucería ojival, arcos apuntados y arbotantes exteriores, liberó los muros para alcanzar alturas monumentales y grandes vidrieras policromadas.",
+        "historicalContext": "Desarrollada en el contexto del renacimiento urbano y la teología escolástica, sustituyendo la pesadez muraria por una estructura esquelética permeable a la luz divina.",
+        "keyFeatures": [
+          "Bóvedas de crucería nervada y líneas de empuje vertical",
+          "Arbotantes exteriores que transmiten los empujes laterales hacia los contrafuertes",
+          "Arcos apuntados (ojivales) y pilares fasciculados",
+          "Grandes vidrieras emplomadas y rosetones radiantes",
+          "Agujas esbeltas y pináculos de carga y estabilización"
+        ]
+      },
+      "renaissance-architecture": {
+        "description": "Surgida en la Florencia del siglo XV, la arquitectura renacentista recuperó los cánones clásicos grecorromanos: órdenes, proporciones matemáticas, simetría y geometría pura. Fundamentada en la perspectiva lineal y los tratados teóricos, inauguró la arquitectura moderna occidental.",
+        "historicalContext": "Impulsada por el mecenazgo humanista, la relectura de Vitruvio y el desarrollo científico, elevando al arquitecto a la categoría de pensador e ingeniero.",
+        "keyFeatures": [
+          "Aplicación matemática de la perspectiva lineal en la articulación espacial",
+          "Recuperación de los órdenes clásicos y proporciones geométricas armónicas",
+          "Urbanismo de la ciudad ideal y plantas centralizadas",
+          "Motivo de la serliana o arco palladiano",
+          "Palacios civiles de fachada tripartita con aparejo almohadillado (rusticación)"
+        ]
+      },
+      "modernist-architecture": {
+        "description": "El movimiento arquitectónico determinante del siglo XX que abarca la Escuela de Chicago, la Bauhaus, el Estilo Internacional y la arquitectura orgánica. Basado en el acero, el vidrio continuo y el hormigón armado, consagró el funcionalismo ('la forma sigue a la función') y la eliminación del ornamento histórico.",
+        "historicalContext": "Iniciado tras el gran incendio de Chicago de 1871 con el rascacielos comercial, madurado en las vanguardias europeas de entreguerras y expandido globalmente.",
+        "keyFeatures": [
+          "Estructuras metálicas de la Escuela de Chicago y tipología de rascacielos",
+          "Funcionalismo: la forma sigue a la función y pureza compositiva",
+          "Nuevos materiales: perfiles de acero, muros cortina de vidrio y hormigón visto",
+          "Pedagogía de la Bauhaus y universalización del Estilo Internacional",
+          "Arquitectura orgánica y los Cinco Puntos para una Nueva Arquitectura"
+        ]
       }
     },
     "artists": {
@@ -3056,6 +4454,66 @@ export const localizedContent = {
       },
       "antoni-gaudi": {
         "bio": "Arquitecto catalán y máxima figura del Modernismo. En obras como la Sagrada Família, Casa Milà y Casa Batlló integró la mecánica estructural catenaria con geometrías regladas y oficios tradicionales."
+      },
+      "lombard-romanesque-masters": {
+        "bio": "Lombard Romanesque Masters fue una figura clave de Romanesque Architecture, autor de obras maestras arquitectónicas, innovaciones estructurales y tratados teóricos."
+      },
+      "pisan-romanesque-masters": {
+        "bio": "Pisan Romanesque Masters fue una figura clave de Romanesque Architecture, autor de obras maestras arquitectónicas, innovaciones estructurales y tratados teóricos."
+      },
+      "french-romanesque-masters": {
+        "bio": "French Romanesque Masters fue una figura clave de Romanesque Architecture, autor de obras maestras arquitectónicas, innovaciones estructurales y tratados teóricos."
+      },
+      "arnolfo-di-cambio": {
+        "bio": "Arnolfo di Cambio fue una figura clave de Romanesque Architecture, autor de obras maestras arquitectónicas, innovaciones estructurales y tratados teóricos."
+      },
+      "french-gothic-masters": {
+        "bio": "French High Gothic Masters fue una figura clave de Gothic Architecture, autor de obras maestras arquitectónicas, innovaciones estructurales y tratados teóricos."
+      },
+      "german-gothic-masters": {
+        "bio": "German Gothic Masters fue una figura clave de Gothic Architecture, autor de obras maestras arquitectónicas, innovaciones estructurales y tratados teóricos."
+      },
+      "italian-gothic-masters": {
+        "bio": "Italian Gothic Masters fue una figura clave de Gothic Architecture, autor de obras maestras arquitectónicas, innovaciones estructurales y tratados teóricos."
+      },
+      "filippo-brunelleschi": {
+        "bio": "Filippo Brunelleschi fue una figura clave de Renaissance Architecture, autor de obras maestras arquitectónicas, innovaciones estructurales y tratados teóricos."
+      },
+      "lorenzo-ghiberti": {
+        "bio": "Lorenzo Ghiberti fue una figura clave de Renaissance Architecture, autor de obras maestras arquitectónicas, innovaciones estructurales y tratados teóricos."
+      },
+      "donato-bramante": {
+        "bio": "Donato Bramante fue una figura clave de Renaissance Architecture, autor de obras maestras arquitectónicas, innovaciones estructurales y tratados teóricos."
+      },
+      "leon-battista-alberti": {
+        "bio": "Leon Battista Alberti fue una figura clave de Renaissance Architecture, autor de obras maestras arquitectónicas, innovaciones estructurales y tratados teóricos."
+      },
+      "michelangelo-buonarroti-arch": {
+        "bio": "Michelangelo Buonarroti fue una figura clave de Renaissance Architecture, autor de obras maestras arquitectónicas, innovaciones estructurales y tratados teóricos."
+      },
+      "renaissance-palazzo-masters": {
+        "bio": "Renaissance Palazzo Masters fue una figura clave de Renaissance Architecture, autor de obras maestras arquitectónicas, innovaciones estructurales y tratados teóricos."
+      },
+      "andrea-palladio": {
+        "bio": "Andrea Palladio fue una figura clave de Renaissance Architecture, autor de obras maestras arquitectónicas, innovaciones estructurales y tratados teóricos."
+      },
+      "chicago-school-architects": {
+        "bio": "Chicago School of Architecture fue una figura clave de Modernist Architecture, autor de obras maestras arquitectónicas, innovaciones estructurales y tratados teóricos."
+      },
+      "walter-gropius": {
+        "bio": "Walter Gropius fue una figura clave de Modernist Architecture, autor de obras maestras arquitectónicas, innovaciones estructurales y tratados teóricos."
+      },
+      "mies-van-der-rohe": {
+        "bio": "Ludwig Mies van der Rohe fue una figura clave de Modernist Architecture, autor de obras maestras arquitectónicas, innovaciones estructurales y tratados teóricos."
+      },
+      "frank-lloyd-wright": {
+        "bio": "Frank Lloyd Wright fue una figura clave de Modernist Architecture, autor de obras maestras arquitectónicas, innovaciones estructurales y tratados teóricos."
+      },
+      "le-corbusier": {
+        "bio": "Le Corbusier fue una figura clave de Modernist Architecture, autor de obras maestras arquitectónicas, innovaciones estructurales y tratados teóricos."
+      },
+      "adolf-loos": {
+        "bio": "Adolf Loos fue una figura clave de Modernist Architecture, autor de obras maestras arquitectónicas, innovaciones estructurales y tratados teóricos."
       }
     },
     "artworks": {
@@ -3781,6 +5239,358 @@ export const localizedContent = {
           "Tratamiento exterior con mosaico cerámico y de vidrio fragmentado (trencadís)",
           "Columnas pétreas de formas óseas y carpintería de madera sin aristas vivas",
           "Referente de la arquitectura orgánica y el uso del color en el Modernismo catalán"
+        ]
+      },
+      "sant-ambrogio-milan": {
+        "notes": "Obra maestra de Lombard Romanesque Masters (379 - 1099) ubicada en 米兰 (Milan, Italy). Representa un hito compositivo y estructural dentro de Romanesque Architecture.",
+        "knowledgePoints": [
+          "Ejemplifica los principios espaciales y constructivos fundamentales de Romanesque Architecture",
+          "Ubicado en Basilica di Sant'Ambrogio (Milan, Italy)",
+          "Hito de referencia en la historia de la arquitectura y la ingeniería occidental"
+        ]
+      },
+      "baptistery-parma": {
+        "notes": "Obra maestra de Lombard Romanesque Masters (1196 - 1270) ubicada en 帕尔马 (Parma, Italy). Representa un hito compositivo y estructural dentro de Romanesque Architecture.",
+        "knowledgePoints": [
+          "Ejemplifica los principios espaciales y constructivos fundamentales de Romanesque Architecture",
+          "Ubicado en Battistero di Parma (Piazza Duomo) (Parma, Italy)",
+          "Hito de referencia en la historia de la arquitectura y la ingeniería occidental"
+        ]
+      },
+      "piazza-dei-miracoli-pisa": {
+        "notes": "Obra maestra de Pisan Romanesque Masters (1063 - 1350) ubicada en 比萨 (Pisa, Italy). Representa un hito compositivo y estructural dentro de Romanesque Architecture.",
+        "knowledgePoints": [
+          "Ejemplifica los principios espaciales y constructivos fundamentales de Romanesque Architecture",
+          "Ubicado en Opera della Primaziale Pisana (Piazza dei Miracoli) (Pisa, Italy)",
+          "Hito de referencia en la historia de la arquitectura y la ingeniería occidental"
+        ]
+      },
+      "basilica-saint-remi": {
+        "notes": "Obra maestra de French Romanesque Masters (c. 1000) ubicada en 兰斯 (Reims, France). Representa un hito compositivo y estructural dentro de Romanesque Architecture.",
+        "knowledgePoints": [
+          "Ejemplifica los principios espaciales y constructivos fundamentales de Romanesque Architecture",
+          "Ubicado en Basilique Saint-Remi de Reims (Reims, France)",
+          "Hito de referencia en la historia de la arquitectura y la ingeniería occidental"
+        ]
+      },
+      "palazzo-vecchio": {
+        "notes": "Obra maestra de Arnolfo di Cambio (1299) ubicada en 佛罗伦萨领主广场 (Florence, Italy). Representa un hito compositivo y estructural dentro de Romanesque Architecture.",
+        "knowledgePoints": [
+          "Ejemplifica los principios espaciales y constructivos fundamentales de Romanesque Architecture",
+          "Ubicado en Museo di Palazzo Vecchio (Florence, Italy)",
+          "Hito de referencia en la historia de la arquitectura y la ingeniería occidental"
+        ]
+      },
+      "amiens-cathedral": {
+        "notes": "Obra maestra de French High Gothic Masters (1220 - 1270) ubicada en 亚眠 (Amiens, France). Representa un hito compositivo y estructural dentro de Gothic Architecture.",
+        "knowledgePoints": [
+          "Ejemplifica los principios espaciales y constructivos fundamentales de Gothic Architecture",
+          "Ubicado en Cathédrale Notre-Dame d'Amiens (Amiens, France)",
+          "Hito de referencia en la historia de la arquitectura y la ingeniería occidental"
+        ]
+      },
+      "notre-dame-paris": {
+        "notes": "Obra maestra de French High Gothic Masters (1163 - 1250) ubicada en 巴黎西堤岛 (Paris, France). Representa un hito compositivo y estructural dentro de Gothic Architecture.",
+        "knowledgePoints": [
+          "Ejemplifica los principios espaciales y constructivos fundamentales de Gothic Architecture",
+          "Ubicado en Cathédrale Notre-Dame de Paris (Paris, France)",
+          "Hito de referencia en la historia de la arquitectura y la ingeniería occidental"
+        ]
+      },
+      "cologne-cathedral": {
+        "notes": "Obra maestra de German Gothic Masters (1248 - 1880) ubicada en 科隆 (Cologne, Germany). Representa un hito compositivo y estructural dentro de Gothic Architecture.",
+        "knowledgePoints": [
+          "Ejemplifica los principios espaciales y constructivos fundamentales de Gothic Architecture",
+          "Ubicado en Kölner Dom (Hohe Domkirche Sankt Petrus) (Cologne, Germany)",
+          "Hito de referencia en la historia de la arquitectura y la ingeniería occidental"
+        ]
+      },
+      "duomo-milano": {
+        "notes": "Obra maestra de Italian Gothic Masters (1386 - 1965) ubicada en 米兰主教堂广场 (Milan, Italy). Representa un hito compositivo y estructural dentro de Gothic Architecture.",
+        "knowledgePoints": [
+          "Ejemplifica los principios espaciales y constructivos fundamentales de Gothic Architecture",
+          "Ubicado en Duomo di Milano (Veneranda Fabbrica del Duomo) (Milan, Italy)",
+          "Hito de referencia en la historia de la arquitectura y la ingeniería occidental"
+        ]
+      },
+      "siena-cathedral": {
+        "notes": "Obra maestra de Italian Gothic Masters (1215 - 1263) ubicada en 锡耶纳 (Siena, Italy). Representa un hito compositivo y estructural dentro de Gothic Architecture.",
+        "knowledgePoints": [
+          "Ejemplifica los principios espaciales y constructivos fundamentales de Gothic Architecture",
+          "Ubicado en Complesso Monumentale del Duomo di Siena (Siena, Italy)",
+          "Hito de referencia en la historia de la arquitectura y la ingeniería occidental"
+        ]
+      },
+      "doges-palace-venice": {
+        "notes": "Obra maestra de Italian Gothic Masters (1340 - 1424) ubicada en 威尼斯圣马可广场 (Venice, Italy). Representa un hito compositivo y estructural dentro de Gothic Architecture.",
+        "knowledgePoints": [
+          "Ejemplifica los principios espaciales y constructivos fundamentales de Gothic Architecture",
+          "Ubicado en Palazzo Ducale (Fondazione Musei Civici di Venezia) (Venice, Italy)",
+          "Hito de referencia en la historia de la arquitectura y la ingeniería occidental"
+        ]
+      },
+      "florence-cathedral-dome": {
+        "notes": "Obra maestra de Filippo Brunelleschi (1420 - 1436) ubicada en 佛罗伦萨 (Florence, Italy). Representa un hito compositivo y estructural dentro de Renaissance Architecture.",
+        "knowledgePoints": [
+          "Ejemplifica los principios espaciales y constructivos fundamentales de Renaissance Architecture",
+          "Ubicado en Opera di Santa Maria del Fiore (Florence, Italy)",
+          "Hito de referencia en la historia de la arquitectura y la ingeniería occidental"
+        ]
+      },
+      "pazzi-chapel": {
+        "notes": "Obra maestra de Filippo Brunelleschi (1440) ubicada en 佛罗伦萨圣十字大殿 (Florence, Italy). Representa un hito compositivo y estructural dentro de Renaissance Architecture.",
+        "knowledgePoints": [
+          "Ejemplifica los principios espaciales y constructivos fundamentales de Renaissance Architecture",
+          "Ubicado en Complesso Monumentale di Santa Croce (Cappella Pazzi) (Florence, Italy)",
+          "Hito de referencia en la historia de la arquitectura y la ingeniería occidental"
+        ]
+      },
+      "santo-spirito-florence": {
+        "notes": "Obra maestra de Filippo Brunelleschi (1444) ubicada en 佛罗伦萨 (Florence, Italy). Representa un hito compositivo y estructural dentro de Renaissance Architecture.",
+        "knowledgePoints": [
+          "Ejemplifica los principios espaciales y constructivos fundamentales de Renaissance Architecture",
+          "Ubicado en Basilica Santo Spirito (Florence, Italy)",
+          "Hito de referencia en la historia de la arquitectura y la ingeniería occidental"
+        ]
+      },
+      "doors-of-paradise": {
+        "notes": "Obra maestra de Lorenzo Ghiberti (1425 - 1452) ubicada en 佛罗伦萨圣若望洗礼堂 (Florence, Italy). Representa un hito compositivo y estructural dentro de Renaissance Architecture.",
+        "knowledgePoints": [
+          "Ejemplifica los principios espaciales y constructivos fundamentales de Renaissance Architecture",
+          "Ubicado en Museo dell'Opera del Duomo (Firenze) (Florence, Italy)",
+          "Hito de referencia en la historia de la arquitectura y la ingeniería occidental"
+        ]
+      },
+      "tempietto-san-pietro": {
+        "notes": "Obra maestra de Donato Bramante (1502 - 1510) ubicada en 罗马 (Rome, Italy). Representa un hito compositivo y estructural dentro de Renaissance Architecture.",
+        "knowledgePoints": [
+          "Ejemplifica los principios espaciales y constructivos fundamentales de Renaissance Architecture",
+          "Ubicado en Real Academia de España en Roma (Tempietto del Bramante) (Rome, Italy)",
+          "Hito de referencia en la historia de la arquitectura y la ingeniería occidental"
+        ]
+      },
+      "santa-maria-delle-grazie-milan": {
+        "notes": "Obra maestra de Donato Bramante (1492 - 1497) ubicada en 米兰 (Milan, Italy). Representa un hito compositivo y estructural dentro de Renaissance Architecture.",
+        "knowledgePoints": [
+          "Ejemplifica los principios espaciales y constructivos fundamentales de Renaissance Architecture",
+          "Ubicado en Complesso Monumentale di Santa Maria delle Grazie (Milan, Italy)",
+          "Hito de referencia en la historia de la arquitectura y la ingeniería occidental"
+        ]
+      },
+      "belvedere-courtyard": {
+        "notes": "Obra maestra de Donato Bramante (1505) ubicada en 梵蒂冈 (Vatican City). Representa un hito compositivo y estructural dentro de Renaissance Architecture.",
+        "knowledgePoints": [
+          "Ejemplifica los principios espaciales y constructivos fundamentales de Renaissance Architecture",
+          "Ubicado en Vatican Museums (Cortile del Belvedere) (Vatican City)",
+          "Hito de referencia en la historia de la arquitectura y la ingeniería occidental"
+        ]
+      },
+      "sant-andrea-mantua": {
+        "notes": "Obra maestra de Leon Battista Alberti (1472) ubicada en 曼图亚 (Mantua, Italy). Representa un hito compositivo y estructural dentro de Renaissance Architecture.",
+        "knowledgePoints": [
+          "Ejemplifica los principios espaciales y constructivos fundamentales de Renaissance Architecture",
+          "Ubicado en Basilica Concattedrale di Sant'Andrea (Mantua, Italy)",
+          "Hito de referencia en la historia de la arquitectura y la ingeniería occidental"
+        ]
+      },
+      "tempio-malatestiano": {
+        "notes": "Obra maestra de Leon Battista Alberti (1468) ubicada en 里米尼 (Rimini, Italy). Representa un hito compositivo y estructural dentro de Renaissance Architecture.",
+        "knowledgePoints": [
+          "Ejemplifica los principios espaciales y constructivos fundamentales de Renaissance Architecture",
+          "Ubicado en Tempio Malatestiano (Cattedrale di Santa Colomba) (Rimini, Italy)",
+          "Hito de referencia en la historia de la arquitectura y la ingeniería occidental"
+        ]
+      },
+      "laurentian-library": {
+        "notes": "Obra maestra de Michelangelo Buonarroti (1524 - 1559) ubicada en 佛罗伦萨圣洛伦佐大殿 (Florence, Italy). Representa un hito compositivo y estructural dentro de Renaissance Architecture.",
+        "knowledgePoints": [
+          "Ejemplifica los principios espaciales y constructivos fundamentales de Renaissance Architecture",
+          "Ubicado en Biblioteca Medicea Laurenziana (Florence, Italy)",
+          "Hito de referencia en la historia de la arquitectura y la ingeniería occidental"
+        ]
+      },
+      "porta-pia": {
+        "notes": "Obra maestra de Michelangelo Buonarroti (1561 - 1565) ubicada en 罗马奥勒良城墙 (Rome, Italy). Representa un hito compositivo y estructural dentro de Renaissance Architecture.",
+        "knowledgePoints": [
+          "Ejemplifica los principios espaciales y constructivos fundamentales de Renaissance Architecture",
+          "Ubicado en Porta Pia (Museo Storico dei Bersaglieri) (Rome, Italy)",
+          "Hito de referencia en la historia de la arquitectura y la ingeniería occidental"
+        ]
+      },
+      "piazza-del-campidoglio": {
+        "notes": "Obra maestra de Michelangelo Buonarroti (1536 - 1546) ubicada en 罗马卡比托利欧山 (Rome, Italy). Representa un hito compositivo y estructural dentro de Renaissance Architecture.",
+        "knowledgePoints": [
+          "Ejemplifica los principios espaciales y constructivos fundamentales de Renaissance Architecture",
+          "Ubicado en Musei Capitolini (Piazza del Campidoglio) (Rome, Italy)",
+          "Hito de referencia en la historia de la arquitectura y la ingeniería occidental"
+        ]
+      },
+      "st-peters-basilica-dome": {
+        "notes": "Obra maestra de Michelangelo Buonarroti (1547 - 1564) ubicada en 梵蒂冈 (Vatican City). Representa un hito compositivo y estructural dentro de Renaissance Architecture.",
+        "knowledgePoints": [
+          "Ejemplifica los principios espaciales y constructivos fundamentales de Renaissance Architecture",
+          "Ubicado en Basilica Papale di San Pietro in Vaticano (Vatican City)",
+          "Hito de referencia en la historia de la arquitectura y la ingeniería occidental"
+        ]
+      },
+      "palazzo-medici-riccardi": {
+        "notes": "Obra maestra de Renaissance Palazzo Masters (1430 - 1444) ubicada en 佛罗伦萨 (Florence, Italy). Representa un hito compositivo y estructural dentro de Renaissance Architecture.",
+        "knowledgePoints": [
+          "Ejemplifica los principios espaciales y constructivos fundamentales de Renaissance Architecture",
+          "Ubicado en Museo di Palazzo Medici Riccardi (Florence, Italy)",
+          "Hito de referencia en la historia de la arquitectura y la ingeniería occidental"
+        ]
+      },
+      "palazzo-dei-diamanti": {
+        "notes": "Obra maestra de Renaissance Palazzo Masters (1493) ubicada en 费拉拉 (Ferrara, Italy). Representa un hito compositivo y estructural dentro de Renaissance Architecture.",
+        "knowledgePoints": [
+          "Ejemplifica los principios espaciales y constructivos fundamentales de Renaissance Architecture",
+          "Ubicado en Gallerie d'Arte Moderna e Contemporanea (Palazzo dei Diamanti) (Ferrara, Italy)",
+          "Hito de referencia en la historia de la arquitectura y la ingeniería occidental"
+        ]
+      },
+      "palazzo-farnese": {
+        "notes": "Obra maestra de Renaissance Palazzo Masters (1517 - 1589) ubicada en 罗马 (Rome, Italy). Representa un hito compositivo y estructural dentro de Renaissance Architecture.",
+        "knowledgePoints": [
+          "Ejemplifica los principios espaciales y constructivos fundamentales de Renaissance Architecture",
+          "Ubicado en Palazzo Farnese (Ambassade de France en Italie) (Rome, Italy)",
+          "Hito de referencia en la historia de la arquitectura y la ingeniería occidental"
+        ]
+      },
+      "basilica-palladiana": {
+        "notes": "Obra maestra de Andrea Palladio (1549) ubicada en 维琴察 (Vicenza, Italy). Representa un hito compositivo y estructural dentro de Renaissance Architecture.",
+        "knowledgePoints": [
+          "Ejemplifica los principios espaciales y constructivos fundamentales de Renaissance Architecture",
+          "Ubicado en Museo Civico di Palazzo Chiericati e Basilica Palladiana (Vicenza, Italy)",
+          "Hito de referencia en la historia de la arquitectura y la ingeniería occidental"
+        ]
+      },
+      "villa-la-rotonda": {
+        "notes": "Obra maestra de Andrea Palladio (1551 - 1567) ubicada en 维琴察 (Vicenza, Italy). Representa un hito compositivo y estructural dentro de Renaissance Architecture.",
+        "knowledgePoints": [
+          "Ejemplifica los principios espaciales y constructivos fundamentales de Renaissance Architecture",
+          "Ubicado en Villa La Rotonda (Fondazione Aldo e Fernando Valmarana) (Vicenza, Italy)",
+          "Hito de referencia en la historia de la arquitectura y la ingeniería occidental"
+        ]
+      },
+      "chicago-skyscraper-movement": {
+        "notes": "Obra maestra de Chicago School of Architecture (1885 - 1904) ubicada en 芝加哥 (Chicago, USA). Representa un hito compositivo y estructural dentro de Modernist Architecture.",
+        "knowledgePoints": [
+          "Ejemplifica los principios espaciales y constructivos fundamentales de Modernist Architecture",
+          "Ubicado en Chicago Architecture Center (CAC) (Chicago, USA)",
+          "Hito de referencia en la historia de la arquitectura y la ingeniería occidental"
+        ]
+      },
+      "bauhaus-dessau": {
+        "notes": "Obra maestra de Walter Gropius (1925 - 1932) ubicada en 德绍 (Dessau, Germany). Representa un hito compositivo y estructural dentro de Modernist Architecture.",
+        "knowledgePoints": [
+          "Ejemplifica los principios espaciales y constructivos fundamentales de Modernist Architecture",
+          "Ubicado en Bauhaus Dessau Foundation (Dessau, Germany)",
+          "Hito de referencia en la historia de la arquitectura y la ingeniería occidental"
+        ]
+      },
+      "brick-country-house": {
+        "notes": "Obra maestra de Ludwig Mies van der Rohe (1923) ubicada en 柏林/纸上建筑 (Berlin, Germany). Representa un hito compositivo y estructural dentro de Modernist Architecture.",
+        "knowledgePoints": [
+          "Ejemplifica los principios espaciales y constructivos fundamentales de Modernist Architecture",
+          "Ubicado en Museum of Modern Art (MoMA Architecture Collection) (New York, USA)",
+          "Hito de referencia en la historia de la arquitectura y la ingeniería occidental"
+        ]
+      },
+      "barcelona-pavilion": {
+        "notes": "Obra maestra de Ludwig Mies van der Rohe (1928 - 1929) ubicada en 巴塞罗那蒙特惠奇 (Barcelona, Spain). Representa un hito compositivo y estructural dentro de Modernist Architecture.",
+        "knowledgePoints": [
+          "Ejemplifica los principios espaciales y constructivos fundamentales de Modernist Architecture",
+          "Ubicado en Fundació Mies van der Rohe (Pavelló Mies van der Rohe) (Barcelona, Spain)",
+          "Hito de referencia en la historia de la arquitectura y la ingeniería occidental"
+        ]
+      },
+      "farnsworth-house": {
+        "notes": "Obra maestra de Ludwig Mies van der Rohe (1951) ubicada en 伊利诺伊州普莱诺 (Plano, Illinois, USA). Representa un hito compositivo y estructural dentro de Modernist Architecture.",
+        "knowledgePoints": [
+          "Ejemplifica los principios espaciales y constructivos fundamentales de Modernist Architecture",
+          "Ubicado en Edith Farnsworth House (National Trust for Historic Preservation) (Plano, Illinois, USA)",
+          "Hito de referencia en la historia de la arquitectura y la ingeniería occidental"
+        ]
+      },
+      "seagram-building": {
+        "notes": "Obra maestra de Ludwig Mies van der Rohe (1958) ubicada en 纽约曼哈顿公园大道 (New York, USA). Representa un hito compositivo y estructural dentro de Modernist Architecture.",
+        "knowledgePoints": [
+          "Ejemplifica los principios espaciales y constructivos fundamentales de Modernist Architecture",
+          "Ubicado en Seagram Building (375 Park Avenue) (New York, USA)",
+          "Hito de referencia en la historia de la arquitectura y la ingeniería occidental"
+        ]
+      },
+      "neue-nationalgalerie": {
+        "notes": "Obra maestra de Ludwig Mies van der Rohe (1968) ubicada en 柏林文化广场 (Berlin, Germany). Representa un hito compositivo y estructural dentro de Modernist Architecture.",
+        "knowledgePoints": [
+          "Ejemplifica los principios espaciales y constructivos fundamentales de Modernist Architecture",
+          "Ubicado en Neue Nationalgalerie (Staatliche Museen zu Berlin) (Berlin, Germany)",
+          "Hito de referencia en la historia de la arquitectura y la ingeniería occidental"
+        ]
+      },
+      "robie-house": {
+        "notes": "Obra maestra de Frank Lloyd Wright (1909) ubicada en 芝加哥海德公园 (Chicago, Illinois, USA). Representa un hito compositivo y estructural dentro de Modernist Architecture.",
+        "knowledgePoints": [
+          "Ejemplifica los principios espaciales y constructivos fundamentales de Modernist Architecture",
+          "Ubicado en Frederick C. Robie House (Frank Lloyd Wright Trust) (Chicago, Illinois, USA)",
+          "Hito de referencia en la historia de la arquitectura y la ingeniería occidental"
+        ]
+      },
+      "fallingwater": {
+        "notes": "Obra maestra de Frank Lloyd Wright (1936 - 1937) ubicada en 宾夕法尼亚熊跑溪 (Mill Run, Pennsylvania, USA). Representa un hito compositivo y estructural dentro de Modernist Architecture.",
+        "knowledgePoints": [
+          "Ejemplifica los principios espaciales y constructivos fundamentales de Modernist Architecture",
+          "Ubicado en Fallingwater (Western Pennsylvania Conservancy) (Mill Run, Pennsylvania, USA)",
+          "Hito de referencia en la historia de la arquitectura y la ingeniería occidental"
+        ]
+      },
+      "guggenheim-museum-ny": {
+        "notes": "Obra maestra de Frank Lloyd Wright (1937 / 1959) ubicada en 纽约曼哈顿第五大道 (New York, USA). Representa un hito compositivo y estructural dentro de Modernist Architecture.",
+        "knowledgePoints": [
+          "Ejemplifica los principios espaciales y constructivos fundamentales de Modernist Architecture",
+          "Ubicado en Solomon R. Guggenheim Museum (New York, USA)",
+          "Hito de referencia en la historia de la arquitectura y la ingeniería occidental"
+        ]
+      },
+      "villa-savoye": {
+        "notes": "Obra maestra de Le Corbusier (1928 - 1931) ubicada en 普瓦西 (Poissy, France). Representa un hito compositivo y estructural dentro de Modernist Architecture.",
+        "knowledgePoints": [
+          "Ejemplifica los principios espaciales y constructivos fundamentales de Modernist Architecture",
+          "Ubicado en Villa Savoye (Centre des monuments nationaux) (Poissy, France)",
+          "Hito de referencia en la historia de la arquitectura y la ingeniería occidental"
+        ]
+      },
+      "unite-dhabitation": {
+        "notes": "Obra maestra de Le Corbusier (1952) ubicada en 马赛 (Marseille, France). Representa un hito compositivo y estructural dentro de Modernist Architecture.",
+        "knowledgePoints": [
+          "Ejemplifica los principios espaciales y constructivos fundamentales de Modernist Architecture",
+          "Ubicado en Cité Radieuse (Unité d'Habitation de Marseille) (Marseille, France)",
+          "Hito de referencia en la historia de la arquitectura y la ingeniería occidental"
+        ]
+      },
+      "notre-dame-du-haut": {
+        "notes": "Obra maestra de Le Corbusier (1955) ubicada en 朗香 (Ronchamp, France). Representa un hito compositivo y estructural dentro de Modernist Architecture.",
+        "knowledgePoints": [
+          "Ejemplifica los principios espaciales y constructivos fundamentales de Modernist Architecture",
+          "Ubicado en Colline Notre-Dame du Haut (Association des Amis de Sainte-Barbe) (Ronchamp, France)",
+          "Hito de referencia en la historia de la arquitectura y la ingeniería occidental"
+        ]
+      },
+      "rufer-house": {
+        "notes": "Obra maestra de Adolf Loos (1922) ubicada en 维也纳 (Vienna, Austria). Representa un hito compositivo y estructural dentro de Modernist Architecture.",
+        "knowledgePoints": [
+          "Ejemplifica los principios espaciales y constructivos fundamentales de Modernist Architecture",
+          "Ubicado en Rufer House (Schlickgasse / Adolf Loos Archive) (Vienna, Austria)",
+          "Hito de referencia en la historia de la arquitectura y la ingeniería occidental"
+        ]
+      },
+      "villa-muller": {
+        "notes": "Obra maestra de Adolf Loos (1930) ubicada en 布拉格 (Prague, Czech Republic). Representa un hito compositivo y estructural dentro de Modernist Architecture.",
+        "knowledgePoints": [
+          "Ejemplifica los principios espaciales y constructivos fundamentales de Modernist Architecture",
+          "Ubicado en City of Prague Museum (Villa Müller) (Prague, Czech Republic)",
+          "Hito de referencia en la historia de la arquitectura y la ingeniería occidental"
         ]
       }
     }
