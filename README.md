@@ -1,4 +1,4 @@
-# Art & Architecture History Learning Platform (Politecnico di milano architeceure ARCHED test knowledge platform)
+# Art & Architecture History Learning Platform (艺术与建筑史研考知识典藏)
 
 A modern, minimalist, and interactive learning platform covering Western Art History and Classical European Architecture movements, master artists/architects, authoritative artworks, 3D flashcards, and an AI study assistant.
 
@@ -14,4 +14,3 @@ A modern, minimalist, and interactive learning platform covering Western Art His
 ## 🚀 Automated Deployment to GitHub Pages
 
 This repository includes a GitHub Actions workflow (`.github/workflows/deploy.yml`) that automatically builds and deploys to GitHub Pages on every push to `main`.
-We support 4 languages:简体中文，ENGLISH,ITALIANO,ESPANOL, but for better use and close to test, we suggested that using ENGLISH or ITALIANO to review.And this is mainly for teach in English

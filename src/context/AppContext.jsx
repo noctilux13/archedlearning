@@ -6,9 +6,20 @@ import { localizedContent } from '../data/localizedContent';
 export const AppContext = createContext();
 
 export const AppProvider = ({ children }) => {
-  const [apiKey, setApiKey] = useState(localStorage.getItem('aiApiKey') || localStorage.getItem('groqApiKey') || '');
-  const [apiEndpoint, setApiEndpoint] = useState(localStorage.getItem('aiApiEndpoint') || 'https://api.deepseek.com/v1');
-  const [apiModel, setApiModel] = useState(localStorage.getItem('aiApiModel') || 'deepseek-chat');
+  const initialKey = localStorage.getItem('aiApiKey') || localStorage.getItem('groqApiKey') || '';
+  const [apiKey, setApiKey] = useState(initialKey);
+  const [apiEndpoint, setApiEndpoint] = useState(() => {
+    const saved = localStorage.getItem('aiApiEndpoint');
+    if (saved) return saved;
+    if (initialKey.startsWith('gsk_')) return 'https://api.groq.com/openai/v1';
+    return 'https://api.deepseek.com/v1';
+  });
+  const [apiModel, setApiModel] = useState(() => {
+    const saved = localStorage.getItem('aiApiModel');
+    if (saved && !saved.includes('llama3') && !saved.includes('llama-3.3') && !saved.includes('llama-3.1') && !saved.includes('mixtral') && !saved.includes('gemma')) return saved;
+    if (initialKey.startsWith('gsk_')) return 'openai/gpt-oss-120b';
+    return 'deepseek-chat';
+  });
   const [cfWorkerUrl, setCfWorkerUrl] = useState(localStorage.getItem('cfWorkerUrl') || '');
   const [language, setLanguageState] = useState(() => localStorage.getItem('app_lang') || 'zh');
   

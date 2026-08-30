@@ -26,6 +26,18 @@ const EASE = [0.16, 1, 0.3, 1];
 
 const PROVIDER_PRESETS = [
   {
+    name: 'Groq (Qwen 3.8)',
+    endpoint: 'https://api.groq.com/openai/v1',
+    model: 'qwen/qwen3.8-27b',
+    hint: 'gsk_... (qwen/qwen3.8-27b 旗舰中文解析)'
+  },
+  {
+    name: 'Groq (GPT-OSS 120B)',
+    endpoint: 'https://api.groq.com/openai/v1',
+    model: 'openai/gpt-oss-120b',
+    hint: 'gsk_... (openai/gpt-oss-120b / openai/gpt-oss-20b)'
+  },
+  {
     name: 'DeepSeek',
     endpoint: 'https://api.deepseek.com/v1',
     model: 'deepseek-chat',
@@ -42,12 +54,6 @@ const PROVIDER_PRESETS = [
     endpoint: 'https://api.openai.com/v1',
     model: 'gpt-4o-mini',
     hint: 'sk-... (gpt-4o / gpt-4o-mini)'
-  },
-  {
-    name: 'Groq',
-    endpoint: 'https://api.groq.com/openai/v1',
-    model: 'llama-3.3-70b-versatile',
-    hint: 'gsk_... (llama-3.3-70b-versatile)'
   },
   {
     name: 'OpenRouter',
@@ -86,6 +92,27 @@ export default function Settings() {
   const importFileRef = useRef(null);
 
   const customList = Object.values(customImages || {});
+
+  const handleKeyChange = (val) => {
+    setInputKey(val);
+    const trimmed = val.trim();
+    if (trimmed.startsWith('gsk_')) {
+      if (inputEndpoint.includes('deepseek.com') || !inputEndpoint) {
+        setInputEndpoint('https://api.groq.com/openai/v1');
+        setInputModel('openai/gpt-oss-120b');
+      }
+    } else if (trimmed.startsWith('sk-ant-')) {
+      if (!inputEndpoint.includes('anthropic.com')) {
+        setInputEndpoint('https://api.anthropic.com/v1');
+        setInputModel('claude-3-5-sonnet-20241022');
+      }
+    } else if (trimmed.startsWith('sk-or-')) {
+      if (inputEndpoint.includes('deepseek.com')) {
+        setInputEndpoint('https://openrouter.ai/api/v1');
+        setInputModel('deepseek/deepseek-r1');
+      }
+    }
+  };
 
   const handleApplyPreset = (preset) => {
     setInputEndpoint(preset.endpoint);
@@ -315,10 +342,28 @@ export default function Settings() {
               <input
                 type="password"
                 className="input-field"
-                placeholder="sk-..."
+                placeholder="sk-... / gsk_..."
                 value={inputKey}
-                onChange={(e) => setInputKey(e.target.value)}
+                onChange={(e) => handleKeyChange(e.target.value)}
               />
+              {inputKey.trim().startsWith('gsk_') && (
+                <div style={{ marginTop: '0.4rem', fontSize: '0.74rem', color: 'var(--accent-emerald, #10b981)', display: 'flex', alignItems: 'center', gap: '4px' }}>
+                  <Check size={12} />
+                  <span>已自动适配 Groq 高速推理引擎 (openai/gpt-oss-120b)</span>
+                </div>
+              )}
+              {inputKey.trim().startsWith('sk-ant-') && (
+                <div style={{ marginTop: '0.4rem', fontSize: '0.74rem', color: 'var(--accent-emerald, #10b981)', display: 'flex', alignItems: 'center', gap: '4px' }}>
+                  <Check size={12} />
+                  <span>已自动适配 Anthropic Claude 接口 (claude-3-5-sonnet-20241022)</span>
+                </div>
+              )}
+              {inputKey.trim().startsWith('sk-or-') && (
+                <div style={{ marginTop: '0.4rem', fontSize: '0.74rem', color: 'var(--accent-emerald, #10b981)', display: 'flex', alignItems: 'center', gap: '4px' }}>
+                  <Check size={12} />
+                  <span>已自动适配 OpenRouter 聚合接口 (deepseek/deepseek-r1)</span>
+                </div>
+              )}
             </div>
 
             {/* API Endpoint Base URL */}

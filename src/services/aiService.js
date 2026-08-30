@@ -1,6 +1,7 @@
 /**
  * Universal Multi-Provider AI Service
  * Supports DeepSeek, Claude, OpenAI, Groq, OpenRouter, and Custom OpenAI-compatible endpoints.
+ * Includes intelligent key prefix detection and auto-routing.
  */
 
 export const getAiApiKey = () => {
@@ -23,16 +24,55 @@ export const getCloudflareWorkerUrl = () => {
 export const getGroqApiKey = getAiApiKey;
 
 /**
+ * Clean reasoning/thinking tags from response if present
+ */
+function cleanAiContent(text) {
+  if (!text) return '';
+  return text.replace(/<think>[\s\S]*?<\/think>\s*/gi, '').trim();
+}
+
+/**
  * Universal AI caller supporting OpenAI-compatible and Anthropic endpoints
  */
 export async function callAiService({ prompt, systemPrompt = '', jsonFormat = false }) {
-  const apiKey = getAiApiKey();
-  const rawEndpoint = getAiApiEndpoint().trim() || 'https://api.deepseek.com/v1';
-  const model = getAiApiModel().trim() || 'deepseek-chat';
+  const rawKey = getAiApiKey().trim();
+  let rawEndpoint = getAiApiEndpoint().trim() || 'https://api.deepseek.com/v1';
+  let model = getAiApiModel().trim() || 'deepseek-chat';
   const cfWorkerUrl = getCloudflareWorkerUrl().trim();
 
-  if (!apiKey && !cfWorkerUrl) {
+  if (!rawKey && !cfWorkerUrl) {
     throw new Error('未检测到有效 API Key。请前往「系统设置」配置您的 AI 接口密钥。');
+  }
+
+  // ── Auto-Detect Provider by API Key Prefix ──
+  if (rawKey.startsWith('gsk_')) {
+    // Groq API Key detected
+    if (rawEndpoint.includes('deepseek.com') || !rawEndpoint) {
+      rawEndpoint = 'https://api.groq.com/openai/v1';
+    }
+    // Auto-update deprecated or non-groq models (preserving qwen3.8 and gpt-oss)
+    if (
+      model === 'deepseek-chat' ||
+      model.includes('llama3') ||
+      model.includes('llama-3.3') ||
+      model.includes('llama-3.1') ||
+      model.includes('mixtral') ||
+      model.includes('gemma')
+    ) {
+      model = 'qwen/qwen3.8-27b';
+    }
+  } else if (rawKey.startsWith('sk-ant-')) {
+    // Anthropic Claude Key detected
+    if (!rawEndpoint.includes('anthropic.com')) {
+      rawEndpoint = 'https://api.anthropic.com/v1';
+      model = 'claude-3-5-sonnet-20241022';
+    }
+  } else if (rawKey.startsWith('sk-or-')) {
+    // OpenRouter Key detected
+    if (rawEndpoint.includes('deepseek.com')) {
+      rawEndpoint = 'https://openrouter.ai/api/v1';
+      model = 'deepseek/deepseek-r1';
+    }
   }
 
   // 1. Anthropic Claude Direct API
@@ -43,7 +83,7 @@ export async function callAiService({ prompt, systemPrompt = '', jsonFormat = fa
     }
     const headers = {
       'Content-Type': 'application/json',
-      'x-api-key': apiKey,
+      'x-api-key': rawKey,
       'anthropic-version': '2023-06-01',
       'dangerously-allow-browser': 'true'
     };
@@ -67,7 +107,8 @@ export async function callAiService({ prompt, systemPrompt = '', jsonFormat = fa
     }
 
     const data = await response.json();
-    return data.content?.[0]?.text || '';
+    const rawText = data.content?.[0]?.text || '';
+    return cleanAiContent(rawText);
   }
 
   // 2. Standard OpenAI-Compatible Endpoints (DeepSeek, OpenAI, Groq, OpenRouter, Moonshot, SiliconFlow, Ollama)
@@ -80,7 +121,7 @@ export async function callAiService({ prompt, systemPrompt = '', jsonFormat = fa
   const payload = {
     model: model || 'deepseek-chat',
     messages,
-    temperature: 0.7,
+    temperature: 0.6,
     max_tokens: 2000,
   };
 
@@ -99,9 +140,9 @@ export async function callAiService({ prompt, systemPrompt = '', jsonFormat = fa
 
   if (cfWorkerUrl) {
     endpoint = cfWorkerUrl;
-    if (apiKey) headers['Authorization'] = `Bearer ${apiKey}`;
-  } else if (apiKey) {
-    headers['Authorization'] = `Bearer ${apiKey}`;
+    if (rawKey) headers['Authorization'] = `Bearer ${rawKey}`;
+  } else if (rawKey) {
+    headers['Authorization'] = `Bearer ${rawKey}`;
   }
 
   try {
@@ -111,13 +152,30 @@ export async function callAiService({ prompt, systemPrompt = '', jsonFormat = fa
       body: JSON.stringify(payload),
     });
 
+    // If 429 Rate Limited on Groq with 120b, auto-fallback to lightweight 20b model
+    if (response.status === 429 && endpoint.includes('groq.com') && payload.model === 'openai/gpt-oss-120b') {
+      console.warn('Groq 120b rate limited, auto-falling back to openai/gpt-oss-20b...');
+      const fallbackPayload = { ...payload, model: 'openai/gpt-oss-20b' };
+      response = await fetch(endpoint, {
+        method: 'POST',
+        headers,
+        body: JSON.stringify(fallbackPayload),
+      });
+    }
+
     if (!response.ok) {
       const errText = await response.text();
-      throw new Error(`API 响应异常 [${response.status}]: ${errText}`);
+      let errorMsg = errText;
+      try {
+        const parsed = JSON.parse(errText);
+        errorMsg = parsed.error?.message || errText;
+      } catch (e) {}
+      throw new Error(`API 响应异常 [${response.status}] (${payload.model}): ${errorMsg}`);
     }
 
     const data = await response.json();
-    return data.choices?.[0]?.message?.content || '';
+    const rawText = data.choices?.[0]?.message?.content || '';
+    return cleanAiContent(rawText);
   } catch (err) {
     console.error('AI Service Call Error:', err);
     throw err;
@@ -131,10 +189,10 @@ export const callGroqAi = callAiService;
  * Generate AI Quiz
  */
 export async function generateAiQuizFromContent(movementName, count = 3) {
-  const systemPrompt = `You are an expert art history professor. Generate multiple-choice quiz questions based on European art movements, masters, and architectural landmarks. Return valid JSON only with a "questions" array.`;
+  const systemPrompt = `You are an expert art history professor. Return valid JSON only with a "questions" array.`;
   
   const prompt = `Generate ${count} multiple-choice quiz questions about "${movementName || '20th Century Modern Art movements like Futurism, Dadaism, Surrealism, De Stijl, Pop Art, and European Architecture'}".
-Format as JSON object with key "questions":
+Format strictly as a JSON object:
 {
   "questions": [
     {
