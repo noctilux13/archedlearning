@@ -19,7 +19,8 @@ export const ArtworkImage = ({
   const { resolveArtworkUrl } = useContext(AppContext) || {};
 
   const data = embeddedArtworksCache?.[artworkId];
-  const defaultUrl = data?.image_url ? getAssetUrl(data.image_url) : '';
+  const rawUrl = data?.image_url || (artworkId ? `/images/artworks/${artworkId}.jpg` : '');
+  const defaultUrl = rawUrl ? getAssetUrl(rawUrl) : '';
   const finalImageUrl = resolveArtworkUrl ? resolveArtworkUrl(artworkId, defaultUrl) : defaultUrl;
 
   // Crucial fix: Reset error & loading state whenever image URL or artworkId changes!
