@@ -48,7 +48,7 @@ export const ArtworkImage = ({
 
   return (
     <div 
-      className={`relative group overflow-hidden ${className}`}
+      className={`relative group overflow-hidden ${!loaded ? 'image-shimmer' : ''} ${className}`}
       style={{ 
         width: '100%', 
         height: '100%', 
@@ -56,6 +56,7 @@ export const ArtworkImage = ({
         alignItems: 'center', 
         justifyContent: 'center',
         position: 'relative',
+        backgroundColor: 'var(--bg-subtle)',
         ...style 
       }}
     >
@@ -69,14 +70,15 @@ export const ArtworkImage = ({
           objectFit: resolvedFit,
           objectPosition: 'center',
           display: 'block',
-          opacity: loaded ? 1 : 0.4,
+          opacity: loaded ? 1 : 0,
           transform: loaded ? 'scale(1)' : 'scale(0.98)',
-          transition: 'opacity 0.4s ease, transform 0.4s ease',
+          transition: 'opacity 0.35s ease, transform 0.35s ease',
           ...imageStyle
         }}
         onLoad={() => setLoaded(true)}
         onError={() => setError(true)}
         loading="lazy"
+        decoding="async"
       />
       
       {showMetaBadge && data?.source_url && (

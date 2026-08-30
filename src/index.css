@@ -607,3 +607,15 @@ h3 {
     grid-template-columns: 1fr;
   }
 }
+
+/* ── Image Shimmer Loading ── */
+@keyframes imageShimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+.image-shimmer {
+  background: linear-gradient(90deg, var(--bg-subtle) 25%, var(--bg-muted) 50%, var(--bg-subtle) 75%) !important;
+  background-size: 200% 100% !important;
+  animation: imageShimmer 1.4s infinite ease-in-out !important;
+}

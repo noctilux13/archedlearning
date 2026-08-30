@@ -142,6 +142,8 @@ export default function MovementDetail() {
                             src={resolveArtistAvatar ? resolveArtistAvatar(artist.id, getAssetUrl(artist.avatar)) : getAssetUrl(artist.avatar)}
                             alt={artist.englishName || artist.name}
                             style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+                            loading="lazy"
+                            decoding="async"
                             onError={(e) => { e.target.style.display = 'none'; }}
                           />
                         </div>

@@ -259,6 +259,8 @@ export default function Timeline() {
                                     src={resolvedAvatar}
                                     alt={artist.name}
                                     style={{ width: '20px', height: '20px', borderRadius: '50%', objectFit: 'cover' }}
+                                    loading="lazy"
+                                    decoding="async"
                                     onError={(e) => { e.currentTarget.style.display = 'none'; }}
                                   />
                                   <span style={{ fontWeight: 500 }}>{artist.englishName || artist.name}</span>
