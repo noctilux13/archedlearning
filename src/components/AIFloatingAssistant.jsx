@@ -153,14 +153,14 @@ export default function AIFloatingAssistant() {
             whileTap={{ scale: 0.96 }}
             transition={{ type: 'spring', stiffness: 350, damping: 25 }}
           >
-            <Bot size={17} />
+            <Bot size={17} style={{ color: 'var(--accent-blue-subtle)' }} />
             <span>{t ? t('assistant.title', 'AI Tutor') : 'AI Tutor'}</span>
             {aiContextData && (
               <span style={{
                 width: '7px',
                 height: '7px',
                 borderRadius: '50%',
-                backgroundColor: 'var(--accent-emerald, #10b981)',
+                backgroundColor: 'var(--accent-sage)',
                 marginLeft: '-2px'
               }} />
             )}
@@ -176,14 +176,14 @@ export default function AIFloatingAssistant() {
               position: 'fixed',
               right: '20px',
               bottom: '20px',
-              width: '420px',
+              width: '430px',
               maxWidth: 'calc(100vw - 32px)',
-              height: '600px',
+              height: '620px',
               maxHeight: 'calc(100vh - 40px)',
               backgroundColor: 'var(--bg-surface)',
               borderRadius: 'var(--radius-md)',
-              border: '1px solid var(--border-subtle)',
-              boxShadow: '0 20px 45px -10px rgba(0,0,0,0.22), 0 0 1px rgba(0,0,0,0.1)',
+              border: '1px solid var(--border-hairline)',
+              boxShadow: 'var(--shadow-float)',
               zIndex: 999,
               display: 'flex',
               flexDirection: 'column',
@@ -197,7 +197,7 @@ export default function AIFloatingAssistant() {
             {/* Header */}
             <div
               style={{
-                padding: '0.85rem 1.1rem',
+                padding: '0.9rem 1.2rem',
                 borderBottom: '1px solid var(--border-hairline)',
                 display: 'flex',
                 alignItems: 'center',
@@ -205,13 +205,14 @@ export default function AIFloatingAssistant() {
                 backgroundColor: 'var(--bg-subtle)',
               }}
             >
-              <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '9px' }}>
                 <div style={{
-                  width: '28px',
-                  height: '28px',
-                  borderRadius: 'var(--radius-xs)',
-                  backgroundColor: 'var(--accent-primary)',
-                  color: '#fff',
+                  width: '30px',
+                  height: '30px',
+                  borderRadius: '50%',
+                  backgroundColor: 'var(--accent-blue-subtle)',
+                  border: '1px solid var(--accent-blue-border)',
+                  color: 'var(--accent-blue)',
                   display: 'flex',
                   alignItems: 'center',
                   justifyContent: 'center'
@@ -219,10 +220,10 @@ export default function AIFloatingAssistant() {
                   <Bot size={16} />
                 </div>
                 <div>
-                  <div style={{ fontSize: '0.88rem', fontWeight: 600, color: 'var(--text-primary)', fontFamily: 'var(--font-serif)' }}>
+                  <div style={{ fontSize: '0.9rem', fontWeight: 600, color: 'var(--text-primary)', fontFamily: 'var(--font-serif)' }}>
                     {t ? t('assistant.title', 'AI Tutor') : 'AI Tutor'}
                   </div>
-                  <div style={{ fontSize: '0.7rem', color: 'var(--text-tertiary)' }}>
+                  <div style={{ fontSize: '0.72rem', color: 'var(--text-tertiary)' }}>
                     {aiContextData ? `${aiContextData.title || ''}` : '艺术与建筑史研考学伴'}
                   </div>
                 </div>
@@ -274,22 +275,22 @@ export default function AIFloatingAssistant() {
             {/* Context Badge Banner if prefilled */}
             {aiContextData && (
               <div style={{
-                padding: '6px 12px',
-                backgroundColor: 'var(--bg-subtle)',
-                borderBottom: '1px solid var(--border-hairline)',
+                padding: '7px 14px',
+                backgroundColor: 'var(--accent-blue-subtle)',
+                borderBottom: '1px solid var(--accent-blue-border)',
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'space-between',
                 fontSize: '0.74rem',
-                color: 'var(--text-secondary)'
+                color: 'var(--accent-blue)'
               }}>
                 <span style={{ overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>
-                  🎯 聚焦作品: <strong>{aiContextData.title}</strong> ({aiContextData.artistName})
+                  🎯 聚焦研读: <strong>{aiContextData.title}</strong> ({aiContextData.artistName})
                 </span>
                 <button
                   type="button"
                   onClick={() => setAiContextData(null)}
-                  style={{ background: 'none', border: 'none', color: 'var(--text-tertiary)', cursor: 'pointer', fontSize: '0.72rem', textDecoration: 'underline' }}
+                  style={{ background: 'none', border: 'none', color: 'var(--accent-blue)', cursor: 'pointer', fontSize: '0.72rem', textDecoration: 'underline' }}
                 >
                   清除
                 </button>
@@ -300,7 +301,7 @@ export default function AIFloatingAssistant() {
             <div
               style={{
                 flex: 1,
-                padding: '1rem',
+                padding: '1.1rem',
                 overflowY: 'auto',
                 display: 'flex',
                 flexDirection: 'column',
@@ -325,12 +326,12 @@ export default function AIFloatingAssistant() {
                     <div
                       style={{
                         maxWidth: '86%',
-                        padding: '0.75rem 0.95rem',
+                        padding: '0.8rem 1rem',
                         borderRadius: isUser ? '14px 14px 2px 14px' : '14px 14px 14px 2px',
                         backgroundColor: isUser ? 'var(--accent-primary)' : 'var(--bg-subtle)',
                         color: isUser ? '#fff' : 'var(--text-primary)',
-                        fontSize: '0.86rem',
-                        lineHeight: '1.65',
+                        fontSize: '0.88rem',
+                        lineHeight: '1.68',
                         border: isUser ? 'none' : '1px solid var(--border-hairline)',
                         whiteSpace: 'pre-wrap',
                         wordBreak: 'break-word',
@@ -359,8 +360,8 @@ export default function AIFloatingAssistant() {
                       >
                         {copiedIndex === idx ? (
                           <>
-                            <Check size={11} style={{ color: 'var(--accent-emerald)' }} />
-                            <span style={{ color: 'var(--accent-emerald)' }}>{t ? t('assistant.copied', 'Copied') : 'Copied'}</span>
+                            <Check size={11} style={{ color: 'var(--accent-sage)' }} />
+                            <span style={{ color: 'var(--accent-sage)' }}>{t ? t('assistant.copied', 'Copied') : 'Copied'}</span>
                           </>
                         ) : (
                           <>
@@ -376,7 +377,7 @@ export default function AIFloatingAssistant() {
 
               {isLoading && (
                 <div style={{ display: 'flex', alignItems: 'center', gap: '8px', color: 'var(--text-tertiary)', fontSize: '0.8rem', padding: '0.5rem 0' }}>
-                  <Loader2 size={15} className="animate-spin" />
+                  <Loader2 size={15} className="animate-spin" style={{ color: 'var(--accent-blue)' }} />
                   <span>AI 正在深入思考中...</span>
                 </div>
               )}
@@ -385,7 +386,7 @@ export default function AIFloatingAssistant() {
 
             {/* Quick Prompts Bar */}
             <div style={{
-              padding: '6px 10px',
+              padding: '7px 12px',
               borderTop: '1px solid var(--border-hairline)',
               backgroundColor: 'var(--bg-surface)',
               display: 'flex',
@@ -402,8 +403,8 @@ export default function AIFloatingAssistant() {
                     onClick={() => handleSend(qp.label)}
                     disabled={isLoading}
                     style={{
-                      padding: '3px 8px',
-                      borderRadius: 'var(--radius-xs)',
+                      padding: '4px 9px',
+                      borderRadius: 'var(--radius-pill)',
                       backgroundColor: 'var(--bg-subtle)',
                       border: '1px solid var(--border-hairline)',
                       color: 'var(--text-secondary)',
@@ -415,7 +416,7 @@ export default function AIFloatingAssistant() {
                       flexShrink: 0
                     }}
                   >
-                    <Icon size={10} />
+                    <Icon size={10} style={{ color: 'var(--accent-blue)' }} />
                     <span>{qp.label}</span>
                   </button>
                 );
@@ -425,7 +426,7 @@ export default function AIFloatingAssistant() {
             {/* Input Area */}
             <div
               style={{
-                padding: '0.75rem',
+                padding: '0.8rem',
                 borderTop: '1px solid var(--border-hairline)',
                 backgroundColor: 'var(--bg-surface)',
                 display: 'flex',
@@ -444,23 +445,24 @@ export default function AIFloatingAssistant() {
                 style={{
                   flex: 1,
                   resize: 'none',
-                  minHeight: '38px',
+                  minHeight: '40px',
                   maxHeight: '80px',
-                  padding: '8px 12px',
-                  fontSize: '0.86rem',
+                  padding: '9px 13px',
+                  fontSize: '0.88rem',
                   lineHeight: '1.4',
+                  borderRadius: 'var(--radius-pill)'
                 }}
               />
               <motion.button
                 className="btn btn-primary"
                 style={{
-                  height: '38px',
-                  width: '38px',
+                  height: '40px',
+                  width: '40px',
                   padding: 0,
                   display: 'flex',
                   alignItems: 'center',
                   justifyContent: 'center',
-                  borderRadius: 'var(--radius-xs)',
+                  borderRadius: '50%',
                   flexShrink: 0
                 }}
                 onClick={() => handleSend()}

@@ -37,9 +37,9 @@ export default function ArtistDetail() {
   return (
     <MouseSpotlight>
       <motion.div
-        initial={{ opacity: 0, y: 24, filter: 'blur(8px)' }}
+        initial={{ opacity: 0, y: 20, filter: 'blur(8px)' }}
         animate={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
-        transition={{ duration: 0.5, ease: EASE }}
+        transition={{ duration: 0.45, ease: EASE }}
         className="container"
       >
         {/* Breadcrumb */}
@@ -53,23 +53,23 @@ export default function ArtistDetail() {
 
         {/* Profile Banner */}
         <motion.div
-          className="card-editorial"
+          className={`card-editorial ${isArch ? 'card-highlight-sage' : 'card-highlight-blue'}`}
           style={{ marginBottom: '3rem' }}
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.45, delay: 0.1, ease: EASE }}
+          transition={{ duration: 0.45, delay: 0.08, ease: EASE }}
         >
           <div style={{ display: 'flex', gap: '2rem', alignItems: 'flex-start', flexWrap: 'wrap' }}>
             {/* Avatar with hover edit overlay */}
             <motion.div
-              initial={{ opacity: 0, scale: 0.9 }}
+              initial={{ opacity: 0, scale: 0.92 }}
               animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.4, delay: 0.15, ease: EASE }}
+              transition={{ duration: 0.4, delay: 0.12, ease: EASE }}
               onClick={() => setShowUploadModal(true)}
               style={{
-                width: '108px', height: '108px', borderRadius: '50%',
+                width: '112px', height: '112px', borderRadius: '50%',
                 overflow: 'hidden', backgroundColor: 'var(--bg-subtle)',
-                flexShrink: 0, border: '1px solid var(--border-hairline)',
+                flexShrink: 0, border: '2px solid var(--border-subtle)',
                 boxShadow: 'var(--shadow-card)', position: 'relative',
                 cursor: 'pointer'
               }}
@@ -86,10 +86,10 @@ export default function ArtistDetail() {
               <div
                 style={{
                   position: 'absolute', inset: 0,
-                  backgroundColor: 'rgba(0,0,0,0.45)',
+                  backgroundColor: 'rgba(0,0,0,0.5)',
                   display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center',
                   opacity: 0, transition: 'opacity 0.2s ease', color: '#fff',
-                  fontSize: '0.7rem', fontWeight: 500, backdropFilter: 'blur(2px)'
+                  fontSize: '0.72rem', fontWeight: 500, backdropFilter: 'blur(2px)'
                 }}
                 className="hover-reveal"
                 onMouseEnter={(e) => e.currentTarget.style.opacity = '1'}
@@ -101,11 +101,11 @@ export default function ArtistDetail() {
             </motion.div>
 
             <div style={{ flex: '1 1 320px' }}>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '0.5rem', flexWrap: 'wrap' }}>
-                <span className="chip chip-neutral">
+              <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '0.6rem', flexWrap: 'wrap' }}>
+                <span className="chip chip-ochre">
                   <Calendar size={11} /> {artist.years}
                 </span>
-                <span className="chip chip-neutral" style={{ gap: '3px' }}>
+                <span className={isArch ? 'chip chip-green' : 'chip chip-blue'} style={{ gap: '4px' }}>
                   {isArch ? <Landmark size={11} /> : <Palette size={11} />}
                   {movement.englishName}
                 </span>
@@ -117,20 +117,20 @@ export default function ArtistDetail() {
                 <button
                   onClick={() => setShowUploadModal(true)}
                   className="btn btn-outline"
-                  style={{ padding: '2px 8px', fontSize: '0.72rem', height: '22px', marginLeft: 'auto' }}
+                  style={{ padding: '2px 8px', fontSize: '0.72rem', height: '24px', marginLeft: 'auto', borderRadius: 'var(--radius-pill)' }}
                 >
-                  <Edit3 size={10} /> {t ? t('artist.changeAvatar', '更换肖像') : '更换肖像'}
+                  <Edit3 size={11} /> {t ? t('artist.changeAvatar', '更换肖像') : '更换肖像'}
                 </button>
               </div>
 
-              <h1 style={{ fontSize: 'clamp(1.8rem, 3.5vw, 2.4rem)', marginBottom: '0.25rem' }}>
+              <h1 style={{ fontSize: 'clamp(1.8rem, 3.5vw, 2.4rem)', marginBottom: '0.3rem' }}>
                 {artist.englishName || artist.name}{' '}
                 <span style={{ fontSize: '1.2rem', color: 'var(--text-secondary)', fontWeight: 400, fontFamily: 'var(--font-sans)' }}>
                   ({artist.name})
                 </span>
               </h1>
 
-              <p style={{ fontSize: '0.95rem', lineHeight: '1.8', color: 'var(--text-secondary)', margin: '0.75rem 0 0 0' }}>
+              <p style={{ fontSize: '0.96rem', lineHeight: '1.8', color: 'var(--text-secondary)', margin: '0.8rem 0 0 0' }}>
                 {l ? l(artist, 'bio', 'artists') : artist.bio}
               </p>
             </div>
@@ -165,7 +165,7 @@ export default function ArtistDetail() {
           borderBottom: '1px solid var(--border-hairline)'
         }}>
           <h2 style={{ fontFamily: 'var(--font-serif)', fontWeight: 500 }}>
-            {t ? t('artist.selectedWorks', 'Selected Works') : 'Selected Works'}
+            {t ? t('artist.selectedWorks', 'Selected Works & Landmarks') : 'Selected Works & Landmarks'}
             <span style={{ fontSize: '0.9rem', color: 'var(--text-tertiary)', fontFamily: 'var(--font-sans)', fontWeight: 400, marginLeft: '0.5rem' }}>
               ({artist.artworks.length})
             </span>
@@ -179,17 +179,17 @@ export default function ArtistDetail() {
             return (
               <motion.div
                 key={work.id}
-                initial={{ opacity: 0, y: 20, filter: 'blur(6px)' }}
+                initial={{ opacity: 0, y: 16, filter: 'blur(6px)' }}
                 animate={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
-                transition={{ duration: 0.4, delay: 0.15 + wIdx * 0.05, ease: EASE }}
-                whileHover={{ y: -5, transition: { type: 'spring', stiffness: 400, damping: 25 } }}
+                transition={{ duration: 0.38, delay: 0.1 + wIdx * 0.04, ease: EASE }}
+                whileHover={{ y: -4, transition: { type: 'spring', stiffness: 400, damping: 25 } }}
                 whileTap={{ scale: 0.98 }}
               >
                 <Link to={`/artwork/${movement.id}/${artist.id}/${work.id}`} style={{ textDecoration: 'none', color: 'inherit' }}>
                   <div className="card" style={{ height: '100%', display: 'flex', flexDirection: 'column', justifyContent: 'space-between', position: 'relative' }}>
                     <div>
                       {/* Image Stage with Quick Replace Button */}
-                      <div className="image-box" style={{ height: '200px', marginBottom: '1rem', position: 'relative' }}>
+                      <div className="image-box" style={{ height: '210px', marginBottom: '1.1rem', position: 'relative' }}>
                         <ArtworkImage artworkId={work.id} alt={work.title} className="w-full h-full object-cover" showMetaBadge={true} />
                         
                         <button
@@ -206,7 +206,7 @@ export default function ArtistDetail() {
                             top: '8px',
                             right: '8px',
                             zIndex: 4,
-                            padding: '3px 8px',
+                            padding: '3px 9px',
                             fontSize: '0.72rem',
                             backgroundColor: 'rgba(0,0,0,0.65)',
                             color: '#fff',
@@ -219,8 +219,8 @@ export default function ArtistDetail() {
                         </button>
                       </div>
 
-                      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '0.4rem' }}>
-                        <span className="chip chip-neutral">{work.date}</span>
+                      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '0.45rem' }}>
+                        <span className="chip chip-ochre">{work.date}</span>
                         {hasCustomImg && (
                           <span className="chip chip-blue" style={{ fontSize: '0.68rem', padding: '1px 6px' }}>
                             {t ? t('artwork.customizedImage', '已自定义') : '已自定义'}
@@ -228,17 +228,17 @@ export default function ArtistDetail() {
                         )}
                       </div>
 
-                      <h3 style={{ fontSize: '1.1rem', fontFamily: 'var(--font-serif)', marginBottom: '0.25rem', fontWeight: 600 }}>
+                      <h3 style={{ fontSize: '1.12rem', fontFamily: 'var(--font-serif)', marginBottom: '0.25rem', fontWeight: 600 }}>
                         {work.title}
                       </h3>
 
-                      <div style={{ fontSize: '0.78rem', color: 'var(--text-tertiary)', marginBottom: '0.7rem' }}>
+                      <div style={{ fontSize: '0.78rem', color: 'var(--text-tertiary)', marginBottom: '0.75rem' }}>
                         {work.location}
                       </div>
 
                       {work.notes && (
                         <p style={{
-                          color: 'var(--text-secondary)', fontSize: '0.82rem', lineHeight: '1.6',
+                          color: 'var(--text-secondary)', fontSize: '0.83rem', lineHeight: '1.6',
                           marginBottom: '1rem',
                           display: '-webkit-box', WebkitLineClamp: 3, WebkitBoxOrient: 'vertical', overflow: 'hidden'
                         }}>
@@ -248,11 +248,12 @@ export default function ArtistDetail() {
                     </div>
 
                     <div style={{
-                      borderTop: '1px solid var(--border-hairline)', paddingTop: '0.7rem',
+                      borderTop: '1px solid var(--border-hairline)', paddingTop: '0.75rem',
                       display: 'flex', alignItems: 'center', justifyContent: 'space-between',
-                      color: 'var(--text-primary)', fontWeight: 550, fontSize: '0.82rem'
+                      color: isArch ? 'var(--accent-sage)' : 'var(--accent-blue)',
+                      fontWeight: 550, fontSize: '0.82rem'
                     }}>
-                      <span>{t ? t('artist.details', 'Details') : 'Details'}</span>
+                      <span>{t ? t('artist.details', 'Inspect & Deep Dive') : 'Inspect & Deep Dive'}</span>
                       <ArrowRight size={14} />
                     </div>
                   </div>

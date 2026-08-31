@@ -69,9 +69,9 @@ export default function ArtworkDetail() {
   return (
     <MouseSpotlight>
       <motion.div
-        initial={{ opacity: 0, y: 24, filter: 'blur(8px)' }}
+        initial={{ opacity: 0, y: 20, filter: 'blur(8px)' }}
         animate={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
-        transition={{ duration: 0.5, ease: EASE }}
+        transition={{ duration: 0.45, ease: EASE }}
         className="container"
       >
         {/* Breadcrumb */}
@@ -87,21 +87,21 @@ export default function ArtworkDetail() {
 
         {/* Header Card */}
         <motion.div
-          className="card-editorial"
+          className={`card-editorial ${isArch ? 'card-highlight-sage' : 'card-highlight-blue'}`}
           style={{ marginBottom: '2rem' }}
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.45, delay: 0.1, ease: EASE }}
+          transition={{ duration: 0.45, delay: 0.08, ease: EASE }}
         >
-          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', flexWrap: 'wrap', gap: '1rem', marginBottom: '1rem' }}>
+          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', flexWrap: 'wrap', gap: '1rem', marginBottom: '1.1rem' }}>
             <div>
-              <div style={{ display: 'flex', gap: '6px', flexWrap: 'wrap', marginBottom: '0.5rem', alignItems: 'center' }}>
-                <span className="chip chip-neutral" style={{ gap: '3px' }}>
-                  {isArch ? <Landmark size={10} /> : <Palette size={10} />}
+              <div style={{ display: 'flex', gap: '7px', flexWrap: 'wrap', marginBottom: '0.6rem', alignItems: 'center' }}>
+                <span className={isArch ? 'chip chip-green' : 'chip chip-blue'} style={{ gap: '4px' }}>
+                  {isArch ? <Landmark size={11} /> : <Palette size={11} />}
                   {movement.englishName}
                 </span>
-                <span className="chip chip-neutral">
-                  <Calendar size={10} /> {artwork.date}
+                <span className="chip chip-ochre">
+                  <Calendar size={11} /> {artwork.date}
                 </span>
                 {isCustomized && (
                   <span className="chip chip-blue" style={{ fontSize: '0.72rem' }}>
@@ -110,11 +110,11 @@ export default function ArtworkDetail() {
                 )}
               </div>
 
-              <h1 style={{ fontSize: 'clamp(1.8rem, 3.5vw, 2.4rem)', margin: '0 0 0.25rem 0' }}>
+              <h1 style={{ fontSize: 'clamp(1.85rem, 3.6vw, 2.5rem)', margin: '0 0 0.3rem 0' }}>
                 {artwork.title}
               </h1>
 
-              <div style={{ fontSize: '0.95rem', color: 'var(--text-secondary)' }}>
+              <div style={{ fontSize: '1rem', color: 'var(--text-secondary)' }}>
                 {artist.englishName || artist.name}{' '}
                 <span style={{ color: 'var(--text-tertiary)' }}>({artist.name})</span>
               </div>
@@ -126,7 +126,7 @@ export default function ArtworkDetail() {
                 onClick={() => setShowUploadModal(true)}
                 whileHover={{ scale: 1.03 }}
                 whileTap={{ scale: 0.97 }}
-                style={{ padding: '0.45rem 0.85rem', fontSize: '0.84rem' }}
+                style={{ padding: '0.45rem 0.85rem', fontSize: '0.84rem', borderRadius: 'var(--radius-pill)' }}
                 title="更换或修正此作品图片"
               >
                 <Camera size={13} />
@@ -138,16 +138,16 @@ export default function ArtworkDetail() {
                 onClick={() => toggleFavorite && toggleFavorite(artwork.id)}
                 whileHover={{ scale: 1.03 }}
                 whileTap={{ scale: 0.97 }}
-                style={{ padding: '0.45rem 0.85rem', fontSize: '0.84rem' }}
+                style={{ padding: '0.45rem 0.85rem', fontSize: '0.84rem', borderRadius: 'var(--radius-pill)' }}
               >
-                <Heart size={14} fill={isFav ? '#e11d48' : 'none'} color={isFav ? '#e11d48' : 'var(--text-secondary)'} />
-                <span>{isFav ? (t ? t('artwork.saved', 'Saved') : 'Saved') : (t ? t('artwork.save', 'Save') : 'Save')}</span>
+                <Heart size={14} fill={isFav ? 'var(--accent-terracotta)' : 'none'} color={isFav ? 'var(--accent-terracotta)' : 'var(--text-secondary)'} />
+                <span style={{ color: isFav ? 'var(--accent-terracotta)' : 'inherit' }}>{isFav ? (t ? t('artwork.saved', 'Saved') : 'Saved') : (t ? t('artwork.save', 'Save') : 'Save')}</span>
               </motion.button>
             </div>
           </div>
 
-          <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexWrap: 'wrap', gap: '8px', borderTop: '1px solid var(--border-hairline)', paddingTop: '0.75rem' }}>
-            <div style={{ display: 'flex', alignItems: 'center', gap: '6px', fontSize: '0.84rem', color: 'var(--text-secondary)' }}>
+          <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexWrap: 'wrap', gap: '8px', borderTop: '1px solid var(--border-hairline)', paddingTop: '0.8rem' }}>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '6px', fontSize: '0.86rem', color: 'var(--text-secondary)' }}>
               <Landmark size={14} style={{ color: 'var(--text-tertiary)' }} />
               <span><strong>{artwork.museum || artwork.location}</strong>{artwork.museumCity ? ` · ${artwork.museumCity}` : ''}</span>
             </div>
@@ -157,10 +157,10 @@ export default function ArtworkDetail() {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="btn btn-outline"
-                style={{ fontSize: '0.74rem', padding: '3px 9px', display: 'inline-flex', alignItems: 'center', gap: '5px', textDecoration: 'none' }}
+                style={{ fontSize: '0.74rem', padding: '3px 10px', display: 'inline-flex', alignItems: 'center', gap: '5px', textDecoration: 'none', borderRadius: 'var(--radius-pill)' }}
                 title={t ? t('artwork.visitOfficialPage', 'Visit Official Museum Page') : 'Visit Official Page'}
               >
-                <span>{t ? t('artwork.visitOfficialPage', 'Visit Official Page') : 'Official Museum Page'}</span>
+                <span>{t ? t('artwork.visitOfficialPage', 'Official Museum Page') : 'Official Museum Page'}</span>
                 <ExternalLink size={11} />
               </a>
             )}
@@ -168,18 +168,18 @@ export default function ArtworkDetail() {
         </motion.div>
 
         {/* Main Content Grid */}
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(340px, 1fr))', gap: '2rem', alignItems: 'start', marginBottom: '3rem' }}>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(350px, 1fr))', gap: '2rem', alignItems: 'start', marginBottom: '3rem' }}>
           {/* Image Stage */}
           <motion.div
             className="card"
-            style={{ padding: '1rem', overflow: 'hidden' }}
+            style={{ padding: '0.9rem', overflow: 'hidden' }}
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.45, delay: 0.15, ease: EASE }}
+            transition={{ duration: 0.45, delay: 0.12, ease: EASE }}
           >
             <div
               style={{
-                width: '100%', height: '440px', backgroundColor: 'var(--bg-subtle)',
+                width: '100%', height: '460px', backgroundColor: 'var(--bg-subtle)',
                 borderRadius: 'var(--radius-sm)', overflow: 'hidden',
                 cursor: 'zoom-in', position: 'relative'
               }}
@@ -195,10 +195,10 @@ export default function ArtworkDetail() {
                 }}
                 style={{
                   position: 'absolute',
-                  bottom: '10px',
-                  left: '10px',
-                  padding: '5px 10px',
-                  borderRadius: 'var(--radius-sm)',
+                  bottom: '12px',
+                  left: '12px',
+                  padding: '5px 12px',
+                  borderRadius: 'var(--radius-pill)',
                   backgroundColor: 'rgba(0,0,0,0.65)',
                   color: '#fff',
                   fontSize: '0.72rem',
@@ -216,11 +216,12 @@ export default function ArtworkDetail() {
               </button>
 
               <div style={{
-                position: 'absolute', bottom: '10px', right: '10px',
-                padding: '5px 10px', borderRadius: 'var(--radius-sm)',
-                backgroundColor: 'rgba(0,0,0,0.6)', color: '#fff',
+                position: 'absolute', bottom: '12px', right: '12px',
+                padding: '5px 12px', borderRadius: 'var(--radius-pill)',
+                backgroundColor: 'rgba(0,0,0,0.65)', color: '#fff',
                 fontSize: '0.72rem', backdropFilter: 'blur(6px)',
-                display: 'flex', alignItems: 'center', gap: '5px'
+                display: 'flex', alignItems: 'center', gap: '5px',
+                border: '1px solid rgba(255,255,255,0.2)'
               }}>
                 <Maximize2 size={11} /> {t ? t('artwork.viewFullSize', 'View full size') : 'View full size'}
               </div>
@@ -228,18 +229,18 @@ export default function ArtworkDetail() {
           </motion.div>
 
           {/* Details Panel */}
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '1.25rem' }}>
-            {/* Notes */}
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '1.35rem' }}>
+            {/* Curatorial Notes */}
             <motion.div
               className="card"
               initial={{ opacity: 0, y: 16 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.4, delay: 0.2, ease: EASE }}
+              transition={{ duration: 0.4, delay: 0.16, ease: EASE }}
             >
-              <div style={{ fontSize: '0.72rem', textTransform: 'uppercase', letterSpacing: '0.05em', color: 'var(--text-tertiary)', fontWeight: 600, marginBottom: '0.5rem' }}>
-                {t ? t('artwork.curatorialNotes', 'Curatorial Notes') : 'Curatorial Notes'}
+              <div style={{ fontSize: '0.72rem', textTransform: 'uppercase', letterSpacing: '0.05em', color: 'var(--text-tertiary)', fontWeight: 650, marginBottom: '0.6rem' }}>
+                {t ? t('artwork.curatorialNotes', 'Curatorial Notes & Historical Analysis') : 'Curatorial Notes & Historical Analysis'}
               </div>
-              <p style={{ fontSize: '0.94rem', lineHeight: '1.75', color: 'var(--text-primary)', margin: 0 }}>
+              <p style={{ fontSize: '0.96rem', lineHeight: '1.8', color: 'var(--text-primary)', margin: 0 }}>
                 {l ? l(artwork, 'notes', 'artworks') : artwork.notes}
               </p>
             </motion.div>
@@ -248,18 +249,29 @@ export default function ArtworkDetail() {
             {artwork.knowledgePoints && artwork.knowledgePoints.length > 0 && (
               <motion.div
                 className="card"
+                style={{
+                  backgroundColor: 'var(--bg-surface)',
+                  borderLeft: `3px solid ${isArch ? 'var(--accent-sage)' : 'var(--accent-blue)'}`
+                }}
                 initial={{ opacity: 0, y: 16 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.4, delay: 0.25, ease: EASE }}
+                transition={{ duration: 0.4, delay: 0.2, ease: EASE }}
               >
-                <div style={{ fontSize: '0.72rem', textTransform: 'uppercase', letterSpacing: '0.05em', color: 'var(--text-tertiary)', fontWeight: 600, marginBottom: '0.65rem' }}>
-                  {t ? t('artwork.keyPoints', 'Key Examination Points') : 'Key Points'}
+                <div style={{
+                  fontSize: '0.72rem',
+                  textTransform: 'uppercase',
+                  letterSpacing: '0.05em',
+                  color: isArch ? 'var(--accent-sage)' : 'var(--accent-blue)',
+                  fontWeight: 650,
+                  marginBottom: '0.75rem'
+                }}>
+                  {t ? t('artwork.keyPoints', 'Key Examination Points') : 'Key Examination Points'}
                 </div>
-                <div style={{ display: 'flex', flexDirection: 'column', gap: '0.6rem' }}>
+                <div style={{ display: 'flex', flexDirection: 'column', gap: '0.7rem' }}>
                   {(lArray ? lArray(artwork, 'knowledgePoints', 'artworks') : artwork.knowledgePoints).map((kp, idx) => (
-                    <div key={idx} style={{ display: 'flex', gap: '8px', alignItems: 'flex-start' }}>
-                      <CheckCircle2 size={14} style={{ color: 'var(--text-primary)', marginTop: '3px', flexShrink: 0 }} />
-                      <span style={{ fontSize: '0.88rem', color: 'var(--text-primary)', lineHeight: '1.6' }}>{kp}</span>
+                    <div key={idx} style={{ display: 'flex', gap: '9px', alignItems: 'flex-start' }}>
+                      <CheckCircle2 size={15} style={{ color: isArch ? 'var(--accent-sage)' : 'var(--accent-blue)', marginTop: '3px', flexShrink: 0 }} />
+                      <span style={{ fontSize: '0.9rem', color: 'var(--text-primary)', lineHeight: '1.6' }}>{kp}</span>
                     </div>
                   ))}
                 </div>
@@ -274,14 +286,22 @@ export default function ArtworkDetail() {
           style={{ marginBottom: '3rem' }}
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.4, delay: 0.3, ease: EASE }}
+          transition={{ duration: 0.4, delay: 0.24, ease: EASE }}
         >
-          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '1rem', flexWrap: 'wrap', gap: '1rem' }}>
-            <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
-              <Bot size={20} style={{ color: 'var(--text-primary)' }} />
+          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '1.2rem', flexWrap: 'wrap', gap: '1rem' }}>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '11px' }}>
+              <div style={{
+                width: '36px', height: '36px', borderRadius: '50%',
+                backgroundColor: 'var(--accent-blue-subtle)',
+                border: '1px solid var(--accent-blue-border)',
+                display: 'flex', alignItems: 'center', justifyContent: 'center',
+                color: 'var(--accent-blue)'
+              }}>
+                <Bot size={18} />
+              </div>
               <div>
-                <h3 style={{ fontSize: '1.1rem', fontFamily: 'var(--font-serif)', margin: 0 }}>{t ? t('artwork.aiSectionTitle', 'AI Analysis') : 'AI Analysis'}</h3>
-                <div style={{ fontSize: '0.76rem', color: 'var(--text-tertiary)' }}>{t ? t('artwork.aiSectionDesc', 'Formal analysis, iconography & historical context') : 'Formal analysis, iconography & historical context'}</div>
+                <h3 style={{ fontSize: '1.12rem', fontFamily: 'var(--font-serif)', margin: 0 }}>{t ? t('artwork.aiSectionTitle', 'AI Academic Analysis') : 'AI Academic Analysis'}</h3>
+                <div style={{ fontSize: '0.78rem', color: 'var(--text-tertiary)' }}>{t ? t('artwork.aiSectionDesc', 'Formal analysis, iconography & historical context') : 'Formal analysis, iconography & historical context'}</div>
               </div>
             </div>
 
@@ -296,10 +316,10 @@ export default function ArtworkDetail() {
                 })}
                 whileHover={{ scale: 1.03 }}
                 whileTap={{ scale: 0.97 }}
-                style={{ display: 'flex', alignItems: 'center', gap: '6px' }}
+                style={{ display: 'flex', alignItems: 'center', gap: '6px', borderRadius: 'var(--radius-pill)' }}
                 title="唤起 AI 助教悬浮窗深入研讨"
               >
-                <MessageSquareText size={14} />
+                <MessageSquareText size={14} style={{ color: 'var(--accent-blue)' }} />
                 <span>{t ? t('artwork.discussWithAi', 'Discuss with AI Tutor') : 'Discuss with AI Tutor'}</span>
               </motion.button>
 
@@ -309,6 +329,7 @@ export default function ArtworkDetail() {
                 disabled={aiLoading}
                 whileHover={{ scale: 1.03 }}
                 whileTap={{ scale: 0.97 }}
+                style={{ borderRadius: 'var(--radius-pill)' }}
               >
                 {aiLoading ? (
                   <>
@@ -326,26 +347,28 @@ export default function ArtworkDetail() {
           </div>
 
           {aiError && (
-            <div style={{ color: 'var(--accent-red)', fontSize: '0.84rem', margin: '0.75rem 0', display: 'flex', alignItems: 'center', gap: '5px' }}>
+            <div style={{ color: 'var(--accent-terracotta)', fontSize: '0.84rem', margin: '0.75rem 0', display: 'flex', alignItems: 'center', gap: '5px' }}>
               <AlertCircle size={14} /> {aiError}
             </div>
           )}
 
           {aiAnalysis ? (
             <div style={{
-              backgroundColor: 'var(--bg-subtle)', padding: '1.25rem',
-              borderRadius: 'var(--radius-sm)', marginTop: '0.75rem',
-              whiteSpace: 'pre-wrap', lineHeight: '1.8', fontSize: '0.9rem', color: 'var(--text-primary)'
+              backgroundColor: 'var(--bg-subtle)', padding: '1.35rem',
+              borderRadius: 'var(--radius-sm)', marginTop: '0.8rem',
+              border: '1px solid var(--border-hairline)',
+              whiteSpace: 'pre-wrap', lineHeight: '1.8', fontSize: '0.92rem', color: 'var(--text-primary)'
             }}>
               {aiAnalysis}
             </div>
           ) : (
             <div style={{
-              backgroundColor: 'var(--bg-subtle)', padding: '1.25rem',
+              backgroundColor: 'var(--bg-subtle)', padding: '1.35rem',
               borderRadius: 'var(--radius-sm)', marginTop: '0.5rem',
-              textAlign: 'center', color: 'var(--text-tertiary)', fontSize: '0.84rem'
+              border: '1px solid var(--border-hairline)',
+              textAlign: 'center', color: 'var(--text-tertiary)', fontSize: '0.85rem'
             }}>
-              {t ? t('artwork.aiPlaceholder', 'Click "Generate AI Analysis" to receive an in-depth academic interpretation.') : 'Click "Generate AI Analysis" to receive an in-depth academic interpretation.'}
+              {t ? t('artwork.aiPlaceholder', 'Click "In-Page Deep Dive" to receive an in-depth academic interpretation from Groq/Qwen.') : 'Click "In-Page Deep Dive" to receive an in-depth academic interpretation.'}
             </div>
           )}
         </motion.div>

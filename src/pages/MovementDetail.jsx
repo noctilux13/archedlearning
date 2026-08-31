@@ -6,7 +6,7 @@ import { AppContext } from '../context/AppContext';
 import MouseSpotlight from '../components/MouseSpotlight';
 import { ArtworkImage } from '../components/ArtworkImage';
 import { getAssetUrl } from '../utils/assetUrl';
-import { ArrowRight, ChevronRight, Calendar, Landmark, Palette } from 'lucide-react';
+import { ArrowRight, ChevronRight, Calendar, Landmark, Palette, Sparkles } from 'lucide-react';
 
 const EASE = [0.16, 1, 0.3, 1];
 
@@ -29,9 +29,9 @@ export default function MovementDetail() {
   return (
     <MouseSpotlight>
       <motion.div
-        initial={{ opacity: 0, y: 24, filter: 'blur(8px)' }}
+        initial={{ opacity: 0, y: 20, filter: 'blur(8px)' }}
         animate={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
-        transition={{ duration: 0.5, ease: EASE }}
+        transition={{ duration: 0.45, ease: EASE }}
         className="container"
       >
         {/* Breadcrumb */}
@@ -43,14 +43,14 @@ export default function MovementDetail() {
 
         {/* Editorial Hero */}
         <motion.div
-          className="card-editorial"
+          className={`card-editorial ${isArch ? 'card-highlight-sage' : 'card-highlight-blue'}`}
           style={{ marginBottom: '3rem' }}
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.45, delay: 0.1, ease: EASE }}
+          transition={{ duration: 0.45, delay: 0.08, ease: EASE }}
         >
           <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '1rem', flexWrap: 'wrap' }}>
-            <span className="chip chip-neutral" style={{ gap: '4px' }}>
+            <span className={isArch ? 'chip chip-green' : 'chip chip-blue'} style={{ gap: '4px' }}>
               <Calendar size={11} /> {movement.years}
             </span>
             <span className="chip chip-neutral" style={{ gap: '4px' }}>
@@ -59,24 +59,36 @@ export default function MovementDetail() {
             </span>
           </div>
 
-          <h1 style={{ marginBottom: '0.5rem' }}>
+          <h1 style={{ marginBottom: '0.6rem' }}>
             {movement.englishName}{' '}
-            <span style={{ fontSize: '1.4rem', color: 'var(--text-secondary)', fontWeight: 400, fontFamily: 'var(--font-sans)' }}>
+            <span style={{ fontSize: '1.35rem', color: 'var(--text-secondary)', fontWeight: 400, fontFamily: 'var(--font-sans)' }}>
               ({movement.name})
             </span>
           </h1>
 
-          <p style={{ fontSize: '1rem', lineHeight: '1.8', color: 'var(--text-secondary)', marginBottom: '1.75rem', maxWidth: '880px' }}>
+          <p style={{ fontSize: '1.02rem', lineHeight: '1.8', color: 'var(--text-secondary)', marginBottom: '1.8rem', maxWidth: '880px' }}>
             {l ? l(movement, 'description', 'movements') : movement.description}
           </p>
 
           {/* Historical Context */}
           <div style={{
-            backgroundColor: 'var(--bg-subtle)', padding: '1.25rem 1.5rem',
-            borderRadius: 'var(--radius-sm)', marginBottom: '1.5rem',
-            borderLeft: '3px solid var(--accent-primary)'
+            backgroundColor: isArch ? 'var(--accent-sage-subtle)' : 'var(--accent-blue-subtle)',
+            padding: '1.25rem 1.5rem',
+            borderRadius: 'var(--radius-sm)',
+            marginBottom: '1.6rem',
+            borderLeft: `3px solid ${isArch ? 'var(--accent-sage)' : 'var(--accent-blue)'}`,
+            borderTop: `1px solid ${isArch ? 'var(--accent-sage-border)' : 'var(--accent-blue-border)'}`,
+            borderRight: `1px solid ${isArch ? 'var(--accent-sage-border)' : 'var(--accent-blue-border)'}`,
+            borderBottom: `1px solid ${isArch ? 'var(--accent-sage-border)' : 'var(--accent-blue-border)'}`,
           }}>
-            <div style={{ fontSize: '0.72rem', textTransform: 'uppercase', letterSpacing: '0.05em', color: 'var(--text-tertiary)', marginBottom: '0.3rem', fontWeight: 600 }}>
+            <div style={{
+              fontSize: '0.72rem',
+              textTransform: 'uppercase',
+              letterSpacing: '0.05em',
+              color: isArch ? 'var(--accent-sage)' : 'var(--accent-blue)',
+              marginBottom: '0.35rem',
+              fontWeight: 650
+            }}>
               {t ? t('movement.historicalContext', 'Historical Context') : 'Historical Context'}
             </div>
             <p style={{ fontSize: '0.92rem', color: 'var(--text-primary)', lineHeight: '1.7', margin: 0 }}>
@@ -88,11 +100,11 @@ export default function MovementDetail() {
           {movement.keyFeatures && (
             <div>
               <div style={{ fontSize: '0.72rem', textTransform: 'uppercase', letterSpacing: '0.05em', color: 'var(--text-tertiary)', marginBottom: '0.5rem', fontWeight: 600 }}>
-                {t ? t('movement.keyFeatures', 'Key Features') : 'Key Features'}
+                {t ? t('movement.keyFeatures', 'Key Features & Characteristics') : 'Key Features & Characteristics'}
               </div>
               <div style={{ display: 'flex', flexWrap: 'wrap', gap: '6px' }}>
                 {(lArray ? lArray(movement, 'keyFeatures', 'movements') : movement.keyFeatures).map((feat, idx) => (
-                  <span key={idx} className="chip chip-neutral" style={{ fontSize: '0.78rem', padding: '4px 10px' }}>
+                  <span key={idx} className="chip chip-neutral" style={{ fontSize: '0.76rem', padding: '4px 10px' }}>
                     {feat}
                   </span>
                 ))}
@@ -111,7 +123,7 @@ export default function MovementDetail() {
             {t ? t('movement.selectedArtists', 'Key Masters & Architects') : 'Key Masters & Architects'}
           </h2>
           <span style={{ fontSize: '0.8rem', color: 'var(--text-tertiary)' }}>
-            {movement.artists.length} {t ? t('movement.artistsCount', 'artists') : 'artists'}
+            {movement.artists.length} {t ? t('movement.artistsCount', 'masters') : 'masters'}
           </span>
         </div>
 
@@ -122,21 +134,22 @@ export default function MovementDetail() {
             return (
               <motion.div
                 key={artist.id}
-                initial={{ opacity: 0, y: 20, filter: 'blur(6px)' }}
+                initial={{ opacity: 0, y: 16, filter: 'blur(6px)' }}
                 animate={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
-                transition={{ duration: 0.4, delay: 0.15 + aIdx * 0.05, ease: EASE }}
-                whileHover={{ y: -5, transition: { type: 'spring', stiffness: 400, damping: 25 } }}
+                transition={{ duration: 0.38, delay: 0.1 + aIdx * 0.04, ease: EASE }}
+                whileHover={{ y: -4, transition: { type: 'spring', stiffness: 400, damping: 25 } }}
                 whileTap={{ scale: 0.98 }}
               >
                 <Link to={`/artist/${movement.id}/${artist.id}`}>
                   <div className="card" style={{ height: '100%', display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
                     <div>
                       {/* Avatar & Name */}
-                      <div style={{ display: 'flex', alignItems: 'center', gap: '0.85rem', marginBottom: '1rem' }}>
+                      <div style={{ display: 'flex', alignItems: 'center', gap: '0.9rem', marginBottom: '1rem' }}>
                         <div style={{
-                          width: '48px', height: '48px', borderRadius: '50%',
+                          width: '50px', height: '50px', borderRadius: '50%',
                           overflow: 'hidden', backgroundColor: 'var(--bg-subtle)',
-                          flexShrink: 0, border: '1px solid var(--border-hairline)'
+                          flexShrink: 0, border: '1.5px solid var(--border-subtle)',
+                          boxShadow: 'var(--shadow-subtle)'
                         }}>
                           <img
                             src={resolveArtistAvatar ? resolveArtistAvatar(artist.id, getAssetUrl(artist.avatar)) : getAssetUrl(artist.avatar)}
@@ -148,7 +161,7 @@ export default function MovementDetail() {
                           />
                         </div>
                         <div>
-                          <h3 style={{ fontSize: '1.05rem', fontFamily: 'var(--font-serif)', margin: 0, fontWeight: 600 }}>
+                          <h3 style={{ fontSize: '1.08rem', fontFamily: 'var(--font-serif)', margin: 0, fontWeight: 600 }}>
                             {artist.englishName || artist.name}
                           </h3>
                           <div style={{ fontSize: '0.78rem', color: 'var(--text-tertiary)' }}>
@@ -159,13 +172,13 @@ export default function MovementDetail() {
 
                       {/* Artwork Preview */}
                       {firstArtwork && (
-                        <div className="image-box" style={{ height: '140px', marginBottom: '1rem' }}>
+                        <div className="image-box" style={{ height: '145px', marginBottom: '1rem' }}>
                           <ArtworkImage artworkId={firstArtwork.id} alt={firstArtwork.title} className="w-full h-full object-cover" />
                         </div>
                       )}
 
                       <p style={{
-                        color: 'var(--text-secondary)', fontSize: '0.82rem', lineHeight: '1.6',
+                        color: 'var(--text-secondary)', fontSize: '0.83rem', lineHeight: '1.6',
                         marginBottom: '1rem',
                         display: '-webkit-box', WebkitLineClamp: 3, WebkitBoxOrient: 'vertical', overflow: 'hidden'
                       }}>
@@ -174,11 +187,12 @@ export default function MovementDetail() {
                     </div>
 
                     <div style={{
-                      borderTop: '1px solid var(--border-hairline)', paddingTop: '0.7rem',
+                      borderTop: '1px solid var(--border-hairline)', paddingTop: '0.75rem',
                       display: 'flex', alignItems: 'center', justifyContent: 'space-between',
-                      color: 'var(--text-primary)', fontWeight: 550, fontSize: '0.82rem'
+                      color: isArch ? 'var(--accent-sage)' : 'var(--accent-blue)',
+                      fontWeight: 550, fontSize: '0.82rem'
                     }}>
-                      <span>{artist.artworks.length} {t ? t('artist.worksCount', 'works') : 'works'}</span>
+                      <span>{artist.artworks.length} {t ? t('artist.worksCount', 'selected works') : 'selected works'}</span>
                       <ArrowRight size={14} />
                     </div>
                   </div>

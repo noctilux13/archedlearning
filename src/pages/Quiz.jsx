@@ -10,12 +10,6 @@ import { Link } from 'react-router-dom';
 
 const EASE = [0.16, 1, 0.3, 1];
 
-const CATEGORIES = [
-  { key: 'all', label: 'All' },
-  { key: 'architecture', label: 'Architecture', icon: Landmark },
-  { key: 'art', label: 'Art', icon: Palette },
-];
-
 export default function Quiz() {
   const { apiKey, addQuizScore, t } = useContext(AppContext);
 
@@ -31,9 +25,9 @@ export default function Quiz() {
   const [errorMsg, setErrorMsg] = useState('');
 
   const CATEGORIES = [
-    { key: 'all', label: t ? t('quiz.all', 'All') : 'All' },
-    { key: 'architecture', label: t ? t('quiz.architecture', 'Architecture') : 'Architecture', icon: Landmark },
-    { key: 'art', label: t ? t('quiz.art', 'Art') : 'Art', icon: Palette },
+    { key: 'all', label: t ? t('quiz.all', 'All Modules') : 'All Modules' },
+    { key: 'architecture', label: t ? t('quiz.architecture', 'Architecture Exam') : 'Architecture Exam', icon: Landmark },
+    { key: 'art', label: t ? t('quiz.art', 'Art History') : 'Art History', icon: Palette },
   ];
 
   useEffect(() => { loadQuestions(selectedCategory); }, [selectedCategory]);
@@ -55,8 +49,8 @@ export default function Quiz() {
     setErrorMsg('');
     try {
       const promptContext = selectedCategory === 'architecture'
-        ? 'focus on Baroque, Neoclassical, Industrial, Art Nouveau, and Expressionist architecture'
-        : 'focus on 20th century modern art movements';
+        ? 'focus on Romanesque, Gothic, Renaissance, Baroque, and Modernist European architecture'
+        : 'focus on 20th century modern art movements and avant-garde manifestos';
       const aiQs = await generateAiQuizFromContent(promptContext, 5);
       if (Array.isArray(aiQs) && aiQs.length > 0) {
         setQuestions(aiQs);
@@ -71,7 +65,7 @@ export default function Quiz() {
       }
     } catch (err) {
       console.error(err);
-      setErrorMsg('AI quiz generation failed. Using built-in questions.');
+      setErrorMsg('AI quiz generation failed. Using built-in Italian entrance exam questions.');
       loadQuestions(selectedCategory);
     } finally {
       setLoading(false);
@@ -103,9 +97,9 @@ export default function Quiz() {
   if (loading) {
     return (
       <div className="container" style={{ textAlign: 'center', padding: '6rem 0' }}>
-        <Sparkles size={32} className="animate-spin" style={{ color: 'var(--text-primary)', marginBottom: '1rem', display: 'inline-block' }} />
-        <h2 style={{ fontFamily: 'var(--font-serif)', marginBottom: '0.4rem' }}>{t ? t('quiz.aiGenerating', 'Generating Quiz...') : 'Generating Quiz...'}</h2>
-        <p style={{ color: 'var(--text-secondary)', fontSize: '0.9rem' }}>{t ? t('quiz.startAiQuiz', 'AI is crafting questions from the curriculum.') : 'AI is crafting questions from the curriculum.'}</p>
+        <Sparkles size={32} className="animate-spin" style={{ color: 'var(--accent-blue)', marginBottom: '1rem', display: 'inline-block' }} />
+        <h2 style={{ fontFamily: 'var(--font-serif)', marginBottom: '0.4rem' }}>{t ? t('quiz.aiGenerating', 'Generating AI Quiz...') : 'Generating AI Quiz...'}</h2>
+        <p style={{ color: 'var(--text-secondary)', fontSize: '0.92rem' }}>{t ? t('quiz.startAiQuiz', 'AI is crafting exam questions from the art & architecture syllabus.') : 'AI is crafting exam questions.'}</p>
       </div>
     );
   }
@@ -118,34 +112,34 @@ export default function Quiz() {
         <motion.div
           initial={{ opacity: 0, scale: 0.96, filter: 'blur(6px)' }}
           animate={{ opacity: 1, scale: 1, filter: 'blur(0px)' }}
-          transition={{ duration: 0.5, ease: EASE }}
+          transition={{ duration: 0.45, ease: EASE }}
           className="container"
-          style={{ maxWidth: '580px', textAlign: 'center', padding: '3rem 1.5rem' }}
+          style={{ maxWidth: '600px', textAlign: 'center', padding: '3rem 1.5rem' }}
         >
-          <div className="card-editorial" style={{ padding: '2.5rem 2rem' }}>
-            <Award size={48} style={{ color: 'var(--text-primary)', marginBottom: '1rem' }} />
-            <h1 style={{ fontSize: '2rem', marginBottom: '0.3rem' }}>{t ? t('quiz.resultsTitle', 'Quiz Completed!') : 'Quiz Complete'}</h1>
-            <p style={{ color: 'var(--text-secondary)', fontSize: '0.9rem', marginBottom: '1.75rem' }}>
-              {percentage === 100 ? (t ? t('quiz.perfectScore', 'Flawless! 🏆') : 'Flawless! 🏆') : percentage >= 70 ? (t ? t('quiz.goodScore', 'Good job! 🎉') : 'Good job! 🎉') : (t ? t('quiz.passScore', 'Keep exploring! 👍') : 'Keep exploring! 👍')}
+          <div className="card-editorial" style={{ padding: '2.8rem 2rem' }}>
+            <Award size={48} style={{ color: 'var(--accent-ochre)', marginBottom: '1rem' }} />
+            <h1 style={{ fontSize: '2.1rem', marginBottom: '0.35rem' }}>{t ? t('quiz.resultsTitle', 'Quiz Completed!') : 'Quiz Complete'}</h1>
+            <p style={{ color: 'var(--text-secondary)', fontSize: '0.94rem', marginBottom: '1.8rem' }}>
+              {percentage === 100 ? (t ? t('quiz.perfectScore', 'Flawless! 🏆 Perfect Score') : 'Flawless! 🏆 Perfect Score') : percentage >= 70 ? (t ? t('quiz.goodScore', 'Great Job! 🎉 Excellent Recall') : 'Great Job! 🎉 Excellent Recall') : (t ? t('quiz.passScore', 'Keep reviewing key points! 👍') : 'Keep reviewing key points! 👍')}
             </p>
 
-            <div style={{ backgroundColor: 'var(--bg-subtle)', borderRadius: 'var(--radius-sm)', padding: '1.5rem', marginBottom: '1.75rem' }}>
-              <div style={{ fontSize: '3rem', fontWeight: 600, fontFamily: 'var(--font-serif)' }}>
-                {score} <span style={{ fontSize: '1.2rem', color: 'var(--text-tertiary)', fontFamily: 'var(--font-sans)', fontWeight: 400 }}>/ {questions.length}</span>
+            <div style={{ backgroundColor: 'var(--bg-subtle)', borderRadius: 'var(--radius-sm)', padding: '1.6rem', marginBottom: '1.8rem', border: '1px solid var(--border-hairline)' }}>
+              <div style={{ fontSize: '3.2rem', fontWeight: 600, fontFamily: 'var(--font-serif)', color: 'var(--text-primary)' }}>
+                {score} <span style={{ fontSize: '1.3rem', color: 'var(--text-tertiary)', fontFamily: 'var(--font-sans)', fontWeight: 400 }}>/ {questions.length}</span>
               </div>
-              <div style={{ fontSize: '0.9rem', fontWeight: 500, color: 'var(--text-secondary)', marginTop: '0.25rem' }}>
-                {t ? t('quiz.score', 'Score') : 'Accuracy'}: <strong>{percentage}%</strong>
+              <div style={{ fontSize: '0.92rem', fontWeight: 550, color: 'var(--text-secondary)', marginTop: '0.3rem' }}>
+                {t ? t('quiz.score', 'Score') : 'Accuracy'}: <strong style={{ color: 'var(--text-primary)' }}>{percentage}%</strong>
               </div>
             </div>
 
-            <div style={{ display: 'flex', gap: '0.75rem', justifyContent: 'center', flexWrap: 'wrap' }}>
-              <motion.button className="btn btn-outline" onClick={() => loadQuestions(selectedCategory)} whileHover={{ scale: 1.03 }} whileTap={{ scale: 0.97 }}>
-                <RotateCcw size={14} /> {t ? t('quiz.restartQuiz', 'Retry') : 'Retry'}
+            <div style={{ display: 'flex', gap: '0.85rem', justifyContent: 'center', flexWrap: 'wrap' }}>
+              <motion.button className="btn btn-outline" onClick={() => loadQuestions(selectedCategory)} whileHover={{ scale: 1.03 }} whileTap={{ scale: 0.97 }} style={{ borderRadius: 'var(--radius-pill)' }}>
+                <RotateCcw size={14} /> {t ? t('quiz.restartQuiz', 'Retry Quiz') : 'Retry Quiz'}
               </motion.button>
-              <motion.button className="btn btn-primary" onClick={handleGenerateAiQuiz} whileHover={{ scale: 1.03 }} whileTap={{ scale: 0.97 }}>
-                <Sparkles size={14} /> {t ? t('quiz.startAiQuiz', 'New AI Quiz') : 'New AI Quiz'}
+              <motion.button className="btn btn-primary" onClick={handleGenerateAiQuiz} whileHover={{ scale: 1.03 }} whileTap={{ scale: 0.97 }} style={{ borderRadius: 'var(--radius-pill)' }}>
+                <Sparkles size={14} /> {t ? t('quiz.startAiQuiz', 'Generate AI Quiz') : 'Generate AI Quiz'}
               </motion.button>
-              <Link to="/dashboard" className="btn btn-outline" style={{ display: 'inline-flex', alignItems: 'center', gap: '5px' }}>
+              <Link to="/dashboard" className="btn btn-outline" style={{ display: 'inline-flex', alignItems: 'center', gap: '5px', borderRadius: 'var(--radius-pill)' }}>
                 {t ? t('quiz.viewDashboard', 'View Dashboard') : 'View Dashboard'}
               </Link>
             </div>
@@ -161,20 +155,20 @@ export default function Quiz() {
   return (
     <MouseSpotlight>
       <motion.div
-        initial={{ opacity: 0, y: 24, filter: 'blur(8px)' }}
+        initial={{ opacity: 0, y: 20, filter: 'blur(8px)' }}
         animate={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
-        transition={{ duration: 0.5, ease: EASE }}
+        transition={{ duration: 0.45, ease: EASE }}
         className="container"
-        style={{ maxWidth: '720px' }}
+        style={{ maxWidth: '740px' }}
       >
         {/* Header */}
-        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '1.5rem', flexWrap: 'wrap', gap: '1rem' }}>
+        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '1.6rem', flexWrap: 'wrap', gap: '1rem' }}>
           <div>
-            <div className="chip chip-neutral" style={{ marginBottom: '0.4rem' }}>
-              <Brain size={11} /> {t ? t('nav.quiz', 'Quiz') : 'Quiz'}
+            <div className="chip chip-terracotta" style={{ marginBottom: '0.45rem' }}>
+              <Brain size={11} /> {t ? t('nav.quiz', 'Quiz') : 'Italian Entrance Exam Quiz'}
             </div>
-            <h1 style={{ fontSize: '1.8rem', margin: 0 }}>{t ? t('quiz.title', 'Knowledge Check') : 'Knowledge Check'}</h1>
-            <p style={{ color: 'var(--text-secondary)', fontSize: '0.88rem', margin: '0.2rem 0 0 0' }}>{t ? t('quiz.subtitle', 'Test your understanding') : 'Test your understanding'}</p>
+            <h1 style={{ fontSize: '1.85rem', margin: 0 }}>{t ? t('quiz.title', 'Knowledge Check') : 'Knowledge Check'}</h1>
+            <p style={{ color: 'var(--text-secondary)', fontSize: '0.9rem', margin: '0.25rem 0 0 0' }}>{t ? t('quiz.subtitle', 'Test your architectural & art history understanding') : 'Test your architectural & art history understanding'}</p>
           </div>
 
           <motion.button
@@ -183,13 +177,14 @@ export default function Quiz() {
             disabled={loading}
             whileHover={{ scale: 1.03 }}
             whileTap={{ scale: 0.97 }}
+            style={{ borderRadius: 'var(--radius-pill)' }}
           >
-            <Sparkles size={13} /> {t ? t('quiz.startAiQuiz', 'AI Quiz') : 'AI Quiz'}
+            <Sparkles size={13} /> {t ? t('quiz.startAiQuiz', 'AI Quiz Generator') : 'AI Quiz Generator'}
           </motion.button>
         </div>
 
         {/* Category Tabs */}
-        <div className="tab-bar" style={{ marginBottom: '1.5rem' }}>
+        <div className="tab-bar" style={{ marginBottom: '1.6rem', borderRadius: 'var(--radius-pill)', padding: '4px' }}>
           {CATEGORIES.map(cat => {
             const Icon = cat.icon;
             const isActive = selectedCategory === cat.key;
@@ -197,17 +192,19 @@ export default function Quiz() {
               <button
                 key={cat.key}
                 className={`tab-item ${isActive ? 'active' : ''}`}
+                style={{ borderRadius: 'var(--radius-pill)', padding: '6px 16px' }}
                 onClick={() => setSelectedCategory(cat.key)}
               >
                 {isActive && (
                   <motion.div
                     layoutId="quiz-tab-indicator"
                     className="tab-indicator"
+                    style={{ borderRadius: 'var(--radius-pill)' }}
                     transition={{ type: 'spring', bounce: 0.15, duration: 0.4 }}
                   />
                 )}
-                <span style={{ position: 'relative', zIndex: 1, display: 'inline-flex', alignItems: 'center', gap: '4px' }}>
-                  {Icon && <Icon size={11} />}
+                <span style={{ position: 'relative', zIndex: 1, display: 'inline-flex', alignItems: 'center', gap: '5px' }}>
+                  {Icon && <Icon size={12} style={{ color: isActive ? (cat.key === 'architecture' ? 'var(--accent-sage)' : 'var(--accent-blue)') : 'inherit' }} />}
                   {cat.label}
                 </span>
               </button>
@@ -216,7 +213,7 @@ export default function Quiz() {
         </div>
 
         {errorMsg && (
-          <div style={{ backgroundColor: 'var(--accent-red-subtle)', color: 'var(--accent-red)', padding: '0.85rem 1rem', borderRadius: 'var(--radius-sm)', marginBottom: '1.25rem', display: 'flex', alignItems: 'center', gap: '6px', fontSize: '0.84rem', border: '1px solid rgba(225, 29, 72, 0.15)' }}>
+          <div style={{ backgroundColor: 'var(--accent-terracotta-subtle)', color: 'var(--accent-terracotta)', padding: '0.85rem 1rem', borderRadius: 'var(--radius-sm)', marginBottom: '1.25rem', display: 'flex', alignItems: 'center', gap: '6px', fontSize: '0.84rem', border: '1px solid var(--accent-terracotta-border)' }}>
             <AlertCircle size={14} /> {errorMsg}
           </div>
         )}
@@ -229,30 +226,31 @@ export default function Quiz() {
             animate={{ opacity: 1, x: 0, filter: 'blur(0px)' }}
             exit={{ opacity: 0, x: -20, filter: 'blur(4px)' }}
             transition={{ duration: 0.35, ease: EASE }}
-            className="card"
-            style={{ padding: '2rem' }}
+            className="card-editorial"
+            style={{ padding: '2.2rem' }}
           >
-            {/* Progress */}
-            <div style={{ display: 'flex', justifyContent: 'space-between', color: 'var(--text-tertiary)', fontSize: '0.8rem', fontWeight: 500, marginBottom: '1rem' }}>
-              <span style={{ fontFamily: 'var(--font-mono)' }}>{t ? t('quiz.questionPrefix', 'Question') : 'Question'} {currentIdx + 1} {t ? t('quiz.of', '/') : '/'} {questions.length}</span>
-              <span>{t ? t('quiz.score', 'Score') : 'Score'}: {score}</span>
+            {/* Progress Bar Header */}
+            <div style={{ display: 'flex', justifyContent: 'space-between', color: 'var(--text-tertiary)', fontSize: '0.82rem', fontWeight: 550, marginBottom: '1.1rem' }}>
+              <span style={{ fontFamily: 'var(--font-mono)' }}>{t ? t('quiz.questionPrefix', 'Question') : 'Question'} {currentIdx + 1} / {questions.length}</span>
+              <span className="chip chip-neutral">{t ? t('quiz.score', 'Score') : 'Score'}: {score}</span>
             </div>
 
-            <h2 style={{ fontSize: '1.15rem', marginBottom: '1.75rem', lineHeight: '1.5', fontFamily: 'var(--font-serif)' }}>
+            <h2 style={{ fontSize: '1.2rem', marginBottom: '1.8rem', lineHeight: '1.6', fontFamily: 'var(--font-serif)', color: 'var(--text-primary)' }}>
               {currentQ.text}
             </h2>
 
             {/* Options */}
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '0.65rem', marginBottom: '1.5rem' }}>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem', marginBottom: '1.6rem' }}>
               {currentQ.options.map((opt, idx) => {
                 let optStyle = {
                   justifyContent: 'space-between',
-                  padding: '0.85rem 1.15rem',
-                  fontSize: '0.9rem',
+                  padding: '0.9rem 1.25rem',
+                  fontSize: '0.92rem',
                   borderRadius: 'var(--radius-sm)',
                   textAlign: 'left',
                   border: '1px solid var(--border-subtle)',
-                  backgroundColor: 'var(--bg-surface)'
+                  backgroundColor: 'var(--bg-surface)',
+                  color: 'var(--text-primary)'
                 };
 
                 let isSelected = selectedOption === idx;
@@ -260,13 +258,13 @@ export default function Quiz() {
 
                 if (selectedOption !== null) {
                   if (isCorrect) {
-                    optStyle.backgroundColor = 'var(--accent-emerald-subtle)';
-                    optStyle.borderColor = 'rgba(5, 150, 105, 0.35)';
-                    optStyle.color = 'var(--accent-emerald)';
+                    optStyle.backgroundColor = 'var(--accent-sage-subtle)';
+                    optStyle.borderColor = 'var(--accent-sage-border)';
+                    optStyle.color = 'var(--accent-sage)';
                   } else if (isSelected) {
-                    optStyle.backgroundColor = 'var(--accent-red-subtle)';
-                    optStyle.borderColor = 'rgba(225, 29, 72, 0.35)';
-                    optStyle.color = 'var(--accent-red)';
+                    optStyle.backgroundColor = 'var(--accent-terracotta-subtle)';
+                    optStyle.borderColor = 'var(--accent-terracotta-border)';
+                    optStyle.color = 'var(--accent-terracotta)';
                   }
                 }
 
@@ -279,8 +277,8 @@ export default function Quiz() {
                     disabled={selectedOption !== null}
                   >
                     <span><strong>{String.fromCharCode(65 + idx)}.</strong> {opt}</span>
-                    {selectedOption !== null && isCorrect && <CheckCircle2 size={16} />}
-                    {selectedOption !== null && isSelected && !isCorrect && <XCircle size={16} />}
+                    {selectedOption !== null && isCorrect && <CheckCircle2 size={17} style={{ color: 'var(--accent-sage)' }} />}
+                    {selectedOption !== null && isSelected && !isCorrect && <XCircle size={17} style={{ color: 'var(--accent-terracotta)' }} />}
                   </button>
                 );
               })}
@@ -292,20 +290,20 @@ export default function Quiz() {
                 initial={{ opacity: 0, y: 8 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.3, ease: EASE }}
-                style={{ borderTop: '1px solid var(--border-hairline)', paddingTop: '1rem', marginTop: '1rem' }}
+                style={{ borderTop: '1px solid var(--border-hairline)', paddingTop: '1.1rem', marginTop: '1.1rem' }}
               >
-                <div style={{ marginBottom: '1.25rem', backgroundColor: 'var(--bg-subtle)', padding: '0.85rem 1rem', borderRadius: 'var(--radius-sm)' }}>
-                  <div style={{ fontSize: '0.7rem', textTransform: 'uppercase', letterSpacing: '0.04em', color: 'var(--text-tertiary)', fontWeight: 600, marginBottom: '0.2rem' }}>
-                    {t ? t('quiz.explanation', 'Explanation:') : 'Explanation:'}
+                <div style={{ marginBottom: '1.35rem', backgroundColor: 'var(--bg-subtle)', padding: '1rem 1.2rem', borderRadius: 'var(--radius-sm)', border: '1px solid var(--border-hairline)' }}>
+                  <div style={{ fontSize: '0.72rem', textTransform: 'uppercase', letterSpacing: '0.04em', color: 'var(--accent-blue)', fontWeight: 650, marginBottom: '0.3rem' }}>
+                    {t ? t('quiz.explanation', 'Academic Explanation:') : 'Academic Explanation:'}
                   </div>
-                  <span style={{ color: 'var(--text-primary)', fontSize: '0.88rem', lineHeight: '1.6' }}>
+                  <span style={{ color: 'var(--text-primary)', fontSize: '0.9rem', lineHeight: '1.65' }}>
                     {currentQ.explanation || (t ? t('quiz.explanation', 'Review the historical context.') : 'Review the historical context.')}
                   </span>
                 </div>
 
                 <div style={{ textAlign: 'right' }}>
-                  <motion.button className="btn btn-primary" onClick={handleNextQuestion} whileHover={{ scale: 1.03 }} whileTap={{ scale: 0.97 }}>
-                    <span>{currentIdx + 1 === questions.length ? (t ? t('quiz.finishQuiz', 'View Results') : 'View Results') : (t ? t('quiz.nextQuestion', 'Next') : 'Next')}</span>
+                  <motion.button className="btn btn-primary" onClick={handleNextQuestion} whileHover={{ scale: 1.03 }} whileTap={{ scale: 0.97 }} style={{ borderRadius: 'var(--radius-pill)' }}>
+                    <span>{currentIdx + 1 === questions.length ? (t ? t('quiz.finishQuiz', 'View Results') : 'View Results') : (t ? t('quiz.nextQuestion', 'Next Question') : 'Next Question')}</span>
                     <ArrowRight size={14} />
                   </motion.button>
                 </div>

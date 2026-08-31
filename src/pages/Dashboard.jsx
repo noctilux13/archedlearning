@@ -50,45 +50,45 @@ export default function Dashboard() {
   return (
     <MouseSpotlight>
       <motion.div
-        initial={{ opacity: 0, y: 24, filter: 'blur(8px)' }}
+        initial={{ opacity: 0, y: 20, filter: 'blur(8px)' }}
         animate={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
-        transition={{ duration: 0.5, ease: EASE }}
+        transition={{ duration: 0.45, ease: EASE }}
         className="container"
-        style={{ maxWidth: '920px' }}
+        style={{ maxWidth: '940px' }}
       >
         {/* Header */}
         <div style={{ textAlign: 'center', marginBottom: '2.5rem' }}>
-          <div className="chip chip-neutral" style={{ marginBottom: '0.75rem' }}>
-            <Award size={11} /> {t ? t('nav.dashboard', 'Dashboard') : 'Dashboard'}
+          <div className="chip chip-blue" style={{ marginBottom: '0.85rem' }}>
+            <Award size={12} /> {t ? t('nav.dashboard', 'Dashboard') : 'Curatorial Dashboard'}
           </div>
-          <h1 style={{ marginBottom: '0.3rem' }}>{t ? t('dashboard.title', 'Study Progress') : 'Study Progress'}</h1>
-          <p style={{ color: 'var(--text-secondary)', fontSize: '0.92rem', maxWidth: '560px', margin: '0 auto' }}>
-            {t ? t('dashboard.subtitle', 'Track exploration coverage and mastery level across art history and architecture.') : 'Track exploration coverage and mastery level across art history and architecture.'}
+          <h1 style={{ marginBottom: '0.4rem' }}>{t ? t('dashboard.title', 'Study & Research Progress') : 'Study & Research Progress'}</h1>
+          <p style={{ color: 'var(--text-secondary)', fontSize: '0.94rem', maxWidth: '580px', margin: '0 auto' }}>
+            {t ? t('dashboard.subtitle', 'Track your study coverage across 16 movements, 55 masters, and 135 architectural landmarks & art masterworks.') : 'Track your study coverage across movements, masters, and landmarks.'}
           </p>
         </div>
 
         {/* Metric Cards */}
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))', gap: '1.25rem', marginBottom: '2.5rem' }}>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '1.4rem', marginBottom: '2.5rem' }}>
           {/* Coverage */}
           <motion.div
-            className="card"
+            className="card card-highlight-blue"
             initial={{ opacity: 0, y: 16, filter: 'blur(4px)' }}
             animate={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
-            transition={{ duration: 0.4, delay: 0.1, ease: EASE }}
+            transition={{ duration: 0.4, delay: 0.08, ease: EASE }}
           >
-            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '0.75rem' }}>
-              <span className="chip chip-blue"><BookOpen size={11} /> {t ? t('dashboard.viewedCount', 'Coverage') : 'Coverage'}</span>
-              <span style={{ fontSize: '0.82rem', color: 'var(--accent-blue)', fontWeight: 600 }}>{viewPercentage}%</span>
+            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '0.85rem' }}>
+              <span className="chip chip-blue"><BookOpen size={11} /> {t ? t('dashboard.viewedCount', 'Catalog Coverage') : 'Catalog Coverage'}</span>
+              <span style={{ fontSize: '0.86rem', color: 'var(--accent-blue)', fontWeight: 650 }}>{viewPercentage}%</span>
             </div>
-            <div style={{ fontSize: '2.4rem', fontWeight: 600, fontFamily: 'var(--font-serif)', marginBottom: '0.25rem' }}>
-              {viewedCount} <span style={{ fontSize: '1rem', color: 'var(--text-tertiary)', fontWeight: 400, fontFamily: 'var(--font-sans)' }}>/ {totalArtworks}</span>
+            <div style={{ fontSize: '2.5rem', fontWeight: 600, fontFamily: 'var(--font-serif)', marginBottom: '0.25rem', color: 'var(--text-primary)' }}>
+              {viewedCount} <span style={{ fontSize: '1.1rem', color: 'var(--text-tertiary)', fontWeight: 400, fontFamily: 'var(--font-sans)' }}>/ {totalArtworks}</span>
             </div>
-            <div style={{ marginTop: '1rem' }}>
-              <div style={{ width: '100%', backgroundColor: 'var(--bg-subtle)', height: '4px', borderRadius: 'var(--radius-pill)', overflow: 'hidden' }}>
+            <div style={{ marginTop: '1.1rem' }}>
+              <div style={{ width: '100%', backgroundColor: 'var(--bg-subtle)', height: '5px', borderRadius: 'var(--radius-pill)', overflow: 'hidden' }}>
                 <motion.div
                   initial={{ width: 0 }}
                   animate={{ width: `${viewPercentage}%` }}
-                  transition={{ duration: 0.8, delay: 0.3, ease: EASE }}
+                  transition={{ duration: 0.8, delay: 0.25, ease: EASE }}
                   style={{ backgroundColor: 'var(--accent-blue)', height: '100%', borderRadius: 'var(--radius-pill)' }}
                 />
               </div>
@@ -97,51 +97,51 @@ export default function Dashboard() {
 
           {/* Mastery */}
           <motion.div
-            className="card"
+            className="card card-highlight-sage"
             initial={{ opacity: 0, y: 16, filter: 'blur(4px)' }}
             animate={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
-            transition={{ duration: 0.4, delay: 0.15, ease: EASE }}
+            transition={{ duration: 0.4, delay: 0.12, ease: EASE }}
           >
-            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '0.75rem' }}>
-              <span className="chip chip-green"><Trophy size={11} /> {t ? t('dashboard.masteryRate', 'Mastery') : 'Mastery'}</span>
-              <span style={{ fontSize: '0.78rem', color: 'var(--text-tertiary)' }}>{(progress.quizScores || []).length} {t ? t('dashboard.quizCount', 'quizzes') : 'quizzes'}</span>
+            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '0.85rem' }}>
+              <span className="chip chip-green"><Trophy size={11} /> {t ? t('dashboard.masteryRate', 'Exam Mastery') : 'Exam Mastery'}</span>
+              <span style={{ fontSize: '0.8rem', color: 'var(--text-tertiary)' }}>{(progress.quizScores || []).length} {t ? t('dashboard.quizCount', 'quizzes') : 'quizzes'}</span>
             </div>
-            <div style={{ fontSize: '2.4rem', fontWeight: 600, fontFamily: 'var(--font-serif)', marginBottom: '0.25rem' }}>
+            <div style={{ fontSize: '2.5rem', fontWeight: 600, fontFamily: 'var(--font-serif)', marginBottom: '0.25rem', color: 'var(--text-primary)' }}>
               {masteryPercentage}%
             </div>
-            <p style={{ color: 'var(--text-secondary)', fontSize: '0.8rem', marginTop: '1rem' }}>
+            <p style={{ color: 'var(--text-secondary)', fontSize: '0.82rem', marginTop: '1.1rem', lineHeight: '1.5' }}>
               {t ? t('dashboard.masteryDesc', 'Calculated from quiz scores and study exploration coverage.') : 'Calculated from quiz scores and study exploration coverage.'}
             </p>
           </motion.div>
         </div>
 
         {/* Favorites */}
-        <div style={{ marginBottom: '2.5rem' }}>
-          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline', marginBottom: '1rem', paddingBottom: '0.5rem', borderBottom: '1px solid var(--border-hairline)' }}>
-            <h2 style={{ fontFamily: 'var(--font-serif)', fontSize: '1.3rem', fontWeight: 500 }}>
-              {t ? t('dashboard.favoritesTitle', 'Saved Works') : 'Saved Works'} <span style={{ fontSize: '0.82rem', color: 'var(--text-tertiary)', fontFamily: 'var(--font-sans)' }}>({favoritedArtworks.length})</span>
+        <div style={{ marginBottom: '2.8rem' }}>
+          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline', marginBottom: '1.2rem', paddingBottom: '0.6rem', borderBottom: '1px solid var(--border-hairline)' }}>
+            <h2 style={{ fontFamily: 'var(--font-serif)', fontSize: '1.35rem', fontWeight: 500 }}>
+              {t ? t('dashboard.favoritesTitle', 'Curated Bookmarks') : 'Curated Bookmarks'} <span style={{ fontSize: '0.84rem', color: 'var(--text-tertiary)', fontFamily: 'var(--font-sans)' }}>({favoritedArtworks.length})</span>
             </h2>
           </div>
           {favoritedArtworks.length > 0 ? (
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(240px, 1fr))', gap: '1rem' }}>
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(260px, 1fr))', gap: '1.1rem' }}>
               {favoritedArtworks.map((w, idx) => (
                 <motion.div
                   key={w.id}
                   initial={{ opacity: 0, y: 12 }}
                   animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.3, delay: 0.25 + idx * 0.04, ease: EASE }}
+                  transition={{ duration: 0.3, delay: 0.2 + idx * 0.03, ease: EASE }}
                   whileHover={{ y: -3, transition: { type: 'spring', stiffness: 400, damping: 25 } }}
                 >
                   <Link to={`/artwork/${w.movementId}/${w.artistId}/${w.id}`}>
-                    <div className="card" style={{ display: 'flex', alignItems: 'center', gap: '0.85rem', padding: '0.85rem' }}>
-                      <div style={{ width: '48px', height: '48px', borderRadius: 'var(--radius-sm)', overflow: 'hidden', backgroundColor: 'var(--bg-subtle)', flexShrink: 0 }}>
+                    <div className="card" style={{ display: 'flex', alignItems: 'center', gap: '0.9rem', padding: '0.9rem' }}>
+                      <div style={{ width: '52px', height: '52px', borderRadius: 'var(--radius-sm)', overflow: 'hidden', backgroundColor: 'var(--bg-subtle)', flexShrink: 0 }}>
                         <ArtworkImage artworkId={w.id} alt={w.title} className="w-full h-full object-cover" />
                       </div>
                       <div style={{ overflow: 'hidden' }}>
-                        <h4 style={{ fontSize: '0.88rem', whiteSpace: 'nowrap', textOverflow: 'ellipsis', overflow: 'hidden', fontFamily: 'var(--font-serif)' }}>
+                        <h4 style={{ fontSize: '0.9rem', whiteSpace: 'nowrap', textOverflow: 'ellipsis', overflow: 'hidden', fontFamily: 'var(--font-serif)', fontWeight: 600 }}>
                           {w.title}
                         </h4>
-                        <div style={{ fontSize: '0.72rem', color: 'var(--text-tertiary)' }}>{w.artistName} · {w.movementName}</div>
+                        <div style={{ fontSize: '0.74rem', color: 'var(--text-tertiary)' }}>{w.artistName} · {w.movementName}</div>
                       </div>
                     </div>
                   </Link>
@@ -149,7 +149,7 @@ export default function Dashboard() {
               ))}
             </div>
           ) : (
-            <div style={{ padding: '2rem', backgroundColor: 'var(--bg-surface)', borderRadius: 'var(--radius-sm)', border: '1px solid var(--border-hairline)', textAlign: 'center', color: 'var(--text-secondary)', fontSize: '0.88rem' }}>
+            <div style={{ padding: '2.5rem', backgroundColor: 'var(--bg-surface)', borderRadius: 'var(--radius-sm)', border: '1px solid var(--border-hairline)', textAlign: 'center', color: 'var(--text-secondary)', fontSize: '0.9rem' }}>
               {t ? t('dashboard.emptyFavorites', 'No saved works yet. Click "Save" on any artwork page to curate your collection!') : 'No saved works yet. Click "Save" on any artwork page to curate your collection!'}
             </div>
           )}
@@ -158,17 +158,25 @@ export default function Dashboard() {
         {/* AI Report */}
         <motion.div
           className="card-editorial"
-          style={{ marginBottom: '2.5rem' }}
+          style={{ marginBottom: '2.8rem' }}
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.4, delay: 0.25, ease: EASE }}
+          transition={{ duration: 0.4, delay: 0.2, ease: EASE }}
         >
-          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '1rem', flexWrap: 'wrap', gap: '1rem' }}>
+          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '1.2rem', flexWrap: 'wrap', gap: '1rem' }}>
             <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
-              <Bot size={20} style={{ color: 'var(--text-primary)' }} />
+              <div style={{
+                width: '36px', height: '36px', borderRadius: '50%',
+                backgroundColor: 'var(--accent-blue-subtle)',
+                border: '1px solid var(--accent-blue-border)',
+                display: 'flex', alignItems: 'center', justifyContent: 'center',
+                color: 'var(--accent-blue)'
+              }}>
+                <Bot size={18} />
+              </div>
               <div>
-                <h2 style={{ fontSize: '1.1rem', fontFamily: 'var(--font-serif)', margin: 0 }}>AI Study Report</h2>
-                <div style={{ fontSize: '0.76rem', color: 'var(--text-tertiary)' }}>Personalized diagnosis and review strategy</div>
+                <h2 style={{ fontSize: '1.15rem', fontFamily: 'var(--font-serif)', margin: 0 }}>AI Personalized Study Diagnosis</h2>
+                <div style={{ fontSize: '0.78rem', color: 'var(--text-tertiary)' }}>Weak-point analysis, memory reinforcement, & exam readiness</div>
               </div>
             </div>
 
@@ -178,28 +186,29 @@ export default function Dashboard() {
               disabled={loadingReport}
               whileHover={{ scale: 1.03 }}
               whileTap={{ scale: 0.97 }}
+              style={{ borderRadius: 'var(--radius-pill)' }}
             >
               {loadingReport ? (
-                <><Loader2 size={13} className="animate-spin" /> <span>Generating...</span></>
+                <><Loader2 size={13} className="animate-spin" /> <span>Generating Report...</span></>
               ) : (
-                <><Sparkles size={13} /> <span>Generate Report</span></>
+                <><Sparkles size={13} /> <span>Generate AI Report</span></>
               )}
             </motion.button>
           </div>
 
           {errorReport && (
-            <div style={{ color: 'var(--accent-red)', fontSize: '0.82rem', margin: '0.75rem 0', display: 'flex', alignItems: 'center', gap: '5px' }}>
-              <AlertCircle size={13} /> {errorReport}
+            <div style={{ color: 'var(--accent-terracotta)', fontSize: '0.84rem', margin: '0.75rem 0', display: 'flex', alignItems: 'center', gap: '5px' }}>
+              <AlertCircle size={14} /> {errorReport}
             </div>
           )}
 
           {report ? (
-            <div style={{ backgroundColor: 'var(--bg-subtle)', padding: '1.25rem', borderRadius: 'var(--radius-sm)', marginTop: '0.75rem', whiteSpace: 'pre-wrap', lineHeight: '1.8', fontSize: '0.9rem' }}>
+            <div style={{ backgroundColor: 'var(--bg-subtle)', padding: '1.35rem', borderRadius: 'var(--radius-sm)', marginTop: '0.8rem', whiteSpace: 'pre-wrap', lineHeight: '1.8', fontSize: '0.92rem', border: '1px solid var(--border-hairline)' }}>
               {report}
             </div>
           ) : (
-            <div style={{ backgroundColor: 'var(--bg-subtle)', padding: '1.25rem', borderRadius: 'var(--radius-sm)', marginTop: '0.5rem', textAlign: 'center', color: 'var(--text-tertiary)', fontSize: '0.82rem' }}>
-              Click "Generate Report" for an AI-powered study diagnosis and review plan.
+            <div style={{ backgroundColor: 'var(--bg-subtle)', padding: '1.35rem', borderRadius: 'var(--radius-sm)', marginTop: '0.5rem', textAlign: 'center', color: 'var(--text-tertiary)', fontSize: '0.84rem', border: '1px solid var(--border-hairline)' }}>
+              Click "Generate AI Report" for a personalized learning diagnostic based on your viewed modules and quiz records.
             </div>
           )}
         </motion.div>
@@ -209,11 +218,11 @@ export default function Dashboard() {
           <motion.button
             className="btn btn-outline"
             onClick={() => { if (window.confirm(t ? t('dashboard.clearConfirm', 'Reset all progress?') : 'Reset all progress?')) resetProgress(); }}
-            style={{ fontSize: '0.78rem', color: 'var(--text-tertiary)' }}
+            style={{ fontSize: '0.78rem', color: 'var(--text-tertiary)', borderRadius: 'var(--radius-pill)' }}
             whileHover={{ scale: 1.03 }}
             whileTap={{ scale: 0.97 }}
           >
-            <RotateCcw size={13} /> {t ? t('dashboard.clearProgress', 'Reset All Progress') : 'Reset All Progress'}
+            <RotateCcw size={13} /> {t ? t('dashboard.clearProgress', 'Reset All Study Records') : 'Reset All Study Records'}
           </motion.button>
         </div>
       </motion.div>

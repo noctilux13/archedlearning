@@ -1,43 +1,54 @@
 /* ==========================================================================
    Art & Architecture Learning Platform — Design System
-   Based on: minimalist-design + smooth-interactions-motion skills
-   Philosophy: Less but better. Typography first. Restrained palette.
+   Minimalist White & Muted Mineral Accents (Editorial Gallery Aesthetic)
    ========================================================================== */
 
 :root {
-  /* ── Surface & Base ── */
-  --bg-main: #fcfcfc;
+  /* ── Canvas & Surface ── */
+  --bg-main: #ffffff;
   --bg-surface: #ffffff;
-  --bg-subtle: #f4f4f5;
-  --bg-muted: #e4e4e7;
-  --glass-bg: rgba(252, 252, 252, 0.88);
+  --bg-subtle: #f8f9fa;
+  --bg-muted: #f1f3f5;
+  --glass-bg: rgba(255, 255, 255, 0.92);
 
   /* ── Typography Colors ── */
-  --text-primary: #18181b;
-  --text-secondary: #52525b;
-  --text-tertiary: #a1a1aa;
+  --text-primary: #111827;
+  --text-secondary: #4b5563;
+  --text-tertiary: #9ca3af;
   --text-inverse: #ffffff;
 
-  /* ── Borders & Dividers ── */
+  /* ── Hairline Borders & Dividers ── */
   --border-hairline: rgba(0, 0, 0, 0.06);
-  --border-subtle: #e4e4e7;
-  --border-hover: rgba(0, 0, 0, 0.15);
-  --border-focus: #18181b;
+  --border-subtle: #e5e7eb;
+  --border-hover: rgba(0, 0, 0, 0.14);
+  --border-focus: #111827;
 
-  /* ── Accent Colors (restrained) ── */
-  --accent-primary: #18181b;
-  --accent-red: #e11d48;
-  --accent-red-subtle: #fff1f2;
+  /* ── Low-Saturation Mineral Accents (Anti-Fatigue & Subtle Highlights) ── */
+  --accent-primary: #111827;
+
+  /* Slate / Cobalt Blue (Art Movements, Interactive Active) */
   --accent-blue: #2563eb;
-  --accent-blue-subtle: #eff6ff;
-  --accent-emerald: #059669;
-  --accent-emerald-subtle: #ecfdf5;
-  --accent-amber: #d97706;
-  --accent-amber-subtle: #fffbeb;
+  --accent-blue-subtle: #f0f7ff;
+  --accent-blue-border: rgba(37, 99, 235, 0.15);
+
+  /* Sage Green (Architecture, Mastery Progress) */
+  --accent-sage: #059669;
+  --accent-sage-subtle: #f0fdf4;
+  --accent-sage-border: rgba(5, 150, 105, 0.15);
+
+  /* Terracotta Coral (Exams, Quizzes, Flashcards) */
+  --accent-terracotta: #e11d48;
+  --accent-terracotta-subtle: #fff1f2;
+  --accent-terracotta-border: rgba(225, 29, 72, 0.15);
+
+  /* Ochre Amber (Centuries, Timeline Markers) */
+  --accent-ochre: #d97706;
+  --accent-ochre-subtle: #fffbeb;
+  --accent-ochre-border: rgba(217, 119, 6, 0.15);
 
   /* ── Typography Stacks ── */
-  --font-serif: 'Newsreader', 'Instrument Serif', 'Playfair Display', Georgia, serif;
-  --font-sans: 'Inter', 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-serif: 'Newsreader', 'Instrument Serif', 'Playfair Display', 'Songti SC', Georgia, serif;
+  --font-sans: 'Plus Jakarta Sans', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   --font-mono: 'JetBrains Mono', 'Geist Mono', ui-monospace, monospace;
 
   /* ── Spacing Scale ── */
@@ -51,53 +62,25 @@
   /* ── Geometry ── */
   --radius-xs: 4px;
   --radius-sm: 8px;
-  --radius-md: 12px;
-  --radius-lg: 16px;
+  --radius-md: 14px;
+  --radius-lg: 18px;
   --radius-pill: 9999px;
 
-  /* ── Elevation (light, functional shadows) ── */
+  /* ── Elevation ── */
   --shadow-subtle: 0 1px 2px rgba(0, 0, 0, 0.03);
   --shadow-card: 0 1px 3px rgba(0, 0, 0, 0.03), 0 6px 16px -4px rgba(0, 0, 0, 0.02);
-  --shadow-card-hover: 0 12px 28px -6px rgba(0, 0, 0, 0.06);
-  --shadow-float: 0 20px 40px -10px rgba(0, 0, 0, 0.08);
+  --shadow-card-hover: 0 12px 28px -6px rgba(0, 0, 0, 0.06), 0 4px 12px -2px rgba(0, 0, 0, 0.03);
+  --shadow-float: 0 20px 40px -10px rgba(0, 0, 0, 0.07);
   --shadow-lightbox: 0 25px 60px -15px rgba(0, 0, 0, 0.35);
 
-  /* ── Motion ── */
+  /* ── Spring Motion ── */
   --ease-spring: cubic-bezier(0.16, 1, 0.3, 1);
   --transition-fast: 150ms cubic-bezier(0.4, 0, 0.2, 1);
   --transition-smooth: 300ms cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-/* ── Dark Mode ── */
-@media (prefers-color-scheme: dark) {
-  :root {
-    --bg-main: #09090b;
-    --bg-surface: #121316;
-    --bg-subtle: #1c1d22;
-    --bg-muted: #27272a;
-    --glass-bg: rgba(9, 9, 11, 0.88);
-
-    --text-primary: #f4f4f5;
-    --text-secondary: #a1a1aa;
-    --text-tertiary: #71717a;
-    --text-inverse: #09090b;
-
-    --border-hairline: rgba(255, 255, 255, 0.07);
-    --border-subtle: rgba(255, 255, 255, 0.12);
-    --border-hover: rgba(255, 255, 255, 0.2);
-    --border-focus: #ffffff;
-
-    --accent-primary: #ffffff;
-
-    --shadow-subtle: 0 1px 2px rgba(0, 0, 0, 0.3);
-    --shadow-card: 0 1px 3px rgba(0, 0, 0, 0.25);
-    --shadow-card-hover: 0 12px 28px -6px rgba(0, 0, 0, 0.45);
-    --shadow-float: 0 20px 40px -10px rgba(0, 0, 0, 0.55);
-  }
-}
-
 /* ==========================================================================
-   Reset & Base
+   Reset & Base with Anti-Fatigue Soft Ambient Glow
    ========================================================================== */
 
 *, *::before, *::after {
@@ -109,6 +92,11 @@
 body {
   font-family: var(--font-sans);
   background-color: var(--bg-main);
+  background-image: 
+    radial-gradient(ellipse 65% 45% at 15% 0%, rgba(59, 130, 246, 0.035), transparent 70%),
+    radial-gradient(ellipse 55% 35% at 85% 15%, rgba(16, 185, 129, 0.03), transparent 70%),
+    radial-gradient(ellipse 45% 45% at 90% 90%, rgba(225, 29, 72, 0.025), transparent 70%);
+  background-attachment: fixed;
   color: var(--text-primary);
   font-size: 15px;
   line-height: 1.6;
@@ -130,7 +118,7 @@ a {
 }
 
 /* ==========================================================================
-   Typography — hierarchy through weight, scale, tracking
+   Typography
    ========================================================================== */
 
 .font-serif { font-family: var(--font-serif); }
@@ -144,7 +132,7 @@ h1, h2, h3, h4, h5, h6 {
 
 h1 {
   font-family: var(--font-serif);
-  font-size: clamp(2rem, 4vw, 3rem);
+  font-size: clamp(2.1rem, 4.2vw, 3.2rem);
   font-weight: 500;
   line-height: 1.15;
   letter-spacing: -0.025em;
@@ -166,7 +154,7 @@ h3 {
    ========================================================================== */
 
 .container {
-  max-width: 1140px;
+  max-width: 1160px;
   margin: 0 auto;
   padding: clamp(1.5rem, 4vw, 2.5rem) clamp(1rem, 5vw, 2rem) 5rem;
 }
@@ -174,19 +162,19 @@ h3 {
 .grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-  gap: 1.25rem;
+  gap: 1.35rem;
 }
 
 /* ==========================================================================
-   Navbar — frosted glass, minimal
+   Navbar — Frosted Glass with Low-Saturation Active Indicator
    ========================================================================== */
 
 .navbar {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0 clamp(1rem, 4vw, 2rem);
-  height: 56px;
+  padding: 0 clamp(1rem, 4vw, 2.2rem);
+  height: 60px;
   background-color: var(--glass-bg);
   backdrop-filter: saturate(180%) blur(20px);
   -webkit-backdrop-filter: saturate(180%) blur(20px);
@@ -198,27 +186,27 @@ h3 {
 
 .nav-brand {
   font-family: var(--font-sans);
-  font-size: 0.82rem;
-  font-weight: 600;
+  font-size: 0.84rem;
+  font-weight: 650;
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 9px;
   color: var(--text-primary);
-  letter-spacing: 0.06em;
+  letter-spacing: 0.05em;
   text-transform: uppercase;
 }
 
 .nav-brand-badge {
-  width: 6px;
-  height: 6px;
+  width: 7px;
+  height: 7px;
   border-radius: 50%;
-  background-color: var(--accent-primary);
+  background: linear-gradient(135deg, var(--accent-blue), var(--accent-sage));
 }
 
 .nav-links {
   display: flex;
   align-items: center;
-  gap: 2px;
+  gap: 3px;
   position: relative;
 }
 
@@ -226,11 +214,11 @@ h3 {
   display: flex;
   align-items: center;
   gap: 6px;
-  padding: 6px 14px;
+  padding: 6px 13px;
   border-radius: var(--radius-sm);
   font-size: 0.84rem;
-  font-weight: 450;
-  color: var(--text-tertiary);
+  font-weight: 480;
+  color: var(--text-secondary);
   transition: color var(--transition-fast);
   position: relative;
   z-index: 1;
@@ -242,10 +230,9 @@ h3 {
 
 .nav-link.active {
   color: var(--text-primary);
-  font-weight: 550;
+  font-weight: 600;
 }
 
-/* The animated indicator background is handled by layoutId in React */
 .nav-indicator {
   position: absolute;
   inset: 0;
@@ -256,7 +243,7 @@ h3 {
 }
 
 /* ==========================================================================
-   Cards — single layer, hairline border, functional shadow
+   Cards & Editorial Panels
    ========================================================================== */
 
 .card {
@@ -279,12 +266,26 @@ h3 {
   background: var(--bg-surface);
   border: 1px solid var(--border-hairline);
   border-radius: var(--radius-md);
-  padding: clamp(1.5rem, 3vw, 2.5rem);
+  padding: clamp(1.5rem, 3.5vw, 2.5rem);
   box-shadow: var(--shadow-card);
+  position: relative;
+}
+
+/* Subtle Card Glow Highlights */
+.card-highlight-blue:hover {
+  border-color: var(--accent-blue-border);
+}
+
+.card-highlight-sage:hover {
+  border-color: var(--accent-sage-border);
+}
+
+.card-highlight-terracotta:hover {
+  border-color: var(--accent-terracotta-border);
 }
 
 /* ==========================================================================
-   Chips & Badges — uppercase metadata
+   Chips & Badges — Low-Saturation Mineral Palette
    ========================================================================== */
 
 .chip {
@@ -294,43 +295,43 @@ h3 {
   padding: 4px 10px;
   border-radius: var(--radius-xs);
   font-size: 0.72rem;
-  font-weight: 500;
+  font-weight: 550;
   letter-spacing: 0.04em;
   text-transform: uppercase;
 }
 
 .chip-neutral {
   background-color: var(--bg-subtle);
-  color: var(--text-tertiary);
+  color: var(--text-secondary);
   border: 1px solid var(--border-hairline);
-}
-
-.chip-red {
-  background-color: var(--accent-red-subtle);
-  color: var(--accent-red);
-  border: 1px solid rgba(225, 29, 72, 0.12);
 }
 
 .chip-blue {
   background-color: var(--accent-blue-subtle);
   color: var(--accent-blue);
-  border: 1px solid rgba(37, 99, 235, 0.12);
+  border: 1px solid var(--accent-blue-border);
 }
 
-.chip-green {
-  background-color: var(--accent-emerald-subtle);
-  color: var(--accent-emerald);
-  border: 1px solid rgba(5, 150, 105, 0.12);
+.chip-green, .chip-sage {
+  background-color: var(--accent-sage-subtle);
+  color: var(--accent-sage);
+  border: 1px solid var(--accent-sage-border);
 }
 
-.chip-amber {
-  background-color: var(--accent-amber-subtle);
-  color: var(--accent-amber);
-  border: 1px solid rgba(217, 119, 6, 0.12);
+.chip-red, .chip-terracotta {
+  background-color: var(--accent-terracotta-subtle);
+  color: var(--accent-terracotta);
+  border: 1px solid var(--accent-terracotta-border);
+}
+
+.chip-amber, .chip-ochre {
+  background-color: var(--accent-ochre-subtle);
+  color: var(--accent-ochre);
+  border: 1px solid var(--accent-ochre-border);
 }
 
 /* ==========================================================================
-   Buttons — minimal, functional
+   Buttons
    ========================================================================== */
 
 .btn {
@@ -341,7 +342,7 @@ h3 {
   padding: 0.5rem 1rem;
   border-radius: var(--radius-sm);
   font-size: 0.85rem;
-  font-weight: 500;
+  font-weight: 520;
   cursor: pointer;
   border: 1px solid transparent;
   transition: opacity var(--transition-fast), background var(--transition-fast), border-color var(--transition-fast);
@@ -360,7 +361,7 @@ h3 {
 }
 
 .btn-primary:active {
-  opacity: 0.75;
+  opacity: 0.78;
 }
 
 .btn-outline {
@@ -374,23 +375,32 @@ h3 {
   background-color: var(--bg-subtle);
 }
 
-.btn-accent-red {
-  background-color: var(--accent-red);
+.btn-accent-blue {
+  background-color: var(--accent-blue);
   color: #ffffff;
 }
 
-.btn-accent-red:hover {
-  opacity: 0.88;
+.btn-accent-blue:hover {
+  opacity: 0.9;
+}
+
+.btn-accent-terracotta {
+  background-color: var(--accent-terracotta);
+  color: #ffffff;
+}
+
+.btn-accent-terracotta:hover {
+  opacity: 0.9;
 }
 
 /* ==========================================================================
-   Category Tabs — pill bar with animated indicator
+   Category Tabs — Pill Bar with Smooth Spring Layout
    ========================================================================== */
 
 .tab-bar {
   display: inline-flex;
-  gap: 2px;
-  padding: 3px;
+  gap: 3px;
+  padding: 4px;
   background-color: var(--bg-subtle);
   border-radius: var(--radius-sm);
   border: 1px solid var(--border-hairline);
@@ -398,13 +408,13 @@ h3 {
 }
 
 .tab-item {
-  padding: 5px 14px;
+  padding: 6px 14px;
   border-radius: 6px;
   border: none;
   font-size: 0.82rem;
-  font-weight: 450;
+  font-weight: 480;
   background: transparent;
-  color: var(--text-tertiary);
+  color: var(--text-secondary);
   cursor: pointer;
   transition: color var(--transition-fast);
   position: relative;
@@ -412,26 +422,26 @@ h3 {
 }
 
 .tab-item:hover {
-  color: var(--text-secondary);
+  color: var(--text-primary);
 }
 
 .tab-item.active {
   color: var(--text-primary);
-  font-weight: 550;
+  font-weight: 600;
 }
 
-/* The animated pill background via layoutId */
 .tab-indicator {
   position: absolute;
   inset: 0;
   background-color: var(--bg-surface);
   border-radius: 6px;
   box-shadow: var(--shadow-subtle);
+  border: 1px solid var(--border-hairline);
   z-index: 0;
 }
 
 /* ==========================================================================
-   Forms
+   Forms & Search
    ========================================================================== */
 
 .input-field {
@@ -453,7 +463,7 @@ h3 {
 }
 
 /* ==========================================================================
-   Image Containers
+   Image Containers & Shimmer
    ========================================================================== */
 
 .image-box {
@@ -478,6 +488,17 @@ h3 {
   transform: scale(1.03);
 }
 
+@keyframes imageShimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+.image-shimmer {
+  background: linear-gradient(90deg, #f8f9fa 25%, #e9ecef 50%, #f8f9fa 75%) !important;
+  background-size: 200% 100% !important;
+  animation: imageShimmer 1.4s infinite ease-in-out !important;
+}
+
 /* ==========================================================================
    Breadcrumbs
    ========================================================================== */
@@ -486,7 +507,7 @@ h3 {
   display: flex;
   align-items: center;
   gap: 8px;
-  font-size: 0.8rem;
+  font-size: 0.82rem;
   color: var(--text-tertiary);
   margin-bottom: 2rem;
   flex-wrap: wrap;
@@ -507,7 +528,7 @@ h3 {
 .modal-backdrop {
   position: fixed;
   inset: 0;
-  background: rgba(0, 0, 0, 0.6);
+  background: rgba(0, 0, 0, 0.65);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
   z-index: 1000;
@@ -522,7 +543,7 @@ h3 {
   top: 20px;
   right: 24px;
   z-index: 1001;
-  background: rgba(255, 255, 255, 0.12);
+  background: rgba(255, 255, 255, 0.15);
   border: none;
   border-radius: 50%;
   width: 40px;
@@ -531,37 +552,13 @@ h3 {
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  color: rgba(255, 255, 255, 0.8);
+  color: rgba(255, 255, 255, 0.9);
   backdrop-filter: blur(8px);
   transition: background var(--transition-fast);
 }
 
 .modal-close:hover {
-  background: rgba(255, 255, 255, 0.2);
-}
-
-/* ==========================================================================
-   Mouse Spotlight (subtle ambient glow)
-   ========================================================================== */
-
-.mouse-spotlight {
-  position: relative;
-  overflow: hidden;
-}
-
-.mouse-spotlight::before {
-  content: '';
-  position: absolute;
-  top: var(--mouse-y, -300px);
-  left: var(--mouse-x, -300px);
-  width: 500px;
-  height: 500px;
-  background: radial-gradient(circle, rgba(0, 0, 0, 0.018) 0%, transparent 70%);
-  transform: translate(-50%, -50%);
-  pointer-events: none;
-  z-index: 0;
-  border-radius: 50%;
-  transition: opacity 0.4s ease;
+  background: rgba(255, 255, 255, 0.25);
 }
 
 /* ==========================================================================
@@ -606,16 +603,4 @@ h3 {
   .grid {
     grid-template-columns: 1fr;
   }
-}
-
-/* ── Image Shimmer Loading ── */
-@keyframes imageShimmer {
-  0% { background-position: -200% 0; }
-  100% { background-position: 200% 0; }
-}
-
-.image-shimmer {
-  background: linear-gradient(90deg, var(--bg-subtle) 25%, var(--bg-muted) 50%, var(--bg-subtle) 75%) !important;
-  background-size: 200% 100% !important;
-  animation: imageShimmer 1.4s infinite ease-in-out !important;
 }
