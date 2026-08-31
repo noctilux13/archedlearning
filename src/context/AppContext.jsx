@@ -58,7 +58,7 @@ export const AppProvider = ({ children }) => {
     if (!item) return '';
     
     // Check in localizedContent dictionary for current language
-    const currentDict = localizedContent[language];
+    const currentDict = localizedContent[language] || (language === 'zh-TW' ? localizedContent.zh : null);
     if (currentDict) {
       if (currentDict[category] && currentDict[category][item.id] && currentDict[category][item.id][field]) {
         return currentDict[category][item.id][field];
@@ -77,13 +77,13 @@ export const AppProvider = ({ children }) => {
     }
 
     // Direct object property fallbacks
-    return item[`${field}_${language}`] || item[`${field}_en`] || item[field] || '';
+    return item[`${field}_${language}`] || item[`${field}_zh`] || item[`${field}_en`] || item[field] || '';
   }, [language]);
 
   const lArray = useCallback((item, field, category = 'artworks') => {
     if (!item) return [];
     
-    const currentDict = localizedContent[language];
+    const currentDict = localizedContent[language] || (language === 'zh-TW' ? localizedContent.zh : null);
     if (currentDict) {
       if (currentDict[category] && currentDict[category][item.id] && currentDict[category][item.id][field]) {
         return currentDict[category][item.id][field];
@@ -100,7 +100,7 @@ export const AppProvider = ({ children }) => {
       }
     }
 
-    return item[`${field}_${language}`] || item[`${field}_en`] || item[field] || [];
+    return item[`${field}_${language}`] || item[`${field}_zh`] || item[`${field}_en`] || item[field] || [];
   }, [language]);
 
   const [progress, setProgress] = useState(() => {

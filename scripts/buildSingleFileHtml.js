@@ -52,4 +52,8 @@ for (const target of outTargets) {
   console.log(`🎉 Packaged single-file HTML saved to: ${target}`);
 }
 
+// Copy dist/index.html to dist/404.html for GitHub Pages SPA support
+fs.copyFileSync(distHtmlPath, path.join(distDir, '404.html'));
+console.log('✅ Created dist/404.html for GitHub Pages SPA routing');
+
 console.log('✨ All single-file HTML versions packaged successfully!');
