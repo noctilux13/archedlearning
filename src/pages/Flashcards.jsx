@@ -66,9 +66,9 @@ export default function Flashcards() {
   return (
     <MouseSpotlight>
       <motion.div
-        initial={{ opacity: 0, y: 20, filter: 'blur(8px)' }}
-        animate={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
-        transition={{ duration: 0.45, ease: EASE }}
+        initial={{ opacity: 0, y: 14 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.4, ease: EASE }}
         className="container"
         style={{ maxWidth: '820px' }}
       >
@@ -101,7 +101,7 @@ export default function Flashcards() {
                       layoutId="flashcard-tab-indicator"
                       className="tab-indicator"
                       style={{ borderRadius: 'var(--radius-pill)' }}
-                      transition={{ type: 'spring', bounce: 0.15, duration: 0.4 }}
+                      transition={{ type: 'spring', bounce: 0.16, duration: 0.42 }}
                     />
                   )}
                   <span style={{ position: 'relative', zIndex: 1, display: 'inline-flex', alignItems: 'center', gap: '5px' }}>
@@ -123,7 +123,7 @@ export default function Flashcards() {
             >
               <motion.div
                 animate={{ rotateY: isFlipped ? 180 : 0 }}
-                transition={{ type: 'spring', stiffness: 280, damping: 28 }}
+                transition={{ type: 'spring', stiffness: 260, damping: 24 }}
                 style={{ width: '100%', height: '100%', position: 'relative', transformStyle: 'preserve-3d' }}
               >
                 {/* Front */}
@@ -229,13 +229,13 @@ export default function Flashcards() {
 
             {/* Navigation Controls */}
             <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', gap: '0.85rem', marginTop: '2rem' }}>
-              <motion.button className="btn btn-outline" onClick={handlePrev} whileHover={{ scale: 1.03 }} whileTap={{ scale: 0.97 }} style={{ borderRadius: 'var(--radius-pill)' }}>
+              <motion.button className="btn btn-outline" onClick={handlePrev} whileHover={{ scale: 1.025, y: -1 }} whileTap={{ scale: 0.975 }} style={{ borderRadius: 'var(--radius-pill)' }}>
                 <ArrowLeft size={14} /> Prev
               </motion.button>
-              <motion.button className="btn btn-outline" onClick={handleShuffle} whileHover={{ scale: 1.03 }} whileTap={{ scale: 0.97 }} style={{ borderRadius: 'var(--radius-pill)' }}>
+              <motion.button className="btn btn-outline" onClick={handleShuffle} whileHover={{ scale: 1.025, y: -1 }} whileTap={{ scale: 0.975 }} style={{ borderRadius: 'var(--radius-pill)' }}>
                 <Shuffle size={14} /> Shuffle
               </motion.button>
-              <motion.button className="btn btn-primary" onClick={handleNext} whileHover={{ scale: 1.03 }} whileTap={{ scale: 0.97 }} style={{ borderRadius: 'var(--radius-pill)' }}>
+              <motion.button className="btn btn-primary" onClick={handleNext} whileHover={{ scale: 1.025, y: -1 }} whileTap={{ scale: 0.975 }} style={{ borderRadius: 'var(--radius-pill)' }}>
                 Next <ArrowRight size={14} />
               </motion.button>
             </div>

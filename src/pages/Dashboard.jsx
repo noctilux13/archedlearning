@@ -50,9 +50,9 @@ export default function Dashboard() {
   return (
     <MouseSpotlight>
       <motion.div
-        initial={{ opacity: 0, y: 20, filter: 'blur(8px)' }}
-        animate={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
-        transition={{ duration: 0.45, ease: EASE }}
+        initial={{ opacity: 0, y: 14 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.4, ease: EASE }}
         className="container"
         style={{ maxWidth: '940px' }}
       >
@@ -72,9 +72,9 @@ export default function Dashboard() {
           {/* Coverage */}
           <motion.div
             className="card card-highlight-blue"
-            initial={{ opacity: 0, y: 16, filter: 'blur(4px)' }}
-            animate={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
-            transition={{ duration: 0.4, delay: 0.08, ease: EASE }}
+            initial={{ opacity: 0, y: 14 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.35, delay: 0.06, ease: EASE }}
           >
             <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '0.85rem' }}>
               <span className="chip chip-blue"><BookOpen size={11} /> {t ? t('dashboard.viewedCount', 'Catalog Coverage') : 'Catalog Coverage'}</span>
@@ -88,7 +88,7 @@ export default function Dashboard() {
                 <motion.div
                   initial={{ width: 0 }}
                   animate={{ width: `${viewPercentage}%` }}
-                  transition={{ duration: 0.8, delay: 0.25, ease: EASE }}
+                  transition={{ duration: 0.8, delay: 0.2, ease: EASE }}
                   style={{ backgroundColor: 'var(--accent-blue)', height: '100%', borderRadius: 'var(--radius-pill)' }}
                 />
               </div>
@@ -98,9 +98,9 @@ export default function Dashboard() {
           {/* Mastery */}
           <motion.div
             className="card card-highlight-sage"
-            initial={{ opacity: 0, y: 16, filter: 'blur(4px)' }}
-            animate={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
-            transition={{ duration: 0.4, delay: 0.12, ease: EASE }}
+            initial={{ opacity: 0, y: 14 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.35, delay: 0.1, ease: EASE }}
           >
             <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '0.85rem' }}>
               <span className="chip chip-green"><Trophy size={11} /> {t ? t('dashboard.masteryRate', 'Exam Mastery') : 'Exam Mastery'}</span>
@@ -129,8 +129,8 @@ export default function Dashboard() {
                   key={w.id}
                   initial={{ opacity: 0, y: 12 }}
                   animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.3, delay: 0.2 + idx * 0.03, ease: EASE }}
-                  whileHover={{ y: -3, transition: { type: 'spring', stiffness: 400, damping: 25 } }}
+                  transition={{ duration: 0.3, delay: Math.min(0.1 + idx * 0.03, 0.3), ease: EASE }}
+                  whileHover={{ y: -4, scale: 1.015, transition: { type: 'spring', stiffness: 380, damping: 22 } }}
                 >
                   <Link to={`/artwork/${w.movementId}/${w.artistId}/${w.id}`}>
                     <div className="card" style={{ display: 'flex', alignItems: 'center', gap: '0.9rem', padding: '0.9rem' }}>
@@ -159,9 +159,9 @@ export default function Dashboard() {
         <motion.div
           className="card-editorial"
           style={{ marginBottom: '2.8rem' }}
-          initial={{ opacity: 0, y: 16 }}
+          initial={{ opacity: 0, y: 14 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.4, delay: 0.2, ease: EASE }}
+          transition={{ duration: 0.35, delay: 0.16, ease: EASE }}
         >
           <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '1.2rem', flexWrap: 'wrap', gap: '1rem' }}>
             <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
@@ -184,8 +184,8 @@ export default function Dashboard() {
               className="btn btn-primary"
               onClick={handleGenerateReport}
               disabled={loadingReport}
-              whileHover={{ scale: 1.03 }}
-              whileTap={{ scale: 0.97 }}
+              whileHover={{ scale: 1.025, y: -1 }}
+              whileTap={{ scale: 0.975 }}
               style={{ borderRadius: 'var(--radius-pill)' }}
             >
               {loadingReport ? (
@@ -219,8 +219,8 @@ export default function Dashboard() {
             className="btn btn-outline"
             onClick={() => { if (window.confirm(t ? t('dashboard.clearConfirm', 'Reset all progress?') : 'Reset all progress?')) resetProgress(); }}
             style={{ fontSize: '0.78rem', color: 'var(--text-tertiary)', borderRadius: 'var(--radius-pill)' }}
-            whileHover={{ scale: 1.03 }}
-            whileTap={{ scale: 0.97 }}
+            whileHover={{ scale: 1.025, y: -1 }}
+            whileTap={{ scale: 0.975 }}
           >
             <RotateCcw size={13} /> {t ? t('dashboard.clearProgress', 'Reset All Study Records') : 'Reset All Study Records'}
           </motion.button>

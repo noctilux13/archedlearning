@@ -69,9 +69,9 @@ export default function ArtworkDetail() {
   return (
     <MouseSpotlight>
       <motion.div
-        initial={{ opacity: 0, y: 20, filter: 'blur(8px)' }}
-        animate={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
-        transition={{ duration: 0.45, ease: EASE }}
+        initial={{ opacity: 0, y: 14 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.4, ease: EASE }}
         className="container"
       >
         {/* Breadcrumb */}
@@ -89,9 +89,9 @@ export default function ArtworkDetail() {
         <motion.div
           className={`card-editorial ${isArch ? 'card-highlight-sage' : 'card-highlight-blue'}`}
           style={{ marginBottom: '2rem' }}
-          initial={{ opacity: 0, y: 16 }}
+          initial={{ opacity: 0, y: 14 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.45, delay: 0.08, ease: EASE }}
+          transition={{ duration: 0.4, delay: 0.06, ease: EASE }}
         >
           <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', flexWrap: 'wrap', gap: '1rem', marginBottom: '1.1rem' }}>
             <div>
@@ -124,8 +124,8 @@ export default function ArtworkDetail() {
               <motion.button
                 className="btn btn-outline"
                 onClick={() => setShowUploadModal(true)}
-                whileHover={{ scale: 1.03 }}
-                whileTap={{ scale: 0.97 }}
+                whileHover={{ scale: 1.025, y: -1 }}
+                whileTap={{ scale: 0.975 }}
                 style={{ padding: '0.45rem 0.85rem', fontSize: '0.84rem', borderRadius: 'var(--radius-pill)' }}
                 title="更换或修正此作品图片"
               >
@@ -136,8 +136,8 @@ export default function ArtworkDetail() {
               <motion.button
                 className="btn btn-outline"
                 onClick={() => toggleFavorite && toggleFavorite(artwork.id)}
-                whileHover={{ scale: 1.03 }}
-                whileTap={{ scale: 0.97 }}
+                whileHover={{ scale: 1.025, y: -1 }}
+                whileTap={{ scale: 0.975 }}
                 style={{ padding: '0.45rem 0.85rem', fontSize: '0.84rem', borderRadius: 'var(--radius-pill)' }}
               >
                 <Heart size={14} fill={isFav ? 'var(--accent-terracotta)' : 'none'} color={isFav ? 'var(--accent-terracotta)' : 'var(--text-secondary)'} />
@@ -173,9 +173,9 @@ export default function ArtworkDetail() {
           <motion.div
             className="card"
             style={{ padding: '0.9rem', overflow: 'hidden' }}
-            initial={{ opacity: 0, y: 16 }}
+            initial={{ opacity: 0, y: 14 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.45, delay: 0.12, ease: EASE }}
+            transition={{ duration: 0.38, delay: 0.08, ease: EASE }}
           >
             <div
               style={{
@@ -233,9 +233,9 @@ export default function ArtworkDetail() {
             {/* Curatorial Notes */}
             <motion.div
               className="card"
-              initial={{ opacity: 0, y: 16 }}
+              initial={{ opacity: 0, y: 14 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.4, delay: 0.16, ease: EASE }}
+              transition={{ duration: 0.35, delay: 0.12, ease: EASE }}
             >
               <div style={{ fontSize: '0.72rem', textTransform: 'uppercase', letterSpacing: '0.05em', color: 'var(--text-tertiary)', fontWeight: 650, marginBottom: '0.6rem' }}>
                 {t ? t('artwork.curatorialNotes', 'Curatorial Notes & Historical Analysis') : 'Curatorial Notes & Historical Analysis'}
@@ -253,9 +253,9 @@ export default function ArtworkDetail() {
                   backgroundColor: 'var(--bg-surface)',
                   borderLeft: `3px solid ${isArch ? 'var(--accent-sage)' : 'var(--accent-blue)'}`
                 }}
-                initial={{ opacity: 0, y: 16 }}
+                initial={{ opacity: 0, y: 14 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.4, delay: 0.2, ease: EASE }}
+                transition={{ duration: 0.35, delay: 0.16, ease: EASE }}
               >
                 <div style={{
                   fontSize: '0.72rem',
@@ -284,9 +284,9 @@ export default function ArtworkDetail() {
         <motion.div
           className="card-editorial"
           style={{ marginBottom: '3rem' }}
-          initial={{ opacity: 0, y: 16 }}
+          initial={{ opacity: 0, y: 14 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.4, delay: 0.24, ease: EASE }}
+          transition={{ duration: 0.35, delay: 0.2, ease: EASE }}
         >
           <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '1.2rem', flexWrap: 'wrap', gap: '1rem' }}>
             <div style={{ display: 'flex', alignItems: 'center', gap: '11px' }}>
@@ -314,8 +314,8 @@ export default function ArtworkDetail() {
                   movementName: movement.name,
                   details: artwork.notes
                 })}
-                whileHover={{ scale: 1.03 }}
-                whileTap={{ scale: 0.97 }}
+                whileHover={{ scale: 1.025, y: -1 }}
+                whileTap={{ scale: 0.975 }}
                 style={{ display: 'flex', alignItems: 'center', gap: '6px', borderRadius: 'var(--radius-pill)' }}
                 title="唤起 AI 助教悬浮窗深入研讨"
               >
@@ -327,8 +327,8 @@ export default function ArtworkDetail() {
                 className="btn btn-primary"
                 onClick={handleAiAnalysis}
                 disabled={aiLoading}
-                whileHover={{ scale: 1.03 }}
-                whileTap={{ scale: 0.97 }}
+                whileHover={{ scale: 1.025, y: -1 }}
+                whileTap={{ scale: 0.975 }}
                 style={{ borderRadius: 'var(--radius-pill)' }}
               >
                 {aiLoading ? (
@@ -380,7 +380,7 @@ export default function ArtworkDetail() {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
-              transition={{ duration: 0.25 }}
+              transition={{ duration: 0.2 }}
               className="modal-backdrop"
               onClick={() => setIsZoomed(false)}
             >
@@ -390,16 +390,16 @@ export default function ArtworkDetail() {
                 title="Close (ESC)"
                 initial={{ opacity: 0, scale: 0.8 }}
                 animate={{ opacity: 1, scale: 1 }}
-                transition={{ delay: 0.15, type: 'spring', stiffness: 300, damping: 20 }}
+                transition={{ delay: 0.1, type: 'spring', stiffness: 350, damping: 20 }}
               >
                 <X size={18} />
               </motion.button>
 
               <motion.div
-                initial={{ opacity: 0, scale: 0.92, filter: 'blur(8px)' }}
-                animate={{ opacity: 1, scale: 1, filter: 'blur(0px)' }}
-                exit={{ opacity: 0, scale: 0.95, filter: 'blur(4px)' }}
-                transition={{ type: 'spring', stiffness: 300, damping: 30 }}
+                initial={{ opacity: 0, scale: 0.95 }}
+                animate={{ opacity: 1, scale: 1 }}
+                exit={{ opacity: 0, scale: 0.96 }}
+                transition={{ type: 'spring', stiffness: 350, damping: 28 }}
                 style={{ maxWidth: '90vw', maxHeight: '90vh', display: 'flex', flexDirection: 'column', alignItems: 'center' }}
                 onClick={(e) => e.stopPropagation()}
               >

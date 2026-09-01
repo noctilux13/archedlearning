@@ -8,12 +8,11 @@ import { ArtworkImage } from '../components/ArtworkImage';
 import { ArrowRight, Search, BookOpen, Layers, Users, X, Landmark, Palette, Sparkles } from 'lucide-react';
 
 const EASE_SPRING = [0.16, 1, 0.3, 1];
-const STAGGER_DELAY = 0.04;
 
-const fadeBlurUp = {
-  initial: { opacity: 0, y: 16, filter: 'blur(6px)' },
-  animate: { opacity: 1, y: 0, filter: 'blur(0px)' },
-  exit: { opacity: 0, y: -8, filter: 'blur(4px)' },
+const fadeUp = {
+  initial: { opacity: 0, y: 14 },
+  animate: { opacity: 1, y: 0 },
+  exit: { opacity: 0, y: -8, scale: 0.98 },
 };
 
 export default function Home() {
@@ -45,9 +44,9 @@ export default function Home() {
       <div className="container">
         {/* ── Hero Section ── */}
         <motion.div
-          initial={{ opacity: 0, y: 20, filter: 'blur(8px)' }}
-          animate={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
-          transition={{ duration: 0.5, ease: EASE_SPRING }}
+          initial={{ opacity: 0, y: 16 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.45, ease: EASE_SPRING }}
           style={{ textAlign: 'center', maxWidth: '780px', margin: '1.2rem auto 3rem auto' }}
         >
           <div style={{ display: 'inline-flex', alignItems: 'center', gap: '6px', marginBottom: '1.2rem' }}>
@@ -80,7 +79,7 @@ export default function Home() {
           <motion.div
             initial={{ opacity: 0, scale: 0.98 }}
             animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.4, delay: 0.12, ease: EASE_SPRING }}
+            transition={{ duration: 0.38, delay: 0.1, ease: EASE_SPRING }}
             style={{
               display: 'inline-flex', alignItems: 'center', gap: '1.4rem',
               padding: '7px 22px', borderRadius: 'var(--radius-pill)',
@@ -110,7 +109,7 @@ export default function Home() {
           <motion.div
             initial={{ opacity: 0, y: 8 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.4, delay: 0.18, ease: EASE_SPRING }}
+            transition={{ duration: 0.35, delay: 0.14, ease: EASE_SPRING }}
             style={{ maxWidth: '520px', margin: '0 auto 1.5rem auto', position: 'relative' }}
           >
             <Search size={16} style={{ position: 'absolute', left: '14px', top: '50%', transform: 'translateY(-50%)', color: 'var(--text-tertiary)' }} />
@@ -145,7 +144,7 @@ export default function Home() {
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            transition={{ duration: 0.3, delay: 0.22 }}
+            transition={{ duration: 0.3, delay: 0.18 }}
             className="tab-bar"
             style={{ borderRadius: 'var(--radius-pill)', padding: '4px' }}
           >
@@ -164,7 +163,7 @@ export default function Home() {
                       layoutId="category-tab-indicator"
                       className="tab-indicator"
                       style={{ borderRadius: 'var(--radius-pill)' }}
-                      transition={{ type: 'spring', bounce: 0.15, duration: 0.4 }}
+                      transition={{ type: 'spring', bounce: 0.16, duration: 0.42 }}
                     />
                   )}
                   <span style={{ position: 'relative', zIndex: 1, display: 'inline-flex', alignItems: 'center', gap: '5px' }}>
@@ -220,15 +219,15 @@ export default function Home() {
                   <motion.div
                     key={movement.id}
                     layout
-                    {...fadeBlurUp}
+                    {...fadeUp}
                     transition={{
-                      duration: 0.38,
-                      delay: idx * STAGGER_DELAY,
+                      duration: 0.35,
+                      delay: Math.min(idx * 0.03, 0.3),
                       ease: EASE_SPRING,
-                      layout: { type: 'spring', bounce: 0.15, duration: 0.5 }
+                      layout: { type: 'spring', bounce: 0.16, duration: 0.45 }
                     }}
-                    whileHover={{ y: -4, transition: { type: 'spring', stiffness: 400, damping: 25 } }}
-                    whileTap={{ scale: 0.98 }}
+                    whileHover={{ y: -5, scale: 1.01, transition: { type: 'spring', stiffness: 380, damping: 22 } }}
+                    whileTap={{ scale: 0.985 }}
                   >
                     <Link to={`/movement/${movement.id}`}>
                       <div

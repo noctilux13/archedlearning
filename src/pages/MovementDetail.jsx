@@ -29,9 +29,9 @@ export default function MovementDetail() {
   return (
     <MouseSpotlight>
       <motion.div
-        initial={{ opacity: 0, y: 20, filter: 'blur(8px)' }}
-        animate={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
-        transition={{ duration: 0.45, ease: EASE }}
+        initial={{ opacity: 0, y: 14 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.4, ease: EASE }}
         className="container"
       >
         {/* Breadcrumb */}
@@ -45,9 +45,9 @@ export default function MovementDetail() {
         <motion.div
           className={`card-editorial ${isArch ? 'card-highlight-sage' : 'card-highlight-blue'}`}
           style={{ marginBottom: '3rem' }}
-          initial={{ opacity: 0, y: 16 }}
+          initial={{ opacity: 0, y: 14 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.45, delay: 0.08, ease: EASE }}
+          transition={{ duration: 0.4, delay: 0.06, ease: EASE }}
         >
           <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '1rem', flexWrap: 'wrap' }}>
             <span className={isArch ? 'chip chip-green' : 'chip chip-blue'} style={{ gap: '4px' }}>
@@ -134,11 +134,11 @@ export default function MovementDetail() {
             return (
               <motion.div
                 key={artist.id}
-                initial={{ opacity: 0, y: 16, filter: 'blur(6px)' }}
-                animate={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
-                transition={{ duration: 0.38, delay: 0.1 + aIdx * 0.04, ease: EASE }}
-                whileHover={{ y: -4, transition: { type: 'spring', stiffness: 400, damping: 25 } }}
-                whileTap={{ scale: 0.98 }}
+                initial={{ opacity: 0, y: 14 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.35, delay: Math.min(0.06 + aIdx * 0.035, 0.3), ease: EASE }}
+                whileHover={{ y: -5, scale: 1.01, transition: { type: 'spring', stiffness: 380, damping: 22 } }}
+                whileTap={{ scale: 0.985 }}
               >
                 <Link to={`/artist/${movement.id}/${artist.id}`}>
                   <div className="card" style={{ height: '100%', display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>

@@ -201,9 +201,9 @@ export default function Settings() {
   return (
     <MouseSpotlight>
       <motion.div
-        initial={{ opacity: 0, y: 20, filter: 'blur(8px)' }}
-        animate={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
-        transition={{ duration: 0.45, ease: EASE }}
+        initial={{ opacity: 0, y: 14 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.4, ease: EASE }}
         className="container"
         style={{ maxWidth: '800px' }}
       >
@@ -222,9 +222,9 @@ export default function Settings() {
         <motion.div
           className="card-editorial"
           style={{ marginBottom: '2rem' }}
-          initial={{ opacity: 0, y: 16 }}
+          initial={{ opacity: 0, y: 14 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.45, delay: 0.05, ease: EASE }}
+          transition={{ duration: 0.35, delay: 0.05, ease: EASE }}
         >
           <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '0.4rem' }}>
             <Languages size={18} style={{ color: 'var(--accent-blue)' }} />

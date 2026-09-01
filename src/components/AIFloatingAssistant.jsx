@@ -189,10 +189,10 @@ export default function AIFloatingAssistant() {
               flexDirection: 'column',
               overflow: 'hidden',
             }}
-            initial={{ opacity: 0, y: 30, scale: 0.94, filter: 'blur(6px)' }}
-            animate={{ opacity: 1, y: 0, scale: 1, filter: 'blur(0px)' }}
-            exit={{ opacity: 0, y: 20, scale: 0.94, filter: 'blur(6px)' }}
-            transition={{ duration: 0.35, ease: EASE }}
+            initial={{ opacity: 0, y: 24, scale: 0.95 }}
+            animate={{ opacity: 1, y: 0, scale: 1 }}
+            exit={{ opacity: 0, y: 16, scale: 0.96 }}
+            transition={{ type: 'spring', stiffness: 350, damping: 28 }}
           >
             {/* Header */}
             <div

@@ -110,9 +110,9 @@ export default function Quiz() {
     return (
       <MouseSpotlight>
         <motion.div
-          initial={{ opacity: 0, scale: 0.96, filter: 'blur(6px)' }}
-          animate={{ opacity: 1, scale: 1, filter: 'blur(0px)' }}
-          transition={{ duration: 0.45, ease: EASE }}
+          initial={{ opacity: 0, scale: 0.96 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.4, ease: EASE }}
           className="container"
           style={{ maxWidth: '600px', textAlign: 'center', padding: '3rem 1.5rem' }}
         >
@@ -133,10 +133,10 @@ export default function Quiz() {
             </div>
 
             <div style={{ display: 'flex', gap: '0.85rem', justifyContent: 'center', flexWrap: 'wrap' }}>
-              <motion.button className="btn btn-outline" onClick={() => loadQuestions(selectedCategory)} whileHover={{ scale: 1.03 }} whileTap={{ scale: 0.97 }} style={{ borderRadius: 'var(--radius-pill)' }}>
+              <motion.button className="btn btn-outline" onClick={() => loadQuestions(selectedCategory)} whileHover={{ scale: 1.025, y: -1 }} whileTap={{ scale: 0.975 }} style={{ borderRadius: 'var(--radius-pill)' }}>
                 <RotateCcw size={14} /> {t ? t('quiz.restartQuiz', 'Retry Quiz') : 'Retry Quiz'}
               </motion.button>
-              <motion.button className="btn btn-primary" onClick={handleGenerateAiQuiz} whileHover={{ scale: 1.03 }} whileTap={{ scale: 0.97 }} style={{ borderRadius: 'var(--radius-pill)' }}>
+              <motion.button className="btn btn-primary" onClick={handleGenerateAiQuiz} whileHover={{ scale: 1.025, y: -1 }} whileTap={{ scale: 0.975 }} style={{ borderRadius: 'var(--radius-pill)' }}>
                 <Sparkles size={14} /> {t ? t('quiz.startAiQuiz', 'Generate AI Quiz') : 'Generate AI Quiz'}
               </motion.button>
               <Link to="/dashboard" className="btn btn-outline" style={{ display: 'inline-flex', alignItems: 'center', gap: '5px', borderRadius: 'var(--radius-pill)' }}>
@@ -155,9 +155,9 @@ export default function Quiz() {
   return (
     <MouseSpotlight>
       <motion.div
-        initial={{ opacity: 0, y: 20, filter: 'blur(8px)' }}
-        animate={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
-        transition={{ duration: 0.45, ease: EASE }}
+        initial={{ opacity: 0, y: 14 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.4, ease: EASE }}
         className="container"
         style={{ maxWidth: '740px' }}
       >
@@ -175,8 +175,8 @@ export default function Quiz() {
             className="btn btn-primary"
             onClick={handleGenerateAiQuiz}
             disabled={loading}
-            whileHover={{ scale: 1.03 }}
-            whileTap={{ scale: 0.97 }}
+            whileHover={{ scale: 1.025, y: -1 }}
+            whileTap={{ scale: 0.975 }}
             style={{ borderRadius: 'var(--radius-pill)' }}
           >
             <Sparkles size={13} /> {t ? t('quiz.startAiQuiz', 'AI Quiz Generator') : 'AI Quiz Generator'}
@@ -200,7 +200,7 @@ export default function Quiz() {
                     layoutId="quiz-tab-indicator"
                     className="tab-indicator"
                     style={{ borderRadius: 'var(--radius-pill)' }}
-                    transition={{ type: 'spring', bounce: 0.15, duration: 0.4 }}
+                    transition={{ type: 'spring', bounce: 0.16, duration: 0.42 }}
                   />
                 )}
                 <span style={{ position: 'relative', zIndex: 1, display: 'inline-flex', alignItems: 'center', gap: '5px' }}>
@@ -222,10 +222,10 @@ export default function Quiz() {
         <AnimatePresence mode="wait">
           <motion.div
             key={currentIdx}
-            initial={{ opacity: 0, x: 20, filter: 'blur(4px)' }}
-            animate={{ opacity: 1, x: 0, filter: 'blur(0px)' }}
-            exit={{ opacity: 0, x: -20, filter: 'blur(4px)' }}
-            transition={{ duration: 0.35, ease: EASE }}
+            initial={{ opacity: 0, x: 12 }}
+            animate={{ opacity: 1, x: 0 }}
+            exit={{ opacity: 0, x: -12 }}
+            transition={{ duration: 0.28, ease: EASE }}
             className="card-editorial"
             style={{ padding: '2.2rem' }}
           >
@@ -302,7 +302,7 @@ export default function Quiz() {
                 </div>
 
                 <div style={{ textAlign: 'right' }}>
-                  <motion.button className="btn btn-primary" onClick={handleNextQuestion} whileHover={{ scale: 1.03 }} whileTap={{ scale: 0.97 }} style={{ borderRadius: 'var(--radius-pill)' }}>
+                  <motion.button className="btn btn-primary" onClick={handleNextQuestion} whileHover={{ scale: 1.025, y: -1 }} whileTap={{ scale: 0.975 }} style={{ borderRadius: 'var(--radius-pill)' }}>
                     <span>{currentIdx + 1 === questions.length ? (t ? t('quiz.finishQuiz', 'View Results') : 'View Results') : (t ? t('quiz.nextQuestion', 'Next Question') : 'Next Question')}</span>
                     <ArrowRight size={14} />
                   </motion.button>

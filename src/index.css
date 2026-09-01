@@ -243,7 +243,36 @@ h3 {
 }
 
 /* ==========================================================================
-   Cards & Editorial Panels
+   Interactive Mouse Spotlight & Dynamic Background Glow
+   ========================================================================== */
+
+.mouse-spotlight-wrapper {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+}
+
+.spotlight-glow-canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  z-index: 0;
+  background: radial-gradient(
+    700px circle at var(--mouse-x, -9999px) var(--mouse-y, -9999px),
+    rgba(37, 99, 235, 0.065) 0%,
+    rgba(5, 150, 105, 0.035) 35%,
+    rgba(225, 29, 72, 0.02) 65%,
+    transparent 85%
+  );
+  will-change: background;
+  transition: opacity 0.4s ease;
+}
+
+/* ==========================================================================
+   Cards & Editorial Panels with Proximity Illumination
    ========================================================================== */
 
 .card {
@@ -252,9 +281,36 @@ h3 {
   padding: var(--space-lg);
   border: 1px solid var(--border-hairline);
   box-shadow: var(--shadow-subtle);
-  transition: border-color var(--transition-fast), box-shadow var(--transition-smooth);
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.35s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.25s ease;
   position: relative;
   will-change: transform;
+  overflow: hidden;
+}
+
+.card::before {
+  content: '';
+  position: absolute;
+  inset: -1px;
+  border-radius: inherit;
+  background: radial-gradient(
+    420px circle at var(--card-mouse-x, -9999px) var(--card-mouse-y, -9999px),
+    rgba(37, 99, 235, 0.16),
+    rgba(5, 150, 105, 0.1) 40%,
+    transparent 75%
+  );
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  z-index: 1;
+}
+
+.card:hover::before {
+  opacity: 1;
+}
+
+.card > * {
+  position: relative;
+  z-index: 2;
 }
 
 .card:hover {
@@ -269,6 +325,33 @@ h3 {
   padding: clamp(1.5rem, 3.5vw, 2.5rem);
   box-shadow: var(--shadow-card);
   position: relative;
+  overflow: hidden;
+}
+
+.card-editorial::before {
+  content: '';
+  position: absolute;
+  inset: -1px;
+  border-radius: inherit;
+  background: radial-gradient(
+    650px circle at var(--card-mouse-x, -9999px) var(--card-mouse-y, -9999px),
+    rgba(37, 99, 235, 0.12),
+    rgba(5, 150, 105, 0.08) 45%,
+    transparent 70%
+  );
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  z-index: 1;
+}
+
+.card-editorial:hover::before {
+  opacity: 1;
+}
+
+.card-editorial > * {
+  position: relative;
+  z-index: 2;
 }
 
 /* Subtle Card Glow Highlights */

@@ -49,9 +49,9 @@ export default function Timeline() {
   return (
     <MouseSpotlight>
       <motion.div
-        initial={{ opacity: 0, y: 20, filter: 'blur(8px)' }}
-        animate={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
-        transition={{ duration: 0.45, ease: EASE }}
+        initial={{ opacity: 0, y: 14 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.4, ease: EASE }}
         className="container"
         style={{ maxWidth: '980px', paddingBottom: '5rem' }}
       >
@@ -85,7 +85,7 @@ export default function Timeline() {
                       layoutId="timeline-filter-indicator"
                       className="tab-indicator"
                       style={{ borderRadius: 'var(--radius-pill)' }}
-                      transition={{ type: 'spring', bounce: 0.15, duration: 0.4 }}
+                      transition={{ type: 'spring', bounce: 0.16, duration: 0.42 }}
                     />
                   )}
                   <span style={{ position: 'relative', zIndex: 1, display: 'flex', alignItems: 'center', gap: '5px' }}>
@@ -125,10 +125,10 @@ export default function Timeline() {
                   <motion.div
                     key={movement.id}
                     layout
-                    initial={{ opacity: 0, y: 20, filter: 'blur(6px)' }}
-                    animate={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
-                    exit={{ opacity: 0, scale: 0.95 }}
-                    transition={{ duration: 0.4, delay: index * 0.03, ease: EASE }}
+                    initial={{ opacity: 0, y: 14 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, scale: 0.96 }}
+                    transition={{ duration: 0.35, delay: Math.min(index * 0.03, 0.3), ease: EASE }}
                     style={{
                       position: 'relative',
                       display: 'flex',
