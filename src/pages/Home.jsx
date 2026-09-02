@@ -62,7 +62,7 @@ export default function Home() {
           </div>
 
           <h1 style={{ marginBottom: '1rem', color: 'var(--text-primary)' }}>
-            {t('home.heroTitle', 'Movements, Masters & Architecture')}
+            {t('home.heroTitle', 'Movements, Artists & Architecture')}
           </h1>
 
           <p style={{
@@ -72,7 +72,7 @@ export default function Home() {
             maxWidth: '640px',
             margin: '0 auto 2.2rem auto'
           }}>
-            {t('home.heroSubtitle', '从古典巴洛克到当代前卫，从哥特式大教堂到现代主义建筑。构建结构化流派脉络、艺术大师全景档案与核心考点深度解析。')}
+            {t('home.heroSubtitle', '从古典巴洛克到当代前卫，从哥特式大教堂到现代主义建筑。构建结构化流派脉络、代表人物学术档案与核心考点深度解析。')}
           </p>
 
           {/* Quick Stats Banner */}

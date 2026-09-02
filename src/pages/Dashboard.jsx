@@ -59,7 +59,7 @@ export default function Dashboard() {
         {/* Header */}
         <div style={{ textAlign: 'center', marginBottom: '2.5rem' }}>
           <div className="chip chip-blue" style={{ marginBottom: '0.85rem' }}>
-            <Award size={12} /> {t ? t('nav.dashboard', 'Dashboard') : 'Curatorial Dashboard'}
+            <Award size={12} /> {t ? t('nav.dashboard', 'Dashboard') : 'Study Dashboard'}
           </div>
           <h1 style={{ marginBottom: '0.4rem' }}>{t ? t('dashboard.title', 'Study & Research Progress') : 'Study & Research Progress'}</h1>
           <p style={{ color: 'var(--text-secondary)', fontSize: '0.94rem', maxWidth: '580px', margin: '0 auto' }}>
@@ -119,7 +119,7 @@ export default function Dashboard() {
         <div style={{ marginBottom: '2.8rem' }}>
           <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline', marginBottom: '1.2rem', paddingBottom: '0.6rem', borderBottom: '1px solid var(--border-hairline)' }}>
             <h2 style={{ fontFamily: 'var(--font-serif)', fontSize: '1.35rem', fontWeight: 500 }}>
-              {t ? t('dashboard.favoritesTitle', 'Curated Bookmarks') : 'Curated Bookmarks'} <span style={{ fontSize: '0.84rem', color: 'var(--text-tertiary)', fontFamily: 'var(--font-sans)' }}>({favoritedArtworks.length})</span>
+              {t ? t('dashboard.favoritesTitle', 'Saved Collection') : 'Saved Collection'} <span style={{ fontSize: '0.84rem', color: 'var(--text-tertiary)', fontFamily: 'var(--font-sans)' }}>({favoritedArtworks.length})</span>
             </h2>
           </div>
           {favoritedArtworks.length > 0 ? (

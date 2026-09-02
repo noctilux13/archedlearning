@@ -1,5 +1,5 @@
 // 20世纪西方现代艺术史与欧洲经典建筑史权威知识库
-// 涵盖 21 大流派阶段、50+ 位大师与 135+ 件代表作品/地标
+// 涵盖 21 大流派阶段、50+ 位代表人物与 135+ 件代表作品/地标
 // 遵循学术客观原则：英文为主，中文释义并列
 
 export const artData = [
@@ -225,7 +225,7 @@ export const artData = [
         "englishName": "German Gothic Masters",
         "years": "13th - 19th Century",
         "avatar": "/images/artists/german-gothic-masters.jpg",
-        "bio": "莱茵河谷的德意志哥特石匠大师，将哥特式垂直向上、剔透如石雕蕾丝的尖塔技术推向世界之巅。",
+        "bio": "莱茵河谷的德意志哥特石匠大师，将哥特式垂直向上、剔透如石雕蕾丝的尖塔技术推向成熟阶段。",
         "artworks": [
           {
             "id": "cologne-cathedral",
@@ -235,7 +235,7 @@ export const artData = [
             "date": "1248 - 1880",
             "location": "科隆 (Cologne, Germany)",
             "image": "/images/artworks/cologne-cathedral.jpg",
-            "notes": "双塔高达157米的哥特式旷世杰作。历经六百年修建，拥有欧洲最宏伟的哥特式唱诗班席、巨大的飞扶壁与华丽的石雕小尖塔群（Pinnacles）。",
+            "notes": "双塔高达157米的哥特式代表作品。历经六百年修建，拥有欧洲最宏伟的哥特式唱诗班席、巨大的飞扶壁与华丽的石雕小尖塔群（Pinnacles）。",
             "knowledgePoints": [
               "世界第三高教堂建筑，双塔高达157米",
               "极致的垂直性与如织锦般的哥特石雕小尖塔（Pinnacles）",
@@ -660,7 +660,7 @@ export const artData = [
             "image": "/images/artworks/palazzo-farnese.jpg",
             "notes": "罗马盛期文艺复兴最宏伟的贵族宫殿。小桑加洛规划了严谨对称的立面与中庭，米开朗基罗设计了二层中央大阳台与极度宏伟的顶部雕花檐口。",
             "knowledgePoints": [
-              "罗马盛期文艺复兴宫殿的巅峰之作",
+              "罗马盛期文艺复兴宫殿的代表作品",
               "小桑加洛设计的严谨三层山花窗格与米开朗基罗操刀的宏大悬挑挑檐"
             ],
             "museum": "Palazzo Farnese (Ambassade de France en Italie)",
@@ -1051,7 +1051,7 @@ export const artData = [
         "englishName": "Luigi Vanvitelli",
         "years": "1700 - 1773",
         "avatar": "/images/artists/luigi-vanvitelli.jpg",
-        "bio": "18世纪意大利最负盛名的建筑巨擘，以设计卡塞塔王宫名扬欧洲。他践行了一种严谨清醒的学院派晚期巴洛克风格，为意大利全面走向新古典主义铺平了道路。",
+        "bio": "18世纪意大利代表性的建筑巨擘，以设计卡塞塔王宫名扬欧洲。他践行了一种严谨清醒的学院派晚期巴洛克风格，为意大利全面走向新古典主义铺平了道路。",
         "artworks": [
           {
             "id": "palace-of-caserta",
@@ -1800,7 +1800,7 @@ export const artData = [
             "date": "1909",
             "location": "芝加哥海德公园 (Chicago, Illinois, USA)",
             "image": "/images/artworks/robie-house.jpg",
-            "notes": "芝加哥草原学派（Prairie House）巅峰之作。极度舒展的水平低坡屋顶、深挑檐、罗马长砖砌筑与中央壁炉核心，打破了传统维多利亚式封闭盒子空间。",
+            "notes": "芝加哥草原学派（Prairie House）代表作品。极度舒展的水平低坡屋顶、深挑檐、罗马长砖砌筑与中央壁炉核心，打破了传统维多利亚式封闭盒子空间。",
             "knowledgePoints": [
               "草原学派（Prairie School）代表杰作",
               "极度延伸的水平挑檐（Cantilever）与连通起居室流动空间",
@@ -1837,7 +1837,7 @@ export const artData = [
             "date": "1937 / 1959",
             "location": "纽约曼哈顿第五大道 (New York, USA)",
             "image": "/images/artworks/guggenheim-ny.jpg",
-            "notes": "赖特晚年划时代杰作。白色连续螺旋上升的无柱中庭坡道，观众乘电梯至顶层沿螺旋斜坡缓缓向下观展，天顶为巨大十二角几何玻璃穹顶。",
+            "notes": "赖特晚年重要代表作品。白色连续螺旋上升的无柱中庭坡道，观众乘电梯至顶层沿螺旋斜坡缓缓向下观展，天顶为巨大十二角几何玻璃穹顶。",
             "knowledgePoints": [
               "连续倒圆台形无柱螺旋展廊（Spiral Ramp）中庭",
               "颠覆传统房间式观展流线，从顶层沿斜坡环形向下",
@@ -1883,7 +1883,7 @@ export const artData = [
             "date": "1952",
             "location": "马赛 (Marseille, France)",
             "image": "/images/artworks/unite-dhabitation.jpg",
-            "notes": "二战后现代集体住宅划时代杰作。粗野主义清水混凝土（Béton Brut）结构，内嵌双层跃层咬合住宅单元、空中商业街、托儿所与雕塑感屋顶跑道活动平台。",
+            "notes": "二战后现代集体住宅重要代表作品。粗野主义清水混凝土（Béton Brut）结构，内嵌双层跃层咬合住宅单元、空中商业街、托儿所与雕塑感屋顶跑道活动平台。",
             "knowledgePoints": [
               "现代粗野主义（Brutalism）与模度（Modulor）人体比例体系典范",
               "双层'L'形咬合紧凑剖面单元与第七层室内空中街道",
@@ -3045,9 +3045,9 @@ export const artData = [
             "date": "1932 - 1936",
             "location": "科莫 (Como, Italy)",
             "image": "/images/artworks/casa-del-fascio.jpg",
-            "notes": "意大利理性主义建筑的划时代杰作。泰拉尼通过完美的正方体比例（长33.2米、高16.6米，宽高比为严谨的2:1黄金分割）、多孔透空格网立面与内部中庭采光天顶，将古典中庭形式以现代混凝土骨架重构，内部由抽象派画家马里奥·拉迪斯（Mario Radice）绘制几何壁画。",
+            "notes": "意大利理性主义建筑的重要代表作品。泰拉尼通过完美的正方体比例（长33.2米、高16.6米，宽高比为严谨的2:1黄金分割）、多孔透空格网立面与内部中庭采光天顶，将古典中庭形式以现代混凝土骨架重构，内部由抽象派画家马里奥·拉迪斯（Mario Radice）绘制几何壁画。",
             "knowledgePoints": [
-              "理性主义空间透明性与正方体几何模数法则的巅峰展现",
+              "理性主义空间透明性与正方体几何模数法则的典型展现",
               "四个立面采用非对称但高度平衡的几何实虚对比格网",
               "大面积玻璃砖、博蒂奇诺大理石（Botticino）与钢框玻璃材质",
               "与抽象画家 Mario Radice 几何壁画的总体艺术融合"
@@ -3094,7 +3094,7 @@ export const artData = [
         "englishName": "Giò Ponti",
         "years": "1891 - 1979",
         "avatar": "/images/artists/gio-ponti.jpg",
-        "bio": "意大利建筑大师、工业设计师、家具大师、教育家与出版家，战后意大利设计与建筑复兴的教父级人物。1928年创办传奇设计杂志《Domus》并终身主导，1936至1961年在米兰理工大学建筑学院任教，1954年创立世界顶尖设计大奖金罗盘奖（Compasso d'Oro）。在长达60年职业生涯中建造了百余座建筑并设计了超轻椅（Superleggera）等传世名作。",
+        "bio": "意大利建筑大师、工业设计师、家具大师、教育家与出版家，战后意大利设计与建筑复兴的重要代表人物。1928年创办传奇设计杂志《Domus》并终身主导，1936至1961年在米兰理工大学建筑学院任教，1954年创立世界顶尖设计大奖金罗盘奖（Compasso d'Oro）。在长达60年职业生涯中建造了百余座建筑并设计了超轻椅（Superleggera）等传世名作。",
         "artworks": [
           {
             "id": "pirelli-tower",
@@ -3102,7 +3102,7 @@ export const artData = [
             "date": "1956 - 1958 (1960)",
             "location": "米兰中央车站前广场 (Piazza Duca d'Aosta, Milan)",
             "image": "/images/artworks/pirelli-tower.jpg",
-            "notes": "米兰战后现代主义与结构理性主义的巅峰天际线象征。庞蒂与著名结构工程师皮埃尔·路易吉·奈尔维（Pier Luigi Nervi）合作，高127.1米，采用六角菱形六面体纤薄翼状收分造型，彻底摆脱传统方盒子摩天楼范式，展现出惊人的结构轻盈与动感优雅。",
+            "notes": "米兰战后现代主义与结构理性主义的天际线标志建筑。庞蒂与著名结构工程师皮埃尔·路易吉·奈尔维（Pier Luigi Nervi）合作，高127.1米，采用六角菱形六面体纤薄翼状收分造型，彻底摆脱传统方盒子摩天楼范式，展现出惊人的结构轻盈与动感优雅。",
             "knowledgePoints": [
               "米兰战后经济复兴与现代摩天楼标志性纪念碑",
               "庞蒂与工程巨匠 Nervi 联手打造的变截面预应力混凝土核心筒体系",
@@ -3170,7 +3170,7 @@ export const artData = [
         "englishName": "Roy Lichtenstein",
         "years": "1923 - 1997",
         "avatar": "/images/artists/roy-lichtenstein.jpg",
-        "bio": "美国波普艺术大师，以独特的通俗连环画风格与印刷网点（Ben-Day Dots）闻名。他将通俗漫画中的戏剧性场景放大成巨幅画作，探讨艺术、广告与消费主义的关系。",
+        "bio": "美国波普艺术家与建筑师，以独特的通俗连环画风格与印刷网点（Ben-Day Dots）闻名。他将通俗漫画中的戏剧性场景放大成巨幅画作，探讨艺术、广告与消费主义的关系。",
         "artworks": [
           {
             "id": "girls-romances",
@@ -3346,7 +3346,7 @@ export const artData = [
             "date": "1958 - 1970",
             "location": "巴西利亚 (Brasília, Brazil)",
             "image": "/images/artworks/cathedral-of-brasilia.jpg",
-            "notes": "尼迈耶最负盛名的宗教建筑杰作。由16根重达90吨的抛物线形混凝土曲柱围合成向天空升腾的王冠形状，柱间嵌以玛丽安·佩雷蒂（Marianne Peretti）设计的巨幅蓝白绿色透光玻璃彩窗，信徒通过地下暗道进入豁然开朗、充满神圣天光的悬浮大厅。",
+            "notes": "尼迈耶代表性宗教建筑杰作。由16根重达90吨的抛物线形混凝土曲柱围合成向天空升腾的王冠形状，柱间嵌以玛丽安·佩雷蒂（Marianne Peretti）设计的巨幅蓝白绿色透光玻璃彩窗，信徒通过地下暗道进入豁然开朗、充满神圣天光的悬浮大厅。",
             "knowledgePoints": [
               "16根抛物线形双曲面混凝土立柱构成的王冠形向心结构",
               "地下暗门进入与穹顶直射自然天光形成强烈的受难与复活对比",
@@ -3364,9 +3364,9 @@ export const artData = [
             "date": "1996",
             "location": "里约热内卢尼泰罗伊 (Niterói, Rio de Janeiro, Brazil)",
             "image": "/images/artworks/niteroi-contemporary-art-museum.jpg",
-            "notes": "矗立在瓜纳巴拉湾悬崖海景之上的飞碟状建筑奇观。高16米、直径50米的三层圆盘主体仅由中央一根直径9米的圆柱支撑并扎根于人工水池中，一条长98米的蜿蜒红色坡道引导访客盘旋升入全景环形海景展厅。",
+            "notes": "矗立在瓜纳巴拉湾悬崖海景之上的倒圆台形展馆建筑。高16米、直径50米的三层圆盘主体仅由中央一根直径9米的圆柱支撑并扎根于人工水池中，一条长98米的蜿蜒红色坡道引导访客盘旋升入全景环形海景展厅。",
             "knowledgePoints": [
-              "单点中心柱支撑的巨型倒圆台悬挑薄壳结构奇迹",
+              "单点中心柱支撑的巨型倒圆台悬挑薄壳结构设计",
               "盘旋曲折的亮红色悬空步道与周围蓝色海湾的戏剧性对比",
               "360度全景观景窗将里约热内卢糖面包山与大西洋尽收眼底"
             ],
@@ -3549,7 +3549,7 @@ export const artData = [
         "englishName": "Renzo Piano",
         "years": "1937 - ",
         "avatar": "/images/artists/renzo-piano.jpg",
-        "bio": "意大利国宝级高技派与当代建筑大师，1998年普利兹克奖得主，意大利终身参议员。他善于将尖端机械工程技术、自然光线精细化漫射与当地地域文脉完美结合。代表作包括巴黎蓬皮杜中心、新喀里多尼亚吉巴欧文化中心、伦敦碎片大厦与罗马音乐公园礼堂。",
+        "bio": "意大利高技派与当代建筑重要代表人物，1998年普利兹克奖得主，意大利终身参议员。他善于将尖端机械工程技术、自然光线精细化漫射与当地地域文脉完美结合。代表作包括巴黎蓬皮杜中心、新喀里多尼亚吉巴欧文化中心、伦敦碎片大厦与罗马音乐公园礼堂。",
         "artworks": [
           {
             "id": "centre-pompidou",
@@ -3557,7 +3557,7 @@ export const artData = [
             "date": "1971 - 1977",
             "location": "巴黎博堡区 (Paris, France)",
             "image": "/images/artworks/centre-pompidou.jpg",
-            "notes": "高技派建筑里程碑与世界建筑史转折点。皮亚诺与理查德·罗杰斯（Richard Rogers）合作设计，将承重钢结构桁架（Gerberettes）与所有机电管线完全暴露在建筑外表，内部释放出跨度达48米、完全无立柱阻隔的超自由策展空间，外部红色玻璃自动扶梯管道斜跨整个立面。",
+            "notes": "高技派建筑里程碑与高技派建筑重要作品。皮亚诺与理查德·罗杰斯（Richard Rogers）合作设计，将承重钢结构桁架（Gerberettes）与所有机电管线完全暴露在建筑外表，内部释放出跨度达48米、完全无立柱阻隔的超自由策展空间，外部红色玻璃自动扶梯管道斜跨整个立面。",
             "knowledgePoints": [
               "高技派（High-Tech）最具革命性的开山宣言之作",
               "外墙设备管线功能色彩编码体系（红/蓝/绿/黄）",
@@ -3662,7 +3662,7 @@ export const artData = [
             "date": "1997",
             "location": "毕尔巴鄂 (Bilbao, Spain)",
             "image": "/images/artworks/guggenheim-bilbao.jpg",
-            "notes": "20世纪建筑史上的旷世杰作与解构主义巅峰之作。整座建筑由33,000块厚度仅0.38毫米的极薄钛合金鱼鳞状曲面包裹，如同一艘停泊在内维翁河畔的金色巨舰，随着光线变换呈现梦幻般的光泽，以一己之力振兴了整个工业衰退城市的经济，创造了著名的'毕尔巴鄂效应'。",
+            "notes": "20世纪建筑史上的代表作品与解构主义代表作品。整座建筑由33,000块厚度仅0.38毫米的极薄钛合金鱼鳞状曲面包裹，如同一艘停泊在内维翁河畔的金色巨舰，随着光线变换呈现梦幻般的光泽，以一己之力振兴了整个工业衰退城市的经济，创造了著名的'毕尔巴鄂效应'。",
             "knowledgePoints": [
               "利用航空级三维软件 CATIA 打造的完全自由双曲面数字建造壮举",
               "有机流动的极薄钛金属（Titanium）表面与石灰石、玻璃复合幕墙",
@@ -3722,7 +3722,7 @@ export const artData = [
         "englishName": "Daniel Libeskind",
         "years": "1946 - ",
         "avatar": "/images/artists/daniel-libeskind.jpg",
-        "bio": "波兰裔美国当代建筑大师、艺术家与布景设计师，柏林犹太博物馆设计者与纽约世贸中心遗址重建总规划师。他以锐利的折线、倾斜裂隙与充满哲学张力的创伤记忆空间设计闻名，善于将历史苦难与未来希望转化为极具震撼力的空间诗学。",
+        "bio": "波兰裔美国当代建筑大师、艺术家与布景设计师，柏林犹太博物馆设计者与纽约世贸中心遗址重建总规划师。他以锐利的折线、倾斜裂隙与充满哲学张力的创伤记忆空间设计闻名，善于将历史苦难与未来希望转化为鲜明的形式特征的空间诗学。",
         "artworks": [
           {
             "id": "jewish-museum-berlin",
@@ -3730,7 +3730,7 @@ export const artData = [
             "date": "1999 - 2001",
             "location": "柏林 (Berlin, Germany)",
             "image": "/images/artworks/jewish-museum-berlin.jpg",
-            "notes": "当代纪念性建筑最震撼的哲学典范。建筑平面呈曲折剧烈的闪电之字形（Zigzag），外覆锌钛合金板并被不规则的倾斜利刃状划痕窗洞切开；内部设置'地下三轴线'、贯穿全楼的'空白空间'（Void）与幽闭冰冷的大屠杀之塔（Holocaust Tower），将缺席与创伤直击人心。",
+            "notes": "当代纪念性建筑具有代表性的纪念空间。建筑平面呈曲折剧烈的闪电之字形（Zigzag），外覆锌钛合金板并被不规则的倾斜利刃状划痕窗洞切开；内部设置'地下三轴线'、贯穿全楼的'空白空间'（Void）与幽闭冰冷的大屠杀之塔（Holocaust Tower），将缺席与创伤直击人心。",
             "knowledgePoints": [
               "闪电之字形解构锌板立面与利刃切口状非对称采光裂隙",
               "贯穿整座建筑的五处贯通垂直'虚空'（Voids）象征历史的断裂",
@@ -3748,7 +3748,7 @@ export const artData = [
             "date": "2002 - 2014",
             "location": "纽约曼哈顿下城 (New York City, USA)",
             "image": "/images/artworks/one-world-trade-center.jpg",
-            "notes": "里伯斯金在2003年赢得世贸中心遗址重建总体规划（Master Plan: Memory Foundations）核心方案，高1776英尺（象征美国《独立宣言》发表年份1776年），八面八角形渐变倒角几何玻璃体向上收分，成为曼哈顿下城天际线上重生的不屈灯塔。",
+            "notes": "里伯斯金在2003年赢得世贸中心遗址重建总体规划（Master Plan: Memory Foundations）核心方案，高1776英尺（象征美国《独立宣言》发表年份1776年），八面八角形渐变倒角几何玻璃体向上收分，成为曼哈顿下城天际线上标志性超高层建筑。",
             "knowledgePoints": [
               "里伯斯金世贸遗址总体规划（Memory Foundations）与'归零地'（Ground Zero）纪念水池",
               "建筑高度1776英尺（541.3米）象征历史独立与重生",
@@ -3768,7 +3768,7 @@ export const artData = [
         "englishName": "Norman Foster",
         "years": "1935 - ",
         "avatar": "/images/artists/norman-foster.jpg",
-        "bio": "英国当代建筑泰斗、高科技建筑关键领军人物，1999年普利兹克奖得主与英国皇家建筑师学会金奖得主。他创立的 Foster + Partners 是全球顶尖建筑巨头。福斯特以将前沿生态可持续技术、透明结构与宏大历史建筑有机织补著称，代表作包括柏林国会大厦穹顶、伦敦小黄瓜（圣玛莉艾克斯30号）与大英博物馆大中庭。",
+        "bio": "英国当代知名建筑师、高科技建筑关键领军人物，1999年普利兹克奖得主与英国皇家建筑师学会金奖得主。他创立的 Foster + Partners 是全球顶尖建筑巨头。福斯特以将前沿生态可持续技术、透明结构与宏大历史建筑有机织补著称，代表作包括柏林国会大厦穹顶、伦敦小黄瓜（圣玛莉艾克斯30号）与大英博物馆大中庭。",
         "artworks": [
           {
             "id": "reichstag-dome",
@@ -3796,7 +3796,7 @@ export const artData = [
         "englishName": "Santiago Calatrava",
         "years": "1951 - ",
         "avatar": "/images/artists/santiago-calatrava.jpg",
-        "bio": "西班牙裔瑞士建筑大师、结构工程师与雕塑家。他以将人体骨骼、鸟类展翼与动植物仿生形态融入受力桥梁、火车站与大型公共场馆著称。卡拉特拉瓦将工程力学与纯白雕塑感推向神性境界，代表作包括巴塞罗那巴克德罗达桥、苏黎世施塔德霍芬火车站、瓦伦西亚艺术与科学城及纽约世贸交通枢纽（Oculus）。",
+        "bio": "西班牙裔瑞士建筑大师、结构工程师与雕塑家。他以将人体骨骼、鸟类展翼与动植物仿生形态融入受力桥梁、火车站与大型公共场馆著称。卡拉特拉瓦将工程力学与纯白雕塑感推向独特的雕塑感，代表作包括巴塞罗那巴克德罗达桥、苏黎世施塔德霍芬火车站、瓦伦西亚艺术与科学城及纽约世贸交通枢纽（Oculus）。",
         "artworks": [
           {
             "id": "bac-de-roda-bridge",
@@ -3842,7 +3842,7 @@ export const artData = [
         "englishName": "Zaha Hadid",
         "years": "1950 - 2016",
         "avatar": "/images/artists/zaha-hadid.jpg",
-        "bio": "伊拉克裔英国传奇女建筑师，参数化主义（Parametricism）巅峰代表，历史上首位女性普利兹克建筑奖得主（2004）。她早年受俄罗斯至上主义与构成主义深刻影响，将绘画抽象作为设计工具，随后利用计算流体力学与参数化算法，创造出前所未见、连绵无垠的流体曲面建筑宇宙。在米兰主导设计了CityLife住宅与哈迪德塔（Torre Hadid / Generali）。",
+        "bio": "伊拉克裔英国知名建筑师，参数化主义（Parametricism）巅峰代表，历史上首位女性普利兹克建筑奖得主（2004）。她早年受俄罗斯至上主义与构成主义深刻影响，将绘画抽象作为设计工具，随后利用计算流体力学与参数化算法，创造出参数化与连续曲面建筑空间。在米兰主导设计了CityLife住宅与哈迪德塔（Torre Hadid / Generali）。",
         "artworks": [
           {
             "id": "maxxi-rome",
@@ -3984,7 +3984,7 @@ export const getQuizQuestions = (category = 'all') => {
             artworkTitle: work.title,
             artworkImage: work.image,
             category: movement.category,
-            question: `作品/地标《${work.titleZh || work.title}》属于哪位大师/学派的代表作？`,
+            question: `作品/地标《${work.titleZh || work.title}》属于哪位代表人物/学派的代表作？`,
             options: [
               artist.name,
               ...artData.flatMap(m => m.artists.filter(a => a.id !== artist.id).map(a => a.name)).slice(0, 3)

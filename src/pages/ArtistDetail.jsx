@@ -23,7 +23,7 @@ export default function ArtistDetail() {
   if (!movement || !artist) {
     return (
       <div className="container" style={{ textAlign: 'center', padding: '6rem 0' }}>
-        <h2 style={{ fontFamily: 'var(--font-serif)', marginBottom: '1rem' }}>{t ? t('artist.notFound', '未找到该大师信息') : 'Artist not found'}</h2>
+        <h2 style={{ fontFamily: 'var(--font-serif)', marginBottom: '1rem' }}>{t ? t('artist.notFound', '未找到相关人物信息') : 'Artist not found'}</h2>
         <Link to="/" className="btn btn-primary">{t ? t('artist.backOverview', '返回总览') : 'Back to Overview'}</Link>
       </div>
     );

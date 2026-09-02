@@ -259,10 +259,10 @@ export default function Timeline() {
 
                       {/* Masters & Representative Works Section */}
                       <div style={{ borderTop: '1px solid var(--border-hairline)', paddingTop: '1rem', display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))', gap: '1.25rem' }}>
-                        {/* Representative Masters */}
+                        {/* Representative Figures */}
                         <div>
                           <div style={{ fontSize: '0.72rem', textTransform: 'uppercase', letterSpacing: '0.04em', color: 'var(--text-tertiary)', fontWeight: 650, marginBottom: '0.6rem' }}>
-                            {t ? t('timeline.keyMasters', 'Representative Masters') : 'Representative Masters'} ({artistsList.length})
+                            {t ? t('timeline.keyMasters', 'Representative Figures') : 'Representative Figures'} ({artistsList.length})
                           </div>
                           <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px' }}>
                             {artistsList.map(artist => {
