@@ -1571,5 +1571,176 @@
     "image_url": "/images/artworks/villa-muller.jpg",
     "source_url": "https://www.muzeumprahy.cz/en/villa-muller",
     "status": "verified"
+  },
+  "casa-del-fascio": {
+    "id": "casa-del-fascio",
+    "title": "Casa del Fascio",
+    "image_url": "/images/artworks/casa-del-fascio.jpg",
+    "source": "Wikipedia / Wikimedia Commons",
+    "source_url": "https://it.wikipedia.org/wiki/Casa_del_Fascio_(Como)",
+    "downloaded": true,
+    "verified": true
+  },
+  "jewish-museum-berlin": {
+    "id": "jewish-museum-berlin",
+    "title": "Jewish Museum Berlin",
+    "image_url": "/images/artworks/jewish-museum-berlin.jpg",
+    "source": "Wikipedia / Wikimedia Commons",
+    "source_url": "https://en.wikipedia.org/wiki/Jewish_Museum_Berlin",
+    "downloaded": true,
+    "verified": true
+  },
+  "one-world-trade-center": {
+    "id": "one-world-trade-center",
+    "title": "one-world-trade-center",
+    "image_url": "/images/artworks/one-world-trade-center.jpg",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File%3AOne%20World%20Trade%20Center%2C%20New%20York%20(33224081040).jpg",
+    "downloaded": true,
+    "verified": true
+  },
+  "reichstag-dome": {
+    "id": "reichstag-dome",
+    "title": "Reichstag Dome",
+    "image_url": "/images/artworks/reichstag-dome.jpg",
+    "source": "Wikipedia / Wikimedia Commons",
+    "source_url": "https://en.wikipedia.org/wiki/Reichstag_dome",
+    "downloaded": true,
+    "verified": true
+  },
+  "bac-de-roda-bridge": {
+    "id": "bac-de-roda-bridge",
+    "title": "Bac de Roda Bridge",
+    "image_url": "/images/artworks/bac-de-roda-bridge.jpg",
+    "source": "Wikipedia / Wikimedia Commons",
+    "source_url": "https://en.wikipedia.org/wiki/Bac_de_Roda_Bridge",
+    "downloaded": true,
+    "verified": true
+  },
+  "zurich-stadelhofen-station": {
+    "id": "zurich-stadelhofen-station",
+    "title": "Zurich Stadelhofen Railway Station",
+    "image_url": "/images/artworks/zurich-stadelhofen-station.jpg",
+    "source": "Wikipedia / Wikimedia Commons",
+    "source_url": "https://de.wikipedia.org/wiki/Bahnhof_Z%C3%BCrich_Stadelhofen",
+    "downloaded": true,
+    "verified": true
+  },
+  "maxxi-rome": {
+    "id": "maxxi-rome",
+    "title": "MAXXI Rome",
+    "image_url": "/images/artworks/maxxi-rome.jpg",
+    "source": "Wikipedia / Wikimedia Commons",
+    "source_url": "https://en.wikipedia.org/wiki/MAXXI",
+    "downloaded": true,
+    "verified": true
+  },
+  "citylife-milan": {
+    "id": "citylife-milan",
+    "title": "CityLife Milan",
+    "image_url": "/images/artworks/citylife-milan.jpg",
+    "source": "Wikipedia / Wikimedia Commons",
+    "source_url": "https://en.wikipedia.org/wiki/CityLife_(Milan)",
+    "downloaded": true,
+    "verified": true
+  },
+  "villa-figini": {
+    "id": "villa-figini",
+    "title": "Villa Figini",
+    "image_url": "/images/artworks/villa-figini.jpg",
+    "source": "Wikipedia / Wikimedia Commons",
+    "source_url": "https://it.wikipedia.org/wiki/Villa_Figini",
+    "downloaded": true,
+    "verified": true
+  },
+  "pirelli-tower": {
+    "id": "pirelli-tower",
+    "title": "Pirelli Tower",
+    "image_url": "/images/artworks/pirelli-tower.jpg",
+    "source": "Wikipedia / Wikimedia Commons",
+    "source_url": "https://it.wikipedia.org/wiki/Grattacielo_Pirelli",
+    "downloaded": true,
+    "verified": true
+  },
+  "velasca-tower": {
+    "id": "velasca-tower",
+    "title": "Velasca Tower",
+    "image_url": "/images/artworks/velasca-tower.jpg",
+    "source": "Wikipedia / Wikimedia Commons",
+    "source_url": "https://it.wikipedia.org/wiki/Torre_Velasca",
+    "downloaded": true,
+    "verified": true
+  },
+  "cathedral-of-brasilia": {
+    "id": "cathedral-of-brasilia",
+    "title": "Cathedral of Brasília",
+    "image_url": "/images/artworks/cathedral-of-brasilia.jpg",
+    "source": "Wikipedia / Wikimedia Commons",
+    "source_url": "https://en.wikipedia.org/wiki/Cathedral_of_Bras%C3%ADlia",
+    "downloaded": true,
+    "verified": true
+  },
+  "niteroi-contemporary-art-museum": {
+    "id": "niteroi-contemporary-art-museum",
+    "title": "Niterói Contemporary Art Museum",
+    "image_url": "/images/artworks/niteroi-contemporary-art-museum.jpg",
+    "source": "Wikipedia / Wikimedia Commons",
+    "source_url": "https://en.wikipedia.org/wiki/Niter%C3%B3i_Contemporary_Art_Museum",
+    "downloaded": true,
+    "verified": true
+  },
+  "centre-pompidou": {
+    "id": "centre-pompidou",
+    "title": "Centre Pompidou",
+    "image_url": "/images/artworks/centre-pompidou.jpg",
+    "source": "Wikipedia / Wikimedia Commons",
+    "source_url": "https://en.wikipedia.org/wiki/Centre_Pompidou",
+    "downloaded": true,
+    "verified": true
+  },
+  "tjibaou-cultural-centre": {
+    "id": "tjibaou-cultural-centre",
+    "title": "Jean-Marie Tjibaou Cultural Centre",
+    "image_url": "/images/artworks/tjibaou-cultural-centre.jpg",
+    "source": "Wikipedia / Wikimedia Commons",
+    "source_url": "https://en.wikipedia.org/wiki/Jean-Marie_Tjibaou_Cultural_Centre",
+    "downloaded": true,
+    "verified": true
+  },
+  "auditorium-parco-della-musica": {
+    "id": "auditorium-parco-della-musica",
+    "title": "Auditorium Parco della Musica",
+    "image_url": "/images/artworks/auditorium-parco-della-musica.jpg",
+    "source": "Wikipedia / Wikimedia Commons",
+    "source_url": "https://it.wikipedia.org/wiki/Auditorium_Parco_della_Musica",
+    "downloaded": true,
+    "verified": true
+  },
+  "dancing-house": {
+    "id": "dancing-house",
+    "title": "Dancing House",
+    "image_url": "/images/artworks/dancing-house.jpg",
+    "source": "Wikipedia / Wikimedia Commons",
+    "source_url": "https://en.wikipedia.org/wiki/Dancing_House",
+    "downloaded": true,
+    "verified": true
+  },
+  "walt-disney-concert-hall": {
+    "id": "walt-disney-concert-hall",
+    "title": "Walt Disney Concert Hall",
+    "image_url": "/images/artworks/walt-disney-concert-hall.jpg",
+    "source": "Wikipedia / Wikimedia Commons",
+    "source_url": "https://en.wikipedia.org/wiki/Walt_Disney_Concert_Hall",
+    "downloaded": true,
+    "verified": true
+  },
+  "guggenheim-bilbao": {
+    "id": "guggenheim-bilbao",
+    "title": "Guggenheim Museum Bilbao",
+    "image_url": "/images/artworks/guggenheim-bilbao.jpg",
+    "source": "Wikipedia / Wikimedia Commons",
+    "source_url": "https://en.wikipedia.org/wiki/Guggenheim_Museum_Bilbao",
+    "downloaded": true,
+    "verified": true
   }
 }
