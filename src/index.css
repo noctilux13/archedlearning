@@ -413,6 +413,12 @@ h3 {
   border: 1px solid var(--accent-ochre-border);
 }
 
+.chip-purple {
+  background-color: #faf5ff;
+  color: #7e22ce;
+  border: 1px solid rgba(126, 34, 206, 0.15);
+}
+
 /* ==========================================================================
    Buttons
    ========================================================================== */

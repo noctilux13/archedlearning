@@ -1,6 +1,6 @@
 // Comprehensive Multilingual Academic Knowledge Base for Art History and Architecture
-// Languages: zh (Chinese), en (English), it (Italiano), es (Español)
-// 100% Coverage across 16 Movements, 50+ Artists, and 135 Artworks/Landmarks
+// Languages: zh (Chinese), zh-TW (Traditional Chinese), en (English), it (Italiano), es (Español)
+// 100% Coverage across 21 Movements, 55+ Artists, and 140+ Artworks/Landmarks
 
 export const localizedContent = {
   "zh": {
@@ -167,6 +167,57 @@ export const localizedContent = {
           "新材料技术革命：钢材、大面积玻璃幕墙与清水混凝土",
           "包豪斯学派与国际风格（International Style）",
           "有机建筑（Organic Architecture）与新建筑五点（Five Points of Architecture）"
+        ]
+      },
+      "rationalism-architecture": {
+        "description": "理性主义建筑是20世纪20至30年代在意大利发展成熟的现代建筑潮流。维特鲁威在《建筑十书》中声称建筑是一门可以理性理解的科学；20世纪的理性主义进一步相信现实世界的复杂问题可通过理性逻辑化解。米兰Gruppo 7在古典主义精神与工业化现代形式之间寻求平衡，并与国际风格深度共振。",
+        "historicalContext": "1926年，由Luigi Figini、Guido Frette、Sebastiano Larco Silva、Gino Pollini、Carlo Enrico Rava、Giuseppe Terragni与Ubaldo Castagnoli七位建筑师在米兰成立Gruppo 7，倡导理性主义，随后成立MIAR并创办《Quadrante》期刊。",
+        "keyFeatures": [
+          "追求纯粹几何形体、网格秩序与逻辑功能划分",
+          "在意大利古典建筑比例与现代工业材质间寻求平衡",
+          "摒弃历史主义繁复装饰，强调结构骨架与空间透明性",
+          "格网立面、通长带形窗与底层架空",
+          "探索建筑与抽象艺术、壁画的一体化结合"
+        ]
+      },
+      "neo-expressionism-architecture": {
+        "description": "新表现主义建筑打破了二战后国际风格千篇一律的方正盒子框架，强调建筑的情感表达、雕塑性空间与有机自由曲面。建筑师通过先进的钢筋混凝土薄壳、悬挑与双曲抛物面技术，将建筑化作具有崇高诗意的巨型雕塑。",
+        "historicalContext": "20世纪50年代起，伴随战后工业化混凝土浇筑技术的成熟，奥斯卡·尼迈耶等大师在巴西利亚新首都与世界各地开辟了极具抒情张力的有机表现主义新时代。",
+        "keyFeatures": [
+          "连续起伏的有机曲线与雕塑般的纪念碑体量",
+          "将钢筋混凝土的可塑性与结构力学推向极限",
+          "强调光影与水面反射构成的戏剧性空间意境",
+          "拒绝死板的教条功能主义，注入浪漫主义与诗意灵性"
+        ]
+      },
+      "high-tech-architecture": {
+        "description": "高技派（结构表现主义）建筑兴起于20世纪70年代，倡导将工业技术、精密工程结构、设备管线与机械美学诚实地暴露在外立面。通过预制金属桁架、张拉索网与透光采光顶，创造具有高灵活性与时代科技感的开放公共空间。",
+        "historicalContext": "在第三次科技革命与太空时代工业材料飞跃背景下诞生，伦佐·皮亚诺、理查德·罗杰斯与诺曼·福斯特打破传统建筑围护结构的定势，开创机器美学与生态技术的新时代。",
+        "keyFeatures": [
+          "建筑承重骨架、通风电梯与设备管网彻底外置裸露",
+          "色彩编码系统：蓝色空调管、绿色水管、黄色电气与红色消防动线",
+          "大跨度无柱开放空间，实现室内功能的高度弹性重构",
+          "高精度工业预制构件与精细节点连接工艺"
+        ]
+      },
+      "deconstructivism-architecture": {
+        "description": "解构主义建筑受后结构主义哲学启发，打破传统欧几里得几何学的垂直与水平正交体系，通过非线性形态、体量扭曲、倾斜断裂与动态解聚，展现非凡的视觉张力与反常规空间体验。",
+        "historicalContext": "伴随冷战结束、后现代哲学深化与计算机辅助三维设计软件（CATIA等）的突破，建筑师彻底摆脱直线直角的建造束缚，开启数字化解构时代。",
+        "keyFeatures": [
+          "非线性、断裂倾斜与反传统透视的碎片化造型",
+          "钛合金薄板、曲面玻璃与不锈钢等复合现代材质大胆拼接",
+          "计算机辅助数字化三维参数化与复杂双曲面制造",
+          "颠覆传统重力感与平稳感，呈现戏剧性动感与张力"
+        ]
+      },
+      "contemporary-architecture": {
+        "description": "当代建筑涵盖20世纪末至21世纪当下的前沿建筑探索，包括参数化主义、仿生结构工程、历史创伤纪念碑建筑与绿色低碳可持续高层。探索建筑在都市重生、生态共存与文化象征层面的全新维度。",
+        "historicalContext": "全球化进程、数字革命与超级都市扩张推动当代建筑跨越地域边界。丹尼尔·里伯斯金、诺曼·福斯特、圣地亚哥·卡拉特拉瓦与扎哈·哈迪德在全球历史都市留下了极具视觉震撼力的世纪地标。",
+        "keyFeatures": [
+          "参数化曲面与计算几何生成设计",
+          "仿生骨骼结构工程与大跨度单塔斜拉桥梁体系",
+          "创伤记忆空间与历史文脉的深层哲学解构",
+          "透明绿色生态穹顶与可再生循环城市更新地标"
         ]
       }
     },
@@ -335,6 +386,39 @@ export const localizedContent = {
       },
       "adolf-loos": {
         "bio": "奥地利-捷克建筑师、理论家与论战家，发表著名的《装饰与罪恶》（Ornament and Crime），开创了三维立体错层空间规划理论（Raumplan）。"
+      },
+      "giuseppe-terragni": {
+        "bio": "意大利理性主义建筑运动领军人物与先驱大师，Gruppo 7核心成员。以纯粹的三维几何网格、透明性与空间逻辑著称，代表作科莫法西斯宫被公认为20世纪现代主义建筑经典里程碑。"
+      },
+      "luigi-figini": {
+        "bio": "意大利理性主义建筑代表人物，Gruppo 7发起人之一。与吉诺·波利尼长期合作组成 Figini & Pollini 事务所，投身于住宅、伊夫雷亚 Olivetti 工厂群与米兰贫民圣母堂建设。"
+      },
+      "gio-ponti": {
+        "bio": "意大利建筑大师、工业设计师、教育家与出版家，战后意大利设计复兴教父。1928年创办《Domus》杂志，1954年创立金罗盘奖，长期执教于米兰理工大学。"
+      },
+      "bbrp": {
+        "bio": "1932年由四位米兰理工大学毕业生 Banfi、Belgiojoso、Peressutti 与 Rogers 创立的先锋建筑工作室。主导《Quadrante》与《Casabella》期刊，探索历史语境与现代主义融合。"
+      },
+      "oscar-niemeyer": {
+        "bio": "巴西现代主义与新表现主义建筑巨匠，1988年普利兹克奖得主。主导巴西新首都巴西利亚标志性建筑群规划设计，以赞美自然蜿蜒起伏的自由曲线著称。"
+      },
+      "renzo-piano": {
+        "bio": "意大利国宝级高技派与当代建筑大师，1998年普利兹克奖得主，意大利终身参议员。善于将尖端机械工程技术、自然光线漫射与地域文脉完美结合。"
+      },
+      "frank-gehry": {
+        "bio": "加拿大裔美国当代建筑大师，解构主义建筑代表人物，1989年普利兹克奖得主。善于将廉价日常材料与惊人的复杂三维雕塑曲面结构结合，引发著名的毕尔巴鄂效应。"
+      },
+      "daniel-libeskind": {
+        "bio": "波兰裔美国当代建筑大师，柏林犹太博物馆设计者与纽约世贸中心遗址重建总规划师。以锐利折线、倾斜裂隙与充满哲学张力的创伤记忆空间闻名。"
+      },
+      "norman-foster": {
+        "bio": "英国当代建筑泰斗、高科技建筑领军人物，1999年普利兹克奖得主。创立 Foster + Partners，善于将生态可持续技术、透明结构与历史建筑有机织补。"
+      },
+      "santiago-calatrava": {
+        "bio": "西班牙裔瑞士建筑大师、结构工程师与雕塑家。将人体骨骼与动植物仿生形态融入受力桥梁、火车站与大型公共场馆，将工程力学与纯白雕塑感推向神性境界。"
+      },
+      "zaha-hadid": {
+        "bio": "伊拉克裔英国传奇女建筑师，参数化主义巅峰代表，首位女性普利兹克建筑奖得主（2004）。利用计算流体力学与算法创造出连绵无垠的流体曲面建筑宇宙。"
       }
     },
     "artworks": {
@@ -1353,6 +1437,162 @@ export const localizedContent = {
           "空间规划（Raumplan）的集大成代表作",
           "外部极简纯白体块与内部错层流线、西波里诺大理石（Cipollino Marble）奢华材质的鲜明对比"
         ]
+      },
+      "casa-del-fascio": {
+        "notes": "意大利理性主义建筑的划时代杰作。通过完美的正方体比例、多孔透空格网立面与内部中庭采光天顶，将古典中庭形式以现代混凝土骨架重构，内部由 Mario Radice 绘制几何壁画。",
+        "knowledgePoints": [
+          "理性主义空间透明性与正方体几何模数法则的巅峰展现",
+          "四个立面采用非对称但高度平衡的几何实虚对比格网",
+          "大面积玻璃砖、博蒂奇诺大理石与钢框玻璃材质",
+          "与抽象画家 Mario Radice 几何壁画的总体艺术融合"
+        ]
+      },
+      "villa-figini": {
+        "notes": "菲吉尼为自己设计的先锋私人住宅。严格遵循柯布西耶新建筑五点原则：底层纤细立柱架空、条形水平窗、自由平面、自由立面与屋顶花园。",
+        "knowledgePoints": [
+          "意大利首座实践柯布西耶新建筑五点的理性主义先锋住宅",
+          "底层全部架空于细长混凝土立柱之上，与花园植被贯通",
+          "水平长窗与悬挑露台构成的漂浮轻盈体量感"
+        ]
+      },
+      "pirelli-tower": {
+        "notes": "米兰战后现代主义与结构理性主义的天际线象征。庞蒂与 Nervi 合作，采用六角菱形纤薄翼状收分造型，彻底摆脱传统方盒子摩天楼范式。",
+        "knowledgePoints": [
+          "米兰战后经济复兴与现代摩天楼标志性纪念碑",
+          "变截面预应力混凝土核心筒体系",
+          "两端逐渐收窄成锐角的六边形菱形平面",
+          "悬浮屋顶挑檐与通透玻璃幕墙带来的视觉失重感"
+        ]
+      },
+      "velasca-tower": {
+        "notes": "战后新自由主义与米兰历史文脉对话的杰作。下部办公、上部住宅向外悬挑，通过外露斜向支撑致敬中世纪伦巴第城堡防御悬楼形制。",
+        "knowledgePoints": [
+          "新自由主义与历史文脉主义代表作",
+          "蘑菇形外挑高层悬臂结构与外露斜撑桁架力学体系",
+          "与米兰大教堂中世纪哥特飞扶壁意象的跨时空隐喻",
+          "下层办公与上层居住的复合功能分区"
+        ]
+      },
+      "cathedral-of-brasilia": {
+        "notes": "尼迈耶最负盛名的宗教建筑杰作。由16根抛物线形混凝土曲柱围合成向天空升腾的王冠形状，柱间嵌以透光彩色玻璃天幕。",
+        "knowledgePoints": [
+          "16根抛物线形双曲面混凝土立柱构成的王冠形向心结构",
+          "地下暗门进入与穹顶直射自然天光形成强烈的受难与复活对比",
+          "巴西利亚世界文化遗产的核心地标"
+        ]
+      },
+      "niteroi-contemporary-art-museum": {
+        "notes": "矗立在瓜纳巴拉湾悬崖海景之上的飞碟状建筑奇观。三层圆盘主体仅由中央一根圆柱支撑扎根于水池中，一条红色坡道盘旋升入展厅。",
+        "knowledgePoints": [
+          "单点中心柱支撑的巨型倒圆台悬挑薄壳结构奇迹",
+          "盘旋曲折的亮红色悬空步道与蓝色海湾的戏剧性对比",
+          "360度全景观景窗将大西洋尽收眼底"
+        ]
+      },
+      "centre-pompidou": {
+        "notes": "高技派建筑里程碑。皮亚诺与罗杰斯将承重钢结构桁架与机电管线完全暴露在外表，内部释放出完全无立柱阻隔的自由策展空间。",
+        "knowledgePoints": [
+          "高技派最具革命性的开山宣言之作",
+          "外墙设备管线功能色彩编码体系（红/蓝/绿/黄）",
+          "无柱大空间与自由模块化策展体系颠覆传统格局",
+          "铸钢格伯梁精巧铰接节点力学体系"
+        ]
+      },
+      "tjibaou-cultural-centre": {
+        "notes": "高科技与南太平洋美拉尼西亚传统卡纳克草屋智慧的诗意融合。10座木格栅壳体利用太平洋信风实现自然的被动式风压对流冷却。",
+        "knowledgePoints": [
+          "生态仿生与被动式风力对流冷却的高技术典范",
+          "耐用木百叶结构随着海风与光线产生呼吸般的开合感",
+          "对土著原住民历史记忆与岛屿生态的崇高致敬"
+        ]
+      },
+      "auditorium-parco-della-musica": {
+        "notes": "欧洲最大的多功能音乐文化复合体。由三座宛如巨型甲虫的弧形铅皮穹顶音乐厅环绕露天剧场分布，内部采用双曲面樱桃木声学反射板。",
+        "knowledgePoints": [
+          "三座独立甲壳状声学建筑体量环抱露天圆形广场",
+          "外覆防腐铅皮与内部樱桃木箱体构成的精密乐器式构造",
+          "建造期间发掘古罗马庄园遗址并整合为原址考古博物馆"
+        ]
+      },
+      "dancing-house": {
+        "notes": "盖里与米卢尼奇合作设计。大楼由一对如舞者般依偎起舞的动态双塔构成，成为布拉格历史老城与现代解构艺术碰撞的标志地标。",
+        "knowledgePoints": [
+          "解构主义动态双体雕塑隐喻（Fred and Ginger 舞姿）",
+          "波浪起伏的混凝土墙面与不对称窗洞构成的流动韵律",
+          "与布拉格历史街区的新旧共生典范"
+        ]
+      },
+      "guggenheim-bilbao": {
+        "notes": "解构主义巅峰之作。整座建筑由33,000块极薄钛合金鱼鳞状曲面包裹，如停泊在河畔的金色巨舰，创造了著名的毕尔巴鄂效应。",
+        "knowledgePoints": [
+          "利用航空级软件 CATIA 打造的自由双曲面数字建造壮举",
+          "有机流动的极薄钛金属表面与石灰石、玻璃复合幕墙",
+          "改变城市命运的毕尔巴鄂效应经济与文化范例"
+        ]
+      },
+      "walt-disney-concert-hall": {
+        "notes": "洛杉矶交响乐团主场。外立面由起伏不锈钢板如扬起风帆般层叠，内部采用花形温润冷杉木打造葡萄园式环绕声学大厅。",
+        "knowledgePoints": [
+          "抛光与雾面不锈钢板打造的风帆状金属雕塑群落",
+          "葡萄园式无瑕声学内胆",
+          "洛杉矶市中心文化复兴核心引擎"
+        ]
+      },
+      "jewish-museum-berlin": {
+        "notes": "当代纪念性建筑最震撼的哲学典范。建筑平面呈闪电之字形，外覆锌板并被倾斜划痕窗洞切开；内部设置地下三轴线与空白空间。",
+        "knowledgePoints": [
+          "闪电之字形解构锌板立面与利刃切口状非对称采光裂隙",
+          "贯穿整座建筑的五处贯通垂直虚空象征历史的断裂",
+          "由万片铸铁面孔构成的沉浸式记忆空间"
+        ]
+      },
+      "one-world-trade-center": {
+        "notes": "里伯斯金世贸中心遗址重建总规划核心，高1776英尺象征美国独立年份，八面渐变倒角几何玻璃体向上收分，成为重生的不屈灯塔。",
+        "knowledgePoints": [
+          "世贸遗址总体规划与归零地纪念水池",
+          "建筑高度1776英尺（541.3米）象征历史独立与重生",
+          "正方形基座渐变为八边形抗风倒角超高层工程"
+        ]
+      },
+      "reichstag-dome": {
+        "notes": "历史建筑与现代民主透明性结合的典范。福斯特在历史石砌大厦顶部架设通体透明的钢网玻璃穹顶，倒圆锥形镜面漏斗反射阳光进议会大厅。",
+        "knowledgePoints": [
+          "双螺旋全景观光步道与中央倒锥形反光镜漏斗",
+          "被动式自然采光与热压通风生态节能系统",
+          "公众视线俯瞰议会大厅的现代民主政治象征"
+        ]
+      },
+      "bac-de-roda-bridge": {
+        "notes": "卡拉特拉瓦国际代表作。采用纯白色双重倾斜抛物线拱肋向外倾斜28度形成张拉索网，不仅承载车流，更为两侧行人开辟林荫步道。",
+        "knowledgePoints": [
+          "成对倾斜抛物线钢拱与悬索构成的三维自平衡空间力学体系",
+          "缝合城市被铁轨割裂街区的都市织补典范",
+          "卡拉特拉瓦标志性仿生纯白钢构美学的起点"
+        ]
+      },
+      "zurich-stadelhofen-station": {
+        "notes": "依陡峭山坡地势而建，利用倾斜预应力混凝土肋拱与外露钢筋骨架支撑起上层人行走廊，雨棚如肋骨与飞鸟翅膀般延展。",
+        "knowledgePoints": [
+          "贴合自然陡坡地形的多层立体复合交通与人行系统",
+          "仿生肋骨架悬臂结构与活动遮阳格栅",
+          "混凝土、钢构与玻璃精雕细琢的无缝工业质感"
+        ]
+      },
+      "maxxi-rome": {
+        "notes": "哈迪德荣获斯特林大奖代表作。由交织穿插的混凝土流线体量层叠构成，内部黑色悬浮钢楼梯与弯曲白墙引导参观者在空间长河中流淌。",
+        "knowledgePoints": [
+          "荣获 RIBA Stirling Prize 斯特林最高荣誉建筑大奖",
+          "连续浇筑的清水混凝土弯曲流动墙体",
+          "自由穿插的黑色发光悬挂楼梯与悬臂式出挑展厅"
+        ]
+      },
+      "citylife-milan": {
+        "notes": "米兰世博会后城市更新核心。忠利保险塔随高度上升呈现优雅螺旋扭转曲率；住宅区由7座流线型阳台公寓构成，重塑米兰天际线。",
+        "knowledgePoints": [
+          "44层垂直轴向自底向上平滑扭转参数化结构",
+          "CityLife三塔汇聚之作（Isozaki / Hadid / Libeskind）",
+          "流线型木质阳台与 LEED 白金级绿色认证"
+        ]
       }
     }
   },
@@ -1521,6 +1761,57 @@ export const localizedContent = {
           "Bauhaus philosophy and the universal International Style",
           "Organic architecture and Le Corbusier's Five Points of a New Architecture"
         ]
+      },
+      "rationalism-architecture": {
+        "description": "Rationalism is an architectural movement developed in Italy in the 1920s and 1930s. Vitruvius claimed that architecture is a science that can be comprehended rationally. Milan’s Gruppo 7 sought a harmonious middle ground between classicism and industrial functionalism, integrating with the broader International Style.",
+        "historicalContext": "Founded in Milan in 1926 by Gruppo 7 (Figini, Frette, Larco, Pollini, Rava, Terragni, and Castagnoli), advocating rational design principles through the MIAR movement and the Quadrante journal.",
+        "keyFeatures": [
+          "Pure geometric volumes, grid order, and logical spatial planning",
+          "Synthesis of Italian classical proportions with modern reinforced concrete and glass",
+          "Rejection of historicist ornamentation in favor of skeletal clarity and transparency",
+          "Grid façades, continuous ribbon windows, and ground-floor pilotis",
+          "Integration of architecture with abstract art and murals"
+        ]
+      },
+      "neo-expressionism-architecture": {
+        "description": "Neo-Expressionist architecture departed from the rigid rectilinear boxes of post-war International Style, championing emotional expression, organic sculptural forms, and curved surfaces crafted from reinforced concrete.",
+        "historicalContext": "Emerging in the 1950s alongside advances in thin-shell concrete engineering, masters like Oscar Niemeyer reshaped civic landscapes across Brasília and beyond with lyrical monumentality.",
+        "keyFeatures": [
+          "Lyrical organic curves and dynamic sculptural volumes",
+          "Pushing reinforced concrete malleability and structural elasticity to its limits",
+          "Dramatic interplay of sunlight, shadow, and reflecting pools",
+          "Poetic romanticism over rigid utilitarian functionalism"
+        ]
+      },
+      "high-tech-architecture": {
+        "description": "High-Tech architecture (Structural Expressionism) emerged in the 1970s, proudly exposing industrial technology, structural engineering trusses, and building service conduits on exterior façades.",
+        "historicalContext": "Driven by space-age material innovations and prefabricated steel engineering, Renzo Piano and Richard Rogers redefined museums and civic centers as adaptable urban machines.",
+        "keyFeatures": [
+          "Exteriorization of structural load-bearing frames, escalators, and HVAC pipes",
+          "Color-coded utilities: blue for air conditioning, green for plumbing, yellow for electrical, red for vertical circulation",
+          "Vast column-free column spans offering universal programmatic adaptability",
+          "Precision prefabricated modular components and cast-steel articulated joints"
+        ]
+      },
+      "deconstructivism-architecture": {
+        "description": "Deconstructivist architecture subverts traditional Euclidean geometry and right-angled orthogonality, using non-linear forms, warped volumes, fragmented silhouettes, and dynamic disjunction.",
+        "historicalContext": "Gaining global prominence after the 1988 MoMA exhibition, Frank Gehry and peers harnessed aerospace CAD software (CATIA) to liberate architectural construction from straight lines.",
+        "keyFeatures": [
+          "Non-linear, tilted, and fragmented sculptural volumes",
+          "Innovative collage of titanium panels, curved glass, and raw metals",
+          "Computer-aided 3D parametric modeling and complex double-curved fabrication",
+          "Subversion of gravitational stillness with kinetic spatial dynamism"
+        ]
+      },
+      "contemporary-architecture": {
+        "description": "Contemporary architecture spans cutting-edge late 20th and 21st-century architectural explorations, encompassing parametricism, biomimetic structural engineering, traumatic memory spaces, and green high-rises.",
+        "historicalContext": "In an era of globalization and digital computation, visionary architects including Daniel Libeskind, Norman Foster, Santiago Calatrava, and Zaha Hadid created striking urban landmarks across world capitals.",
+        "keyFeatures": [
+          "Parametric curves and algorithmic generative design",
+          "Biomimetic skeletal structures and sweeping single-pylon cable-stayed bridges",
+          "Profound philosophical deconstruction of memory and historical trauma",
+          "Transparent sustainable eco-domes and urban revitalization catalysts"
+        ]
       }
     },
     "artists": {
@@ -1688,6 +1979,39 @@ export const localizedContent = {
       },
       "adolf-loos": {
         "bio": "Adolf Loos was a pivotal master in Modernist Architecture, creating milestone architectural monuments, engineering advances, and theoretical canons."
+      },
+      "giuseppe-terragni": {
+        "bio": "Pioneering master of Italian Rationalism and leading figure of Gruppo 7. Renowned for geometric purity, spatial transparency, and his masterpiece Casa del Fascio in Como."
+      },
+      "luigi-figini": {
+        "bio": "Prominent Italian Rationalist architect and co-founder of Gruppo 7. Partnered with Gino Pollini on major housing, Olivetti industrial complexes, and church architecture."
+      },
+      "gio-ponti": {
+        "bio": "Legendary Italian architect, industrial designer, educator, and publisher. Founded Domus magazine in 1928, established the Compasso d’Oro award, and designed the iconic Pirelli Tower."
+      },
+      "bbrp": {
+        "bio": "Historic Milanese architectural collective formed in 1932 by Banfi, Belgiojoso, Peressutti, and Rogers. Famous for bridging historical context and modernism in Torre Velasca."
+      },
+      "oscar-niemeyer": {
+        "bio": "Visionary Brazilian architect and 1988 Pritzker laureate celebrated as a \"sculptor of monuments,\" renowned for Brasília’s civic masterpieces and organic concrete curves."
+      },
+      "renzo-piano": {
+        "bio": "Italian Pritzker laureate and life senator celebrated for harmonious fusion of high technology, natural lighting, and civic elegance across world capitals."
+      },
+      "frank-gehry": {
+        "bio": "World-renowned Canadian-American architect and 1989 Pritzker laureate famous for sculptural titanium curves and creating the transformative \"Bilbao Effect.\""
+      },
+      "daniel-libeskind": {
+        "bio": "Polish-American architect celebrated for profound memorial spaces, zigzag geometries, the Jewish Museum Berlin, and the World Trade Center Master Plan."
+      },
+      "norman-foster": {
+        "bio": "Iconic British architect and 1999 Pritzker laureate, founder of Foster + Partners, pioneering high-tech eco-domes, transparent structures, and sustainable urbanism."
+      },
+      "santiago-calatrava": {
+        "bio": "Spanish-Swiss architect, structural engineer, and sculptor renowned for biomimetic skeletal bridges, soaring railway terminals, and organic white sculptural forms."
+      },
+      "zaha-hadid": {
+        "bio": "Revolutionary Iraqi-British architect and first female Pritzker laureate (2004), celebrated for radical parametric fluid architecture and the MAXXI museum in Rome."
       }
     },
     "artworks": {
@@ -2766,6 +3090,162 @@ export const localizedContent = {
           "Located at City of Prague Museum (Villa Müller) (Prague, Czech Republic)",
           "Key milestone in Western architectural and engineering history"
         ]
+      },
+      "casa-del-fascio": {
+        "notes": "A defining milestone of Italian Rationalism in Como, featuring a strict 2:1 golden ratio cube, skeletal grid façades, transparent atrium, and murals by abstract painter Mario Radice.",
+        "knowledgePoints": [
+          "Masterpiece of Rationalist spatial transparency and geometric modularity",
+          "Four asymmetric yet rigorously balanced grid façades",
+          "Botticino marble, glass blocks, and steel-framed glazing",
+          "Integration of Mario Radice’s abstract geometric murals"
+        ]
+      },
+      "villa-figini": {
+        "notes": "Figini’s personal avant-garde residence in Milan, rigorously applying Le Corbusier’s Five Points of Modern Architecture with slender pilotis and ribbon windows.",
+        "knowledgePoints": [
+          "First Italian villa to fully execute Le Corbusier’s Five Points",
+          "Elevated on slender reinforced concrete pilotis above gardens",
+          "Floating lightness achieved through continuous horizontal glazing"
+        ]
+      },
+      "pirelli-tower": {
+        "notes": "Milan’s landmark skyscraper designed by Giò Ponti with structural engineering by Pier Luigi Nervi, featuring a tapering hexagonal diamond plan.",
+        "knowledgePoints": [
+          "Symbol of post-war Italian economic and architectural renaissance",
+          "Prestressed concrete tapered core designed with Pier Luigi Nervi",
+          "Diamond-shaped aerodynamic profile with sharp knife-edge ends",
+          "Floating cantilevered roof canopy giving an illusion of weightlessness"
+        ]
+      },
+      "velasca-tower": {
+        "notes": "A masterpiece of Neo-Liberty and contextual modernism in Milan, with an overhanging residential crown supported by exposed external diagonal struts.",
+        "knowledgePoints": [
+          "Icon of contextual modernism and Neo-Liberty dialogue",
+          "Mushroom-shaped cantilevered profile with exposed diagonal trusses",
+          "Metaphorical homage to medieval Lombard castles and Milan Cathedral",
+          "Hybrid vertical zoning: compact commercial base and expansive residential crown"
+        ]
+      },
+      "cathedral-of-brasilia": {
+        "notes": "Niemeyer’s spiritual masterpiece in Brasília, composed of 16 sweeping parabolic concrete columns forming a crown-like structure crowned with stained glass.",
+        "knowledgePoints": [
+          "Crown-like hyperbolic structure formed by 16 parabolic columns",
+          "Dramatic contrast between underground dark tunnel and radiant celestial sanctuary",
+          "UNESCO World Heritage centerpiece of planned capital Brasília"
+        ]
+      },
+      "niteroi-contemporary-art-museum": {
+        "notes": "A saucer-like architectural icon perched over Guanabara Bay, supported by a single cylindrical base with a 98-meter winding red pedestrian ramp.",
+        "knowledgePoints": [
+          "Cantilevered saucer shell balanced on a single 9-meter column",
+          "Dramatic sinuous red ramp hovering above ocean reflecting pools",
+          "360-degree panoramic picture windows framing Sugarloaf Mountain"
+        ]
+      },
+      "centre-pompidou": {
+        "notes": "Revolutionary High-Tech landmark by Renzo Piano and Richard Rogers in Paris, turning the building inside-out with exposed colorful structural systems.",
+        "knowledgePoints": [
+          "Manifesto of High-Tech structural expressionism",
+          "Externalized color-coded infrastructure (blue/green/yellow/red)",
+          "Vast 48m column-free universal floor plates for dynamic curation",
+          "Precision cast-steel Gerberette articulated truss system"
+        ]
+      },
+      "tjibaou-cultural-centre": {
+        "notes": "Harmonious fusion of cutting-edge technology and Kanak indigenous vernacular in New Caledonia, featuring 10 curved wooden passive-ventilation shells.",
+        "knowledgePoints": [
+          "Pioneering ecological biomimicry with passive wind cooling",
+          "Durable Iroko timber louvers that breathe with ocean trade winds",
+          "Deep tribute to Kanak indigenous cultural memory and island ecology"
+        ]
+      },
+      "auditorium-parco-della-musica": {
+        "notes": "Major musical complex in Rome featuring three scarab-shaped lead-clad acoustic halls surrounding an open-air amphitheater.",
+        "knowledgePoints": [
+          "Three beetle-like acoustic shells encircling an open-air amphitheater",
+          "Exterior aged lead cladding and interior cherry-wood acoustic shells",
+          "Integrated archaeological museum preserving excavated ancient Roman villa"
+        ]
+      },
+      "dancing-house": {
+        "notes": "Gehry and Milunić’s dynamic deconstructivist icon in Prague, nicknamed Fred and Ginger for its intertwined stone and twisted glass towers.",
+        "knowledgePoints": [
+          "Deconstructivist sculptural metaphor of dancing figures Fred and Ginger",
+          "Undulating concrete façades with dynamic wave-like window rhythms",
+          "Harmonious modern dialogue with historical Vltava riverfront"
+        ]
+      },
+      "guggenheim-bilbao": {
+        "notes": "Pinnacle of deconstructivist architecture in Spain clad in 33,000 wafer-thin titanium tiles, sparking the worldwide \"Bilbao Effect.\"",
+        "knowledgePoints": [
+          "Aerospace CATIA 3D parametric digital engineering breakthrough",
+          "Fluid sculptural surfaces clad in 0.38mm titanium shingles",
+          "The definitive case study of cultural investment reviving an industrial city"
+        ]
+      },
+      "walt-disney-concert-hall": {
+        "notes": "Acoustically superlative home of the LA Philharmonic, clad in sweeping stainless-steel sails with an intimate vineyard-style auditorium inside.",
+        "knowledgePoints": [
+          "Sweeping composition of polished and brushed stainless-steel sails",
+          "Flawless vineyard-style acoustic hall developed with Yasuhisa Toyota",
+          "Anchor and catalyst of downtown Los Angeles cultural revival"
+        ]
+      },
+      "jewish-museum-berlin": {
+        "notes": "A profoundly poignant monument to memory by Libeskind, featuring a zigzag zinc exterior slashed by diagonal slits, underground axes, and vertical voids.",
+        "knowledgePoints": [
+          "Zigzag deconstructed zinc façade slashed by knife-like window incisions",
+          "Five continuous vertical voids piercing the interior symbolizing absence",
+          "Shalekhet (Fallen Leaves) immersive memory installation with 10,000 cast-iron faces"
+        ]
+      },
+      "one-world-trade-center": {
+        "notes": "Centerpiece of Libeskind’s Ground Zero master plan rising 1,776 feet, transitioning from a square base into an octagonal geometric beacon.",
+        "knowledgePoints": [
+          "Memory Foundations master plan and Ground Zero memorial pools",
+          "Symbolic height of 1,776 feet honoring the year of American independence",
+          "Tapering octagonal chamfered glass envelope designed for aerodynamic stability"
+        ]
+      },
+      "reichstag-dome": {
+        "notes": "Foster’s iconic glass dome atop Berlin’s historic parliament, featuring a double-helix pedestrian ramp and inverted light cone reflecting daylight.",
+        "knowledgePoints": [
+          "Double-helix panoramic ramp wrapping an inverted conical light sculptor",
+          "Passive natural illumination and eco-ventilation heat recovery system",
+          "Civic metaphor of the public elevated directly above debating lawmakers"
+        ]
+      },
+      "bac-de-roda-bridge": {
+        "notes": "Calatrava’s breakthrough bridge in Barcelona with inclined twin parabolic arches and cable nets creating wide pedestrian promenades.",
+        "knowledgePoints": [
+          "Inclined parabolic steel arches and cable nets forming a self-balancing structure",
+          "Urban weaving of severed neighborhoods across railway tracks",
+          "The Genesis of Calatrava’s signature pure white skeletal aesthetic"
+        ]
+      },
+      "zurich-stadelhofen-station": {
+        "notes": "Calatrava’s poetic transport hub integrated into a steep hillside with cantilevered concrete ribs and articulating sunshades.",
+        "knowledgePoints": [
+          "Multi-tiered transit hub organically molded into natural steep topography",
+          "Biomimetic skeletal cantilevered framework with mechanical sunshades",
+          "Meticulous hand-crafted detailing uniting concrete, steel, and glass"
+        ]
+      },
+      "maxxi-rome": {
+        "notes": "Zaha Hadid’s Stirling Prize-winning masterpiece in Rome, composed of dynamic overlapping concrete ribbons and suspended black staircases.",
+        "knowledgePoints": [
+          "Recipient of the prestigious RIBA Stirling Prize for Architecture",
+          "Continuous flowing fair-faced concrete ribbon walls and cantilevers",
+          "Interlocking illuminated black staircases guiding visitors through fluid galleries"
+        ]
+      },
+      "citylife-milan": {
+        "notes": "Hadid’s signature contribution to Milan’s skyline, featuring the 177m twisting Generali Tower and sweeping residential balconies.",
+        "knowledgePoints": [
+          "44-story vertically twisting skyscraper (Lo Storto) engineered parametrically",
+          "Trilogy of contemporary towers by Isozaki, Hadid, and Libeskind",
+          "LEED Platinum certified sustainable residential quarter with fluid timber balconies"
+        ]
       }
     }
   },
@@ -2934,6 +3414,57 @@ export const localizedContent = {
           "Didattica del Bauhaus e razionalismo dell'International Style",
           "Architettura organica e i Cinque Punti della Nuova Architettura di Le Corbusier"
         ]
+      },
+      "rationalism-architecture": {
+        "description": "Rationalism is an architectural movement developed in Italy in the 1920s and 1930s. Vitruvius claimed that architecture is a science that can be comprehended rationally. Milan’s Gruppo 7 sought a harmonious middle ground between classicism and industrial functionalism, integrating with the broader International Style.",
+        "historicalContext": "Founded in Milan in 1926 by Gruppo 7 (Figini, Frette, Larco, Pollini, Rava, Terragni, and Castagnoli), advocating rational design principles through the MIAR movement and the Quadrante journal.",
+        "keyFeatures": [
+          "Pure geometric volumes, grid order, and logical spatial planning",
+          "Synthesis of Italian classical proportions with modern reinforced concrete and glass",
+          "Rejection of historicist ornamentation in favor of skeletal clarity and transparency",
+          "Grid façades, continuous ribbon windows, and ground-floor pilotis",
+          "Integration of architecture with abstract art and murals"
+        ]
+      },
+      "neo-expressionism-architecture": {
+        "description": "Neo-Expressionist architecture departed from the rigid rectilinear boxes of post-war International Style, championing emotional expression, organic sculptural forms, and curved surfaces crafted from reinforced concrete.",
+        "historicalContext": "Emerging in the 1950s alongside advances in thin-shell concrete engineering, masters like Oscar Niemeyer reshaped civic landscapes across Brasília and beyond with lyrical monumentality.",
+        "keyFeatures": [
+          "Lyrical organic curves and dynamic sculptural volumes",
+          "Pushing reinforced concrete malleability and structural elasticity to its limits",
+          "Dramatic interplay of sunlight, shadow, and reflecting pools",
+          "Poetic romanticism over rigid utilitarian functionalism"
+        ]
+      },
+      "high-tech-architecture": {
+        "description": "High-Tech architecture (Structural Expressionism) emerged in the 1970s, proudly exposing industrial technology, structural engineering trusses, and building service conduits on exterior façades.",
+        "historicalContext": "Driven by space-age material innovations and prefabricated steel engineering, Renzo Piano and Richard Rogers redefined museums and civic centers as adaptable urban machines.",
+        "keyFeatures": [
+          "Exteriorization of structural load-bearing frames, escalators, and HVAC pipes",
+          "Color-coded utilities: blue for air conditioning, green for plumbing, yellow for electrical, red for vertical circulation",
+          "Vast column-free column spans offering universal programmatic adaptability",
+          "Precision prefabricated modular components and cast-steel articulated joints"
+        ]
+      },
+      "deconstructivism-architecture": {
+        "description": "Deconstructivist architecture subverts traditional Euclidean geometry and right-angled orthogonality, using non-linear forms, warped volumes, fragmented silhouettes, and dynamic disjunction.",
+        "historicalContext": "Gaining global prominence after the 1988 MoMA exhibition, Frank Gehry and peers harnessed aerospace CAD software (CATIA) to liberate architectural construction from straight lines.",
+        "keyFeatures": [
+          "Non-linear, tilted, and fragmented sculptural volumes",
+          "Innovative collage of titanium panels, curved glass, and raw metals",
+          "Computer-aided 3D parametric modeling and complex double-curved fabrication",
+          "Subversion of gravitational stillness with kinetic spatial dynamism"
+        ]
+      },
+      "contemporary-architecture": {
+        "description": "Contemporary architecture spans cutting-edge late 20th and 21st-century architectural explorations, encompassing parametricism, biomimetic structural engineering, traumatic memory spaces, and green high-rises.",
+        "historicalContext": "In an era of globalization and digital computation, visionary architects including Daniel Libeskind, Norman Foster, Santiago Calatrava, and Zaha Hadid created striking urban landmarks across world capitals.",
+        "keyFeatures": [
+          "Parametric curves and algorithmic generative design",
+          "Biomimetic skeletal structures and sweeping single-pylon cable-stayed bridges",
+          "Profound philosophical deconstruction of memory and historical trauma",
+          "Transparent sustainable eco-domes and urban revitalization catalysts"
+        ]
       }
     },
     "artists": {
@@ -3101,6 +3632,39 @@ export const localizedContent = {
       },
       "adolf-loos": {
         "bio": "Adolf Loos fu un maestro fondamentale dell'Modernist Architecture, autore di capolavori architettonici, innovazioni costruttive e trattati teorici."
+      },
+      "giuseppe-terragni": {
+        "bio": "Pioneering master of Italian Rationalism and leading figure of Gruppo 7. Renowned for geometric purity, spatial transparency, and his masterpiece Casa del Fascio in Como."
+      },
+      "luigi-figini": {
+        "bio": "Prominent Italian Rationalist architect and co-founder of Gruppo 7. Partnered with Gino Pollini on major housing, Olivetti industrial complexes, and church architecture."
+      },
+      "gio-ponti": {
+        "bio": "Legendary Italian architect, industrial designer, educator, and publisher. Founded Domus magazine in 1928, established the Compasso d’Oro award, and designed the iconic Pirelli Tower."
+      },
+      "bbrp": {
+        "bio": "Historic Milanese architectural collective formed in 1932 by Banfi, Belgiojoso, Peressutti, and Rogers. Famous for bridging historical context and modernism in Torre Velasca."
+      },
+      "oscar-niemeyer": {
+        "bio": "Visionary Brazilian architect and 1988 Pritzker laureate celebrated as a \"sculptor of monuments,\" renowned for Brasília’s civic masterpieces and organic concrete curves."
+      },
+      "renzo-piano": {
+        "bio": "Italian Pritzker laureate and life senator celebrated for harmonious fusion of high technology, natural lighting, and civic elegance across world capitals."
+      },
+      "frank-gehry": {
+        "bio": "World-renowned Canadian-American architect and 1989 Pritzker laureate famous for sculptural titanium curves and creating the transformative \"Bilbao Effect.\""
+      },
+      "daniel-libeskind": {
+        "bio": "Polish-American architect celebrated for profound memorial spaces, zigzag geometries, the Jewish Museum Berlin, and the World Trade Center Master Plan."
+      },
+      "norman-foster": {
+        "bio": "Iconic British architect and 1999 Pritzker laureate, founder of Foster + Partners, pioneering high-tech eco-domes, transparent structures, and sustainable urbanism."
+      },
+      "santiago-calatrava": {
+        "bio": "Spanish-Swiss architect, structural engineer, and sculptor renowned for biomimetic skeletal bridges, soaring railway terminals, and organic white sculptural forms."
+      },
+      "zaha-hadid": {
+        "bio": "Revolutionary Iraqi-British architect and first female Pritzker laureate (2004), celebrated for radical parametric fluid architecture and the MAXXI museum in Rome."
       }
     },
     "artworks": {
@@ -4179,6 +4743,162 @@ export const localizedContent = {
           "Conservato / situato presso City of Prague Museum (Villa Müller) (Prague, Czech Republic)",
           "Pietra miliare nella storia dell'architettura e dell'ingegneria europea"
         ]
+      },
+      "casa-del-fascio": {
+        "notes": "A defining milestone of Italian Rationalism in Como, featuring a strict 2:1 golden ratio cube, skeletal grid façades, transparent atrium, and murals by abstract painter Mario Radice.",
+        "knowledgePoints": [
+          "Masterpiece of Rationalist spatial transparency and geometric modularity",
+          "Four asymmetric yet rigorously balanced grid façades",
+          "Botticino marble, glass blocks, and steel-framed glazing",
+          "Integration of Mario Radice’s abstract geometric murals"
+        ]
+      },
+      "villa-figini": {
+        "notes": "Figini’s personal avant-garde residence in Milan, rigorously applying Le Corbusier’s Five Points of Modern Architecture with slender pilotis and ribbon windows.",
+        "knowledgePoints": [
+          "First Italian villa to fully execute Le Corbusier’s Five Points",
+          "Elevated on slender reinforced concrete pilotis above gardens",
+          "Floating lightness achieved through continuous horizontal glazing"
+        ]
+      },
+      "pirelli-tower": {
+        "notes": "Milan’s landmark skyscraper designed by Giò Ponti with structural engineering by Pier Luigi Nervi, featuring a tapering hexagonal diamond plan.",
+        "knowledgePoints": [
+          "Symbol of post-war Italian economic and architectural renaissance",
+          "Prestressed concrete tapered core designed with Pier Luigi Nervi",
+          "Diamond-shaped aerodynamic profile with sharp knife-edge ends",
+          "Floating cantilevered roof canopy giving an illusion of weightlessness"
+        ]
+      },
+      "velasca-tower": {
+        "notes": "A masterpiece of Neo-Liberty and contextual modernism in Milan, with an overhanging residential crown supported by exposed external diagonal struts.",
+        "knowledgePoints": [
+          "Icon of contextual modernism and Neo-Liberty dialogue",
+          "Mushroom-shaped cantilevered profile with exposed diagonal trusses",
+          "Metaphorical homage to medieval Lombard castles and Milan Cathedral",
+          "Hybrid vertical zoning: compact commercial base and expansive residential crown"
+        ]
+      },
+      "cathedral-of-brasilia": {
+        "notes": "Niemeyer’s spiritual masterpiece in Brasília, composed of 16 sweeping parabolic concrete columns forming a crown-like structure crowned with stained glass.",
+        "knowledgePoints": [
+          "Crown-like hyperbolic structure formed by 16 parabolic columns",
+          "Dramatic contrast between underground dark tunnel and radiant celestial sanctuary",
+          "UNESCO World Heritage centerpiece of planned capital Brasília"
+        ]
+      },
+      "niteroi-contemporary-art-museum": {
+        "notes": "A saucer-like architectural icon perched over Guanabara Bay, supported by a single cylindrical base with a 98-meter winding red pedestrian ramp.",
+        "knowledgePoints": [
+          "Cantilevered saucer shell balanced on a single 9-meter column",
+          "Dramatic sinuous red ramp hovering above ocean reflecting pools",
+          "360-degree panoramic picture windows framing Sugarloaf Mountain"
+        ]
+      },
+      "centre-pompidou": {
+        "notes": "Revolutionary High-Tech landmark by Renzo Piano and Richard Rogers in Paris, turning the building inside-out with exposed colorful structural systems.",
+        "knowledgePoints": [
+          "Manifesto of High-Tech structural expressionism",
+          "Externalized color-coded infrastructure (blue/green/yellow/red)",
+          "Vast 48m column-free universal floor plates for dynamic curation",
+          "Precision cast-steel Gerberette articulated truss system"
+        ]
+      },
+      "tjibaou-cultural-centre": {
+        "notes": "Harmonious fusion of cutting-edge technology and Kanak indigenous vernacular in New Caledonia, featuring 10 curved wooden passive-ventilation shells.",
+        "knowledgePoints": [
+          "Pioneering ecological biomimicry with passive wind cooling",
+          "Durable Iroko timber louvers that breathe with ocean trade winds",
+          "Deep tribute to Kanak indigenous cultural memory and island ecology"
+        ]
+      },
+      "auditorium-parco-della-musica": {
+        "notes": "Major musical complex in Rome featuring three scarab-shaped lead-clad acoustic halls surrounding an open-air amphitheater.",
+        "knowledgePoints": [
+          "Three beetle-like acoustic shells encircling an open-air amphitheater",
+          "Exterior aged lead cladding and interior cherry-wood acoustic shells",
+          "Integrated archaeological museum preserving excavated ancient Roman villa"
+        ]
+      },
+      "dancing-house": {
+        "notes": "Gehry and Milunić’s dynamic deconstructivist icon in Prague, nicknamed Fred and Ginger for its intertwined stone and twisted glass towers.",
+        "knowledgePoints": [
+          "Deconstructivist sculptural metaphor of dancing figures Fred and Ginger",
+          "Undulating concrete façades with dynamic wave-like window rhythms",
+          "Harmonious modern dialogue with historical Vltava riverfront"
+        ]
+      },
+      "guggenheim-bilbao": {
+        "notes": "Pinnacle of deconstructivist architecture in Spain clad in 33,000 wafer-thin titanium tiles, sparking the worldwide \"Bilbao Effect.\"",
+        "knowledgePoints": [
+          "Aerospace CATIA 3D parametric digital engineering breakthrough",
+          "Fluid sculptural surfaces clad in 0.38mm titanium shingles",
+          "The definitive case study of cultural investment reviving an industrial city"
+        ]
+      },
+      "walt-disney-concert-hall": {
+        "notes": "Acoustically superlative home of the LA Philharmonic, clad in sweeping stainless-steel sails with an intimate vineyard-style auditorium inside.",
+        "knowledgePoints": [
+          "Sweeping composition of polished and brushed stainless-steel sails",
+          "Flawless vineyard-style acoustic hall developed with Yasuhisa Toyota",
+          "Anchor and catalyst of downtown Los Angeles cultural revival"
+        ]
+      },
+      "jewish-museum-berlin": {
+        "notes": "A profoundly poignant monument to memory by Libeskind, featuring a zigzag zinc exterior slashed by diagonal slits, underground axes, and vertical voids.",
+        "knowledgePoints": [
+          "Zigzag deconstructed zinc façade slashed by knife-like window incisions",
+          "Five continuous vertical voids piercing the interior symbolizing absence",
+          "Shalekhet (Fallen Leaves) immersive memory installation with 10,000 cast-iron faces"
+        ]
+      },
+      "one-world-trade-center": {
+        "notes": "Centerpiece of Libeskind’s Ground Zero master plan rising 1,776 feet, transitioning from a square base into an octagonal geometric beacon.",
+        "knowledgePoints": [
+          "Memory Foundations master plan and Ground Zero memorial pools",
+          "Symbolic height of 1,776 feet honoring the year of American independence",
+          "Tapering octagonal chamfered glass envelope designed for aerodynamic stability"
+        ]
+      },
+      "reichstag-dome": {
+        "notes": "Foster’s iconic glass dome atop Berlin’s historic parliament, featuring a double-helix pedestrian ramp and inverted light cone reflecting daylight.",
+        "knowledgePoints": [
+          "Double-helix panoramic ramp wrapping an inverted conical light sculptor",
+          "Passive natural illumination and eco-ventilation heat recovery system",
+          "Civic metaphor of the public elevated directly above debating lawmakers"
+        ]
+      },
+      "bac-de-roda-bridge": {
+        "notes": "Calatrava’s breakthrough bridge in Barcelona with inclined twin parabolic arches and cable nets creating wide pedestrian promenades.",
+        "knowledgePoints": [
+          "Inclined parabolic steel arches and cable nets forming a self-balancing structure",
+          "Urban weaving of severed neighborhoods across railway tracks",
+          "The Genesis of Calatrava’s signature pure white skeletal aesthetic"
+        ]
+      },
+      "zurich-stadelhofen-station": {
+        "notes": "Calatrava’s poetic transport hub integrated into a steep hillside with cantilevered concrete ribs and articulating sunshades.",
+        "knowledgePoints": [
+          "Multi-tiered transit hub organically molded into natural steep topography",
+          "Biomimetic skeletal cantilevered framework with mechanical sunshades",
+          "Meticulous hand-crafted detailing uniting concrete, steel, and glass"
+        ]
+      },
+      "maxxi-rome": {
+        "notes": "Zaha Hadid’s Stirling Prize-winning masterpiece in Rome, composed of dynamic overlapping concrete ribbons and suspended black staircases.",
+        "knowledgePoints": [
+          "Recipient of the prestigious RIBA Stirling Prize for Architecture",
+          "Continuous flowing fair-faced concrete ribbon walls and cantilevers",
+          "Interlocking illuminated black staircases guiding visitors through fluid galleries"
+        ]
+      },
+      "citylife-milan": {
+        "notes": "Hadid’s signature contribution to Milan’s skyline, featuring the 177m twisting Generali Tower and sweeping residential balconies.",
+        "knowledgePoints": [
+          "44-story vertically twisting skyscraper (Lo Storto) engineered parametrically",
+          "Trilogy of contemporary towers by Isozaki, Hadid, and Libeskind",
+          "LEED Platinum certified sustainable residential quarter with fluid timber balconies"
+        ]
       }
     }
   },
@@ -4347,6 +5067,57 @@ export const localizedContent = {
           "Pedagogía de la Bauhaus y universalización del Estilo Internacional",
           "Arquitectura orgánica y los Cinco Puntos para una Nueva Arquitectura"
         ]
+      },
+      "rationalism-architecture": {
+        "description": "Rationalism is an architectural movement developed in Italy in the 1920s and 1930s. Vitruvius claimed that architecture is a science that can be comprehended rationally. Milan’s Gruppo 7 sought a harmonious middle ground between classicism and industrial functionalism, integrating with the broader International Style.",
+        "historicalContext": "Founded in Milan in 1926 by Gruppo 7 (Figini, Frette, Larco, Pollini, Rava, Terragni, and Castagnoli), advocating rational design principles through the MIAR movement and the Quadrante journal.",
+        "keyFeatures": [
+          "Pure geometric volumes, grid order, and logical spatial planning",
+          "Synthesis of Italian classical proportions with modern reinforced concrete and glass",
+          "Rejection of historicist ornamentation in favor of skeletal clarity and transparency",
+          "Grid façades, continuous ribbon windows, and ground-floor pilotis",
+          "Integration of architecture with abstract art and murals"
+        ]
+      },
+      "neo-expressionism-architecture": {
+        "description": "Neo-Expressionist architecture departed from the rigid rectilinear boxes of post-war International Style, championing emotional expression, organic sculptural forms, and curved surfaces crafted from reinforced concrete.",
+        "historicalContext": "Emerging in the 1950s alongside advances in thin-shell concrete engineering, masters like Oscar Niemeyer reshaped civic landscapes across Brasília and beyond with lyrical monumentality.",
+        "keyFeatures": [
+          "Lyrical organic curves and dynamic sculptural volumes",
+          "Pushing reinforced concrete malleability and structural elasticity to its limits",
+          "Dramatic interplay of sunlight, shadow, and reflecting pools",
+          "Poetic romanticism over rigid utilitarian functionalism"
+        ]
+      },
+      "high-tech-architecture": {
+        "description": "High-Tech architecture (Structural Expressionism) emerged in the 1970s, proudly exposing industrial technology, structural engineering trusses, and building service conduits on exterior façades.",
+        "historicalContext": "Driven by space-age material innovations and prefabricated steel engineering, Renzo Piano and Richard Rogers redefined museums and civic centers as adaptable urban machines.",
+        "keyFeatures": [
+          "Exteriorization of structural load-bearing frames, escalators, and HVAC pipes",
+          "Color-coded utilities: blue for air conditioning, green for plumbing, yellow for electrical, red for vertical circulation",
+          "Vast column-free column spans offering universal programmatic adaptability",
+          "Precision prefabricated modular components and cast-steel articulated joints"
+        ]
+      },
+      "deconstructivism-architecture": {
+        "description": "Deconstructivist architecture subverts traditional Euclidean geometry and right-angled orthogonality, using non-linear forms, warped volumes, fragmented silhouettes, and dynamic disjunction.",
+        "historicalContext": "Gaining global prominence after the 1988 MoMA exhibition, Frank Gehry and peers harnessed aerospace CAD software (CATIA) to liberate architectural construction from straight lines.",
+        "keyFeatures": [
+          "Non-linear, tilted, and fragmented sculptural volumes",
+          "Innovative collage of titanium panels, curved glass, and raw metals",
+          "Computer-aided 3D parametric modeling and complex double-curved fabrication",
+          "Subversion of gravitational stillness with kinetic spatial dynamism"
+        ]
+      },
+      "contemporary-architecture": {
+        "description": "Contemporary architecture spans cutting-edge late 20th and 21st-century architectural explorations, encompassing parametricism, biomimetic structural engineering, traumatic memory spaces, and green high-rises.",
+        "historicalContext": "In an era of globalization and digital computation, visionary architects including Daniel Libeskind, Norman Foster, Santiago Calatrava, and Zaha Hadid created striking urban landmarks across world capitals.",
+        "keyFeatures": [
+          "Parametric curves and algorithmic generative design",
+          "Biomimetic skeletal structures and sweeping single-pylon cable-stayed bridges",
+          "Profound philosophical deconstruction of memory and historical trauma",
+          "Transparent sustainable eco-domes and urban revitalization catalysts"
+        ]
       }
     },
     "artists": {
@@ -4514,6 +5285,39 @@ export const localizedContent = {
       },
       "adolf-loos": {
         "bio": "Adolf Loos fue una figura clave de Modernist Architecture, autor de obras maestras arquitectónicas, innovaciones estructurales y tratados teóricos."
+      },
+      "giuseppe-terragni": {
+        "bio": "Pioneering master of Italian Rationalism and leading figure of Gruppo 7. Renowned for geometric purity, spatial transparency, and his masterpiece Casa del Fascio in Como."
+      },
+      "luigi-figini": {
+        "bio": "Prominent Italian Rationalist architect and co-founder of Gruppo 7. Partnered with Gino Pollini on major housing, Olivetti industrial complexes, and church architecture."
+      },
+      "gio-ponti": {
+        "bio": "Legendary Italian architect, industrial designer, educator, and publisher. Founded Domus magazine in 1928, established the Compasso d’Oro award, and designed the iconic Pirelli Tower."
+      },
+      "bbrp": {
+        "bio": "Historic Milanese architectural collective formed in 1932 by Banfi, Belgiojoso, Peressutti, and Rogers. Famous for bridging historical context and modernism in Torre Velasca."
+      },
+      "oscar-niemeyer": {
+        "bio": "Visionary Brazilian architect and 1988 Pritzker laureate celebrated as a \"sculptor of monuments,\" renowned for Brasília’s civic masterpieces and organic concrete curves."
+      },
+      "renzo-piano": {
+        "bio": "Italian Pritzker laureate and life senator celebrated for harmonious fusion of high technology, natural lighting, and civic elegance across world capitals."
+      },
+      "frank-gehry": {
+        "bio": "World-renowned Canadian-American architect and 1989 Pritzker laureate famous for sculptural titanium curves and creating the transformative \"Bilbao Effect.\""
+      },
+      "daniel-libeskind": {
+        "bio": "Polish-American architect celebrated for profound memorial spaces, zigzag geometries, the Jewish Museum Berlin, and the World Trade Center Master Plan."
+      },
+      "norman-foster": {
+        "bio": "Iconic British architect and 1999 Pritzker laureate, founder of Foster + Partners, pioneering high-tech eco-domes, transparent structures, and sustainable urbanism."
+      },
+      "santiago-calatrava": {
+        "bio": "Spanish-Swiss architect, structural engineer, and sculptor renowned for biomimetic skeletal bridges, soaring railway terminals, and organic white sculptural forms."
+      },
+      "zaha-hadid": {
+        "bio": "Revolutionary Iraqi-British architect and first female Pritzker laureate (2004), celebrated for radical parametric fluid architecture and the MAXXI museum in Rome."
       }
     },
     "artworks": {
@@ -5591,6 +6395,410 @@ export const localizedContent = {
           "Ejemplifica los principios espaciales y constructivos fundamentales de Modernist Architecture",
           "Ubicado en City of Prague Museum (Villa Müller) (Prague, Czech Republic)",
           "Hito de referencia en la historia de la arquitectura y la ingeniería occidental"
+        ]
+      },
+      "casa-del-fascio": {
+        "notes": "A defining milestone of Italian Rationalism in Como, featuring a strict 2:1 golden ratio cube, skeletal grid façades, transparent atrium, and murals by abstract painter Mario Radice.",
+        "knowledgePoints": [
+          "Masterpiece of Rationalist spatial transparency and geometric modularity",
+          "Four asymmetric yet rigorously balanced grid façades",
+          "Botticino marble, glass blocks, and steel-framed glazing",
+          "Integration of Mario Radice’s abstract geometric murals"
+        ]
+      },
+      "villa-figini": {
+        "notes": "Figini’s personal avant-garde residence in Milan, rigorously applying Le Corbusier’s Five Points of Modern Architecture with slender pilotis and ribbon windows.",
+        "knowledgePoints": [
+          "First Italian villa to fully execute Le Corbusier’s Five Points",
+          "Elevated on slender reinforced concrete pilotis above gardens",
+          "Floating lightness achieved through continuous horizontal glazing"
+        ]
+      },
+      "pirelli-tower": {
+        "notes": "Milan’s landmark skyscraper designed by Giò Ponti with structural engineering by Pier Luigi Nervi, featuring a tapering hexagonal diamond plan.",
+        "knowledgePoints": [
+          "Symbol of post-war Italian economic and architectural renaissance",
+          "Prestressed concrete tapered core designed with Pier Luigi Nervi",
+          "Diamond-shaped aerodynamic profile with sharp knife-edge ends",
+          "Floating cantilevered roof canopy giving an illusion of weightlessness"
+        ]
+      },
+      "velasca-tower": {
+        "notes": "A masterpiece of Neo-Liberty and contextual modernism in Milan, with an overhanging residential crown supported by exposed external diagonal struts.",
+        "knowledgePoints": [
+          "Icon of contextual modernism and Neo-Liberty dialogue",
+          "Mushroom-shaped cantilevered profile with exposed diagonal trusses",
+          "Metaphorical homage to medieval Lombard castles and Milan Cathedral",
+          "Hybrid vertical zoning: compact commercial base and expansive residential crown"
+        ]
+      },
+      "cathedral-of-brasilia": {
+        "notes": "Niemeyer’s spiritual masterpiece in Brasília, composed of 16 sweeping parabolic concrete columns forming a crown-like structure crowned with stained glass.",
+        "knowledgePoints": [
+          "Crown-like hyperbolic structure formed by 16 parabolic columns",
+          "Dramatic contrast between underground dark tunnel and radiant celestial sanctuary",
+          "UNESCO World Heritage centerpiece of planned capital Brasília"
+        ]
+      },
+      "niteroi-contemporary-art-museum": {
+        "notes": "A saucer-like architectural icon perched over Guanabara Bay, supported by a single cylindrical base with a 98-meter winding red pedestrian ramp.",
+        "knowledgePoints": [
+          "Cantilevered saucer shell balanced on a single 9-meter column",
+          "Dramatic sinuous red ramp hovering above ocean reflecting pools",
+          "360-degree panoramic picture windows framing Sugarloaf Mountain"
+        ]
+      },
+      "centre-pompidou": {
+        "notes": "Revolutionary High-Tech landmark by Renzo Piano and Richard Rogers in Paris, turning the building inside-out with exposed colorful structural systems.",
+        "knowledgePoints": [
+          "Manifesto of High-Tech structural expressionism",
+          "Externalized color-coded infrastructure (blue/green/yellow/red)",
+          "Vast 48m column-free universal floor plates for dynamic curation",
+          "Precision cast-steel Gerberette articulated truss system"
+        ]
+      },
+      "tjibaou-cultural-centre": {
+        "notes": "Harmonious fusion of cutting-edge technology and Kanak indigenous vernacular in New Caledonia, featuring 10 curved wooden passive-ventilation shells.",
+        "knowledgePoints": [
+          "Pioneering ecological biomimicry with passive wind cooling",
+          "Durable Iroko timber louvers that breathe with ocean trade winds",
+          "Deep tribute to Kanak indigenous cultural memory and island ecology"
+        ]
+      },
+      "auditorium-parco-della-musica": {
+        "notes": "Major musical complex in Rome featuring three scarab-shaped lead-clad acoustic halls surrounding an open-air amphitheater.",
+        "knowledgePoints": [
+          "Three beetle-like acoustic shells encircling an open-air amphitheater",
+          "Exterior aged lead cladding and interior cherry-wood acoustic shells",
+          "Integrated archaeological museum preserving excavated ancient Roman villa"
+        ]
+      },
+      "dancing-house": {
+        "notes": "Gehry and Milunić’s dynamic deconstructivist icon in Prague, nicknamed Fred and Ginger for its intertwined stone and twisted glass towers.",
+        "knowledgePoints": [
+          "Deconstructivist sculptural metaphor of dancing figures Fred and Ginger",
+          "Undulating concrete façades with dynamic wave-like window rhythms",
+          "Harmonious modern dialogue with historical Vltava riverfront"
+        ]
+      },
+      "guggenheim-bilbao": {
+        "notes": "Pinnacle of deconstructivist architecture in Spain clad in 33,000 wafer-thin titanium tiles, sparking the worldwide \"Bilbao Effect.\"",
+        "knowledgePoints": [
+          "Aerospace CATIA 3D parametric digital engineering breakthrough",
+          "Fluid sculptural surfaces clad in 0.38mm titanium shingles",
+          "The definitive case study of cultural investment reviving an industrial city"
+        ]
+      },
+      "walt-disney-concert-hall": {
+        "notes": "Acoustically superlative home of the LA Philharmonic, clad in sweeping stainless-steel sails with an intimate vineyard-style auditorium inside.",
+        "knowledgePoints": [
+          "Sweeping composition of polished and brushed stainless-steel sails",
+          "Flawless vineyard-style acoustic hall developed with Yasuhisa Toyota",
+          "Anchor and catalyst of downtown Los Angeles cultural revival"
+        ]
+      },
+      "jewish-museum-berlin": {
+        "notes": "A profoundly poignant monument to memory by Libeskind, featuring a zigzag zinc exterior slashed by diagonal slits, underground axes, and vertical voids.",
+        "knowledgePoints": [
+          "Zigzag deconstructed zinc façade slashed by knife-like window incisions",
+          "Five continuous vertical voids piercing the interior symbolizing absence",
+          "Shalekhet (Fallen Leaves) immersive memory installation with 10,000 cast-iron faces"
+        ]
+      },
+      "one-world-trade-center": {
+        "notes": "Centerpiece of Libeskind’s Ground Zero master plan rising 1,776 feet, transitioning from a square base into an octagonal geometric beacon.",
+        "knowledgePoints": [
+          "Memory Foundations master plan and Ground Zero memorial pools",
+          "Symbolic height of 1,776 feet honoring the year of American independence",
+          "Tapering octagonal chamfered glass envelope designed for aerodynamic stability"
+        ]
+      },
+      "reichstag-dome": {
+        "notes": "Foster’s iconic glass dome atop Berlin’s historic parliament, featuring a double-helix pedestrian ramp and inverted light cone reflecting daylight.",
+        "knowledgePoints": [
+          "Double-helix panoramic ramp wrapping an inverted conical light sculptor",
+          "Passive natural illumination and eco-ventilation heat recovery system",
+          "Civic metaphor of the public elevated directly above debating lawmakers"
+        ]
+      },
+      "bac-de-roda-bridge": {
+        "notes": "Calatrava’s breakthrough bridge in Barcelona with inclined twin parabolic arches and cable nets creating wide pedestrian promenades.",
+        "knowledgePoints": [
+          "Inclined parabolic steel arches and cable nets forming a self-balancing structure",
+          "Urban weaving of severed neighborhoods across railway tracks",
+          "The Genesis of Calatrava’s signature pure white skeletal aesthetic"
+        ]
+      },
+      "zurich-stadelhofen-station": {
+        "notes": "Calatrava’s poetic transport hub integrated into a steep hillside with cantilevered concrete ribs and articulating sunshades.",
+        "knowledgePoints": [
+          "Multi-tiered transit hub organically molded into natural steep topography",
+          "Biomimetic skeletal cantilevered framework with mechanical sunshades",
+          "Meticulous hand-crafted detailing uniting concrete, steel, and glass"
+        ]
+      },
+      "maxxi-rome": {
+        "notes": "Zaha Hadid’s Stirling Prize-winning masterpiece in Rome, composed of dynamic overlapping concrete ribbons and suspended black staircases.",
+        "knowledgePoints": [
+          "Recipient of the prestigious RIBA Stirling Prize for Architecture",
+          "Continuous flowing fair-faced concrete ribbon walls and cantilevers",
+          "Interlocking illuminated black staircases guiding visitors through fluid galleries"
+        ]
+      },
+      "citylife-milan": {
+        "notes": "Hadid’s signature contribution to Milan’s skyline, featuring the 177m twisting Generali Tower and sweeping residential balconies.",
+        "knowledgePoints": [
+          "44-story vertically twisting skyscraper (Lo Storto) engineered parametrically",
+          "Trilogy of contemporary towers by Isozaki, Hadid, and Libeskind",
+          "LEED Platinum certified sustainable residential quarter with fluid timber balconies"
+        ]
+      }
+    }
+  },
+  "zh-TW": {
+    "movements": {
+      "rationalism-architecture": {
+        "description": "理性主义建筑是20世纪20至30年代在意大利发展成熟的现代建筑潮流。维特鲁威在《建筑十书》中声称建筑是一门可以理性理解的科学；20世纪的理性主义进一步相信现实世界的复杂问题可通过理性逻辑化解。米兰Gruppo 7在古典主义精神与工业化现代形式之间寻求平衡，并与国际风格深度共振。",
+        "historicalContext": "1926年，由Luigi Figini、Guido Frette、Sebastiano Larco Silva、Gino Pollini、Carlo Enrico Rava、Giuseppe Terragni与Ubaldo Castagnoli七位建筑师在米兰成立Gruppo 7，倡导理性主义，随后成立MIAR并创办《Quadrante》期刊。",
+        "keyFeatures": [
+          "追求纯粹几何形体、网格秩序与逻辑功能划分",
+          "在意大利古典建筑比例与现代工业材质间寻求平衡",
+          "摒弃历史主义繁复装饰，强调结构骨架与空间透明性",
+          "格网立面、通长带形窗与底层架空",
+          "探索建筑与抽象艺术、壁画的一体化结合"
+        ]
+      },
+      "neo-expressionism-architecture": {
+        "description": "新表现主义建筑打破了二战后国际风格千篇一律的方正盒子框架，强调建筑的情感表达、雕塑性空间与有机自由曲面。建筑师通过先进的钢筋混凝土薄壳、悬挑与双曲抛物面技术，将建筑化作具有崇高诗意的巨型雕塑。",
+        "historicalContext": "20世纪50年代起，伴随战后工业化混凝土浇筑技术的成熟，奥斯卡·尼迈耶等大师在巴西利亚新首都与世界各地开辟了极具抒情张力的有机表现主义新时代。",
+        "keyFeatures": [
+          "连续起伏的有机曲线与雕塑般的纪念碑体量",
+          "将钢筋混凝土的可塑性与结构力学推向极限",
+          "强调光影与水面反射构成的戏剧性空间意境",
+          "拒绝死板的教条功能主义，注入浪漫主义与诗意灵性"
+        ]
+      },
+      "high-tech-architecture": {
+        "description": "高技派（结构表现主义）建筑兴起于20世纪70年代，倡导将工业技术、精密工程结构、设备管线与机械美学诚实地暴露在外立面。通过预制金属桁架、张拉索网与透光采光顶，创造具有高灵活性与时代科技感的开放公共空间。",
+        "historicalContext": "在第三次科技革命与太空时代工业材料飞跃背景下诞生，伦佐·皮亚诺、理查德·罗杰斯与诺曼·福斯特打破传统建筑围护结构的定势，开创机器美学与生态技术的新时代。",
+        "keyFeatures": [
+          "建筑承重骨架、通风电梯与设备管网彻底外置裸露",
+          "色彩编码系统：蓝色空调管、绿色水管、黄色电气与红色消防动线",
+          "大跨度无柱开放空间，实现室内功能的高度弹性重构",
+          "高精度工业预制构件与精细节点连接工艺"
+        ]
+      },
+      "deconstructivism-architecture": {
+        "description": "解构主义建筑受后结构主义哲学启发，打破传统欧几里得几何学的垂直与水平正交体系，通过非线性形态、体量扭曲、倾斜断裂与动态解聚，展现非凡的视觉张力与反常规空间体验。",
+        "historicalContext": "伴随冷战结束、后现代哲学深化与计算机辅助三维设计软件（CATIA等）的突破，建筑师彻底摆脱直线直角的建造束缚，开启数字化解构时代。",
+        "keyFeatures": [
+          "非线性、断裂倾斜与反传统透视的碎片化造型",
+          "钛合金薄板、曲面玻璃与不锈钢等复合现代材质大胆拼接",
+          "计算机辅助数字化三维参数化与复杂双曲面制造",
+          "颠覆传统重力感与平稳感，呈现戏剧性动感与张力"
+        ]
+      },
+      "contemporary-architecture": {
+        "description": "当代建筑涵盖20世纪末至21世纪当下的前沿建筑探索，包括参数化主义、仿生结构工程、历史创伤纪念碑建筑与绿色低碳可持续高层。探索建筑在都市重生、生态共存与文化象征层面的全新维度。",
+        "historicalContext": "全球化进程、数字革命与超级都市扩张推动当代建筑跨越地域边界。丹尼尔·里伯斯金、诺曼·福斯特、圣地亚哥·卡拉特拉瓦与扎哈·哈迪德在全球历史都市留下了极具视觉震撼力的世纪地标。",
+        "keyFeatures": [
+          "参数化曲面与计算几何生成设计",
+          "仿生骨骼结构工程与大跨度单塔斜拉桥梁体系",
+          "创伤记忆空间与历史文脉的深层哲学解构",
+          "透明绿色生态穹顶与可再生循环城市更新地标"
+        ]
+      }
+    },
+    "artists": {
+      "giuseppe-terragni": {
+        "bio": "意大利理性主义建筑运动领军人物与先驱大师，Gruppo 7核心成员。以纯粹的三维几何网格、透明性与空间逻辑著称，代表作科莫法西斯宫被公认为20世纪现代主义建筑经典里程碑。"
+      },
+      "luigi-figini": {
+        "bio": "意大利理性主义建筑代表人物，Gruppo 7发起人之一。与吉诺·波利尼长期合作组成 Figini & Pollini 事务所，投身于住宅、伊夫雷亚 Olivetti 工厂群与米兰贫民圣母堂建设。"
+      },
+      "gio-ponti": {
+        "bio": "意大利建筑大师、工业设计师、教育家与出版家，战后意大利设计复兴教父。1928年创办《Domus》杂志，1954年创立金罗盘奖，长期执教于米兰理工大学。"
+      },
+      "bbrp": {
+        "bio": "1932年由四位米兰理工大学毕业生 Banfi、Belgiojoso、Peressutti 与 Rogers 创立的先锋建筑工作室。主导《Quadrante》与《Casabella》期刊，探索历史语境与现代主义融合。"
+      },
+      "oscar-niemeyer": {
+        "bio": "巴西现代主义与新表现主义建筑巨匠，1988年普利兹克奖得主。主导巴西新首都巴西利亚标志性建筑群规划设计，以赞美自然蜿蜒起伏的自由曲线著称。"
+      },
+      "renzo-piano": {
+        "bio": "意大利国宝级高技派与当代建筑大师，1998年普利兹克奖得主，意大利终身参议员。善于将尖端机械工程技术、自然光线漫射与地域文脉完美结合。"
+      },
+      "frank-gehry": {
+        "bio": "加拿大裔美国当代建筑大师，解构主义建筑代表人物，1989年普利兹克奖得主。善于将廉价日常材料与惊人的复杂三维雕塑曲面结构结合，引发著名的毕尔巴鄂效应。"
+      },
+      "daniel-libeskind": {
+        "bio": "波兰裔美国当代建筑大师，柏林犹太博物馆设计者与纽约世贸中心遗址重建总规划师。以锐利折线、倾斜裂隙与充满哲学张力的创伤记忆空间闻名。"
+      },
+      "norman-foster": {
+        "bio": "英国当代建筑泰斗、高科技建筑领军人物，1999年普利兹克奖得主。创立 Foster + Partners，善于将生态可持续技术、透明结构与历史建筑有机织补。"
+      },
+      "santiago-calatrava": {
+        "bio": "西班牙裔瑞士建筑大师、结构工程师与雕塑家。将人体骨骼与动植物仿生形态融入受力桥梁、火车站与大型公共场馆，将工程力学与纯白雕塑感推向神性境界。"
+      },
+      "zaha-hadid": {
+        "bio": "伊拉克裔英国传奇女建筑师，参数化主义巅峰代表，首位女性普利兹克建筑奖得主（2004）。利用计算流体力学与算法创造出连绵无垠的流体曲面建筑宇宙。"
+      }
+    },
+    "artworks": {
+      "casa-del-fascio": {
+        "notes": "意大利理性主义建筑的划时代杰作。通过完美的正方体比例、多孔透空格网立面与内部中庭采光天顶，将古典中庭形式以现代混凝土骨架重构，内部由 Mario Radice 绘制几何壁画。",
+        "knowledgePoints": [
+          "理性主义空间透明性与正方体几何模数法则的巅峰展现",
+          "四个立面采用非对称但高度平衡的几何实虚对比格网",
+          "大面积玻璃砖、博蒂奇诺大理石与钢框玻璃材质",
+          "与抽象画家 Mario Radice 几何壁画的总体艺术融合"
+        ]
+      },
+      "villa-figini": {
+        "notes": "菲吉尼为自己设计的先锋私人住宅。严格遵循柯布西耶新建筑五点原则：底层纤细立柱架空、条形水平窗、自由平面、自由立面与屋顶花园。",
+        "knowledgePoints": [
+          "意大利首座实践柯布西耶新建筑五点的理性主义先锋住宅",
+          "底层全部架空于细长混凝土立柱之上，与花园植被贯通",
+          "水平长窗与悬挑露台构成的漂浮轻盈体量感"
+        ]
+      },
+      "pirelli-tower": {
+        "notes": "米兰战后现代主义与结构理性主义的天际线象征。庞蒂与 Nervi 合作，采用六角菱形纤薄翼状收分造型，彻底摆脱传统方盒子摩天楼范式。",
+        "knowledgePoints": [
+          "米兰战后经济复兴与现代摩天楼标志性纪念碑",
+          "变截面预应力混凝土核心筒体系",
+          "两端逐渐收窄成锐角的六边形菱形平面",
+          "悬浮屋顶挑檐与通透玻璃幕墙带来的视觉失重感"
+        ]
+      },
+      "velasca-tower": {
+        "notes": "战后新自由主义与米兰历史文脉对话的杰作。下部办公、上部住宅向外悬挑，通过外露斜向支撑致敬中世纪伦巴第城堡防御悬楼形制。",
+        "knowledgePoints": [
+          "新自由主义与历史文脉主义代表作",
+          "蘑菇形外挑高层悬臂结构与外露斜撑桁架力学体系",
+          "与米兰大教堂中世纪哥特飞扶壁意象的跨时空隐喻",
+          "下层办公与上层居住的复合功能分区"
+        ]
+      },
+      "cathedral-of-brasilia": {
+        "notes": "尼迈耶最负盛名的宗教建筑杰作。由16根抛物线形混凝土曲柱围合成向天空升腾的王冠形状，柱间嵌以透光彩色玻璃天幕。",
+        "knowledgePoints": [
+          "16根抛物线形双曲面混凝土立柱构成的王冠形向心结构",
+          "地下暗门进入与穹顶直射自然天光形成强烈的受难与复活对比",
+          "巴西利亚世界文化遗产的核心地标"
+        ]
+      },
+      "niteroi-contemporary-art-museum": {
+        "notes": "矗立在瓜纳巴拉湾悬崖海景之上的飞碟状建筑奇观。三层圆盘主体仅由中央一根圆柱支撑扎根于水池中，一条红色坡道盘旋升入展厅。",
+        "knowledgePoints": [
+          "单点中心柱支撑的巨型倒圆台悬挑薄壳结构奇迹",
+          "盘旋曲折的亮红色悬空步道与蓝色海湾的戏剧性对比",
+          "360度全景观景窗将大西洋尽收眼底"
+        ]
+      },
+      "centre-pompidou": {
+        "notes": "高技派建筑里程碑。皮亚诺与罗杰斯将承重钢结构桁架与机电管线完全暴露在外表，内部释放出完全无立柱阻隔的自由策展空间。",
+        "knowledgePoints": [
+          "高技派最具革命性的开山宣言之作",
+          "外墙设备管线功能色彩编码体系（红/蓝/绿/黄）",
+          "无柱大空间与自由模块化策展体系颠覆传统格局",
+          "铸钢格伯梁精巧铰接节点力学体系"
+        ]
+      },
+      "tjibaou-cultural-centre": {
+        "notes": "高科技与南太平洋美拉尼西亚传统卡纳克草屋智慧的诗意融合。10座木格栅壳体利用太平洋信风实现自然的被动式风压对流冷却。",
+        "knowledgePoints": [
+          "生态仿生与被动式风力对流冷却的高技术典范",
+          "耐用木百叶结构随着海风与光线产生呼吸般的开合感",
+          "对土著原住民历史记忆与岛屿生态的崇高致敬"
+        ]
+      },
+      "auditorium-parco-della-musica": {
+        "notes": "欧洲最大的多功能音乐文化复合体。由三座宛如巨型甲虫的弧形铅皮穹顶音乐厅环绕露天剧场分布，内部采用双曲面樱桃木声学反射板。",
+        "knowledgePoints": [
+          "三座独立甲壳状声学建筑体量环抱露天圆形广场",
+          "外覆防腐铅皮与内部樱桃木箱体构成的精密乐器式构造",
+          "建造期间发掘古罗马庄园遗址并整合为原址考古博物馆"
+        ]
+      },
+      "dancing-house": {
+        "notes": "盖里与米卢尼奇合作设计。大楼由一对如舞者般依偎起舞的动态双塔构成，成为布拉格历史老城与现代解构艺术碰撞的标志地标。",
+        "knowledgePoints": [
+          "解构主义动态双体雕塑隐喻（Fred and Ginger 舞姿）",
+          "波浪起伏的混凝土墙面与不对称窗洞构成的流动韵律",
+          "与布拉格历史街区的新旧共生典范"
+        ]
+      },
+      "guggenheim-bilbao": {
+        "notes": "解构主义巅峰之作。整座建筑由33,000块极薄钛合金鱼鳞状曲面包裹，如停泊在河畔的金色巨舰，创造了著名的毕尔巴鄂效应。",
+        "knowledgePoints": [
+          "利用航空级软件 CATIA 打造的自由双曲面数字建造壮举",
+          "有机流动的极薄钛金属表面与石灰石、玻璃复合幕墙",
+          "改变城市命运的毕尔巴鄂效应经济与文化范例"
+        ]
+      },
+      "walt-disney-concert-hall": {
+        "notes": "洛杉矶交响乐团主场。外立面由起伏不锈钢板如扬起风帆般层叠，内部采用花形温润冷杉木打造葡萄园式环绕声学大厅。",
+        "knowledgePoints": [
+          "抛光与雾面不锈钢板打造的风帆状金属雕塑群落",
+          "葡萄园式无瑕声学内胆",
+          "洛杉矶市中心文化复兴核心引擎"
+        ]
+      },
+      "jewish-museum-berlin": {
+        "notes": "当代纪念性建筑最震撼的哲学典范。建筑平面呈闪电之字形，外覆锌板并被倾斜划痕窗洞切开；内部设置地下三轴线与空白空间。",
+        "knowledgePoints": [
+          "闪电之字形解构锌板立面与利刃切口状非对称采光裂隙",
+          "贯穿整座建筑的五处贯通垂直虚空象征历史的断裂",
+          "由万片铸铁面孔构成的沉浸式记忆空间"
+        ]
+      },
+      "one-world-trade-center": {
+        "notes": "里伯斯金世贸中心遗址重建总规划核心，高1776英尺象征美国独立年份，八面渐变倒角几何玻璃体向上收分，成为重生的不屈灯塔。",
+        "knowledgePoints": [
+          "世贸遗址总体规划与归零地纪念水池",
+          "建筑高度1776英尺（541.3米）象征历史独立与重生",
+          "正方形基座渐变为八边形抗风倒角超高层工程"
+        ]
+      },
+      "reichstag-dome": {
+        "notes": "历史建筑与现代民主透明性结合的典范。福斯特在历史石砌大厦顶部架设通体透明的钢网玻璃穹顶，倒圆锥形镜面漏斗反射阳光进议会大厅。",
+        "knowledgePoints": [
+          "双螺旋全景观光步道与中央倒锥形反光镜漏斗",
+          "被动式自然采光与热压通风生态节能系统",
+          "公众视线俯瞰议会大厅的现代民主政治象征"
+        ]
+      },
+      "bac-de-roda-bridge": {
+        "notes": "卡拉特拉瓦国际代表作。采用纯白色双重倾斜抛物线拱肋向外倾斜28度形成张拉索网，不仅承载车流，更为两侧行人开辟林荫步道。",
+        "knowledgePoints": [
+          "成对倾斜抛物线钢拱与悬索构成的三维自平衡空间力学体系",
+          "缝合城市被铁轨割裂街区的都市织补典范",
+          "卡拉特拉瓦标志性仿生纯白钢构美学的起点"
+        ]
+      },
+      "zurich-stadelhofen-station": {
+        "notes": "依陡峭山坡地势而建，利用倾斜预应力混凝土肋拱与外露钢筋骨架支撑起上层人行走廊，雨棚如肋骨与飞鸟翅膀般延展。",
+        "knowledgePoints": [
+          "贴合自然陡坡地形的多层立体复合交通与人行系统",
+          "仿生肋骨架悬臂结构与活动遮阳格栅",
+          "混凝土、钢构与玻璃精雕细琢的无缝工业质感"
+        ]
+      },
+      "maxxi-rome": {
+        "notes": "哈迪德荣获斯特林大奖代表作。由交织穿插的混凝土流线体量层叠构成，内部黑色悬浮钢楼梯与弯曲白墙引导参观者在空间长河中流淌。",
+        "knowledgePoints": [
+          "荣获 RIBA Stirling Prize 斯特林最高荣誉建筑大奖",
+          "连续浇筑的清水混凝土弯曲流动墙体",
+          "自由穿插的黑色发光悬挂楼梯与悬臂式出挑展厅"
+        ]
+      },
+      "citylife-milan": {
+        "notes": "米兰世博会后城市更新核心。忠利保险塔随高度上升呈现优雅螺旋扭转曲率；住宅区由7座流线型阳台公寓构成，重塑米兰天际线。",
+        "knowledgePoints": [
+          "44层垂直轴向自底向上平滑扭转参数化结构",
+          "CityLife三塔汇聚之作（Isozaki / Hadid / Libeskind）",
+          "流线型木质阳台与 LEED 白金级绿色认证"
         ]
       }
     }
