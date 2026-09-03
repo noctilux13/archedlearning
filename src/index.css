@@ -23,28 +23,28 @@
   --border-hover: rgba(0, 0, 0, 0.14);
   --border-focus: #111827;
 
-  /* ── Low-Saturation Mineral Accents (Anti-Fatigue & Subtle Highlights) ── */
-  --accent-primary: #111827;
+  /* ── Low-Saturation Mineral Accents (Subtle Architectural Highlights) ── */
+  --accent-primary: #181c24;
 
-  /* Slate / Cobalt Blue (Art Movements, Interactive Active) */
-  --accent-blue: #2563eb;
-  --accent-blue-subtle: #f0f7ff;
-  --accent-blue-border: rgba(37, 99, 235, 0.15);
+  /* Low-Saturation Slate Blue (Art Movements, Academic Navigation) */
+  --accent-blue: #3b5d82;
+  --accent-blue-subtle: #f3f6f9;
+  --accent-blue-border: rgba(59, 93, 130, 0.18);
 
-  /* Sage Green (Architecture, Mastery Progress) */
-  --accent-sage: #059669;
-  --accent-sage-subtle: #f0fdf4;
-  --accent-sage-border: rgba(5, 150, 105, 0.15);
+  /* Low-Saturation Mineral Sage (Architecture, Structural Progress) */
+  --accent-sage: #486a55;
+  --accent-sage-subtle: #f2f6f4;
+  --accent-sage-border: rgba(72, 106, 85, 0.18);
 
-  /* Terracotta Coral (Exams, Quizzes, Flashcards) */
-  --accent-terracotta: #e11d48;
-  --accent-terracotta-subtle: #fff1f2;
-  --accent-terracotta-border: rgba(225, 29, 72, 0.15);
+  /* Low-Saturation Dried Terracotta (Quizzes, Flashcard Anchors) */
+  --accent-terracotta: #8d5255;
+  --accent-terracotta-subtle: #f9f4f4;
+  --accent-terracotta-border: rgba(141, 82, 85, 0.18);
 
-  /* Ochre Amber (Centuries, Timeline Markers) */
-  --accent-ochre: #d97706;
-  --accent-ochre-subtle: #fffbeb;
-  --accent-ochre-border: rgba(217, 119, 6, 0.15);
+  /* Low-Saturation Sepia Umber (Centuries, Timeline Chronology) */
+  --accent-ochre: #7d633f;
+  --accent-ochre-subtle: #f8f6f1;
+  --accent-ochre-border: rgba(125, 99, 63, 0.18);
 
   /* ── Typography Stacks ── */
   --font-serif: 'Newsreader', 'Instrument Serif', 'Playfair Display', 'Songti SC', Georgia, serif;
@@ -69,7 +69,7 @@
   /* ── Elevation ── */
   --shadow-subtle: 0 1px 2px rgba(0, 0, 0, 0.03);
   --shadow-card: 0 1px 3px rgba(0, 0, 0, 0.03), 0 6px 16px -4px rgba(0, 0, 0, 0.02);
-  --shadow-card-hover: 0 12px 28px -6px rgba(0, 0, 0, 0.06), 0 4px 12px -2px rgba(0, 0, 0, 0.03);
+  --shadow-card-hover: 0 10px 24px -6px rgba(0, 0, 0, 0.05), 0 3px 10px -2px rgba(0, 0, 0, 0.025);
   --shadow-float: 0 20px 40px -10px rgba(0, 0, 0, 0.07);
   --shadow-lightbox: 0 25px 60px -15px rgba(0, 0, 0, 0.35);
 
@@ -80,7 +80,7 @@
 }
 
 /* ==========================================================================
-   Reset & Base with Anti-Fatigue Soft Ambient Glow
+   Reset & Base with Neutral Low-Saturation Ambient Vignette
    ========================================================================== */
 
 *, *::before, *::after {
@@ -89,13 +89,17 @@
   padding: 0;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   font-family: var(--font-sans);
   background-color: var(--bg-main);
   background-image: 
-    radial-gradient(ellipse 65% 45% at 15% 0%, rgba(59, 130, 246, 0.035), transparent 70%),
-    radial-gradient(ellipse 55% 35% at 85% 15%, rgba(16, 185, 129, 0.03), transparent 70%),
-    radial-gradient(ellipse 45% 45% at 90% 90%, rgba(225, 29, 72, 0.025), transparent 70%);
+    radial-gradient(ellipse 70% 50% at 15% 0%, rgba(30, 41, 59, 0.018), transparent 70%),
+    radial-gradient(ellipse 60% 40% at 85% 15%, rgba(15, 23, 42, 0.015), transparent 70%),
+    radial-gradient(ellipse 50% 50% at 90% 90%, rgba(30, 41, 59, 0.012), transparent 70%);
   background-attachment: fixed;
   color: var(--text-primary);
   font-size: 15px;
@@ -261,14 +265,15 @@ h3 {
   pointer-events: none;
   z-index: 0;
   background: radial-gradient(
-    700px circle at var(--mouse-x, -9999px) var(--mouse-y, -9999px),
-    rgba(37, 99, 235, 0.065) 0%,
-    rgba(5, 150, 105, 0.035) 35%,
-    rgba(225, 29, 72, 0.02) 65%,
-    transparent 85%
+    760px circle at var(--mouse-x, -9999px) var(--mouse-y, -9999px),
+    rgba(15, 23, 42, 0.052) 0%,
+    rgba(30, 41, 59, 0.032) 38%,
+    rgba(51, 65, 85, 0.012) 65%,
+    transparent 80%
   );
   will-change: background;
-  transition: opacity 0.4s ease;
+  opacity: var(--spotlight-opacity, 0.7);
+  transition: opacity 0.5s ease;
 }
 
 /* ==========================================================================
@@ -281,7 +286,7 @@ h3 {
   padding: var(--space-lg);
   border: 1px solid var(--border-hairline);
   box-shadow: var(--shadow-subtle);
-  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.35s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.25s ease;
+  transition: transform 0.32s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.32s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.22s ease;
   position: relative;
   will-change: transform;
   overflow: hidden;
@@ -293,9 +298,9 @@ h3 {
   inset: -1px;
   border-radius: inherit;
   background: radial-gradient(
-    420px circle at var(--card-mouse-x, -9999px) var(--card-mouse-y, -9999px),
-    rgba(37, 99, 235, 0.16),
-    rgba(5, 150, 105, 0.1) 40%,
+    480px circle at var(--card-mouse-x, -9999px) var(--card-mouse-y, -9999px),
+    rgba(15, 23, 42, 0.075) 0%,
+    rgba(51, 65, 85, 0.03) 45%,
     transparent 75%
   );
   pointer-events: none;
@@ -324,6 +329,7 @@ h3 {
   border-radius: var(--radius-md);
   padding: clamp(1.5rem, 3.5vw, 2.5rem);
   box-shadow: var(--shadow-card);
+  transition: transform 0.32s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.32s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.22s ease;
   position: relative;
   overflow: hidden;
 }
@@ -335,8 +341,8 @@ h3 {
   border-radius: inherit;
   background: radial-gradient(
     650px circle at var(--card-mouse-x, -9999px) var(--card-mouse-y, -9999px),
-    rgba(37, 99, 235, 0.12),
-    rgba(5, 150, 105, 0.08) 45%,
+    rgba(15, 23, 42, 0.065) 0%,
+    rgba(51, 65, 85, 0.025) 45%,
     transparent 70%
   );
   pointer-events: none;
@@ -414,9 +420,9 @@ h3 {
 }
 
 .chip-purple {
-  background-color: #faf5ff;
-  color: #7e22ce;
-  border: 1px solid rgba(126, 34, 206, 0.15);
+  background-color: #f6f4f8;
+  color: #5c4f6d;
+  border: 1px solid rgba(92, 79, 109, 0.18);
 }
 
 /* ==========================================================================

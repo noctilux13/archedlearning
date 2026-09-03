@@ -269,17 +269,19 @@ export default function Quiz() {
                 }
 
                 return (
-                  <button
+                  <motion.button
                     key={idx}
                     className="btn"
                     style={optStyle}
                     onClick={() => handleSelectOption(idx)}
                     disabled={selectedOption !== null}
+                    whileHover={selectedOption === null ? { x: 3, transition: { type: 'spring', stiffness: 450, damping: 25 } } : {}}
+                    whileTap={selectedOption === null ? { scale: 0.99 } : {}}
                   >
                     <span><strong>{String.fromCharCode(65 + idx)}.</strong> {opt}</span>
                     {selectedOption !== null && isCorrect && <CheckCircle2 size={17} style={{ color: 'var(--accent-sage)' }} />}
                     {selectedOption !== null && isSelected && !isCorrect && <XCircle size={17} style={{ color: 'var(--accent-terracotta)' }} />}
-                  </button>
+                  </motion.button>
                 );
               })}
             </div>

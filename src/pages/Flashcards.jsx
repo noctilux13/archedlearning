@@ -123,7 +123,7 @@ export default function Flashcards() {
             >
               <motion.div
                 animate={{ rotateY: isFlipped ? 180 : 0 }}
-                transition={{ type: 'spring', stiffness: 260, damping: 24 }}
+                transition={{ type: 'spring', stiffness: 220, damping: 22 }}
                 style={{ width: '100%', height: '100%', position: 'relative', transformStyle: 'preserve-3d' }}
               >
                 {/* Front */}

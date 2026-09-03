@@ -2,13 +2,17 @@ import React, { useRef, useEffect } from 'react';
 
 export default function MouseSpotlight({ children, className = '', style = {} }) {
   const containerRef = useRef(null);
-  const posRef = useRef({ targetX: -9999, targetY: -9999, currentX: -9999, currentY: -9999 });
+  const posRef = useRef({ targetX: -9999, targetY: -9999, currentX: -9999, currentY: -9999, isHovering: false });
   const rafRef = useRef(null);
 
   useEffect(() => {
     const handleMouseMove = (e) => {
       posRef.current.targetX = e.clientX;
       posRef.current.targetY = e.clientY;
+      if (!posRef.current.isHovering) {
+        posRef.current.isHovering = true;
+        document.documentElement.style.setProperty('--spotlight-opacity', '1');
+      }
 
       // Update card-local mouse coordinates for cards hovered
       const card = e.target.closest?.('.card, .card-editorial');
@@ -20,8 +24,8 @@ export default function MouseSpotlight({ children, className = '', style = {} })
     };
 
     const handleMouseLeave = () => {
-      posRef.current.targetX = -9999;
-      posRef.current.targetY = -9999;
+      posRef.current.isHovering = false;
+      document.documentElement.style.setProperty('--spotlight-opacity', '0');
     };
 
     window.addEventListener('mousemove', handleMouseMove, { passive: true });
@@ -36,9 +40,9 @@ export default function MouseSpotlight({ children, className = '', style = {} })
           posRef.current.currentX = targetX;
           posRef.current.currentY = targetY;
         } else {
-          // LERP factor 0.14 for buttery smooth trailing
-          posRef.current.currentX += (targetX - currentX) * 0.14;
-          posRef.current.currentY += (targetY - currentY) * 0.14;
+          // LERP factor 0.11 for buttery smooth, cinematic trailing
+          posRef.current.currentX += (targetX - currentX) * 0.11;
+          posRef.current.currentY += (targetY - currentY) * 0.11;
         }
 
         document.documentElement.style.setProperty('--mouse-x', `${posRef.current.currentX.toFixed(1)}px`);
